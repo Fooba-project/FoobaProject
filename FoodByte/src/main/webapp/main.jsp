@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
 
-
-<div id="maintextbox">
+	<div id="maintextbox">
         <span id="maintext">음식은 푸바, 
          배달은 푸바!
             </span>

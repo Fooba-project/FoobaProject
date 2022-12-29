@@ -11,12 +11,9 @@
 <script src="javascript/fooba.js"></script>
  <style type="text/css">
     body {margin: 0;}
-    #head {position:absolute; width: 100%; height: 110px; background-color: #fa6146;}
-    #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto;}
-    #logo {position: absolute; left: 5px; top: -25px; width: 145px; height: 145px;}
- </style>
- 
- <style type="text/css">
+    #head1 {position:absolute; width: 100%; height: 110px; background-color: #fa6146; margin: 0 auto;}
+    #mainlogo1 {position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto;}
+    #logo1 {position: absolute; left: 5px; top: -5px; width: 145px; height: 145px;}
 
         #main{position:absolute; width:100%; height: 420px; background-color: #fa6146;left:0; bottom: 0px;}   
 
@@ -34,7 +31,7 @@
 
         #background{ position:absolute; width:100%; height:600px;
         background-repeat: no-repeat;
-        top:60px;left:0;bottom:0;right:0;
+        top:50px;left:0;bottom:0;right:0;
         margin:0px; padding:0px; }
 
         #hash{position: absolute; width:100%; height:70px; background-color: white;
@@ -49,9 +46,7 @@
 
         #maintextbox span{position: relative;
         font-size:200%; font-weight: bold; color: #fa6146; white-space:pre;} 
-   </style>
-        
-   <style type="text/css">
+   
     #footerbox{position: absolute;  height: 100px; width: 100%; background-color: white; margin-top:861px; left: 0px;
         right:0px; 
     }
@@ -74,9 +69,8 @@
 </head>
 <body>
 
-<div>
-    <div id="head">
-        <div id="mainlogo">
+    <div id="head1">
+        <div id="mainlogo1">
             <img src="images/mainlogo1.png" id="logo";>
         </div>
     </div>
