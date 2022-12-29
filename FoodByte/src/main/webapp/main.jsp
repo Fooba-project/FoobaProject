@@ -4,7 +4,7 @@
 <div id="maintextbox">
     <span id="maintext">음식은 푸바, 
         배달은 푸바!
-        </span>
+     </span>
 </div>
     
 <div id="hash">
@@ -29,7 +29,7 @@
         <input id="searchtext" placeholder="   검색어를 입력하세요"
         size="30px"/>
         <div id="searchicon">
-            <img src="/images/search.png">
+            <img src="images/search.png">
         </div>
     </div>
 
