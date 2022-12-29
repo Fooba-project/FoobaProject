@@ -31,7 +31,7 @@ public class MemberDao {
 	}*/
 
 	public MemberVO getMember(String id) {
-MemberVO mvo=null;
+		MemberVO mvo=null;
 		
 		con=Dbman.getConnection();
 		String sql="select * from member where id=?";

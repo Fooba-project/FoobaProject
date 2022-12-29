@@ -23,12 +23,13 @@ public class findZipNumAction implements Action {
 			if(dong.equals("")==false) {
 				MemberDao mdao=MemberDao.getInstance();
 				ArrayList<AddressVO> list=mdao.selectAddress(dong);
-				request.setAttribute("addressList", list);
+				request.setAttribute("addressList", list); //member와 같은 방식이므로 복붙 
 			}
 		}
 		
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/findZipNum.jsp");
+		
+		RequestDispatcher dp=request.getRequestDispatcher("restaurant/findZipNum.jsp");
 		dp.forward(request, response);
 
 	}

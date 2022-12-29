@@ -39,8 +39,21 @@ import fooba.action.mypage.reviewWriteAction;
 import fooba.action.mypage.reviewWriteFormAction;
 import fooba.action.mypage.withdrawalMemberAction;
 import fooba.action.qna.qnaListAction;
+import fooba.action.qna.qnaViewAction;
 import fooba.action.res_info.res_infoAction;
+import fooba.action.res_info.res_reviewAction;
+import fooba.action.res_info.res_reviewReplyWriteAction;
+import fooba.action.restaurant.res_contractAction;
+import fooba.action.restaurant.res_editFormAction;
+import fooba.action.restaurant.res_findZipNumAction;
+import fooba.action.restaurant.res_idCheckFormAction;
+import fooba.action.restaurant.res_joinAction;
+import fooba.action.restaurant.res_joinFormAction;
 import fooba.action.restaurant.res_loginAction;
+import fooba.action.restaurant.res_loginFormAction;
+import fooba.action.restaurant.res_logoutAction;
+import fooba.action.restaurant.res_updateAction;
+import fooba.action.restaurant.res_withdrawalAction;
 
 public class ActionFactory {
 	
@@ -88,10 +101,11 @@ public class ActionFactory {
 		else if (command.equals("foodDetail")) ac = new foodDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
 		else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
-		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기
+		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 		
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
+		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
 		else if (command.equals("res_login")) ac = new res_loginAction();
 		else if (command.equals("res_logout")) ac = new res_logoutAction();
 		else if (command.equals("res_contract")) ac = new res_contractAction();
@@ -142,9 +156,9 @@ public class ActionFactory {
 		else if (command.equals("admin")) ac = new adminAction(); // admin 로그인창 
 		else if (command.equals("adminLogin")) ac = new adminLoginAction(); // 로그인 명령
 		else if (command.equals("adminLogout")) ac = new adminLogoutAction();
-		else if (command.equals("adminRestaurantList")) ac = new adminRestaurantListAction(); // 가게관리 result 1
-		else if (command.equals("adminRestaurantOk")) ac = new adminRestaurantOkAction(); // 가게관리 result 0
-		else if (command.equals("adminRestaurantKick")) ac = new adminRestaurantKickAction(); // 가게관리 result 2
+		else if (command.equals("adminRestaurantList")) ac = new adminRestaurantListAction(); // 가게관리 result 1 운영 가능 가게 
+		else if (command.equals("adminRestaurantOk")) ac = new adminRestaurantOkAction(); // 가게관리 result 0 가입신청한 가게
+		else if (command.equals("adminRestaurantKick")) ac = new adminRestaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("adminMemberKick")) ac = new adminMemberKickAction(); // 회원관리 - 리스트옆에 방출버튼
 		//else if (command.equals("adminMemberList")) ac = new adminMemberListAction();   //KickAction으로
 		//else if (command.equals("adminProductDetail")) ac = new adminProductDetailAction();

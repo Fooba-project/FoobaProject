@@ -1,0 +1,55 @@
+package fooba.action.res_info;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fooba.VO.RestaurantVO;
+import fooba.VO.ReviewVO;
+import fooba.action.Action;
+import fooba.dao.ResDao;
+import fooba.util.Paging;
+
+public class res_reviewAction implements Action {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginUser");
+		String url="restaurant/reviewList.jsp";
+		
+		if(rvo==null) {
+			url="fooba.do?command=res_loginForm";
+		}else {
+			//로그인한 아이디로 qna 목록을 조회하고 리턴받는다 (메서드 이름 selectQna)
+			ResDao rdao=ResDao.getInstance();
+			int page=1;			
+			if(request.getParameter("page")!=null) { 
+				page=Integer.parseInt(request.getParameter("page"));
+				session.setAttribute("page", page);
+			}else if(session.getAttribute("page")!=null) { 
+				page=(Integer)session.getAttribute("page");
+			}else { 
+				session.removeAttribute("page");
+			}
+			
+			Paging paging = new Paging();
+			paging.setPage(page); 
+			int count = rdao.getAllCount(rvo.getRseq());
+			paging.setTotalCount(count); 
+			
+			ArrayList<ReviewVO> list=rdao.selectReview(rvo.getRseq(),paging); 
+			request.setAttribute("ReviewList", list);
+			request.setAttribute("paging", paging);
+		}
+		request.getRequestDispatcher(url).forward(request, response);
+		
+
+	}
+
+}

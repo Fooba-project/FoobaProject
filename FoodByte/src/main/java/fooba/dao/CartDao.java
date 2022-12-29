@@ -33,7 +33,7 @@ public class CartDao {
 	public ArrayList<RestaurantVO> searchKey(String key) {
 		ArrayList<RestaurantVO>list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select*from search where fname='%'||?||'%' or rname='%'||?||'%' or hash='%'||?||'%'";
+		String sql="select*from search where (fname='%'||?||'%' or rname='%'||?||'%' or hash='%'||?||'%') and result='1'";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
@@ -57,7 +57,7 @@ public class CartDao {
 	public ArrayList<RestaurantVO> searchKind(String kind) {
 		ArrayList<RestaurantVO>list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select from restaurant where kind=?";
+		String sql="select from restaurant where kind=? and result='1'";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, kind);
