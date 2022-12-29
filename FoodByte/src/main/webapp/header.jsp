@@ -9,32 +9,18 @@
 <title>Fooba</title>
 <link href="css/fooba.css" rel="stylesheet">
 <script src="javascript/fooba.js"></script>
-<style type="css/text">
-    #head {width: 100%; background-color: red; height: 100px;}
-    .log_join {}
-
-</style>
+ <style type="text/css">
+    body {margin: 0;}
+    #head {position:absolute; width: 100%; height: 110px; background-color: #fa6146;}
+    #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto;}
+    #logo {position: absolute; left: 5px; top: -25px; width: 145px; height: 145px;}
+ </style>
 </head>
 <body>
-<div id="head">
 
-    <input type="button" value="로그인" class="log_join">
-    <input type="button" value="회원가입" class="log_join">
-    <input type="button" value="로그아웃" class="log_join">
-    <input type="button" value="마이페이지" class="log_join">
-
-    마이페이지 -> 주문진행사항, 과거주문내역, 회원정보수정, 회원탈퇴
-
-</div>
-
-<footer>
-	<hr>
-	<div id="copy">	All contents Copyright 2022 Fooba.Co all rights reserved<br>
-	Contact mail : abc@abc.com  Tel : +82 02 1234 1234 Fax : +82 02 1233 1233&nbsp;&nbsp;&nbsp;
-	<a href="fooba.do?command=admin">administrator</a>
-	</div>
-</footer>
-
-</div>
-</body>
-</html>
+<div>
+    <div id="head">
+        <div id="mainlogo">
+            <img src="/src/main/webapp/images/mainlogo1.png" id="logo";>
+        </div>
+    </div>
