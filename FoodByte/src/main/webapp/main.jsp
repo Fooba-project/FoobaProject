@@ -54,6 +54,10 @@
             <span class="kindtext">피자</span><br>
             <img src="images/pizza.png">
         </div>
+         <div class="kindbox">
+               <span class="kindtext">치킨</span><br>
+               <img src="images/chicken.png">
+            </div>
         <div class="kindbox">
             <span class="kindtext">분식</span><br>
             <img src="images/bunsic.png">
