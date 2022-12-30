@@ -13,7 +13,7 @@ public class joinFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="member/joinForm.jsp";
+		String url="member/memberJoinForm.jsp";
 		RequestDispatcher dispatcher=request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	
