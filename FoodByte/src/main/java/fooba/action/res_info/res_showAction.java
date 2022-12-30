@@ -14,7 +14,7 @@ import fooba.action.Action;
 import fooba.dao.ResDao;
 
 public class res_showAction implements Action {
-
+ 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  String url="restaurant/showres.jsp";
