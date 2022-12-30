@@ -2,6 +2,7 @@
 <%@ include file="../header.jsp"%>
 
 <div class="login_form">
+		<div id="logspace"></div>
         <div id="loginmain_logo">
             <img src="images/mainlogo1.png">
         </div>
