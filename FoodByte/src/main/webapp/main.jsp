@@ -85,14 +85,14 @@
             </div>
             
         <div class="kindbox">
-        <a href="fooba.do?command=category&kind=7">
+        <a href="fooba.do?command=category&kind=7" >
             <span class="kindtext">분식</span><br>
             <img src="images/bunsic.png">
         </a>
         </div>
         
         <div class="kindbox">
-        <a href="fooba.do?command=category&kind=8" style="text-decoration: none;">
+        <a href="fooba.do?command=category&kind=8" >
             <span class="kindtext">디저트</span><br>
             <img src="images/dessert.png">
         </a>
