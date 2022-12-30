@@ -49,3 +49,19 @@ body {margin: 0; position:relative;}
 #join_btn .join_btn:hover {background-color: white; color: #fa6146; cursor: pointer; border:2px solid #fa6146}
 #join_agree_text {width: 680px; height: 120px; overflow-y: auto; border: 1px solid #ccc;  margin: 10px;}
 #join_agree_btn {margin:10px;}
+
+#mainlist {position: relative; margin:0; width:100%; height:230px; background-color: #fa6146;}
+#searchtextlist{width:400px; height:35px; border-radius: 10px; border:none; margin-top: 10px;}
+#searchiconlist{position:absolute; top:20px; left:calc(50% + 170px); cursor: pointer; opacity:50%; }
+#kindboxeslist {margin:0 auto; width: 1350px; margin-top: 0px; height: 180px;}
+
+.row{position: relative; width:884px; margin:0 auto;  margin-top:15px;}
+.resList{ width: 250px; height: 280px; margin:20px; border:2px solid #fa6146; border-radius:10%; -webkit-border-radius:10%; -moz-border-radius:10%; -ms-border-radius:10%; -o-border-radius:10%;
+float: left;}
+.resList:hover{ box-shadow: 1px 1px 10px #fa6130; opacity: 0.9; transform: translate(0,-10px);  }
+.rimage { text-decoration: none;}
+.res_imgbox {width: 100%; height: 130px; text-align: center;}
+.res_imgbox img {width: auto; height: 100%; }
+.rtext .res_name{ font-size: 140%; color: #fa6146; text-align: center; font-weight:bolder;}
+.rtext .res_kind{text-align: center;}
+.rtext .res_tag{text-align: center;}
