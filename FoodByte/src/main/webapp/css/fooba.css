@@ -8,10 +8,11 @@ body {margin: 0; position:relative;}
 .headbutton {width: 150px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
 .headbutton:hover {background-color: white; color: #fa6146; cursor: pointer;}
 
-#maintextbox {position: relative; width:100%; height:275px; background-image: url("images/background1.jpg"); background-size: 100%;}
+#maintextbox {position: relative; width:100%; height:275px; overflow:hidden;}
+#maintextbox img {width:100%;}
 #maintextbox #maintext {font-size:200%; font-weight: bold; color: #fa6146; white-space:pre; position: absolute; right: 20%; top: 30%;} 
 
-#main {position: relative; margin:0; width:100%; height:350px; background-color: #fa6146;}
+#main {position: relative; margin:0; width:100%; height:320px; background-color: #fa6146;}
 
 #search{text-align: center; }
 #searchtext{width:400px; height:35px; border-radius: 10px; border:none; margin-top: 40px;}
@@ -27,15 +28,15 @@ body {margin: 0; position:relative;}
 .kindbox span {color: white; font-family: Verdana; margin: 0;}
 .kindbox img {margin-top:10px; width:64px; height:60px;}
 
-#footerbox{position: absolute;  height: 100px; width: 100%; background-color: white; margin-top:861px; left: 0px; right:0px; }
-#copy{position: absolute; top: 10px; text-align: center; right:0px; font-size: 15px; opacity: 80%; color: #fa6146;}
-#logo{position:absolute; z-index: 100; width:80px; height: 90px;  left: 20px; opacity: 60%;}
-#logotextbox{position: absolute; left: 100px; line-height:25px; width: 500px;}
-#logotext{white-space:pre; font-family: Verdana; font-weight: bold; opacity: 80%; color: #fa6146;}
-.linemenubox{position: relative;width: 150px; height: 20px; cursor: pointer; float: right;  right:0px; margin:1px; top:60px; font-weight: bold;color: #fa6146; text-align: center;}
+#footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
+#copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: #fa6146;}
+#logo{position:absolute; width:80px; height: 90px;  left: 20px; opacity: 60%; }
+#logotextbox{position:absolute; left: 100px; line-height:25px; width: 500px; border:1px solid yellow;}
+#logotext{font-family: Verdana; font-weight: bold; color: #fa6146; border:1px solid black;}
+.linemenubox{width: 150px; height: 20px; cursor: pointer; float: right; margin:10px; font-weight: bold; color: #fa6146; text-align: center;}
 
 
-.member_join {width: 700px; overflow: hidden;}
+.member_join {width: 700px; overflow: hidden; }
 #input_warp { margin: 0; width: 700px;}
 .join_list { position: relative; height: 44px; padding: 0; margin: 0; overflow: hidden; border-radius: 3px; margin: 10px;}
 .member_join_title { text-align: left; font-size: 26px;font-weight: bold; }

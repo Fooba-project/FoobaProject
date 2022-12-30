@@ -2,6 +2,7 @@
 <%@ include file="header.jsp"%>
 
 <div id="maintextbox">
+	<img src="images/background1.jpg">
     <span id="maintext">음식은 푸바, 
         배달은 푸바!
      </span>
@@ -68,6 +69,5 @@
         </div>
     </div>
 </div>
-
 
 <%@ include file="footer.jsp"%>
