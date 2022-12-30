@@ -1,90 +1,24 @@
-select*from order_view;
-
-alter table orders add address1 varchar2(100);
-alter table orders add address2 varchar2(100);
-alter table orders add totalprice number(7);
-alter table orders add phone varchar2(20);
-alter table review add reviewyn number(2);
-
-
-create or replace view order_view
-as
-select a.oseq, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.address1 as oadd1, a.address2 as oadd2, a.phone as ophone, a.totalprice,
-      b.odseq, b.quantity, b.result, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
-      c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
-      d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3 ,
-      e.rname,e.rseq
-      
-     from orders a, order_detail b, member c, foodmenu d , RESTAURANT e
-	where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
-	
-	
-	create or replace view search
-	as
-	select a.rseq, a.rname, a.hash, a.rimage, a.kind,
-      b.fname
-   from restaurant a, foodmenu b
-   where a.rseq=b.rseq;
-
-   
-select * from search
-	
-
-	select * from order_view
 /* Drop Triggers */
-	
-	fsideprice3
-	fsideprice2
-	fsideprice1
-	fside3
-	fside2
-	fside1
-	fprice
-	fname
-	mphone
-	madd2
-	madd1
-	nick
-	sideyn3
-	sideyn2
-	sideyn1
-	fseq
-	result
-	quantity
-	oseq
-	indate
-	id
-	rideryn
-	plasticyn
-	payment
-	oadd1
-	oadd2
-	ophone
-	odseq
-	
-	
-	
-	
-DROP TRIGGER TRI_NEW_TABLE_fseq;
-alter table restaurant add ryn number(2);
 
-alter table orders add address1 varchar2(100);
-alter table orders add address2 varchar2(100);
+DROP TRIGGER TRI_NEW_TABLE_fseq;
+
+
+select*from order_view
 
 /* Drop Tables */
-drop view order_view cascade constraints; 
-DROP TABLE address CASCADE CONSTRAINTS;
-DROP TABLE admin CASCADE CONSTRAINTS;
+drop view order_view
+DROP TABLE order_view CASCADE CONSTRAINTS;
+DROP TABLE Admin CASCADE CONSTRAINTS;
 DROP TABLE cart CASCADE CONSTRAINTS;
 DROP TABLE order_detail CASCADE CONSTRAINTS;
 DROP TABLE foodmenu CASCADE CONSTRAINTS;
 DROP TABLE review CASCADE CONSTRAINTS;
 DROP TABLE orders CASCADE CONSTRAINTS;
-DROP TABLE member CASCADE CONSTRAINTS;
+DROP TABLE Member CASCADE CONSTRAINTS;
 DROP TABLE qna CASCADE CONSTRAINTS;
 DROP TABLE restaurant CASCADE CONSTRAINTS;
 
-
+select*from Member
 
 /* Drop Sequences */
 
@@ -97,7 +31,7 @@ DROP SEQUENCE SEQ_NEW_TABLE_fseq;
 
 CREATE SEQUENCE SEQ_NEW_TABLE_fseq INCREMENT BY 1 START WITH 1;
 
-
+select*from admin
 
 /* Create Tables */
 
@@ -296,8 +230,43 @@ ALTER TABLE review
 	REFERENCES restaurant (rseq)
 ;
 
-select* from booklist where rentprice like '%0%' and inprice=12000;
+alter table orders add address1 varchar2(100);
+alter table orders add address2 varchar2(100);
+alter table orders add totalprice number(7);
+alter table review add reviewyn number(2);
+alter table orders add phone varchar2(20);
 
-sel
+select * from admin;
 
 
+create or replace view order_view
+as
+select a.oseq, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.address1 as oadd1, a.address2 as oadd2, a.phone as ophone, a.totalprice,
+      b.odseq, b.quantity, b.result, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
+      c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
+      d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3 ,
+      e.rname,e.rseq
+      
+     from orders a, order_detail b, member c, foodmenu d , RESTAURANT e
+   where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
+
+   ---------
+   create or replace view search
+   as
+   select a.rseq, a.rname, a.hash, a.rimage, a.kind,
+      b.fname
+   from restaurant a, foodmenu b
+   where a.rseq=b.rseq;
+ 
+ALTER TABLE member MODIFY nick VARCHAR2(100);
+ALTER TABLE foodmenu MODIFY fname VARCHAR2(100);
+ALTER TABLE foodmenu MODIFY fimage VARCHAR2(200);
+ALTER TABLE foodmenu MODIFY fcontent VARCHAR2(500);
+ALTER TABLE foodmenu MODIFY fcontent VARCHAR2(500);
+ALTER TABLE foodmenu MODIFY fside1 VARCHAR2(100);
+ALTER TABLE foodmenu MODIFY fside2 VARCHAR2(100);
+ALTER TABLE foodmenu MODIFY fside3 VARCHAR2(100);
+ALTER TABLE restaurant MODIFY rname VARCHAR2(100);
+ALTER TABLE restaurant MODIFY raddress VARCHAR2(100);
+ALTER TABLE qna MODIFY subject VARCHAR2(200);
+ALTER TABLE qna MODIFY content VARCHAR2(2000);
