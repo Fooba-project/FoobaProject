@@ -4,6 +4,7 @@ DROP TRIGGER TRI_NEW_TABLE_fseq;
 
 
 select*from order_view
+select*from restaurant;
 
 /* Drop Tables */
 drop view order_view
@@ -270,3 +271,6 @@ ALTER TABLE restaurant MODIFY rname VARCHAR2(100);
 ALTER TABLE restaurant MODIFY raddress VARCHAR2(100);
 ALTER TABLE qna MODIFY subject VARCHAR2(200);
 ALTER TABLE qna MODIFY content VARCHAR2(2000);
+
+
+select*from RESTAURANT;
