@@ -29,12 +29,11 @@ body {margin: 0; position:relative;}
 .kindbox img {margin-top:10px; width:64px; height:60px;}
 
 #footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
-#copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: #fa6146;}
-#logo{position:absolute; width:80px; height: 90px;  left: 15px; opacity: 60%; }
-#logotextbox{position:absolute; top:10px; left: 110px; line-height:25px; width: 500px; }
-#logotext{font-family: Verdana; font-weight: bold; color: #fa6146; }
-.linemenubox{width: 150px; height: 20px; cursor: pointer; float: right; margin:10px; font-weight: bold; color: #fa6146; text-align: center;}
-
+#footerbox #copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: #fa6146;}
+#footerbox  #logo{position:absolute; width:80px; height: 90px;  left: 15px; opacity: 60%; }
+#footerbox #logotextbox{position:absolute; top:10px; left: 110px; line-height:25px; width: 500px; }
+#footerbox #logotext{font-family: Verdana; font-weight: bold; color: #fa6146; }
+#footerbox .linemenubox{width: 150px; height: 20px; cursor: pointer; float: right; margin:10px; font-weight: bold; color: #fa6146; text-align: center;}
 
 .member_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
@@ -55,7 +54,7 @@ body {margin: 0; position:relative;}
 #searchiconlist{position:absolute; top:20px; left:calc(50% + 170px); cursor: pointer; opacity:50%; }
 #kindboxeslist {margin:0 auto; width: 1350px; margin-top: 0px; height: 180px;}
 
-.row{position: relative; width:884px; margin:0 auto;  margin-top:15px;}
+.row{position: relative; width:884px; margin:0 auto;  margin-top:15px; height:650px; overflow:hidden;}
 .resList{ width: 250px; height: 280px; margin:20px; border:2px solid #fa6146; border-radius:10%; -webkit-border-radius:10%; -moz-border-radius:10%; -ms-border-radius:10%; -o-border-radius:10%;
 float: left;}
 .resList:hover{ box-shadow: 1px 1px 10px #fa6130; opacity: 0.9; transform: translate(0,-10px);  }

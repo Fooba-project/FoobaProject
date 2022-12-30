@@ -10,19 +10,19 @@ import javax.servlet.http.HttpSession;
 
 import fooba.VO.RestaurantVO;
 import fooba.action.Action;
-import fooba.dao.CartDao;
+import fooba.dao.ResDao;
 
 public class categoryAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="";
+		String url="restaurantNmenu/resList.jsp";
 		HttpSession session=request.getSession();
 		String kind= request.getParameter("kind");
 		
-		CartDao cdao=CartDao.getInstance();
-		ArrayList<RestaurantVO>KindList=cdao.searchKind(kind);
+		ResDao rdao=ResDao.getInstance();
+		ArrayList<RestaurantVO>KindList=rdao.searchKind(kind);
 		
 		request.setAttribute("RList", KindList);
 
