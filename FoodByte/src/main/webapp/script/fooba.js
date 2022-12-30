@@ -132,7 +132,6 @@ function autoHypenPhone(str){
 			alert("이메일을 입력하세요.");
 			document.member_join_send_form.useremail.focus();
 		} else {
-			document.member_join_send_form.action="fooba.do?command=join";
 			document.member_join_send_form.submit();
 		}
 }

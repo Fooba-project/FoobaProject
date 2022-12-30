@@ -31,8 +31,8 @@ public class joinAction implements Action {
 		int result=mdao.insertMember(mvo);
 		
 		HttpSession session=request.getSession();
-		if(result==1)session.setAttribute("message","È¸¿ø°¡ÀÔ ¿Ï·á! ·Î±×ÀÎÇÏ¼¼¿ä.");
-		else session.setAttribute("message","È¸¿ø°¡ÀÔ ½ÇÆĞ.  °è¼Ó ½ÇÆĞÇÏ¸é °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä.");
+		if(result==1)session.setAttribute("message","íšŒì›ê°€ì… ì™„ë£Œ. ë¡œê·¸ì¸í•˜ì„¸ìš”.");
+		else session.setAttribute("message","íšŒì›ê°€ì… ì‹¤íŒ¨. ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•˜ì„¸ìš”.");
 		
 		response.sendRedirect("fooba.do?command=loginForm");
 

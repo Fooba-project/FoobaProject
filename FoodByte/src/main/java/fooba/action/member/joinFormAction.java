@@ -16,8 +16,6 @@ public class joinFormAction implements Action {
 		String url="member/memberJoinForm.jsp";
 		RequestDispatcher dispatcher=request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-	
-
 	}
 
 }

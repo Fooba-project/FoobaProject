@@ -31,13 +31,13 @@ public class FoobaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String command=request.getParameter("command");
-		System.out.println(command);
+		System.out.println("commandê°’ : "+command);
 		
 		ActionFactory af= ActionFactory.getInstance();
 		Action ac=af.getAction(command);
 		
 		if (ac!=null)ac.execute(request,response);
-		else System.out.println("command°¡ nullÀÔ´Ï´Ù. command¸¦ È®ÀÎÇÏ¼¼¿ä");
+		else System.out.println("commandê°€ nullì…ë‹ˆë‹¤. commandë¥¼ í™•ì¸í•˜ì„¸ìš”");
 	}
 
 	/**
