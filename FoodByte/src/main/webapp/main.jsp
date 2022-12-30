@@ -11,16 +11,22 @@
 <div id="hash">
     <div class="hashboxes">
         <div class="hashbox">
-        <span class="hashtext">#한식</span>
+        <span class="hashtext">#푸짐해요</span>
         </div>
         <div class="hashbox">
-        <span class="hashtext">#비건</span>
+        <span class="hashtext">#매워요</span>
+        </div>
+        <div class="hashbox">
+        <span class="hashtext">#소울푸드</span>
+        </div>
+        <div class="hashbox">
+        <span class="hashtext">#건강한맛집</span>
         </div>
         <div class="hashbox">
         <span class="hashtext">#가성비</span>
         </div>
         <div class="hashbox">
-        <span class="hashtext">#맛집</span>
+        <span class="hashtext">#나눠먹어요</span>
         </div>
     </div>
 </div>
