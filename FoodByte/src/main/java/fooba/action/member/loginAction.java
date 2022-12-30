@@ -22,20 +22,20 @@ public class loginAction implements Action {
 		MemberDao mdao=MemberDao.getInstance();
 		MemberVO mvo=mdao.getMember(id);
 		
-		//getMember¸Ş¼­µå¸¦ ¸¸µé°í, ¸®ÅÏ »óÈ²¿¡ ¸Â´Â if¹®À» ÀÌ¿ëÇØ¼­ ·Î±×ÀÎÀ» ±¸Çö
-		//ÃÖÁ¾ ¸ñÀûÁö´Â main.jsp
+		//getMemberë©”ì„œë“œë¥¼ ë§Œë“¤ê³ , ë¦¬í„´ ìƒí™©ì— ë§ëŠ” ifë¬¸ì„ ì´ìš©í•´ì„œ ë¡œê·¸ì¸ì„ êµ¬í˜„
+		//ìµœì¢… ëª©ì ì§€ëŠ” main.jsp
 		
-		String url="member/login.jsp";
+		String url="fooba.do?command=login";
 		
-		if(mvo==null) request.setAttribute("message","Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµğÀÔ´Ï´Ù.");
-		else if(mvo.getPwd()==null)request.setAttribute("message","½Ã½ºÅÛ ¿À·ù. °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä");
-		else if(!mvo.getPwd().equals(pwd))request.setAttribute("message","ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù.");
+		if(mvo==null) request.setAttribute("message","ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.");
+		else if(mvo.getPwd()==null)request.setAttribute("message","ì‹œìŠ¤í…œ ì˜¤ë¥˜. ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•˜ì„¸ìš”");
+		else if(!mvo.getPwd().equals(pwd))request.setAttribute("message","ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.");
 		else if(mvo.getPwd().equals(pwd)) {
 			url="fooba.do?command=index";
 			HttpSession session=request.getSession();
 			session.setAttribute("loginUser",mvo);
 			
-		}else request.setAttribute("message","·Î±×ÀÎ ½ÇÆĞ, °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä.");
+		}else request.setAttribute("message","ë¡œê·¸ì¸ ì‹¤íŒ¨, ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•˜ì„¸ìš”.");
 		
 		RequestDispatcher rd=request.getRequestDispatcher(url);
 		rd.forward(request, response);

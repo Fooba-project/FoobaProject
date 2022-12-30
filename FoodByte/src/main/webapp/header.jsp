@@ -23,6 +23,14 @@
     </div>
     
     <div class="headbuttons">
-	    <input type="button" value="로그인" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=loginForm'">
-	    <input type="button" value="회원가입" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=joinForm'">
+    	<c:choose>
+    		<c:when test="${empty loginUser}">
+	    		<input type="button" value="로그인" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=loginForm'">
+	    		<input type="button" value="회원가입" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=joinForm'">
+    		</c:when>
+    		<c:otherwise>
+    			<input type="button" value="로그아웃" class="headbutton" name="userLogout" onclick="location.href='fooba.do?command=logout'">
+	    		<input type="button" value="마이페이지" class="headbutton" name="userMypage" onclick="location.href='fooba.do?command=mypage'">
+    		</c:otherwise>
+    	</c:choose>
     </div>
