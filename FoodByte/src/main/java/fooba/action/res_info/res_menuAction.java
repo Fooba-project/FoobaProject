@@ -10,10 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import fooba.VO.FoodmenuVO;
 import fooba.VO.RestaurantVO;
-import fooba.VO.ReviewVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
-import fooba.util.Paging;
 
 public class res_menuAction implements Action {
 
@@ -21,19 +19,23 @@ public class res_menuAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String url="restaurant/resMenu.jsp";
-		
-		HttpSession session=request.getSession();
-		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginUser");
-		
-			if(rvo==null) {
-				url="fooba.do?command=res_loginForm";
-			}else {
-			ResDao rdao=ResDao.getInstance();
-
-			ArrayList<FoodmenuVO> list=rdao.selectMenu(rvo.getRseq()); 
-			request.setAttribute("MenuList", list);
-		}
-	request.getRequestDispatcher(url).forward(request, response);
+	      
+	      HttpSession session=request.getSession();
+	      RestaurantVO rvo=(RestaurantVO) session.getAttribute("loginUser");
+	      
+	         if(rvo==null) {
+	            url="fooba.do?command=res_loginForm";
+	         }else {
+	            
+	            int rseq=Integer.parseInt(request.getParameter("rseq"));
+	            
+	            ResDao rdao=ResDao.getInstance();
+	            
+	            ArrayList<FoodmenuVO>FoodList=rdao.foodList(rseq);
+	            
+	            request.setAttribute("FoodList", FoodList);
+	         }
+	      request.getRequestDispatcher(url).forward(request, response);
 	}
 
 }
