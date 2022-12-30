@@ -16,8 +16,8 @@ public class loginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id=request.getParameter("id");
-		String pwd=request.getParameter("pwd");
+		String id=request.getParameter("userid");
+		String pwd=request.getParameter("userpw");
 		
 		MemberDao mdao=MemberDao.getInstance();
 		MemberVO mvo=mdao.getMember(id);
@@ -25,11 +25,11 @@ public class loginAction implements Action {
 		//getMember메서드를 만들고, 리턴 상황에 맞는 if문을 이용해서 로그인을 구현
 		//최종 목적지는 main.jsp
 		
-		String url="fooba.do?command=login";
+		String url="fooba.do?command=loginForm";
 		
 		if(mvo==null) request.setAttribute("message","존재하지 않는 아이디입니다.");
 		else if(mvo.getPwd()==null)request.setAttribute("message","시스템 오류. 관리자에게 문의하세요");
-		else if(!mvo.getPwd().equals(pwd))request.setAttribute("message","비밀번호가 틀립니다.");
+		else if(!mvo.getPwd().equals(pwd)) request.setAttribute("message","비밀번호가 틀립니다.");
 		else if(mvo.getPwd().equals(pwd)) {
 			url="fooba.do?command=index";
 			HttpSession session=request.getSession();
