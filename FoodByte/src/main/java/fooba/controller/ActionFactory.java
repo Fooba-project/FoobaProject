@@ -42,6 +42,8 @@ import fooba.action.qna.qnaListAction;
 import fooba.action.qna.qnaViewAction;
 import fooba.action.res_info.res_infoAction;
 import fooba.action.res_info.res_menuAction;
+import fooba.action.res_info.res_menuUpdateAction;
+import fooba.action.res_info.res_menuUpdateFormAction;
 import fooba.action.res_info.res_orderAction;
 import fooba.action.res_info.res_orderCompleteAction;
 import fooba.action.res_info.res_orderDetailAction;
@@ -71,8 +73,8 @@ public class ActionFactory {
 //		request.getRequestDispatcher(fooba.do?command=index).forward(request, response);
 		
 		
-		// member °¡ÀÔ, ·Î±×ÀÎ, ·Î±×¾Æ¿ô µî ±âº»±â´É
-		if(command.equals("index")) ac=new indexAction(); // ¸ŞÀÎÈ­¸é Ç¥½Ã
+		// member ê°€ì…, ë¡œê·¸ì¸, ë¡œê·¸ì•„ì›ƒ ë“± ê¸°ë³¸ê¸°ëŠ¥
+		if(command.equals("index")) ac=new indexAction(); // ë©”ì¸í™”ë©´ í‘œì‹œ
 		else if(command.equals("loginForm"))ac=new loginFormAction();
 		else if (command.equals("login")) ac = new loginAction();
 		else if (command.equals("logout")) ac = new logoutAction();
@@ -82,33 +84,33 @@ public class ActionFactory {
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
 		else if (command.equals("join")) ac = new joinAction();
 
-		// ¸¶ÀÌÆäÀÌÁö È¸¿øÁ¤º¸, ÁÖ¹®³»¿ªÈ®ÀÎ, ¸®ºäÀÛ¼º µî
+		// ë§ˆì´í˜ì´ì§€ íšŒì›ì •ë³´, ì£¼ë¬¸ë‚´ì—­í™•ì¸, ë¦¬ë·°ì‘ì„± ë“±
 		else if (command.equals("mypage")) ac = new mypageAction();
 		else if (command.equals("editForm")) ac = new editFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
 		else if (command.equals("withdrawalMember")) ac = new withdrawalMemberAction();
-		else if (command.equals("orderList")) ac = new orderListAction();// ÁøÇàÁßÀÎ ÁÖ¹® ³»¿ª
-		else if (command.equals("orderAll")) ac = new orderAllAction();// ÀüÃ¼ ÁÖ¹® ³»¿ª
-		else if (command.equals("orderDetail")) ac = new orderDetailAction();// ÁÖ¹® ¹øÈ£º° »ó¼¼ ³»¿ª
+		else if (command.equals("orderList")) ac = new orderListAction();// ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ ë‚´ì—­
+		else if (command.equals("orderAll")) ac = new orderAllAction();// ì „ì²´ ì£¼ë¬¸ ë‚´ì—­
+		else if (command.equals("orderDetail")) ac = new orderDetailAction();// ì£¼ë¬¸ ë²ˆí˜¸ë³„ ìƒì„¸ ë‚´ì—­
 		
 		
-		//º¸·ù review yn, order_view¿¡ review³ÖÀ»Áö
-		else if (command.equals("reviewWriteForm")) ac = new reviewWriteFormAction();// º°Á¡ ¹× ¸®ºä ÀÛ¼ºÆäÀÌÁö·Î ÀÌµ¿
-		else if (command.equals("reviewWrite")) ac = new reviewWriteAction();// º°Á¡ ¹× ¸®ºä ÀÛ¼ºµÈ ³»¿ë ÀúÀå
+		//ë³´ë¥˜ review yn, order_viewì— reviewë„£ì„ì§€
+		else if (command.equals("reviewWriteForm")) ac = new reviewWriteFormAction();// ë³„ì  ë° ë¦¬ë·° ì‘ì„±í˜ì´ì§€ë¡œ ì´ë™
+		else if (command.equals("reviewWrite")) ac = new reviewWriteAction();// ë³„ì  ë° ë¦¬ë·° ì‘ì„±ëœ ë‚´ìš© ì €ì¥
 		
 		
 		
-		// food_cart ¾×¼Ç
-		// Àå¹Ù±¸´Ï³Ö±â, ¼öÁ¤, »èÁ¦, ÁÖ¹®ÇÏ±â,
-		else if (command.equals("search")) ac = new searchAction();// °Ë»ö ÈÄ °¡°Ô ¸®½ºÆÃ
-		else if (command.equals("category")) ac = new categoryAction();// Ä«Å×°í¸®º° °¡°Ô ¸®½ºÆÃ
-		else if (command.equals("foodDetail")) ac = new foodDetailAction();// °¡°Ô Å¬¸¯½Ã °¡°Ô ¼Ò°³ ¹× ¸Ş´º ¸®½ºÆÃ
-		else if (command.equals("cartInsert")) ac = new cartInsertAction();// Ä«Æ®¿¡ ´ã±â
-		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// Ä«Æ®¿¡¼­ »èÁ¦
-		else if (command.equals("orderInsert")) ac = new orderInsertAction();// ÁÖ¹®ÇÏ±â º¸·ù
+		// food_cart ì•¡ì…˜
+		// ì¥ë°”êµ¬ë‹ˆë„£ê¸°, ìˆ˜ì •, ì‚­ì œ, ì£¼ë¬¸í•˜ê¸°,
+		else if (command.equals("search")) ac = new searchAction();// ê²€ìƒ‰ í›„ ê°€ê²Œ ë¦¬ìŠ¤íŒ…
+		else if (command.equals("category")) ac = new categoryAction();// ì¹´í…Œê³ ë¦¬ë³„ ê°€ê²Œ ë¦¬ìŠ¤íŒ…
+		else if (command.equals("foodDetail")) ac = new foodDetailAction();// ê°€ê²Œ í´ë¦­ì‹œ ê°€ê²Œ ì†Œê°œ ë° ë©”ë‰´ ë¦¬ìŠ¤íŒ…
+		else if (command.equals("cartInsert")) ac = new cartInsertAction();// ì¹´íŠ¸ì— ë‹´ê¸°
+		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// ì¹´íŠ¸ì—ì„œ ì‚­ì œ
+		else if (command.equals("orderInsert")) ac = new orderInsertAction();// ì£¼ë¬¸í•˜ê¸° ë³´ë¥˜
 		
-		// restaurant °¡ÀÔ-Á¤º¸-¼öÁ¤ ¾×¼Ç
-		// °¡°ÔÁ¤º¸, ÁÖ¹®°ü¸®, ¸Ş´º°ü¸®, ¸®ºä°ü¸®, °¡°Ô¹Ì¸®º¸±â
+		// restaurant ê°€ì…-ì •ë³´-ìˆ˜ì • ì•¡ì…˜
+		// ê°€ê²Œì •ë³´, ì£¼ë¬¸ê´€ë¦¬, ë©”ë‰´ê´€ë¦¬, ë¦¬ë·°ê´€ë¦¬, ê°€ê²Œë¯¸ë¦¬ë³´ê¸°
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
 		else if (command.equals("res_login")) ac = new res_loginAction();
 		else if (command.equals("res_logout")) ac = new res_logoutAction();
@@ -121,32 +123,32 @@ public class ActionFactory {
 		else if (command.equals("res_Update")) ac = new res_updateAction();
 		else if (command.equals("res_withdrawal")) ac = new res_withdrawalAction();
 		
-		// ·¹½ºÅä¶û °ü¸®
-		else if (command.equals("res_info")) ac = new res_infoAction();// ·Î±×ÀÎ ÈÄ ·¹½ºÅä¶û °ü¸®ÆäÀÌÁö ÀÔÀå
-		// ¸®ºä
-		else if (command.equals("res_review")) ac = new res_reviewAction();// ¸®ºä ÅÇ
-		else if (command.equals("res_reviewReplyWrite")) ac = new res_reviewReplyWriteAction();// ´ä±Û ´Ş±â
-		// ÁÖ¹®°ü¸®
-		else if (command.equals("res_order")) ac = new res_orderAction();// ÁÖ¹® °ü¸® ÅÇ, ÁÖ¹®¸®½ºÆ® Ç¥½Ã
-		else if (command.equals("res_orderDetail")) ac = new res_orderDetailAction(); // ÁÖ¹® »ó¼¼º¸±â
-		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// ¹è´Ş¿Ï·á Ã³¸®
-		// ¸Ş´º
-		else if (command.equals("res_menu")) ac = new res_menuAction();// ¸Ş´º ¸®½ºÆ®
+		// ë ˆìŠ¤í† ë‘ ê´€ë¦¬
+		else if (command.equals("res_info")) ac = new res_infoAction();// ë¡œê·¸ì¸ í›„ ë ˆìŠ¤í† ë‘ ê´€ë¦¬í˜ì´ì§€ ì…ì¥
+		// ë¦¬ë·°
+		else if (command.equals("res_review")) ac = new res_reviewAction();// ë¦¬ë·° íƒ­
+		else if (command.equals("res_reviewReplyWrite")) ac = new res_reviewReplyWriteAction();// ë‹µê¸€ ë‹¬ê¸°
+		// ì£¼ë¬¸ê´€ë¦¬
+		else if (command.equals("res_order")) ac = new res_orderAction();// ì£¼ë¬¸ ê´€ë¦¬ íƒ­, ì£¼ë¬¸ë¦¬ìŠ¤íŠ¸ í‘œì‹œ
+		else if (command.equals("res_orderDetail")) ac = new res_orderDetailAction(); // ì£¼ë¬¸ ìƒì„¸ë³´ê¸°
+		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// ë°°ë‹¬ì™„ë£Œ ì²˜ë¦¬
+		// ë©”ë‰´
+		else if (command.equals("res_menu")) ac = new res_menuAction();// ë©”ë‰´ ë¦¬ìŠ¤íŠ¸
 		else if (command.equals("res_menuUpdateForm")) ac = new res_menuUpdateFormAction();
-		else if (command.equals("res_menuUpdate")) ac = new res_menuUpdateAction();// ¸Ş´º ¾÷µ¥ÀÌÆ®
+		else if (command.equals("res_menuUpdate")) ac = new res_menuUpdateAction();// ë©”ë‰´ ì—…ë°ì´íŠ¸
 		else if (command.equals("res_menuAddForm")) ac = new res_menuAddFormAction();
-		else if (command.equals("res_menuAdd")) ac = new res_menuAddAction();// ¸Ş´º Ãß°¡
-		else if (command.equals("res_menuDelete")) ac = new res_menuDeleteAction();// ¸Ş´º »èÁ¦
-		// ·¹½ºÅä¶û ¹Ì¸®º¸±â
-		else if (command.equals("res_show")) ac = new res_showAction();// °¡°Ô ¹Ì¸®º¸±â
+		else if (command.equals("res_menuAdd")) ac = new res_menuAddAction();// ë©”ë‰´ ì¶”ê°€
+		else if (command.equals("res_menuDelete")) ac = new res_menuDeleteAction();// ë©”ë‰´ ì‚­ì œ
+		// ë ˆìŠ¤í† ë‘ ë¯¸ë¦¬ë³´ê¸°
+		else if (command.equals("res_show")) ac = new res_showAction();// ê°€ê²Œ ë¯¸ë¦¬ë³´ê¸°
 		
 
-		// qna ¾×¼Ç(°í°´¼¾ÅÍ - ÀÚÁÖ¹¯´Â Áú¹®)
-		else if (command.equals("qnaList")) ac = new qnaListAction(); // qna ¸®½ºÆ®  °í°´ÀÌ º¸´Â¸ğ½À
-		else if (command.equals("qnaView")) ac = new qnaViewAction(); // qna »ó¼¼ º¸±â  °í°´ÀÌ º¸´Â¸ğ½À
+		// qna ì•¡ì…˜(ê³ ê°ì„¼í„° - ìì£¼ë¬»ëŠ” ì§ˆë¬¸)
+		else if (command.equals("qnaList")) ac = new qnaListAction(); // qna ë¦¬ìŠ¤íŠ¸  ê³ ê°ì´ ë³´ëŠ”ëª¨ìŠµ
+		else if (command.equals("qnaView")) ac = new qnaViewAction(); // qna ìƒì„¸ ë³´ê¸°  ê³ ê°ì´ ë³´ëŠ”ëª¨ìŠµ
 		
 		/*
-		else if (command.equals("qnaList											`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````")) ac = new qnaListAction();
+		else if (command.equals("qnaList")) ac = new qnaListAction();
 		else if (command.equals("qnaView")) ac = new qnaViewAction();
 		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction();
 		else if (command.equals("qnaWrite")) ac = new qnaWriteAction();
@@ -157,15 +159,15 @@ public class ActionFactory {
 		else if (command.equals("qnaDelete")) ac = new qnaDeleteAction();
 		*/
 		
-		// admin ¾×¼Ç
-		else if (command.equals("admin")) ac = new adminAction(); // admin ·Î±×ÀÎÃ¢ 
-		else if (command.equals("adminLogin")) ac = new adminLoginAction(); // ·Î±×ÀÎ ¸í·É
+		// admin ì•¡ì…˜
+		else if (command.equals("admin")) ac = new adminAction(); // admin ë¡œê·¸ì¸ì°½ 
+		else if (command.equals("adminLogin")) ac = new adminLoginAction(); // ë¡œê·¸ì¸ ëª…ë ¹
 		else if (command.equals("adminLogout")) ac = new adminLogoutAction();
-		else if (command.equals("adminRestaurantList")) ac = new adminRestaurantListAction(); // °¡°Ô°ü¸® result 1 ¿î¿µ °¡´É °¡°Ô 
-		else if (command.equals("adminRestaurantOk")) ac = new adminRestaurantOkAction(); // °¡°Ô°ü¸® result 0 °¡ÀÔ½ÅÃ»ÇÑ °¡°Ô
-		else if (command.equals("adminRestaurantKick")) ac = new adminRestaurantKickAction(); // °¡°Ô°ü¸® result 2 ÅğÃâµÈ °¡°Ô
-		else if (command.equals("adminMemberKick")) ac = new adminMemberKickAction(); // È¸¿ø°ü¸® - ¸®½ºÆ®¿·¿¡ ¹æÃâ¹öÆ°
-		//else if (command.equals("adminMemberList")) ac = new adminMemberListAction();   //KickActionÀ¸·Î
+		else if (command.equals("adminRestaurantList")) ac = new adminRestaurantListAction(); // ê°€ê²Œê´€ë¦¬ result 1 ìš´ì˜ ê°€ëŠ¥ ê°€ê²Œ 
+		else if (command.equals("adminRestaurantOk")) ac = new adminRestaurantOkAction(); // ê°€ê²Œê´€ë¦¬ result 0 ê°€ì…ì‹ ì²­í•œ ê°€ê²Œ
+		else if (command.equals("adminRestaurantKick")) ac = new adminRestaurantKickAction(); // ê°€ê²Œê´€ë¦¬ result 2 í‡´ì¶œëœ ê°€ê²Œ
+		else if (command.equals("adminMemberKick")) ac = new adminMemberKickAction(); // íšŒì›ê´€ë¦¬ - ë¦¬ìŠ¤íŠ¸ì˜†ì— ë°©ì¶œë²„íŠ¼
+		//else if (command.equals("adminMemberList")) ac = new adminMemberListAction();   //KickActionìœ¼ë¡œ
 		//else if (command.equals("adminProductDetail")) ac = new adminProductDetailAction();
 		//else if (command.equals("adminProductUpdateForm")) ac = new adminProductUpdateFormAction();
 		//else if (command.equals("adminProductUpdate")) ac = new adminProductUpdateAction();
@@ -175,11 +177,11 @@ public class ActionFactory {
 		//else if (command.equals("adminQnaRepSave")) ac = new adminQnaRepSaveAction();
 		
 		else if (command.equals("adminQnaList")) ac = new adminQnaListAction();
-		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction(); // ÀÛ¼º Æû  ¹ØÀ¸·Î admin
-		else if (command.equals("qnaWrite")) ac = new qnaWriteAction(); // ÀÛ¼º ¸í·É
-		else if (command.equals("qnaUpdateForm")) ac = new qnaUpdateFormAction(); // ¼öÁ¤ Æû
-		else if (command.equals("qnaUpdate")) ac = new qnaUpdateAction(); // ¼öÁ¤¸í·É
-		else if (command.equals("qnaDelete")) ac = new qnaDeleteAction(); // »èÁ¦
+		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction(); // ì‘ì„± í¼  ë°‘ìœ¼ë¡œ admin
+		else if (command.equals("qnaWrite")) ac = new qnaWriteAction(); // ì‘ì„± ëª…ë ¹
+		else if (command.equals("qnaUpdateForm")) ac = new qnaUpdateFormAction(); // ìˆ˜ì • í¼
+		else if (command.equals("qnaUpdate")) ac = new qnaUpdateAction(); // ìˆ˜ì •ëª…ë ¹
+		else if (command.equals("qnaDelete")) ac = new qnaDeleteAction(); // ì‚­ì œ
 		
 		
 		
