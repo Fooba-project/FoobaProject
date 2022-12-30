@@ -11,18 +11,18 @@
 <link href="css/fooba.css" rel="stylesheet">
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src = "script/jquery-3.6.1.js"></script>
-<script src="javascript/fooba.js"></script>
+<script src="script/fooba.js"></script>
 <link href="css/fooba.css" rel="stylesheet">
 </head>
 <body>
 
     <div id="headback">
         <div id="mainlogo">
-            <img src="images/mainlogo1.png">
+            <a href="fooba.do?command=index"><img src="images/mainlogo1.png"></a>
         </div>
     </div>
     
     <div class="headbuttons">
-	    <input type="button" value="로그인" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=loginForm">
-	    <input type="button" value="회원가입" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=joinForm">
+	    <input type="button" value="로그인" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=loginForm'">
+	    <input type="button" value="회원가입" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=joinForm'">
     </div>
