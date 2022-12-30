@@ -97,3 +97,42 @@ function autoHypenPhone(str){
                 }
             })
         } )
+        
+        
+ function joincheck() {
+		if(document.member_join_send_form.userid.value.length==0){
+			alert("아이디를 입력하세요");
+			document.member_join_send_form.userid.focus();
+		}
+		else if(document.member_join_send_form.userreid.value.length==0){
+			alert("아이디 중복확인을 하지 않았습니다.");
+			document.member_join_send_form.userid.focus();		
+		}
+		else if(document.member_join_send_form.userreid.value != document.member_join_send_form.userid.value){
+			alert("아이디 중복확인을 하지 않았습니다.");
+			document.member_join_send_form.userid.focus();	
+		}
+		else if(document.member_join_send_form.userpwd.value.length==0){
+			alert("비밀번호를 입력하세요.");
+			document.member_join_send_form.userpwd.focus();
+		}
+		else if(document.member_join_send_form.userpwd.value != document.member_join_send_form.userpwdchk.value){
+			alert("비밀번호 확인이 일치하지 않습니다.");
+			document.member_join_send_form.userpwdchk.focus();
+		}
+		else if(document.member_join_send_form.username.length==0){
+			alert("이름을 입력하세요.");
+			document.member_join_send_form.username.focus();
+		}
+		else if(document.member_join_send_form.userphone.value.length==0){
+			alert("전화번호를 입력하세요.");
+			document.member_join_send_form.userphone.focus();
+		} 
+		else if(document.member_join_send_form.useremail.value.length==0){
+			alert("이메일을 입력하세요.");
+			document.member_join_send_form.useremail.focus();
+		} else {
+			document.member_join_send_form.action="fooba.do?command=join";
+			document.member_join_send_form.submit();
+		}
+}
