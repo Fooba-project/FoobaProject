@@ -35,6 +35,7 @@
             </div>
         </div>
     </div>
+    <div id="loginmessage">회원가입 완료</div>
 </div>
 
 <%@ include file="../footer.jsp"%>

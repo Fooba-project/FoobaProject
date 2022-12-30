@@ -68,6 +68,7 @@ float: left;}
 
 .login_form {position: relative; width:100%; height:745px;}
 #logspace {width: 100%; height: 100px;}
+#loginmessage {width: 100%; height: 20px; margin-top: 30px; color: red; text-align: center; }
 #Login_form_space {width:100%; height:150px;}
 #loginmain_logo{position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto; border-radius:50%; width: calc(5.5em / 0.7); height: calc(5em / 0.7); background-color: #fa6146; opacity:90%;}
 #loginmain_logo img{width: 100px; height: 100px;}
