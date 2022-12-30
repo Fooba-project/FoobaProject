@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import fooba.VO.FoodmenuVO;
+import fooba.VO.OrderViewVO;
 import fooba.VO.RestaurantVO;
 import fooba.VO.ReviewVO;
 import fooba.util.Dbman;
@@ -205,7 +206,7 @@ public class ResDao {
 			ArrayList<ReviewVO> list=new ArrayList<>();
 			String sql="select*from("
 					+ "select *from("
-					+ "select rownum as rn, r.*from((select*from review where rseq=? order by review_seq desc) r )"
+					+ "select rownum as rn, r.*from((select*from orders where rseq=? order by review_seq desc) r )"
 					+ ")where rn>=?"
 					+ ")where rn<=?";
 			con=Dbman.getConnection();
@@ -245,6 +246,60 @@ public class ResDao {
 				pstmt.executeUpdate();
 			} catch (SQLException e) {	e.printStackTrace();
 			}finally {Dbman.close(con, pstmt, rs);}
+		}
+
+
+		public ArrayList<OrderViewVO> selectOrdersByRseq(Integer rseq) {
+			ArrayList<OrderViewVO> list=new ArrayList<>();
+			String sql="select*from order_view where rseq=? order by result asc, oseq desc";
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, rseq);
+				rs=pstmt.executeQuery();
+				while(rs.next()) {
+					OrderViewVO ovo=new OrderViewVO();
+					ovo.setFsideprice1(rs.getInt("fsideprice"));
+					ovo.setFsideprice2(rs.getInt("fsideprice"));
+					ovo.setFsideprice3(rs.getInt("fsideprice"));
+					ovo.setFside1(rs.getString("fside1"));
+					ovo.setFside2(rs.getString("fside2"));
+					ovo.setFside3(rs.getString("fside3"));
+					ovo.setFprice(rs.getInt("fprice"));
+					ovo.setFname(rs.getString("fname"));
+					ovo.setMphone(rs.getString("mphone"));
+					ovo.setMadd2(rs.getString("madd2"));
+					ovo.setMadd1(rs.getString("madd1"));
+					ovo.setNick(rs.getString("nick"));
+					ovo.setSideyn3(rs.getInt("sideyn3"));
+					ovo.setSideyn2(rs.getInt("sideyn2"));
+					ovo.setSideyn1(rs.getInt("sideyn1"));
+					ovo.setFseq(rs.getInt("fseq"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setQuantity(rs.getInt("quantity"));
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setOadd1(rs.getString("oadd1"));
+					ovo.setOadd2(rs.getString("oadd2"));
+					ovo.setOphone(rs.getString("ophone"));
+					ovo.setOdseq(rs.getInt("odseq"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);	
+				}
+			} catch (SQLException e) {	e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);
+			}
+			return list;
+		}
+
+
+		public ArrayList<FoodmenuVO> selectMenu(int rseq) {
+			
+			return null;
 		}
 	
 

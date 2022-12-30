@@ -41,6 +41,10 @@ import fooba.action.mypage.withdrawalMemberAction;
 import fooba.action.qna.qnaListAction;
 import fooba.action.qna.qnaViewAction;
 import fooba.action.res_info.res_infoAction;
+import fooba.action.res_info.res_menuAction;
+import fooba.action.res_info.res_orderAction;
+import fooba.action.res_info.res_orderCompleteAction;
+import fooba.action.res_info.res_orderDetailAction;
 import fooba.action.res_info.res_reviewAction;
 import fooba.action.res_info.res_reviewReplyWriteAction;
 import fooba.action.restaurant.res_contractAction;
@@ -124,7 +128,8 @@ public class ActionFactory {
 		else if (command.equals("res_reviewReplyWrite")) ac = new res_reviewReplyWriteAction();// 답글 달기
 		// 주문관리
 		else if (command.equals("res_order")) ac = new res_orderAction();// 주문 관리 탭, 주문리스트 표시
-		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// 배송완료 처리
+		else if (command.equals("res_orderDetail")) ac = new res_orderDetailAction(); // 주문 상세보기
+		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// 배달완료 처리
 		// 메뉴
 		else if (command.equals("res_menu")) ac = new res_menuAction();// 메뉴 리스트
 		else if (command.equals("res_menuUpdateForm")) ac = new res_menuUpdateFormAction();

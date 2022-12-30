@@ -124,6 +124,19 @@ public class OrderDao {
 		}
 		return list;
 	}
+
+		public void Complete(int oseq) {
+		String sql="update orders set result='1' where oseq=?";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,oseq);
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {e.printStackTrace();
+		} finally {Dbman.close(con, pstmt, rs);}
+
+	}
 	
 	
 }

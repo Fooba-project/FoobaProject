@@ -17,7 +17,7 @@ public class orderListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//로그인 유저의 nick과 result가 1(진행중)로 데이터베이스에서 찾아온다
+		//로그인 유저의 nick과 result가 0(진행중)로 데이터베이스에서 찾아온다
 		
 	      String url = "mypage/orderList.jsp";
 	      HttpSession session = request.getSession();
@@ -27,7 +27,7 @@ public class orderListAction implements Action {
 	         url = "fooba.do?command=loginForm";
 	      }else {         
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, "1"); // 1- 배달 완료 전
+	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, "0"); // 0- 배달 완료 전
 	      
 	         request.setAttribute("orderList", list);
 	         
