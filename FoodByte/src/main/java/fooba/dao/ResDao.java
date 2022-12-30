@@ -174,7 +174,7 @@ public class ResDao {
 
 	public void withDrawalRes(String rid) {
 		con=Dbman.getConnection();
-		String sql="update restaurant set result='3' where rid=?"; //3Àº ÈÞ¸é(Å»Åð)
+		String sql="update restaurant set result='3' where rid=?"; //3ï¿½ï¿½ ï¿½Þ¸ï¿½(Å»ï¿½ï¿½)
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,rid);
@@ -291,18 +291,58 @@ public class ResDao {
 					list.add(ovo);	
 				}
 			} catch (SQLException e) {	e.printStackTrace();
-			}finally {Dbman.close(con, pstmt, rs);
+			} finally {Dbman.close(con, pstmt, rs);
 			}
 			return list;
 		}
 
-
-		public ArrayList<FoodmenuVO> selectMenu(int rseq) {
-			
-			return null;
+		public void updateFoodMenu(FoodmenuVO fvo) {
+			String sql="update foodmenu set fname=?, fprice=?, fimage=?, fcontent=?, fside1=?, fsideprice1=?,"
+					+ " fside2=?, fsideprice2=?, fside3=?, fsideprice3=? where fseq=?";
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1,fvo.getFname());
+				pstmt.setInt(2,fvo.getFprice());
+				pstmt.setString(3,fvo.getFimage() );
+				pstmt.setString(4,fvo.getFcontent() );
+				pstmt.setString(5,fvo.getFside1() );
+				pstmt.setInt(6,fvo.getFsideprice1() );
+				pstmt.setString(7,fvo.getFside2() );
+				pstmt.setInt(8,fvo.getFsideprice2());
+				pstmt.setString(9, fvo.getFside3());
+				pstmt.setInt(10, fvo.getFsideprice3());
+				pstmt.setInt(11, fvo.getFseq());
+				pstmt.executeUpdate();
+				
+			} catch (SQLException e) {e.printStackTrace();
+			} finally {Dbman.close(con, pstmt, rs);			
 		}
-	
+		
+		}
 
-	
-	
+		public void addFoodMenu(FoodmenuVO fvo) {
+			String sql="insert into foodmenu(rseq,fseq,fname,fprice,fimage,fcontent,fside1,fsideprice1,fside2,fsideprice2,fside3,fsideprice3)"
+					+ "values(?,foodmenu_seq.nextVal,?,?,?,?,?,?,?,?,?,?)";
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt=con.prepareStatement(sql);
+	            pstmt.setInt(1,fvo.getRseq());
+	            pstmt.setString(2, fvo.getFname());
+	            pstmt.setInt(3, fvo.getFprice());
+	            pstmt.setString(4, fvo.getFimage());
+	            pstmt.setString(5, fvo.getFcontent());
+	            pstmt.setString(6, fvo.getFside1());
+	            pstmt.setInt(7,fvo.getFsideprice1());
+	            pstmt.setString(8, fvo.getFside2());
+	            pstmt.setInt(9,fvo.getFsideprice2());
+	            pstmt.setString(10, fvo.getFside3());
+	            pstmt.setInt(11,fvo.getFsideprice3());    
+	            pstmt.executeUpdate();
+		
+			} catch (SQLException e) {e.printStackTrace();
+			} finally {Dbman.close(con, pstmt, rs);
+		}
+  }
 }
