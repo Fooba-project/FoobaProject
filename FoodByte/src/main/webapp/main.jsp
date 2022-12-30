@@ -92,7 +92,7 @@
         </div>
         
         <div class="kindbox">
-        <a href="fooba.do?command=category&kind=8">
+        <a href="fooba.do?command=category&kind=8" style="text-decoration: none;">
             <span class="kindtext">디저트</span><br>
             <img src="images/dessert.png">
         </a>
