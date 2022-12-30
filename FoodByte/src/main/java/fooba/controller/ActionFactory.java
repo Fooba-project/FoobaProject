@@ -42,8 +42,6 @@ import fooba.action.qna.qnaListAction;
 import fooba.action.qna.qnaViewAction;
 import fooba.action.res_info.res_infoAction;
 import fooba.action.res_info.res_menuAction;
-import fooba.action.res_info.res_menuUpdateAction;
-import fooba.action.res_info.res_menuUpdateFormAction;
 import fooba.action.res_info.res_orderAction;
 import fooba.action.res_info.res_orderCompleteAction;
 import fooba.action.res_info.res_orderDetailAction;
@@ -107,7 +105,7 @@ public class ActionFactory {
 		else if (command.equals("foodDetail")) ac = new foodDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
 		else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
-		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
+//		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 		
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
@@ -134,13 +132,13 @@ public class ActionFactory {
 		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// 배달완료 처리
 		// 메뉴
 		else if (command.equals("res_menu")) ac = new res_menuAction();// 메뉴 리스트
-		else if (command.equals("res_menuUpdateForm")) ac = new res_menuUpdateFormAction();
-		else if (command.equals("res_menuUpdate")) ac = new res_menuUpdateAction();// 메뉴 업데이트
-		else if (command.equals("res_menuAddForm")) ac = new res_menuAddFormAction();
-		else if (command.equals("res_menuAdd")) ac = new res_menuAddAction();// 메뉴 추가
-		else if (command.equals("res_menuDelete")) ac = new res_menuDeleteAction();// 메뉴 삭제
+//		else if (command.equals("res_menuUpdateForm")) ac = new res_menuUpdateFormAction();
+//		else if (command.equals("res_menuUpdate")) ac = new res_menuUpdateAction();// 메뉴 업데이트
+//		else if (command.equals("res_menuAddForm")) ac = new res_menuAddFormAction();
+//		else if (command.equals("res_menuAdd")) ac = new res_menuAddAction();// 메뉴 추가
+//		else if (command.equals("res_menuDelete")) ac = new res_menuDeleteAction();// 메뉴 삭제
 		// 레스토랑 미리보기
-		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
+//		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
 		
 
 		// qna 액션(고객센터 - 자주묻는 질문)
