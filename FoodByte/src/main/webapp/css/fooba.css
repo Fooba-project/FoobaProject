@@ -12,7 +12,7 @@ body {margin: 0; position:relative;}
 #maintextbox img {width:100%;}
 #maintextbox #maintext {font-size:200%; font-weight: bold; color: #fa6146; white-space:pre; position: absolute; right: 20%; top: 30%;} 
 
-#main {position: relative; margin:0; width:100%; height:320px; background-color: #fa6146;}
+#main {position: relative; margin:0; width:100%; height:400px; background-color: #fa6146;}
 
 #search{text-align: center; }
 #searchtext{width:400px; height:35px; border-radius: 10px; border:none; margin-top: 40px;}
@@ -23,7 +23,7 @@ body {margin: 0; position:relative;}
 .hashbox{width: 100px; height: 70px; cursor: pointer; float: left; margin:0 30px;}
 .hashbox span{ line-height:70px; color: #fa6146; font-weight: bold; font-family: Verdana; font-size:120%;}
 
-#kindboxes {margin:0 auto; width: 1350px; margin-top: 40px; height: 180px;}
+#kindboxes {margin:0 auto; width: 1350px; margin-top: 60px; height: 180px;}
 .kindbox {border: 2px solid white; width: 120px; height:120px; float: left; border-radius: 10px; margin: 20px; cursor: pointer; text-align: center;padding-top:20px; }
 .kindbox span {color: white; font-family: Verdana; margin: 0;}
 .kindbox img {margin-top:10px; width:64px; height:60px;}
@@ -31,8 +31,8 @@ body {margin: 0; position:relative;}
 #footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
 #copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: #fa6146;}
 #logo{position:absolute; width:80px; height: 90px;  left: 20px; opacity: 60%; }
-#logotextbox{position:absolute; left: 100px; line-height:25px; width: 500px; border:1px solid yellow;}
-#logotext{font-family: Verdana; font-weight: bold; color: #fa6146; border:1px solid black;}
+#logotextbox{position:absolute; top:10px; left: 110px; line-height:25px; width: 500px; }
+#logotext{font-family: Verdana; font-weight: bold; color: #fa6146; }
 .linemenubox{width: 150px; height: 20px; cursor: pointer; float: right; margin:10px; font-weight: bold; color: #fa6146; text-align: center;}
 
 
