@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import fooba.VO.FoodmenuVO;
 import fooba.util.Dbman;
 
 public class FoodDao {
@@ -25,6 +26,26 @@ public class FoodDao {
 		} catch (SQLException e) {e.printStackTrace();}
 		catch (Exception e) {e.printStackTrace();} 
 		finally {Dbman.close(con, pstmt, rs);}
+	}
+
+	public FoodmenuVO selectFood(int rseq) {
+		con = Dbman.getConnection();
+		FoodmenuVO fvo = null;
+		String sql = "select * from foodmenu where rseq=?"; 
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1,rseq);
+			rs = pstmt.executeQuery();
+			rs.next();
+			fvo=new FoodmenuVO();
+			fvo.setFimage(rs.getString("fimage").replace(".jfif",""));
+			fvo.setRseq(rs.getInt("rseq"));
+			fvo.setFname(rs.getString("fname"));
+			System.out.println(rs.getString("fname"));
+		} catch (SQLException e) {e.printStackTrace();}
+		catch (Exception e) {e.printStackTrace();} 
+		finally {Dbman.close(con, pstmt, rs);}
+		return fvo;
 	}
 	
 	

@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fooba.VO.FoodmenuVO;
 import fooba.VO.RestaurantVO;
 import fooba.action.Action;
+import fooba.dao.FoodDao;
 import fooba.dao.ResDao;
 
 public class categoryAction implements Action {
@@ -26,7 +28,15 @@ public class categoryAction implements Action {
 		
 		request.setAttribute("RList", KindList);
 
+		FoodDao fdao=FoodDao.getInstance();
+		ArrayList<FoodmenuVO> Foodlist =new ArrayList<FoodmenuVO>();
 		
+		for(RestaurantVO rvo : KindList) {	
+			Foodlist.add(fdao.selectFood(rvo.getRseq()));
+			
+		}
+		
+		request.setAttribute("FList", Foodlist);
 		request.getRequestDispatcher(url).forward(request, response);
 
 		

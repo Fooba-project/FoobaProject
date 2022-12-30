@@ -87,12 +87,18 @@
 				 
 				 
        		<c:forEach items="${RList}" var="RestaurantVO">
+       		
        		<div class="resList">
             <a href="#" class="rimage">                
               	 	<div class="res_imgbox">
-                    	<img src="images/title/${RestaurantVO.rimage}" alt="${RestaurantVO.rname}" id="rtitle">
+              	 	<c:forEach items="${FList}" var="FoodmenuVO" >
+              	 	<c:if test="${FoodmenuVO.rseq==RestaurantVO.rseq}">
+              	 		<img src="images/foodmenu/${FoodmenuVO.fimage}" alt="${FoodmenuVO.fimage}" id="rtitle">
+              	 	</c:if>
+              	 	</c:forEach>              	 	
+                    	
                 	</div>
-                
+           
                 <div class="rtext">
                     <p class="res_name">${RestaurantVO.rname}</p>
                     <p class="res_kind">
@@ -107,7 +113,7 @@
 	                    	<c:otherwise>디저트</c:otherwise>
 	                    </c:choose>
                     </p>
-                    <p class="res_tag">${RestaurantVO.hash}</p>
+                    <p class="res_tag">#${RestaurantVO.hash}</p>
                 </div>
             </a>
         </div>
