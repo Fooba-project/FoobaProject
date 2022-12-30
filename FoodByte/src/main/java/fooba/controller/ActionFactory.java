@@ -146,7 +146,7 @@ public class ActionFactory {
 		else if (command.equals("qnaView")) ac = new qnaViewAction(); // qna 상세 보기  고객이 보는모습
 		
 		/*
-		else if (command.equals("qnaList")) ac = new qnaListAction();
+		else if (command.equals("qnaList											`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````")) ac = new qnaListAction();
 		else if (command.equals("qnaView")) ac = new qnaViewAction();
 		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction();
 		else if (command.equals("qnaWrite")) ac = new qnaWriteAction();
