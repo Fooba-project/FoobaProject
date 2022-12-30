@@ -15,7 +15,7 @@
 <link href="css/fooba.css" rel="stylesheet">
 </head>
 <body>
- 
+
     <div id="headback">
         <div id="mainlogo">
             <a href="fooba.do?command=index"><img src="images/mainlogo1.png"></a>
