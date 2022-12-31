@@ -22,10 +22,10 @@
 				opener.document.member_join_send_form.userid.value="";
 				opener.document.member_join_send_form.userreid.value="";
 			</script>
-			${id}는 이미 사용중인 아이디입니다.
+			${userid}는 이미 사용중인 아이디입니다.
 		</c:if>
 		<c:if test="${result == -1}">
-			${id}는 사용 가능한 ID입니다.    
+			${userid}는 사용 가능한 ID입니다.    
 			<input type="button" value="사용" class="cancel" onclick="idok('${userid}');">
 		</c:if>
 		

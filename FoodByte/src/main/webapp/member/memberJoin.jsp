@@ -9,7 +9,7 @@
                 <div class="join_list">
                     <input type="text" class="input_text" style="width: 490px;" name="userid" placeholder="아이디" onkeyup="chkIdCode(event)"/>
                     <input type="hidden" name="userreid" value=""/>
-                    <button id="id_btn" onclick="idcheck()">중복 확인</button>
+                    <input type="button" id="id_btn" value="중복 확인" onclick="idcheck()">
                 </div>
 
                 <div class="join_list">
@@ -42,7 +42,7 @@
 
                 <div class="join_list">
                     <input type="text" class="input_text" style="width: 490px;" name="userzip_num" placeholder="우편번호" readonly/>
-                    <button id="id_btn">우편번호 검색</button>
+                    <input type="button" id="id_btn" value="우편번호 검색" onclick="post_zip()"> 
                 </div>
 
                 <div class="join_list">
