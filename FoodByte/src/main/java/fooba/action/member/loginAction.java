@@ -34,11 +34,10 @@ public class loginAction implements Action {
 			url="fooba.do?command=index";
 			HttpSession session=request.getSession();
 			session.setAttribute("loginUser",mvo);
-			
+			session.removeAttribute("message");
 		}else request.setAttribute("message","로그인 실패, 관리자에게 문의하세요.");
 		
-		RequestDispatcher rd=request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		request.getRequestDispatcher(url).forward(request, response);
 
 	}
 

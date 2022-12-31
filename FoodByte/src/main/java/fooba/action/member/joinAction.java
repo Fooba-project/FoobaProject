@@ -2,6 +2,7 @@ package fooba.action.member;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,11 +38,11 @@ public class joinAction implements Action {
 			
 			if(result==1)session.setAttribute("message","회원가입 완료. 로그인하세요.");
 			else session.setAttribute("message","회원가입 실패. 관리자에게 문의하세요.");
-			response.sendRedirect("fooba.do?command=loginForm");
 		} else {
 			session.removeAttribute("message");
-			response.sendRedirect("fooba.do?command=loginForm");
 		}
+		request.getRequestDispatcher("fooba.do?command=loginForm").forward(request, response);
+
 	}
 
 }
