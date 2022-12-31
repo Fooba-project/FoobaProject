@@ -30,7 +30,7 @@ public class joinAction implements Action {
 			mvo.setAddress1(request.getParameter("useraddress1"));
 			mvo.setAddress2(request.getParameter("useraddress2"));
 			mvo.setPhone(request.getParameter("userphone"));
-			if(request.getParameter("usernick")==null || request.getParameter("usernick").equals("")) mvo.setNick("username");
+			if(request.getParameter("usernick")==null || request.getParameter("usernick").equals("")) mvo.setNick(request.getParameter("username"));
 			else mvo.setNick(request.getParameter("usernick"));
 			
 			int result=mdao.insertMember(mvo);
