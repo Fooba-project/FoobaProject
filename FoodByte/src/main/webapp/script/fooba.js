@@ -131,7 +131,79 @@ function autoHypenPhone(str){
 		else if(document.member_join_send_form.useremail.value.length==0){
 			alert("이메일을 입력하세요.");
 			document.member_join_send_form.useremail.focus();
-		} else {
+		}
+		else if( document.member_join_send_form.useragree.checked==false){
+			alert("약관에 동의하셔야 회원가입이 가능합니다.");
+			document.member_join_send_form.useragree.focus();
+		}
+		else {
 			document.member_join_send_form.submit();
 		}
+}
+
+function idcheck(){
+	if( document.member_join_send_form.userid.value=="" ){
+		alert("아이디를 입력하고 중복체크를 진행하세요" );
+		documnet.member_join_send_form.userid.focus();
+		return;
+	}
+	var url = "fooba.do?command=idCheckForm&userid=" + document.member_join_send_form.userid.value;
+	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
+	window.open(url, "IdCheck", opt);	
+}
+
+
+function loginCheck(){
+	if(document.loginFrm.id.value==""){
+		alert("아이디는 필수입력사항입니다");
+		document.userloginFrm.userid.focus();
+		return false;
+	}else if(document.loginFrm.pwd.value==""){
+		alert("비밀번호는 필수입력사항입니다");
+		document.userloginFrm.userpwd.focus();
+		return false;
+	}else{
+		return true;	
+	}	
+}
+
+function idok( userid ){
+	opener.member_join_send_form.userid.value = userid;
+	opener.member_join_send_form.userreid.value = userid;
+	self.close();
+}
+
+
+
+function post_zip(){
+	var url = "fooba.do?command=findZipNum";
+	var opt = "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=550, height=300, top=300, left=300";
+	window.open( url, "우편번호 찾기", opt);
+}
+
+
+
+
+function result( zip_num, sido, gugun, dong){
+	//  함수 호출 형태 - result( '123-123', '서울시', '서대문구',  '대현동')
+	opener.document.member_join_send_form.userzip_num.value=zip_num;
+	opener.document.member_join_send_form.useraddress1.value=sido+" "+gugun+" "+dong;
+	self.close();
+}
+
+
+function go_update(){
+	if ((document.member_update_form.pwd.value != document.member_update_form.pwdCheck.value)) {
+	    alert("비밀번호가 일치하지 않습니다.");
+	    document.member_update_form.pwd.focus();
+	}else if (document.member_update_form.name.value == "") {
+	    alert("이름을 입력해 주세요.");
+	    document.member_update_form.name.focus();
+	} else if (document.member_update_form.phone.value == "") {
+	    alert("전화번호를 입력해 주세요.");
+	    document.member_update_form.email.focus();
+	}else {
+	    document.member_update_form.action = "fooba.do";
+	    document.member_update_form.submit();
+	}
 }

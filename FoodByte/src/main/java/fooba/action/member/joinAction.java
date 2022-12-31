@@ -15,27 +15,33 @@ public class joinAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDao mdao=MemberDao.getInstance();
-		MemberVO mvo=new MemberVO();
-		
-		mvo.setId(request.getParameter("id"));
-		mvo.setPwd(request.getParameter("pwd"));
-		mvo.setName(request.getParameter("name"));
-		mvo.setEmail(request.getParameter("email"));
-		mvo.setZip_num(request.getParameter("zip_num"));
-		mvo.setAddress1(request.getParameter("address1"));
-		mvo.setAddress2(request.getParameter("address2"));
-		mvo.setPhone(request.getParameter("phone"));
-		mvo.setNick(request.getParameter("nick"));
-		
-		int result=mdao.insertMember(mvo);
-		
 		HttpSession session=request.getSession();
-		if(result==1)session.setAttribute("message","회원가입 완료. 로그인하세요.");
-		else session.setAttribute("message","회원가입 실패. 관리자에게 문의하세요.");
-		
-		response.sendRedirect("fooba.do?command=loginForm");
 
+		if (session.getAttribute("login_message_reset")==null) {
+			MemberDao mdao=MemberDao.getInstance();
+			MemberVO mvo=new MemberVO();
+			
+			mvo.setId(request.getParameter("userid"));
+			mvo.setPwd(request.getParameter("userpwd"));
+			mvo.setName(request.getParameter("username"));
+			mvo.setEmail(request.getParameter("useremail"));
+			mvo.setZip_num(request.getParameter("userzip_num"));
+			mvo.setAddress1(request.getParameter("useraddress1"));
+			mvo.setAddress2(request.getParameter("useraddress2"));
+			mvo.setPhone(request.getParameter("userphone"));
+			mvo.setNick(request.getParameter("usernick"));
+			int result=mdao.insertMember(mvo);
+			
+			session.setAttribute("login_message_reset", "1");
+
+			if(result==1)session.setAttribute("message","회원가입 완료. 로그인하세요.");
+			else session.setAttribute("message","회원가입 실패. 관리자에게 문의하세요.");
+			response.sendRedirect("fooba.do?command=loginForm");
+			
+		} else {
+			session.removeAttribute("message");
+			response.sendRedirect("fooba.do?command=loginForm");
+		}
 	}
 
 }

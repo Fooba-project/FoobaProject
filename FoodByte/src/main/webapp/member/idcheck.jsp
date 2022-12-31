@@ -26,7 +26,7 @@
 		</c:if>
 		<c:if test="${result == -1}">
 			${id}는 사용 가능한 ID입니다.    
-			<input type="button" value="사용" class="cancel" onclick="joincheck('${userid}');">
+			<input type="button" value="사용" class="cancel" onclick="idok('${userid}');">
 		</c:if>
 		
 	</div>

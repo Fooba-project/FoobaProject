@@ -8,8 +8,8 @@
             <table class="member_join_table">
                 <div class="join_list">
                     <input type="text" class="input_text" style="width: 490px;" name="userid" placeholder="아이디" onkeyup="chkIdCode(event)"/>
-                    <input type="hidden" name="userreid" value="asdf"/>
-                    <button id="id_btn">중복 확인</button>
+                    <input type="hidden" name="userreid" value=""/>
+                    <button id="id_btn" onclick="idcheck()">중복 확인</button>
                 </div>
 
                 <div class="join_list">
@@ -72,8 +72,8 @@
             </table>
             <br><br>
             <div id="join_btn">
-                <input class="join_btn" type="button" name="join" value="가입" onclick="joincheck()">
-                <input class="join_btn" type="button" name="gohome" value="홈으로" onclick="location.href='fooba.do?command=index'">
+                <input class="join_btn" type="button" value="가입" onclick="joincheck()">
+                <input class="join_btn" type="button" value="홈으로" onclick="location.href='fooba.do?command=index'">
             </div>
         </form>
     </div>
