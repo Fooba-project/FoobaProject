@@ -10,63 +10,56 @@
                 <img src="images/search.png">
             </div>
         </div>
-    
+    	
         <div id="kindboxeslist">
-            <div class="kindbox">
-            <a href="fooba.do?command=category&kind=1">
-                <span class="kindtext">한식</span><br>
-                <img src="images/korean.png">
-             </a>
-            </div>
-            
-            <div class="kindbox">
-            <a href="fooba.do?command=category&kind=2">
-                <span class="kindtext">중식</span><br>
-                <img src="images/china.png">
+	        <a href="fooba.do?command=category&kind=1">
+	            <div class="kindbox">
+	                <span class="kindtext">한식</span><br>
+	                <img src="images/korean.png">
+	            </div>
+			</a>
+		    <a href="fooba.do?command=category&kind=2">
+	            <div class="kindbox">
+	                <span class="kindtext">중식</span><br>
+	                <img src="images/china.png">
+	            </div>
             </a>
-            </div>
-            
-            <div class="kindbox">
             <a href="fooba.do?command=category&kind=3">
-                <span class="kindtext">양식</span><br>
-                <img src="images/western.png">
+	            <div class="kindbox">
+	                <span class="kindtext">양식</span><br>
+	                <img src="images/western.png">
+	            </div>
             </a>
-            </div>
-            
-            <div class="kindbox">
             <a href="fooba.do?command=category&kind=4">
-                <span class="kindtext">일식</span><br>
-                <img src="images/japan.png">
-             </a>
-            </div>
-            
-            <div class="kindbox">
+	            <div class="kindbox">
+	                <span class="kindtext">일식</span><br>
+	                <img src="images/japan.png">
+	            </div>
+            </a>
             <a href="fooba.do?command=category&kind=5">
-                <span class="kindtext">피자</span><br>
-                <img src="images/pizza.png">
+	            <div class="kindbox">
+	                <span class="kindtext">피자</span><br>
+	                <img src="images/pizza.png">
+	            </div>
             </a>
-            </div>
-            
-             <div class="kindbox">
-             <a href="fooba.do?command=category&kind=6">
-                   <span class="kindtext">치킨</span><br>
-                   <img src="images/chicken.png">
-             </a>   
-             </div>
-             
-            <div class="kindbox">
-            <a href="fooba.do?command=category&kind=7">
-                <span class="kindtext">분식</span><br>
-                <img src="images/bunsic.png">
+            <a href="fooba.do?command=category&kind=6">
+	             <div class="kindbox">
+	                   <span class="kindtext">치킨</span><br>
+	                   <img src="images/chicken.png">
+	             </div>
+             </a> 
+             <a href="fooba.do?command=category&kind=7">
+	            <div class="kindbox">
+	                <span class="kindtext">분식</span><br>
+	                <img src="images/bunsic.png">
+	            </div>
             </a>
-            </div>
-            
-            <div class="kindbox">
             <a href="fooba.do?command=category&kind=8">
-                <span class="kindtext">디저트</span><br>
-                <img src="images/dessert.png">
+	            <div class="kindbox">
+	                <span class="kindtext">디저트</span><br>
+	                <img src="images/dessert.png">
+	            </div>
             </a>
-            </div>
         </div>
     </div>
 

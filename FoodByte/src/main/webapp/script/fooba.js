@@ -132,6 +132,14 @@ function autoHypenPhone(str){
 			alert("이메일을 입력하세요.");
 			document.member_join_send_form.useremail.focus();
 		}
+		else if(document.member_join_send_form.useraddress1.value.length==0){
+			alert("주소를 입력하세요.");
+			post_zip();
+		}
+		else if(document.member_join_send_form.useraddress2.value.length==0){
+			alert("주소를 입력하세요.");
+			document.member_join_send_form.useraddress2.focus();
+		}
 		else if( document.member_join_send_form.useragree.checked==false){
 			alert("약관에 동의하셔야 회원가입이 가능합니다.");
 			document.member_join_send_form.useragree.focus();

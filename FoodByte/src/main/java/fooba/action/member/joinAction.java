@@ -29,15 +29,15 @@ public class joinAction implements Action {
 			mvo.setAddress1(request.getParameter("useraddress1"));
 			mvo.setAddress2(request.getParameter("useraddress2"));
 			mvo.setPhone(request.getParameter("userphone"));
-			mvo.setNick(request.getParameter("usernick"));
-			int result=mdao.insertMember(mvo);
+			if(request.getParameter("usernick")==null || request.getParameter("usernick").equals("")) mvo.setNick("username");
+			else mvo.setNick(request.getParameter("usernick"));
 			
+			int result=mdao.insertMember(mvo);
 			session.setAttribute("login_message_reset", "1");
-
+			
 			if(result==1)session.setAttribute("message","회원가입 완료. 로그인하세요.");
 			else session.setAttribute("message","회원가입 실패. 관리자에게 문의하세요.");
 			response.sendRedirect("fooba.do?command=loginForm");
-			
 		} else {
 			session.removeAttribute("message");
 			response.sendRedirect("fooba.do?command=loginForm");
