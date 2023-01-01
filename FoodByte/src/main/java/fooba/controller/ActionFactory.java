@@ -82,7 +82,6 @@ public class ActionFactory {
 		else if(command.equals("loginForm"))ac=new loginFormAction();
 		else if (command.equals("login")) ac = new loginAction();
 		else if (command.equals("logout")) ac = new logoutAction();
-		else if (command.equals("contract")) ac = new contractAction();
 		else if (command.equals("joinForm")) ac = new joinFormAction();
 		else if (command.equals("idCheckForm")) ac = new idCheckFormAction();
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
@@ -118,7 +117,6 @@ public class ActionFactory {
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
 		else if (command.equals("res_login")) ac = new res_loginAction();
 		else if (command.equals("res_logout")) ac = new res_logoutAction();
-		else if (command.equals("res_contract")) ac = new res_contractAction();
 		else if (command.equals("res_joinForm")) ac = new res_joinFormAction();
 		else if (command.equals("res_idCheckForm")) ac = new res_idCheckFormAction();
 		else if (command.equals("res_findZipNum")) ac = new res_findZipNumAction();

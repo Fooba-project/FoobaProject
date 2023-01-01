@@ -26,15 +26,15 @@ public class res_loginAction implements Action {
 				
 		String url="restaurant/login.jsp";
 		
-		if(rvo==null) request.setAttribute("message","Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµðÀÔ´Ï´Ù.");
-		else if(rvo.getRpwd()==null)request.setAttribute("message","½Ã½ºÅÛ ¿À·ù. °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä");
-		else if(!rvo.getRpwd().equals(rpwd))request.setAttribute("message","ºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù.");
+		if(rvo==null) request.setAttribute("message","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½Ô´Ï´ï¿½.");
+		else if(rvo.getRpwd()==null)request.setAttribute("message","ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½");
+		else if(!rvo.getRpwd().equals(rpwd))request.setAttribute("message","ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ Æ²ï¿½ï¿½ï¿½Ï´ï¿½.");
 		else if(rvo.getRpwd().equals(rpwd)) {
 			url="fooba.do?command=res_info";
 			HttpSession session=request.getSession();
-			session.setAttribute("loginUser",rvo);
+			session.setAttribute("loginRes",rvo);
 			
-		}else request.setAttribute("message","·Î±×ÀÎ ½ÇÆÐ, °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä.");
+		}else request.setAttribute("message","ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		
 		RequestDispatcher rd=request.getRequestDispatcher(url);
 		rd.forward(request, response);
