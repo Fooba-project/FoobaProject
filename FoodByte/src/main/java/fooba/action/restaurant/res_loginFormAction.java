@@ -13,7 +13,7 @@ public class res_loginFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="restaurant/login.jsp";
+		String url="restaurant/res_login.jsp";
 		
 		
 		RequestDispatcher dp=request.getRequestDispatcher(url);

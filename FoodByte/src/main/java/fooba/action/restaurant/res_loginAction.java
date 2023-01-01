@@ -26,15 +26,15 @@ public class res_loginAction implements Action {
 				
 		String url="restaurant/login.jsp";
 		
-		if(rvo==null) request.setAttribute("message","�������� �ʴ� ���̵��Դϴ�.");
-		else if(rvo.getRpwd()==null)request.setAttribute("message","�ý��� ����. �����ڿ��� �����ϼ���");
-		else if(!rvo.getRpwd().equals(rpwd))request.setAttribute("message","��й�ȣ�� Ʋ���ϴ�.");
+		if(rvo==null) request.setAttribute("message","아이디가 존재하지 않습니다.");
+		else if(rvo.getRpwd()==null)request.setAttribute("message","패스워드 DB 오류. 관리자에게 문의하세요.");
+		else if(!rvo.getRpwd().equals(rpwd))request.setAttribute("message","비밀번호가 틀렸습니다.");
 		else if(rvo.getRpwd().equals(rpwd)) {
 			url="fooba.do?command=res_info";
 			HttpSession session=request.getSession();
 			session.setAttribute("loginRes",rvo);
-			
-		}else request.setAttribute("message","�α��� ����, �����ڿ��� �����ϼ���.");
+			session.removeAttribute("message");
+		}else request.setAttribute("message","DB오류. 관리자에게 문의하세요.");
 		
 		RequestDispatcher rd=request.getRequestDispatcher(url);
 		rd.forward(request, response);

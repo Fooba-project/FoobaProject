@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {margin: 0; position:relative;}
-.headback {position:relative; width: 100%; height: 100px; background-color: #fa6146; margin: 0 auto;}
+
+.headback {width: 100%; height: 100px; background-color: #fa6146; margin: 0;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
 

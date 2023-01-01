@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 
 <footer>
-	<div id="footerbox">
+	<div class="footerbox">
 	    <div class="linemenubox">
 	       <span class="linetext">/자주 묻는 질문</span>
 	    </div>
@@ -32,6 +32,5 @@
 
 </footer>
 
-</div>
 </body>
 </html>
