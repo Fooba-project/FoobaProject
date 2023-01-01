@@ -24,7 +24,7 @@
     <div class="headbuttons" id="resheadbuttons">
     	<c:choose>
     		<c:when test="${empty loginAdmin}">
-	    		<input type="button" value="입점신청" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=res_joinForm'">
+	    		<input type="button" value="가입신청" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=res_joinForm'">
 	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=index'">
     		</c:when>
     		<c:otherwise>
