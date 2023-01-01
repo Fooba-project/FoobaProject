@@ -38,6 +38,6 @@
 	    </div>
 	    <div id="loginmessage">${message}</div>
 	</div>
-
 </form>
+
 <%@ include file="res_footer.jsp"%>

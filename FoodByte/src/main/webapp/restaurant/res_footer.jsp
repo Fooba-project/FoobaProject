@@ -28,8 +28,6 @@
 			*<a href="fooba.do?command=index">UserHome</a>
 		</div>
 	</div>
-	
-
 </footer>
 
 </body>

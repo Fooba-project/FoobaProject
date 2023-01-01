@@ -1,0 +1,91 @@
+@charset "UTF-8";
+body {margin: 0; position:relative;}
+
+.headback {width: 100%; height: 100px; background-color: #fa6146; margin: 0;}
+#mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
+#mainlogo img {width: 100px; height: 100px;}
+
+.headbuttons {position:absolute; width: 320px; top:23px; left:calc(50% + 300px); }
+.headbutton {width: 150px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
+.headbutton:hover {background-color: white; color: #fa6146; cursor: pointer;}
+
+#maintextbox {position: relative; width:100%; height:275px; overflow:hidden;}
+#maintextbox img {width:100%;}
+#maintextbox #maintext {font-size:200%; font-weight: bold; color: #fa6146; white-space:pre; position: absolute; right: 20%; top: 30%;} 
+
+#main {position: relative; margin:0; width:100%; height:400px; background-color: #fa6146;}
+
+#search{text-align: center; }
+#searchtext{width:400px; height:35px; border-radius: 10px; border:none; margin-top: 40px;}
+#searchicon{position:absolute; top:50px; left:calc(50% + 170px); cursor: pointer; opacity:50%; }
+
+#hash{width:100%; height:70px; background-color: white;}
+.hashboxes{margin: 0 auto; width: 1100px; height: 70px; }
+.hashbox{width: 120px; height: 70px; cursor: pointer; float: left; margin:0 30px;}
+.hashbox span{ line-height:70px; color: #fa6146; font-weight: bold; font-family: Verdana; font-size:120%;}
+
+#kindboxes {margin:0 auto; width: 1350px; margin-top: 60px; height: 180px; }
+.kindbox {border: 2px solid white; width: 120px; height:120px; float: left; border-radius: 10px; margin: 20px; cursor: pointer; text-align: center;
+padding-top:20px; }
+.kindbox:hover{opacity:0.5;}
+.kindbox span {color: white; font-family: Verdana; margin: 0;}
+.kindbox a{text-decoration: none;}
+.kindbox img {margin-top:10px; width:64px; height:60px;}
+
+.footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
+.footerbox #copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: #fa6146;}
+.footerbox  #logo{position:absolute; width:80px; height: 90px;  left: 15px; opacity: 60%; }
+.footerbox #logotextbox{position:absolute; top:10px; left: 110px; line-height:25px; width: 500px; }
+.footerbox #logotext{font-family: Verdana; font-weight: bold; color: #fa6146; }
+.footerbox .linemenubox{width: 150px; height: 20px; cursor: pointer; float: right; margin:10px; font-weight: bold; color: #fa6146; text-align: center;}
+
+.member_join {width: 700px; overflow: hidden; margin:50px auto;}
+#input_warp { margin: 0; width: 700px;}
+.join_list { position: relative; height: 44px; padding: 0; margin: 0; overflow: hidden; border-radius: 3px; margin: 10px;}
+.member_join_title { text-align: left; font-size: 26px;font-weight: bold; }
+.error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
+.input_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border: 1px solid #BCBCBC;}
+.join_list #id_btn {  position: absolute;  width: 180px;  height: 45px;  top: 0px; right: 0;  border: 0; border-radius: 3px;}
+.join_list #id_btn:hover { outline: 0px solid #9191dfab; background-color: rgb(125, 114, 245);}
+#join_btn {margin-left: 200px;}
+#join_btn .join_btn {width: 150px; height: 50px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fa6146; line-height: 40px; color:#fff; border: 1px solid white; text-align: center;}
+#join_btn .join_btn:hover {background-color: white; color: #fa6146; cursor: pointer; border:2px solid #fa6146}
+#join_agree_text {width: 680px; height: 120px; overflow-y: auto; border: 1px solid #ccc;  margin: 10px;}
+#join_agree_btn {margin:10px;}
+
+#mainlist {position: relative; margin:0; width:100%; height:230px; background-color: #fa6146;}
+#searchtextlist{width:400px; height:35px; border-radius: 10px; border:none; margin-top: 10px;}
+#searchiconlist{position:absolute; top:20px; left:calc(50% + 170px); cursor: pointer; opacity:50%; }
+#kindboxeslist {margin:0 auto; width: 1350px; margin-top: 0px; height: 180px;}
+
+.row{position: relative; width:1180px; margin:0 auto;  margin-top:15px; height:650px; overflow:hidden;}
+.resList{ width: 250px; height: 280px; margin:20px; border:2px solid #f85454; border-radius:10%; -webkit-border-radius:10%; -moz-border-radius:10%; -ms-border-radius:10%; -o-border-radius:10%;
+float: left;}
+.resList:hover{ box-shadow: 1px 1px 10px #fa6130; opacity: 0.9; transform: translate(0,-10px);  }
+.rimage { text-decoration: none;}
+.res_imgbox {width: 100%; height: 130px; text-align: center;}
+.res_imgbox img {width: auto; height: 100%; }
+.rtext .res_name{ font-size: 140%; color: #fa6146; text-align: center; font-weight:bolder;}
+.rtext .res_kind{text-align: center; color:black;}
+.rtext .res_tag{text-align: center; color:black;}
+
+.login_form {position: relative; width:100%; height:745px;}
+#logspace {width: 100%; height: 100px;}
+#loginmessage {width: 100%; height: 20px; margin-top: 30px; color: red; text-align: center; }
+#Login_form_space {width:100%; height:150px;}
+#loginmain_logo{position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto; border-radius:50%; width: calc(5.5em / 0.7); height: calc(5em / 0.7); background-color: #fa6146; opacity:90%;}
+#loginmain_logo img{width: 100px; height: 100px;}
+#login_box{position: relative; height:300px; width:500px; border:2px solid rgb(224, 133, 80); margin: 0 auto; border-radius: 20px; margin-top:50px; }
+#text_button_box{position:relative; width: 500px;height: 190px; margin-top: 50px; margin-left:0 auto;}
+#login_idpw_box{position:relative; height:75px; width:310px; margin-top:0 auto; margin-left:90px;}
+#login_id{position: relative; width:300px;height:36px; border:1px solid #616161; padding-left:10px;}
+#login_pw{position: relative; width:300px; height:36px; bottom:1px; border:1px solid #616161; padding-left:10px; margin-top:10px;}
+#log_buttonbox{position: relative; width: 310px; height:40px; margin-top: 40px;margin-left:90px;}
+#log_button{position: relative; width: 310px; height:40px; background-color:#fa6146; opacity:80%;border-color:#fa6146; border-radius:10px; cursor: pointer;}
+#log_button span{position: relative;font-size: 20px; font-weight:bold;color: white; } 
+#login_idpw_box input:enabled{background:white;}
+#login_idpw_box input:focus{background: rgb(255, 209, 182); outline: none;}
+#loginform_linetextbox{height:25px; width:450px; margin:0 auto;}
+.loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
+
+
