@@ -48,7 +48,7 @@ body {margin: 0; position:relative;}
 #loginform_linetextbox{height:25px; width:450px; margin:0 auto;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
-
+#logspace {font-size: 30px; font-weight:bold; text-align:center;}
 </style>
 <body>
     <div class="headback" id="adminheadback">

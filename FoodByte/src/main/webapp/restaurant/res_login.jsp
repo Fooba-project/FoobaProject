@@ -3,7 +3,7 @@
 
 <form method="post" action="fooba.do?command=res_login" name="loginForm">
 	<div class="login_form">
-			<div id="logspace"></div>
+			<div id="logspace"><br>restaurant login</div>
 	        <div id="loginmain_logo">
 	            <img src="images/mainlogo1.png">
 	        </div>
