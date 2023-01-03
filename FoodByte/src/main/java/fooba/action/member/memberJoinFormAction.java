@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fooba.action.Action;
 
-public class joinFormAction implements Action {
+public class memberJoinFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,4 +1,4 @@
-package fooba.action.food_cart;
+package fooba.action.main;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class categoryAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="restaurantNmenu/resList.jsp";
+		String url="main/resList.jsp";
 		HttpSession session=request.getSession();
 		String kind= request.getParameter("kind");
 		

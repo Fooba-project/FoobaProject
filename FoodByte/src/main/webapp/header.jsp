@@ -25,7 +25,7 @@
     	<c:choose>
     		<c:when test="${empty loginUser}">
 	    		<input type="button" value="로그인" class="headbutton" onclick="location.href='fooba.do?command=loginForm'">
-	    		<input type="button" value="회원가입" class="headbutton" onclick="location.href='fooba.do?command=joinForm'">
+	    		<input type="button" value="회원가입" class="headbutton" onclick="location.href='fooba.do?command=memberJoinForm'">
     		</c:when>
     		<c:otherwise>
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=logout'">

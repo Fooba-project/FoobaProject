@@ -9,15 +9,16 @@ import javax.servlet.http.HttpSession;
 
 import fooba.action.Action;
 
-public class adminLogoutAction implements Action {
+public class admin_logoutAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session=request.getSession();
 		session.removeAttribute("loginAdmin");
-		request.getRequestDispatcher("fooba.do?command=admin").forward(request, response);
-
+		session.removeAttribute("message");
+		request.getRequestDispatcher("fooba.do?command=admin_loginForm").forward(request, response);
+		
 	}
 
 }

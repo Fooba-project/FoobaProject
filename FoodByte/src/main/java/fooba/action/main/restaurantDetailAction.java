@@ -1,4 +1,4 @@
-package fooba.action.food_cart;
+package fooba.action.main;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import fooba.VO.RestaurantVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
 
-public class foodDetailAction implements Action {
+public class restaurantDetailAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,10 +22,10 @@ public class foodDetailAction implements Action {
 		ResDao rdao=ResDao.getInstance();
 		
 		RestaurantVO rvo=rdao.getResInfo(rseq);
-		ArrayList<FoodmenuVO>FoodList=rdao.foodList(rseq);
+		ArrayList<FoodmenuVO>foodmenuList=rdao.foodList(rseq);
 		
 		request.setAttribute("RestaurantVO", rvo);
-		request.setAttribute("FoodList", FoodList);
+		request.setAttribute("FoodmenuList", foodmenuList);
 		
 		request.getRequestDispatcher("").forward(request, response);
 	}

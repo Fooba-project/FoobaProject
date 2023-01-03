@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import fooba.action.Action;
 import fooba.dao.AdminDao;
 
-public class adminLoginAction implements Action {
+public class admin_loginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,19 +18,20 @@ public class adminLoginAction implements Action {
 		String workId=request.getParameter("workId");
 		String workPwd=request.getParameter("workPwd");
 		
-		String url="fooba.do?command=admin"; //°ü¸®ÀÚ ·Î±×ÀÎÃ¢
+		String url="fooba.do?command=admin_loginForm"; //ê´€ë¦¬ì ë¡œê·¸ì¸ì°½
 		
 		AdminDao adao =AdminDao.getInstance();
 		String adminUserPwd=adao.AdminCheck(workId);
 		
 		if(adminUserPwd==null)
-			request.setAttribute("message", "¾ÆÀÌµğ°¡ ¾ø½À´Ï´Ù.");
+			request.setAttribute("message", "ì•„ì´ë””ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		else if(!adminUserPwd.equals(workPwd))
-			request.setAttribute("message", "ºñ¹Ğ¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+			request.setAttribute("message", "ë¹„ë°€ë²ˆí˜¸ê°€ ë§ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		else if(adminUserPwd.equals(workPwd)) {
 			HttpSession session=request.getSession();
 			session.setAttribute("loginAdmin", workId);
-			url="fooba.do?command=adminProductList";
+			url="fooba.do?command=admin_restaurantList";
+			request.removeAttribute("message");
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 

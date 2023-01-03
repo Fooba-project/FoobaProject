@@ -1,4 +1,4 @@
-package fooba.action.mypage;
+package fooba.action.member;
 
 import java.io.IOException;
 
@@ -11,30 +11,24 @@ import fooba.VO.MemberVO;
 import fooba.action.Action;
 import fooba.dao.MemberDao;
 
-public class withdrawalMemberAction implements Action {
+public class memberWithdrawalMemberAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String url="fooba.do?command=loginForm";
-		
-		
+
 		HttpSession session=request.getSession();
 		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");
-		
 
-		if(mvo==null) {
-			url="fooba.do?command=loginForm";
-			request.setAttribute("message","·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½ºÀÔ´Ï´Ù.");
-		}else {
-
+		if(mvo!=null) {
 			MemberDao mdao=MemberDao.getInstance();
 			mdao.deleteMember(mvo.getId());
-			request.setAttribute("message",
-					"Å»ÅğµÇ¾ú½À´Ï´Ù. Å»ÅğÈ¸¿øÀÇ Á¤º¸´Â 3°³¿ù°£ º¸°üµÇ¸ç ±× ±â°£¾È¿¡ º°µµÀÇ °¡ÀÔ¾øÀÌ °èÁ¤ º¹±¸°¡ °¡´ÉÇÕ´Ï´Ù.");
+			request.setAttribute("message", "íšŒì›íƒˆí‡´ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			session.removeAttribute("loginUser");
+		} else {
+			request.removeAttribute("message");
 		}
-		
 		request.getRequestDispatcher(url).forward(request,response); 
 
 

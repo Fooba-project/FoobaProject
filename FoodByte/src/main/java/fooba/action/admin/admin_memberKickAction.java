@@ -13,16 +13,16 @@ import fooba.action.Action;
 import fooba.dao.AdminDao;
 import fooba.util.Paging;
 
-public class adminMemberKickAction implements Action {
+public class admin_memberKickAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="admin/member/memberlist.jsp";
+		String url="fooba.do?command=admin_memberList";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");
 		if(adminId==null)
-			url="fooba.do?command=admin";
+			url="fooba.do?command=admin_loginForm";
 		else {
 			AdminDao adao=AdminDao.getInstance();
 			
@@ -32,7 +32,7 @@ public class adminMemberKickAction implements Action {
 			}
 			
 			int page=1;
-			if(request.getParameter("page")!=null) {  //리퀘스트에 파라미터로 page가 전달된다면 page변수값을 그 값으로 대체
+			if(request.getParameter("page")!=null) { 
 				page=Integer.parseInt(request.getParameter("page"));
 				session.setAttribute("page", page);
 			}else if(session.getAttribute("page")!=null) { 

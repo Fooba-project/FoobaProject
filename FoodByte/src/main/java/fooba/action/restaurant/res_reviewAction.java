@@ -1,4 +1,4 @@
-package fooba.action.res_info;
+package fooba.action.restaurant;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class res_reviewAction implements Action {
 		if(rvo==null) {
 			url="fooba.do?command=res_loginForm";
 		}else {
-			//·Î±×ÀÎÇÑ ¾ÆÀÌµð·Î qna ¸ñ·ÏÀ» Á¶È¸ÇÏ°í ¸®ÅÏ¹Þ´Â´Ù (¸Þ¼­µå ÀÌ¸§ selectQna)
+			//ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ qna ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ï¹Þ´Â´ï¿½ (ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ selectQna)
 			ResDao rdao=ResDao.getInstance();
 			int page=1;			
 			if(request.getParameter("page")!=null) { 

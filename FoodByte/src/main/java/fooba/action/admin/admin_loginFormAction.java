@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import fooba.action.Action;
 
-public class adminAction implements Action {
+public class admin_loginFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url="admin/adminLogin.jsp";
-		request.getRequestDispatcher(url).forward(request, response);
+		request.getRequestDispatcher("admin/adminLogin.jsp").forward(request, response);
 
 	}
 

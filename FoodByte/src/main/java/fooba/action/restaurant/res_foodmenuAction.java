@@ -1,4 +1,4 @@
-package fooba.action.res_info;
+package fooba.action.restaurant;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import fooba.VO.RestaurantVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
 
-public class res_menuAction implements Action {
+public class res_foodmenuAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="restaurant/resMenu.jsp";
+		String url="restaurant/resFoodmenu.jsp";
 	      
 	      HttpSession session=request.getSession();
 	      RestaurantVO rvo=(RestaurantVO) session.getAttribute("loginUser");
@@ -31,9 +31,9 @@ public class res_menuAction implements Action {
 	            
 	            ResDao rdao=ResDao.getInstance();
 	            
-	            ArrayList<FoodmenuVO>FoodList=rdao.foodList(rseq);
+	            ArrayList<FoodmenuVO>FoodmenuList=rdao.foodList(rseq);
 	            
-	            request.setAttribute("FoodList", FoodList);
+	            request.setAttribute("FoodmenuList", FoodmenuList);
 	         }
 	      request.getRequestDispatcher(url).forward(request, response);
 	}

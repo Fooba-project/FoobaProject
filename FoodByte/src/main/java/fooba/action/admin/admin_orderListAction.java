@@ -13,18 +13,19 @@ import fooba.action.Action;
 import fooba.dao.AdminDao;
 import fooba.util.Paging;
 
-public class adminOrderListAction implements Action {
+public class admin_orderListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
-		String url="admin/order/orderList.jsp";
+		String url="admin/admin_orderList.jsp";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");
 		if(adminId==null)
-			url="fooba.do?command=admin";
+			url="fooba.do?command=admin_loginForm";
+		
 		else {
 			AdminDao adao=AdminDao.getInstance();
 			
@@ -34,7 +35,7 @@ public class adminOrderListAction implements Action {
 			}
 			
 			int page=1;
-			if(request.getParameter("page")!=null) {  //¸®Äù½ºÆ®¿¡ ÆÄ¶ó¹ÌÅÍ·Î page°¡ Àü´ÞµÈ´Ù¸é pageº¯¼ö°ªÀ» ±× °ªÀ¸·Î ´ëÃ¼
+			if(request.getParameter("page")!=null) {  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í·ï¿½ pageï¿½ï¿½ ï¿½ï¿½ï¿½ÞµÈ´Ù¸ï¿½ pageï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
 				page=Integer.parseInt(request.getParameter("page"));
 				session.setAttribute("page", page);
 			}else if(session.getAttribute("page")!=null) { 
@@ -60,7 +61,7 @@ public class adminOrderListAction implements Action {
 			paging.setDisplayRow(10);
 			paging.setDisplayPage(10);
 			
-			int count = adao.getMemberCount("order_view","id",key); // order countµµ °°ÀÌ °Ë»ö
+			int count = adao.getMemberCount("order_view","id",key); // order countï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
 			paging.setTotalCount(count);
 			
 			

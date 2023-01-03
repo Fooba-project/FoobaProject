@@ -1,4 +1,4 @@
-package fooba.action.res_info;
+package fooba.action.restaurant;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package fooba.action.mypage;
+package fooba.action.member;
 
 import java.io.IOException;
 
@@ -10,12 +10,12 @@ import javax.servlet.http.HttpSession;
 import fooba.VO.MemberVO;
 import fooba.action.Action;
 
-public class mypageAction implements Action {
+public class memberMypageAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="mypage/mypage.jsp";
+		String url="member/mypage.jsp";
 		HttpSession session=request.getSession();
 		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");
 		if(mvo==null) {

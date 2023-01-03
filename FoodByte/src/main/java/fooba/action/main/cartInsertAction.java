@@ -1,4 +1,4 @@
-package fooba.action.food_cart;
+package fooba.action.main;
 
 import java.io.IOException;
 
@@ -16,8 +16,6 @@ public class cartInsertAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//cartvo에 전달 파라미터를 넣고, cart 테이블에 레코드를 추가한다.
-		//cart 관련(mypage관련) 동작은 로그인 이후에 유효한 동작이므로, 현재 로그인 상태인지 먼저 점검한다.
 		
 		HttpSession session=request.getSession();
 		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");

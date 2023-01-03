@@ -1,4 +1,4 @@
-package fooba.action.mypage;
+package fooba.action.member;
 
 import java.io.IOException;
 
@@ -11,23 +11,23 @@ import fooba.VO.ReviewVO;
 import fooba.action.Action;
 import fooba.dao.MemberDao;
 
-public class reviewWriteAction implements Action {
+public class memberReviewWriteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url="review/reviewList.jsp";
+		String url="member/memberOrderAll.jsp";
 		
 		HttpSession session=request.getSession();
 		String loginUser=(String)session.getAttribute("loginUser");
+		
 		if(loginUser==null) {
 			url="fooba.do?command=loginForm";
 		}
+		
 		MemberDao mdao=MemberDao.getInstance();
 		ReviewVO rvvo=new ReviewVO();
-		
 		rvvo.setId(request.getParameter("id"));
-		
 		
 		request.getRequestDispatcher(url).forward(request, response);
 

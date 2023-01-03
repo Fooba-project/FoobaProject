@@ -1,4 +1,4 @@
-package fooba.action.member;
+package fooba.action.main;
 
 import java.io.IOException;
 

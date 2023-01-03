@@ -13,16 +13,18 @@ import fooba.action.Action;
 import fooba.dao.AdminDao;
 import fooba.util.Paging;
 
-public class adminRestaurantListAction implements Action {
+public class admin_restaurantListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="admin/restaurant/restaurantList.jsp";
+		String url="admin/admin_restaurantList.jsp";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");
+		
 		if(adminId==null)
-			url="fooba.do?command=admin";
+			url="fooba.do?command=admin_loginForm";
+		
 		else {
 			AdminDao adao=AdminDao.getInstance();
 			

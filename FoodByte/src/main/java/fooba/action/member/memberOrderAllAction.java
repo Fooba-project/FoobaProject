@@ -1,4 +1,4 @@
-package fooba.action.mypage;
+package fooba.action.member;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import fooba.VO.OrderViewVO;
 import fooba.action.Action;
 import fooba.dao.OrderDao;
 
-public class orderAllAction implements Action {
+public class memberOrderAllAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		  String url = "mypage/orderList.jsp";
+		  String url = "member/memberOrderList.jsp";
 	      HttpSession session = request.getSession();
 	      String nick = request.getParameter("nick");
 	      MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
@@ -26,9 +26,9 @@ public class orderAllAction implements Action {
 	         url = "fooba.do?command=loginForm";
 	      }else {         
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, ""); // 0 - ¹è´Þ¿Ï·á Àü
+	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, ""); // 0 - ï¿½ï¿½Þ¿Ï·ï¿½ ï¿½ï¿½
 	      
-	         request.setAttribute("orderList", list);
+	         request.setAttribute("memberOrderList", list);
 	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);

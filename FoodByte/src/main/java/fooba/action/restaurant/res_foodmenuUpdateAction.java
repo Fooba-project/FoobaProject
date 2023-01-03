@@ -1,4 +1,4 @@
-package fooba.action.res_info;
+package fooba.action.restaurant;
 
 import java.io.IOException;
 
@@ -16,15 +16,15 @@ import fooba.VO.RestaurantVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
 
-public class res_menuUpdateAction implements Action {
+public class res_foodmenuUpdateAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="fooba.do?command=res_menu";
+		String url="fooba.do?command=res_foodmenu";
         HttpSession session=request.getSession();
         RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginUser");
         if(rvo==null) {
-           url="fooba.do?command=res_loginFrom";
+           url="fooba.do?command=res_loginForm";
         }else {
            FoodmenuVO fvo=new FoodmenuVO();
            ServletContext context=session.getServletContext();

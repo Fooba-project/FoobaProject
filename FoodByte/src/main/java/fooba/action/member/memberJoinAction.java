@@ -12,7 +12,7 @@ import fooba.VO.MemberVO;
 import fooba.action.Action;
 import fooba.dao.MemberDao;
 
-public class joinAction implements Action {
+public class memberJoinAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
