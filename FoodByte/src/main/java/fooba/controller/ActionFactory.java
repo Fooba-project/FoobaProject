@@ -21,7 +21,6 @@ import fooba.action.food_cart.cartInsertAction;
 import fooba.action.food_cart.categoryAction;
 import fooba.action.food_cart.foodDetailAction;
 import fooba.action.food_cart.searchAction;
-import fooba.action.member.contractAction;
 import fooba.action.member.findZipNumAction;
 import fooba.action.member.idCheckFormAction;
 import fooba.action.member.joinAction;
@@ -29,8 +28,8 @@ import fooba.action.member.joinFormAction;
 import fooba.action.member.loginAction;
 import fooba.action.member.loginFormAction;
 import fooba.action.member.logoutAction;
-import fooba.action.mypage.editFormAction;
 import fooba.action.mypage.memberUpdateAction;
+import fooba.action.mypage.memberUpdateFormAction;
 import fooba.action.mypage.mypageAction;
 import fooba.action.mypage.orderAllAction;
 import fooba.action.mypage.orderDetailAction;
@@ -53,7 +52,6 @@ import fooba.action.res_info.res_orderDetailAction;
 import fooba.action.res_info.res_reviewAction;
 import fooba.action.res_info.res_reviewReplyWriteAction;
 import fooba.action.res_info.res_showAction;
-import fooba.action.restaurant.res_contractAction;
 import fooba.action.restaurant.res_editFormAction;
 import fooba.action.restaurant.res_findZipNumAction;
 import fooba.action.restaurant.res_idCheckFormAction;
@@ -89,19 +87,16 @@ public class ActionFactory {
 
 		// 마이페이지 회원정보, 주문내역확인, 리뷰작성 등
 		else if (command.equals("mypage")) ac = new mypageAction();
-		else if (command.equals("editForm")) ac = new editFormAction();
+		else if (command.equals("memberUpdateForm")) ac = new memberUpdateFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
 		else if (command.equals("withdrawalMember")) ac = new withdrawalMemberAction();
 		else if (command.equals("orderList")) ac = new orderListAction();// 진행중인 주문 내역
 		else if (command.equals("orderAll")) ac = new orderAllAction();// 전체 주문 내역
 		else if (command.equals("orderDetail")) ac = new orderDetailAction();// 주문 번호별 상세 내역
 		
-		
 		//보류 review yn, order_view에 review넣을지
 		else if (command.equals("reviewWriteForm")) ac = new reviewWriteFormAction();// 별점 및 리뷰 작성페이지로 이동
 		else if (command.equals("reviewWrite")) ac = new reviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
-		
-		
 		
 		// food_cart 액션
 		// 장바구니넣기, 수정, 삭제, 주문하기,
@@ -143,24 +138,7 @@ public class ActionFactory {
 		else if (command.equals("res_menuDelete")) ac = new res_menuDeleteAction();// 메뉴 삭제
 		// 레스토랑 미리보기
 		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
-		
-
-		// qna 액션(고객센터 - 자주묻는 질문)
-		else if (command.equals("qnaList")) ac = new qnaListAction(); // qna 리스트  고객이 보는모습
-		else if (command.equals("qnaView")) ac = new qnaViewAction(); // qna 상세 보기  고객이 보는모습
-		
-		/*
-		else if (command.equals("qnaList")) ac = new qnaListAction();
-		else if (command.equals("qnaView")) ac = new qnaViewAction();
-		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction();
-		else if (command.equals("qnaWrite")) ac = new qnaWriteAction();
-		else if (command.equals("qnaPassCheckForm")) ac = new qnaPassCheckFormAction();
-		else if (command.equals("qnaPassCheck")) ac = new qnaPassCheckAction();
-		else if (command.equals("qnaUpdateForm")) ac = new qnaUpdateFormAction();
-		else if (command.equals("qnaUpdate")) ac = new qnaUpdateAction();
-		else if (command.equals("qnaDelete")) ac = new qnaDeleteAction();
-		*/
-		
+				
 		// admin 액션
 		else if (command.equals("admin")) ac = new adminAction(); // admin 로그인창 
 		else if (command.equals("adminLogin")) ac = new adminLoginAction(); // 로그인 명령
@@ -178,15 +156,15 @@ public class ActionFactory {
 		//else if (command.equals("adminQnaDetail")) ac = new adminQnaDetailAction();
 		//else if (command.equals("adminQnaRepSave")) ac = new adminQnaRepSaveAction();
 		
+		// qna 액션(고객센터 - 자주묻는 질문)
 		else if (command.equals("adminQnaList")) ac = new adminQnaListAction();
+		else if (command.equals("qnaList")) ac = new qnaListAction(); // qna 리스트  고객이 보는모습
+		else if (command.equals("qnaView")) ac = new qnaViewAction(); // qna 상세 보기  고객이 보는모습
 		else if (command.equals("qnaWriteForm")) ac = new qnaWriteFormAction(); // 작성 폼  밑으로 admin
 		else if (command.equals("qnaWrite")) ac = new qnaWriteAction(); // 작성 명령
 		else if (command.equals("qnaUpdateForm")) ac = new qnaUpdateFormAction(); // 수정 폼
 		else if (command.equals("qnaUpdate")) ac = new qnaUpdateAction(); // 수정명령
 		else if (command.equals("qnaDelete")) ac = new qnaDeleteAction(); // 삭제
-		
-		
-		
 		
 		return ac;
 	}

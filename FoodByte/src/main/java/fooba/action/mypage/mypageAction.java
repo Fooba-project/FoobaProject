@@ -22,59 +22,59 @@ public class mypageAction implements Action {
 			url="fooba.do?command=loginForm";
 		}else {
 			/*
-			//mypage.jsp ¿¡ ÃÖÁ¾ Àü´ÞµÅ¼­ È­¸é¿¡ º¸¿©Áú ¸®½ºÆ® »ý¼º
+			//mypage.jsp ì— ìµœì¢… ì „ë‹¬ë¼ì„œ í™”ë©´ì— ë³´ì—¬ì§ˆ ë¦¬ìŠ¤íŠ¸ ìƒì„±
 			ArrayList<OrderViewVO> finalList = new ArrayList<>();
-			//(finalList.get(0).getName() -> "xxxx¿Ü 2°Ç")
+			//(finalList.get(0).getName() -> "xxxxì™¸ 2ê±´")
 			
-			//ÁøÇàÁßÀÎ ÁÖ¹® ³»¿ª
-			//ÇöÀç ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ¾ÆÁ÷ ¹è¼Û¾ÈµÈ ÁÖ¹®³»¿ªÀÌ º¸¿©Áø´Ù.
-			//¿¹¸¦ µé¾î ÇÑ¹ø¿¡ 2,3°³ÀÇ »óÇ°¾¿ 3È¸¿¡ °ÉÃÄ¼­ ÁÖ¹®ÇÑ »óÅÂ¶ó¸é.... ±×¸®°í ±× ÁÖ¹®µéÀÌ ÇÏ³ªµµ ¹è¼ÛÀÌ ¾ÈµÈ »óÅÂ(¹è¼ÛÀü)ÀÌ¶ó¸é
-			//ÁøÇàÁßÀÎ ÁÖ¹®³»¿ªÀº 3ÁÙÀÌ Ç¥½ÃµÈ´Ù.(ordersÅ×ÀÌºí ±âÁØ ÁÖ¹® °Çº° Ç¥½Ã)
-			//Ç¥½Ã³»¿ëÀº ÁÖ¹®°Çº° ´ëÇ¥»óÇ°ÀÇ ÀÌ¸§À» ÀÌ¿ëÇÏ¿© 	½½¸®ÆÛ Æ÷ÇÔ3, °Ü¿ï¿ëºÎÃ÷ ¿Ü 2... µîµîÀÇ ³»¿ëÀ¸·Î ÃÑ3ÁÙÀÌ Ç¥½ÃµÈ´Ù.
-			//±×¸®°í °¢ Çà¿¡´Â »ó¼¼º¸±â ¹öÆ°ÀÌ ÀÖ¾î¼­ Å¬¸¯ÇÏ¸é ±× ÁÖ¹®¿¡ ¼ÓÇÑ ¼¼°³ÀÇ »óÇ°À» º¼ ¼ö ÀÖ´Ù.
+			//ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ ë‚´ì—­
+			//í˜„ìž¬ ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìžì˜ ì•„ì§ ë°°ì†¡ì•ˆëœ ì£¼ë¬¸ë‚´ì—­ì´ ë³´ì—¬ì§„ë‹¤.
+			//ì˜ˆë¥¼ ë“¤ì–´ í•œë²ˆì— 2,3ê°œì˜ ìƒí’ˆì”© 3íšŒì— ê±¸ì³ì„œ ì£¼ë¬¸í•œ ìƒíƒœë¼ë©´.... ê·¸ë¦¬ê³  ê·¸ ì£¼ë¬¸ë“¤ì´ í•˜ë‚˜ë„ ë°°ì†¡ì´ ì•ˆëœ ìƒíƒœ(ë°°ì†¡ì „)ì´ë¼ë©´
+			//ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ë‚´ì—­ì€ 3ì¤„ì´ í‘œì‹œëœë‹¤.(ordersí…Œì´ë¸” ê¸°ì¤€ ì£¼ë¬¸ ê±´ë³„ í‘œì‹œ)
+			//í‘œì‹œë‚´ìš©ì€ ì£¼ë¬¸ê±´ë³„ ëŒ€í‘œìƒí’ˆì˜ ì´ë¦„ì„ ì´ìš©í•˜ì—¬ 	ìŠ¬ë¦¬í¼ í¬í•¨3, ê²¨ìš¸ìš©ë¶€ì¸  ì™¸ 2... ë“±ë“±ì˜ ë‚´ìš©ìœ¼ë¡œ ì´3ì¤„ì´ í‘œì‹œëœë‹¤.
+			//ê·¸ë¦¬ê³  ê° í–‰ì—ëŠ” ìƒì„¸ë³´ê¸° ë²„íŠ¼ì´ ìžˆì–´ì„œ í´ë¦­í•˜ë©´ ê·¸ ì£¼ë¬¸ì— ì†í•œ ì„¸ê°œì˜ ìƒí’ˆì„ ë³¼ ìˆ˜ ìžˆë‹¤.
 			
-			//ÀÌ¸¦ À§ÇØ¼­ °¡Àå ¸ÕÀú ÇÊ¿äÇÑ »çÇ×Àº ÁÖ¹®¹øÈ£µé ÀÌ´Ù
-			//order_view ¿¡¼­ ÁÖ¹®ÀÚ ¾ÆÀÌµð·Î °Ë»öÇÏ°í, result°¡ 1ÀÎ ÁÖ¹®µéÀ» °Ë»öÇØ¼­, ÁÖ¹®¹øÈ£µéÀ» Á¶È¸ÇÑ´Ù.
-			//À§ÀÇ ¿¹¸¦ µç »óÅÂ¶ó¸é ÁÖ¹®¹øÈ£µéÀÌ ´ÙÀ½°ú °°´Ù.
-			//22 22 22  24 24 24  26 26 26  27 27 27 <-Á¶È¸µÈ ÁÖ¹® ¹øÈ£µé
+			//ì´ë¥¼ ìœ„í•´ì„œ ê°€ìž¥ ë¨¼ì € í•„ìš”í•œ ì‚¬í•­ì€ ì£¼ë¬¸ë²ˆí˜¸ë“¤ ì´ë‹¤
+			//order_view ì—ì„œ ì£¼ë¬¸ìž ì•„ì´ë””ë¡œ ê²€ìƒ‰í•˜ê³ , resultê°€ 1ì¸ ì£¼ë¬¸ë“¤ì„ ê²€ìƒ‰í•´ì„œ, ì£¼ë¬¸ë²ˆí˜¸ë“¤ì„ ì¡°íšŒí•œë‹¤.
+			//ìœ„ì˜ ì˜ˆë¥¼ ë“  ìƒíƒœë¼ë©´ ì£¼ë¬¸ë²ˆí˜¸ë“¤ì´ ë‹¤ìŒê³¼ ê°™ë‹¤.
+			//22 22 22  24 24 24  26 26 26  27 27 27 <-ì¡°íšŒëœ ì£¼ë¬¸ ë²ˆí˜¸ë“¤
 			
-			//±×·¯³ª Á¤ÀÛ ¿ì¸®¿¡°Ô ÇÊ¿äÇÑ°Ç 22 25 26 27 ÀÌ¹Ç·Î, Á¶È¸ÇÒ¶§ distinct Å°¿öµå¸¦ ½á¼­ Á¶È¸ÇØ ¿Â´Ù.
+			//ê·¸ëŸ¬ë‚˜ ì •ìž‘ ìš°ë¦¬ì—ê²Œ í•„ìš”í•œê±´ 22 25 26 27 ì´ë¯€ë¡œ, ì¡°íšŒí• ë•Œ distinct í‚¤ì›Œë“œë¥¼ ì¨ì„œ ì¡°íšŒí•´ ì˜¨ë‹¤.
 			//select distinct oseq from order_viiew where id=? and result='1'
-			//ÁÖ¹®¹øÈ£(oseq)¸¸ Á¶È¸ÇÒ²¨¶ó¸é orders Å×ÀÌºí¿¡¼­ distinct ¾øÀÌ Á¶È¸ÇÏ¸é µÉµíµµ ÇÏÁö¸¸
-			//orders Å×ÀÌºí¿¡´Â result ÇÊµå°¡ ¾ø¾î¼­ ¹è¼ÛÀü ÁÖ¹®ÀÌ ±¸ºÐµÈ ¹øÈ£°¡ Á¶È¸°¡ µÇÁö ¾Ê´Â´Ù.
+			//ì£¼ë¬¸ë²ˆí˜¸(oseq)ë§Œ ì¡°íšŒí• êº¼ë¼ë©´ orders í…Œì´ë¸”ì—ì„œ distinct ì—†ì´ ì¡°íšŒí•˜ë©´ ë ë“¯ë„ í•˜ì§€ë§Œ
+			//orders í…Œì´ë¸”ì—ëŠ” result í•„ë“œê°€ ì—†ì–´ì„œ ë°°ì†¡ì „ ì£¼ë¬¸ì´ êµ¬ë¶„ëœ ë²ˆí˜¸ê°€ ì¡°íšŒê°€ ë˜ì§€ ì•ŠëŠ”ë‹¤.
 			
-			//Áßº¹À» ¾ø¾Ø ¹è¼ÛÀü(Ã³¸®Àü) ÁÖ¹®¹øÈ£µéÀ» Á¶È¸ÇÑ´Ù.
+			//ì¤‘ë³µì„ ì—†ì•¤ ë°°ì†¡ì „(ì²˜ë¦¬ì „) ì£¼ë¬¸ë²ˆí˜¸ë“¤ì„ ì¡°íšŒí•œë‹¤.
 			OrderDao odao=OrderDao.getInstance();
 			ArrayList<Integer> oseqList=odao.selectOseqOrderIng(mvo.getId());
 			
-			//Á¶È¸µÈ ÁÖ¹®¹øÈ£µé·Î ¹Ýº¹½ÇÇàÇÑ´Ù.
+			//ì¡°íšŒëœ ì£¼ë¬¸ë²ˆí˜¸ë“¤ë¡œ ë°˜ë³µì‹¤í–‰í•œë‹¤.
 			for(Integer oseq : oseqList) {
-				//ÇöÀç ÁÖ¹® ¹øÈ£·Î ÁÖ¹®³»¿ª Á¶È¸
+				//í˜„ìž¬ ì£¼ë¬¸ ë²ˆí˜¸ë¡œ ì£¼ë¬¸ë‚´ì—­ ì¡°íšŒ
 				ArrayList<OrderViewVO> orderListByOseq=odao.selectOrdersByOseq(oseq);
 					
-				//Á¶È¸ÇÑ ÁÖ¹®¸®½ºÆ®¿¡ ¼¼°³ÀÇ »óÇ°ÀÌ ÀÖ´Ù¸é
-				//Ã¹¹øÂ° »óÇ°À» ²¨³½´Ù
+				//ì¡°íšŒí•œ ì£¼ë¬¸ë¦¬ìŠ¤íŠ¸ì— ì„¸ê°œì˜ ìƒí’ˆì´ ìžˆë‹¤ë©´
+				//ì²«ë²ˆì§¸ ìƒí’ˆì„ êº¼ë‚¸ë‹¤
 				OrderViewVO ovo=orderListByOseq.get(0);
 					
-				//²¨³½ »óÇ°ÀÇ ÀÌ¸§À» "ÇöÀç»óÇ°ÀÌ¸§ Æ÷ÇÔ X°Ç" À¸·Î ¼öÁ¤ÇÑ´Ù
-				ovo.setPname(ovo.getPname()+" Æ÷ÇÔ "+orderListByOseq.size()+"°Ç");
-				ovo.setResult("4"); //´ëÇ¥»óÇ°ÀÇ °á°ú¸¦ "±¸¸ÅÈ®Á¤"À¸·Î ¼³Á¤
-				//°áÁ¦ÇÑ ÃÑ±Ý¾×À» °è»êÇÑ ÈÄ
+				//êº¼ë‚¸ ìƒí’ˆì˜ ì´ë¦„ì„ "í˜„ìž¬ìƒí’ˆì´ë¦„ í¬í•¨ Xê±´" ìœ¼ë¡œ ìˆ˜ì •í•œë‹¤
+				ovo.setPname(ovo.getPname()+" í¬í•¨ "+orderListByOseq.size()+"ê±´");
+				ovo.setResult("4"); //ëŒ€í‘œìƒí’ˆì˜ ê²°ê³¼ë¥¼ "êµ¬ë§¤í™•ì •"ìœ¼ë¡œ ì„¤ì •
+				//ê²°ì œí•œ ì´ê¸ˆì•¡ì„ ê³„ì‚°í•œ í›„
 				int totalPrice=0;
 				for(OrderViewVO ovo1 : orderListByOseq) {
 					totalPrice+=ovo1.getPrice2()*ovo1.getQuantity();
 					if(!ovo1.getResult().equals("4"))
 						ovo.setResult(ovo1.getResult());
-					//ÁÖ¹®¿¡ Æ÷ÇÔµÈ Á¦Ç°ÀÇ °á°ú¸¦ ÇÏ³ª¾¿ Á¶È¸ÇØ¼­ 4°¡ ¾Æ´Ï¸é ´ëÇ¥»óÇ°ÀÇ °á°ú¸¦ ÇöÀç»óÇ°ÀÇ °á°ú°ªÀ¸·Î
+					//ì£¼ë¬¸ì— í¬í•¨ëœ ì œí’ˆì˜ ê²°ê³¼ë¥¼ í•˜ë‚˜ì”© ì¡°íšŒí•´ì„œ 4ê°€ ì•„ë‹ˆë©´ ëŒ€í‘œìƒí’ˆì˜ ê²°ê³¼ë¥¼ í˜„ìž¬ìƒí’ˆì˜ ê²°ê³¼ê°’ìœ¼ë¡œ
 				}
-				//ovo°´Ã¼ÀÇ price2 ¸¦ ¾Õ¿¡¼­ °è»êÇÑ ÃÑ ±Ý¾×À¸·Î ¼öÁ¤ÇÑ´Ù
+				//ovoê°ì²´ì˜ price2 ë¥¼ ì•žì—ì„œ ê³„ì‚°í•œ ì´ ê¸ˆì•¡ìœ¼ë¡œ ìˆ˜ì •í•œë‹¤
 				ovo.setPrice2(totalPrice);
 				
-				//¸ðµç º¯°æÀ» ¸¶Ä£ ovo¸¦ finalList¿¡ ´ã´Â´Ù
+				//ëª¨ë“  ë³€ê²½ì„ ë§ˆì¹œ ovoë¥¼ finalListì— ë‹´ëŠ”ë‹¤
 				finalList.add(ovo);
 			}
 			request.setAttribute("orderList", finalList);
-			request.setAttribute("title","ÁøÇà ÁßÀÎ ÁÖ¹® ³»¿ª");
+			request.setAttribute("title","ì§„í–‰ ì¤‘ì¸ ì£¼ë¬¸ ë‚´ì—­");
 			*/
 		}
 		request.getRequestDispatcher(url).forward(request, response);

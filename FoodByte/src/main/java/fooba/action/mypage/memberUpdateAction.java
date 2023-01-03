@@ -17,8 +17,8 @@ public class memberUpdateAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//Àü´ŞµÈ ÆÄ¶ó¹ÌÅÍµé·Î VO °´Ã¼¸¦ Ã¤¿ì°í updateMember ¸Ş¼­µå·Î È¸¿øÁ¤º¸¸¦ ¼öÁ¤ÇÑÈÄ ¼¼¼Ç°ªÀ» ¼öÁ¤
-				//ÃÖÁ¾ ¸ñÀûÁö´Â main.jsp
+		//ì „ë‹¬ëœ íŒŒë¼ë¯¸í„°ë“¤ë¡œ VO ê°ì²´ë¥¼ ì±„ìš°ê³  updateMember ë©”ì„œë“œë¡œ íšŒì›ì •ë³´ë¥¼ ìˆ˜ì •í•œí›„ ì„¸ì…˜ê°’ì„ ìˆ˜ì •
+				//ìµœì¢… ëª©ì ì§€ëŠ” main.jsp
 				MemberDao mdao=MemberDao.getInstance();
 				fooba.VO.MemberVO mvo=new MemberVO();
 				
@@ -39,7 +39,7 @@ public class memberUpdateAction implements Action {
 				
 				if(result==1) {
 					HttpSession session=request.getSession();
-					session.setAttribute("loginUser", mvo); //¼¼¼Ç ·Î±×ÀÎ Á¤º¸¸¦ ¼öÁ¤µÈ ³»¿ëÀ¸·Î ±³Ã¼
+					session.setAttribute("loginUser", mvo); //ì„¸ì…˜ ë¡œê·¸ì¸ ì •ë³´ë¥¼ ìˆ˜ì •ëœ ë‚´ìš©ìœ¼ë¡œ êµì²´
 					
 					}
 				

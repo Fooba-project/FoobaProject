@@ -27,10 +27,6 @@ public class reviewWriteAction implements Action {
 		ReviewVO rvvo=new ReviewVO();
 		
 		rvvo.setId(request.getParameter("id"));
-		rvvo.
-		
-		
-		
 		
 		
 		request.getRequestDispatcher(url).forward(request, response);
