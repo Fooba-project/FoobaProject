@@ -207,7 +207,7 @@ public class ResDao {
 			ArrayList<ReviewVO> list=new ArrayList<>();
 			String sql="select*from("
 					+ "select *from("
-					+ "select rownum as rn, r.*from((select*from orders where rseq=? order by review_seq desc) r )"
+					+ "select rownum as rn, r.*from((select*from review where rseq=? order by review_seq desc) r )"
 					+ ")where rn>=?"
 					+ ")where rn<=?";
 			con=Dbman.getConnection();
@@ -385,6 +385,35 @@ public class ResDao {
 			} catch (SQLException e) {e.printStackTrace();
 			} finally { Dbman.close(con, pstmt, rs); }
 
+			return list;
+		}
+
+
+		public ArrayList<ReviewVO> reviewList(int rseq) {
+			ArrayList<ReviewVO> list=new ArrayList<>();
+			String sql="select*from review where rseq=? order by review_seq desc";
+		
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, rseq);
+				rs=pstmt.executeQuery();
+				while(rs.next()) {
+					ReviewVO rvvo=new ReviewVO();
+					rvvo.setReview_seq(rs.getInt("review_seq"));
+					rvvo.setId(rs.getString("id"));
+					rvvo.setRseq(rs.getInt("rseq"));
+					rvvo.setIndate(rs.getTimestamp("indate"));
+					rvvo.setStar(rs.getInt("star"));
+					rvvo.setImages(rs.getString("image"));
+					rvvo.setContent(rs.getString("content"));
+					rvvo.setOseq(rs.getInt("Oseq"));
+					rvvo.setReply(rs.getString("reply"));
+					rvvo.setReplyyn(rs.getInt("replyyn"));
+					list.add(rvvo);
+				}
+			} catch (SQLException e) {	e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
 			return list;
 		}
 }

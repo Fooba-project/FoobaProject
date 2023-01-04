@@ -39,7 +39,7 @@ public class res_joinAction implements Action {
 		rvo.setRimage(multi.getFilesystemName("image"));
 		rvo.setContent(request.getParameter("content"));
 		rvo.setHash(request.getParameter("hash"));
-		rvo.setRbiznum(request.getParameter("rbiznum")));
+		rvo.setRbiznum(request.getParameter("rbiznum"));
 		rvo.setKind(Integer.parseInt(request.getParameter("kind")));
 		rvo.setRtip(Integer.parseInt(request.getParameter("rtip")));
 		
