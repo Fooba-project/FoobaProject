@@ -21,14 +21,13 @@ public class res_showAction implements Action {
 		String url="restaurant/res_show.jsp";
 		
 	      HttpSession session=request.getSession();
-	      RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginUser");
+	      RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");
 	      if(rvo==null) {
 	         url="fooba.do?command=res_loginForm";
 	      }else {
 	    	  
 	    	ResDao rdao=ResDao.getInstance();
-	  		int rseq=Integer.parseInt(request.getParameter("rseq"));
-	  		ArrayList<FoodmenuVO>FoodList=rdao.foodList(rseq);
+	  		ArrayList<FoodmenuVO>FoodList=rdao.foodList(rvo.getRseq());
 	  		
 	  		request.setAttribute("RestaurantVO", rvo);
 	  		request.setAttribute("FoodList", FoodList);

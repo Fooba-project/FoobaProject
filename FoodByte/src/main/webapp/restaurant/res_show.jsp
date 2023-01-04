@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/restaurant/res_header.jsp"%>
 
-<!-- RestaurantVO, FoodmenuList, ReviewList-->
+<div id="dummy">
 
+</div>
+
+<!-- RestaurantVO, FoodmenuList, ReviewList-->
+<%-- 
         <div id="res_main">
         <div id="res_name">${RestaurantVO.rname}</div>
         <div id="res_info">
@@ -87,7 +91,7 @@
             </div>
         </div>
     </div>
-    
+     --%>
 
 
 

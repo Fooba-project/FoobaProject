@@ -22,10 +22,9 @@ public class res_loginAction implements Action {
 		String rpwd=request.getParameter("respw");
 		String url="fooba.do?command=res_loginForm";
 		
-		
 		ResDao rdao=ResDao.getInstance();
 		RestaurantVO rvo=rdao.getRes(rid);
-		System.out.println("rvo:"+rvo.getContent()+rvo.getHash()+rvo.getRname()+rvo.getRphone()+rvo.getRtip());
+		
 		if(rvo==null) request.setAttribute("message","아이디가 존재하지 않습니다.");
 		
 		else if(rvo.getRpwd()==null)request.setAttribute("message","패스워드 DB 오류. 관리자에게 문의하세요.");

@@ -4,6 +4,8 @@
 
 <form method="post" action="fooba.do" name="res_loginForm">
 <input type="hidden" name="command" value="res_login">
+
+
 	<div class="login_form">
 			<div id="logspace"><br>restaurant login</div>
 	        <div id="loginmain_logo">

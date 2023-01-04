@@ -15,6 +15,7 @@ public class res_loginFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		String url="restaurant/res_login.jsp";
 		HttpSession session=request.getSession();
 		RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");

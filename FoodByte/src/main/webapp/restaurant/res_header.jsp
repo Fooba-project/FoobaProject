@@ -34,8 +34,8 @@ body {margin:0}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
 
-.headbuttons {position:absolute; width: 320px; top:23px; left:calc(50% + 300px); }
-.headbutton {width: 150px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
+.headbuttons {position:absolute; width: 380px; top:23px; left:calc(50% + 300px); }
+.headbutton {width: 70px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 90%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
 .headbutton:hover {background-color: white; color: rgb(255,204,0); cursor: pointer;}
 
 .footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
@@ -66,7 +66,7 @@ body {margin:0}
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
 
-
+#dummy{height:745px; width:100%;  }
 
 </style>
 </head>
@@ -82,7 +82,7 @@ body {margin:0}
     
     <div class="headbuttons" id="resheadbuttons">
     	<c:choose>
-    		<c:when test="${empty loginAdmin}">
+    		<c:when test="${empty loginRes}">
 	    		<input type="button" value="가입신청" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=res_joinForm'">
 	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=index'">
     		</c:when>
@@ -91,7 +91,7 @@ body {margin:0}
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
 	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
 	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_menu'">
-	    		<input type="button" value="레스토랑미리보기" class="headbutton" onclick="location.href='fooba.do?command=res_show'">    		
+	    		<input type="button" value="미리보기" class="headbutton" onclick="location.href='fooba.do?command=res_show'">    		
 	    	</c:otherwise>
     	</c:choose>
     </div>
