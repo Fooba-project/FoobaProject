@@ -123,4 +123,28 @@ height:50px; width:348px ;position: relative;float:left ;border :1px solid red;l
 #jengboreview{width:700px; position:absolute; top:0px; right: 0px;}
 #reviewww{border-bottom: 1px solid black;}
 
-
+ .popup {position: absolute; width: 460px;height: 760px;top: 50%;left: 50%;margin: 0 auto;
+transform: translate(-50%, -50%);border: 1px solid gray;background-color: #fffcfd;}
+.popupheader {width: 460px;height: 60px;background-color: #d53651;color: white;opacity: 0.9;padding: 25px 0 0 0;z-index: 2;text-align: center;font-weight: 700;font-size: 21px;}
+.popupimgg {height: 220px;margin: auto;display: block;padding-top: 14px;}
+.popupcontext {padding-inline: 5%;}
+#contextsub {text-align: center;}
+.contextsub2 {line-height: 10%;}
+.contextprice {position: relative;height: 58.5px;font-weight: 700;}
+.contextprice1 {position: absolute;left: 0px;line-height: 58.5px;}
+.contextprice2 {position: absolute;right: 0px;line-height: 58.5px;}
+.contextoption {position: relative;font-weight: 700;height: 120px;}
+.optionnn {position: relative;left: 0px;line-height: 30px;}
+.optionprice {position: absolute;top: 0px;right: 0px;font-size: 15px;}
+.popupchecks {margin-left: 10px;position: relative;margin-bottom: 10px;font-size: 14px;}
+.popupquantity {line-height: 58.5px;position: relative;height: 58.5px;font-weight: 700;}
+.pquantity {width: 100px;}
+.pbox {position: absolute;right: 5px;top: 10px;line-height: 32px;}
+.pbox_button {width: 30px;height: 30px;font-size: 15px;font-weight: 700;border-radius: 3px;border: none;background: #f2f0f1;}
+.pcount {outline: none;border: none;font-size: 17px;background-color: #fffcfd;text-align: center;width: 30px;height: 30px;}
+.popuptotal {position: relative;height: 58.5px;font-weight: 700;}
+.ptotal {position: absolute;left: 0px;line-height: 58.5px;}
+.pwon {position: absolute;line-height: 58.5px;right: 0px;font-size: 23px;color: #d53651;}
+.popupbutton {position: fixed;width: 460px;border: none;font-size: 16px;font-weight: bold;margin: 0;}
+#plbutton {position: relative;float: left;height: 48px;width: 50%;background-color: #515050;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}
+#prbutton {position: relative;height: 48px;width: 50%;background-color: #d53651;float: right;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}
