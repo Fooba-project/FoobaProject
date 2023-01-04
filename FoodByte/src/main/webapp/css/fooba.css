@@ -88,10 +88,10 @@ float: left;}
 #loginform_linetextbox{height:25px; width:450px; margin:0 auto;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
-#idcheck_box{width: 100%; background-color:#f7c5bc; color: rgb(0, 0, 0); height:300px;}
+#idcheck_box{width: 100%; background-color:#f7c5bc; color: rgb(0, 0, 0); height:300px; padding:1px;}
 #idcheck_text{padding-left: 30px; }
 
-#popup{background-color:#f7c5bc; color: rgb(0, 0, 0); height:500px;}
+#popup{background-color:#f7c5bc; color: rgb(0, 0, 0); height:500px; padding:1px;}
 #popup_text{padding-left: 30px;}
 #zipcode{margin-top: 20px;}
 
