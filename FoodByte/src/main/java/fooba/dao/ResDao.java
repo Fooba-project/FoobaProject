@@ -392,7 +392,7 @@ public class ResDao {
 		public ArrayList<ReviewVO> reviewList(int rseq) {
 			ArrayList<ReviewVO> list=new ArrayList<>();
 			String sql="select*from review where rseq=? order by review_seq desc";
-		//가나다
+		//하
 			con=Dbman.getConnection();
 			try {
 				pstmt=con.prepareStatement(sql);
