@@ -3,8 +3,7 @@
 <%@ include file="sub_head.jsp"%>
 
     <div class="row">
-    
-
+ 
        		<c:forEach items="${RList}" var="RestaurantVO">
        		
        		<div class="resList">
