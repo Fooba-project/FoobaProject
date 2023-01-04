@@ -22,39 +22,23 @@ public class searchAction implements Action {
 		String url="main/resList.jsp";
 		HttpSession session=request.getSession();
 			
-		String key="";
-		if(request.getParameter("search")!=null) {
-			key=request.getParameter("search");
-			session.setAttribute("search", key);
-		}else if(session.getAttribute("search")!=null) {
-			key=(String)session.getAttribute("search");
-			
-	
-		}else {
-			session.removeAttribute("search");
-		}
-		
-		
+		String search=request.getParameter("search");
 		
 		ResDao rdao=ResDao.getInstance();
-		ArrayList<RestaurantVO>searchList=rdao.searchKey(key);
+		ArrayList<RestaurantVO>searchList=rdao.searchKey(search);
 		
 		
 		request.setAttribute("RList", searchList);
-		request.setAttribute("key", key);
-		
-		System.out.println("key 값1 :"+ key);
+		request.setAttribute("key", search);
 		
 		FoodDao fdao=FoodDao.getInstance();
 		ArrayList<FoodmenuVO> Foodlist =new ArrayList<FoodmenuVO>();
 		
 		for(RestaurantVO rvo : searchList) {	
 			Foodlist.add(fdao.selectFood(rvo.getRseq()));
-			
 		}
 		
 		request.setAttribute("FList", Foodlist);
-		
 		request.getRequestDispatcher(url).forward(request, response);
 
 	}

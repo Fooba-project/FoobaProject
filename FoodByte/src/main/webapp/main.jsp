@@ -29,9 +29,11 @@
 	        <span class="hashtext">#소울푸드</span>
 	        </a>
         </div>
+        
         <div class="hashbox">
-        <a href="#" onclick="go_search('건강한맛집')">
-        <span class="hashtext">#건강한맛집</span>
+	        <a href="#" onclick="go_search('건강한맛집')">
+	        <span class="hashtext">#건강한맛집</span>
+	        </a>
         </div>
         
         <div class="hashbox">
