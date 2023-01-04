@@ -20,18 +20,41 @@ public class memberUpdateAction implements Action {
 			//전달된 파라미터들로 VO 객체를 채우고 updateMember 메서드로 회원정보를 수정한후 세션값을 수정
 			//최종 목적지는 main.jsp
 			MemberDao mdao=MemberDao.getInstance();
-			fooba.VO.MemberVO mvo=new MemberVO();
+			MemberVO mvo=new MemberVO();
 			
-			mvo.setId(request.getParameter("id"));
-			mvo.setPwd(request.getParameter("pwd"));
-			mvo.setName(request.getParameter("name"));
-			mvo.setEmail(request.getParameter("email"));
-			mvo.setZip_num(request.getParameter("zip_num"));
-			mvo.setAddress1(request.getParameter("address1"));
-			mvo.setAddress2(request.getParameter("address2"));
-			mvo.setPhone(request.getParameter("phone"));
-			mvo.setNick(request.getParameter("nick"));
+			String id = request.getParameter("id");
+			mvo = mdao.getMember(id);
 			
+			String name = request.getParameter("name");
+			mvo = mdao.getMember(name);
+			
+			String zip_num = request.getParameter("zip_num");
+			mvo = mdao.getMember(zip_num);
+			
+			String pwd = request.getParameter("pwd");
+			if (pwd==null || pwd=="") {
+			} else mvo.setPwd(pwd);
+			
+			String email = request.getParameter("email");
+			if (email==null || email=="") {
+			} else mvo.setEmail(email);
+			
+			String address1 = request.getParameter("address1");
+			if(address1==null || address1=="") {
+			}else mvo.setAddress1(address1);
+			
+			String address2 = request.getParameter("address2");
+			if(address2==null || address2=="") {
+			}else mvo.setAddress2(address2);
+			
+			String phone = request.getParameter("phone");
+			if(phone==null || phone=="") {
+			}else mvo.setPhone(phone);
+			
+			String nick = request.getParameter("nick");
+			if(nick==null || nick=="") {
+			}else mvo.setNick(nick);
+				
 			int result=mdao.updateMember(mvo);
 			
 			if(result==1) {
@@ -39,8 +62,7 @@ public class memberUpdateAction implements Action {
 				session.setAttribute("loginUser", mvo); //세션 로그인 정보를 수정된 내용으로 교체
 			}
 			
-			RequestDispatcher dp=request.getRequestDispatcher("fooba.do?command=index");
-			dp.forward(request, response);
+			request.getRequestDispatcher("fooba.do?command=memberUpdateForm").forward(request, response);
 
 	}
 
