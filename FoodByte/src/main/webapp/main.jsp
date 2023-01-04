@@ -13,7 +13,7 @@
     <div class="hashboxes">
     
         <div class="hashbox">
-        	<a href="#" onclick="search('푸짐해요')">
+        	<a href="#" onclick="go_search('푸짐해요')">
         	<span class="hashtext">#푸짐해요</span>
         	</a>
         </div>

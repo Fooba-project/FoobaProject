@@ -232,7 +232,7 @@ function go_search(){
 
 function go_search(hash){
 	
-	var url = "fooba.do?command="+ hash;  
+	var url = "fooba.do?command=search&search="+ hash;  
 	document.search.action = url;
 	document.search.submit();
 }       
