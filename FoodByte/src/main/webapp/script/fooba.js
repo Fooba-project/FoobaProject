@@ -226,3 +226,11 @@ var menunumm=0;
             var dist=menunumm*700*-1;
             document.getElementById("tul").style.left=dist+'px';
         }
+
+        
+function go_search( comm ){
+	
+	var url = "fooba.do?command=" + comm + "&page=1";  
+	document.serch.action = url;
+	document.serch.submit();
+}        

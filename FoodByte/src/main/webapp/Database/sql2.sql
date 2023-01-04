@@ -19,7 +19,7 @@ DROP TABLE Member CASCADE CONSTRAINTS;
 DROP TABLE qna CASCADE CONSTRAINTS;
 DROP TABLE restaurant CASCADE CONSTRAINTS;
 
-select*from Member
+select*from review
 
 /* Drop Sequences */
 

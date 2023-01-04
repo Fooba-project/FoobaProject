@@ -20,7 +20,7 @@
        		<c:forEach items="${RList}" var="RestaurantVO">
        		
        		<div class="resList">
-            <a href="fooba.do?command=restaurantDetail&rseq=${RestaurantVO.rseq }" class="rimage">                
+            <a href="#" class="rimage">                
               	 	<div class="res_imgbox">
               	 	<c:forEach items="${FList}" var="FoodmenuVO" >
               	 	<c:if test="${FoodmenuVO.rseq==RestaurantVO.rseq}">

@@ -6,14 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 import fooba.VO.FoodmenuVO;
 import fooba.VO.OrderViewVO;
 import fooba.VO.RestaurantVO;
 import fooba.VO.ReviewVO;
 import fooba.util.Dbman;
 import fooba.util.Paging;
-
 
 public class ResDao {
 	private ResDao() {}
@@ -42,7 +40,7 @@ public class ResDao {
 			rvo.setContent(rs.getString("content"));
 			rvo.setHash(rs.getString("hash"));
 			rvo.setRseq(rs.getInt("rseq"));
-			rvo.setRbiznum(rs.getString("Rbiznum"));
+			rvo.setRbiznum(rs.getString("biznum"));
 			rvo.setKind(rs.getInt("kind"));
 			rvo.setRtip(rs.getInt("rtip"));
 			}
@@ -207,7 +205,7 @@ public class ResDao {
 			ArrayList<ReviewVO> list=new ArrayList<>();
 			String sql="select*from("
 					+ "select *from("
-					+ "select rownum as rn, r.*from((select*from review where rseq=? order by review_seq desc) r )"
+					+ "select rownum as rn, r.*from((select*from orders where rseq=? order by review_seq desc) r )"
 					+ ")where rn>=?"
 					+ ")where rn<=?";
 			con=Dbman.getConnection();
@@ -389,31 +387,36 @@ public class ResDao {
 		}
 
 
-		public ArrayList<ReviewVO> reviewList(int rseq) {
-			ArrayList<ReviewVO> list=new ArrayList<>();
-			String sql="select*from review where rseq=? order by review_seq desc";
-		//하
-			con=Dbman.getConnection();
-			try {
-				pstmt=con.prepareStatement(sql);
-				pstmt.setInt(1, rseq);
-				rs=pstmt.executeQuery();
-				while(rs.next()) {
-					ReviewVO rvvo=new ReviewVO();
-					rvvo.setReview_seq(rs.getInt("review_seq"));
-					rvvo.setId(rs.getString("id"));
-					rvvo.setRseq(rs.getInt("rseq"));
-					rvvo.setIndate(rs.getTimestamp("indate"));
-					rvvo.setStar(rs.getInt("star"));
-					rvvo.setImages(rs.getString("image"));
-					rvvo.setContent(rs.getString("content"));
-					rvvo.setOseq(rs.getInt("Oseq"));
-					rvvo.setReply(rs.getString("reply"));
-					rvvo.setReplyyn(rs.getInt("replyyn"));
-					list.add(rvvo);
-				}
-			} catch (SQLException e) {	e.printStackTrace();
-			}finally {Dbman.close(con, pstmt, rs);}
-			return list;
+		public ArrayList<RestaurantVO> searchKey(String key) {
+		
+			ArrayList<RestaurantVO>list=new ArrayList<>();
+		      con=Dbman.getConnection();
+		      String sql = "select rname, rseq, rimage, kind, hash from search  "
+		      		+ " where fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%'  "
+		      		+ "group by rname,rseq,rimage,kind,hash";
+		      try {
+		         pstmt=con.prepareStatement(sql);
+		         System.out.println(key);
+		         pstmt.setString(1, key);
+		         pstmt.setString(2, key);
+		         pstmt.setString(3, key);		       
+		         rs=pstmt.executeQuery();
+	         
+		         while(rs.next()) {
+		        	 
+		            RestaurantVO rvo=new RestaurantVO();		      
+		            rvo.setRseq(rs.getInt("rseq"));
+		            rvo.setRname(rs.getString("rname"));
+		            rvo.setRimage(rs.getString("rimage"));
+		            rvo.setKind(rs.getInt("kind"));
+		            rvo.setHash(rs.getString("hash"));
+		            System.out.println("가게이름: "+rvo.getRname());
+		            list.add(rvo);
+		      }
+		      } catch (SQLException e) {e.printStackTrace();
+		      } finally {Dbman.close(con, pstmt, rs);}
+		      return list;
+
+			
 		}
 }
