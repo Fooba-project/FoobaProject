@@ -256,7 +256,7 @@ function go_search(hash){
   });
   
  function withdrawalMember(){
-	document.search.action = "fooba.do?command=memberWithdrawalMember";
+	document.search.action = "fooba.do?command=memberWithdrawal";
 	document.search.submit();
 }     
  

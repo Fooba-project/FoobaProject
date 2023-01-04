@@ -98,7 +98,7 @@ public class ActionFactory {
 		else if (command.equals("memberMypage")) ac = new memberMypageAction();
 		else if (command.equals("memberUpdateForm")) ac = new memberUpdateFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
-		else if (command.equals("memberWithdrawalMember")) ac = new memberWithdrawalMemberAction();
+		else if (command.equals("memberWithdrawal")) ac = new memberWithdrawalAction();
 		else if (command.equals("memberOrderList")) ac = new memberOrderListAction();// 진행중인 주문 내역
 		else if (command.equals("memberOrderAll")) ac = new memberOrderAllAction();// 전체 주문 내역
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
