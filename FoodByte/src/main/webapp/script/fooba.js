@@ -258,8 +258,7 @@ function go_search(hash){
  function withdrawalMember(){
  	var ok=confirm("정말 탈퇴하겠습니까?");
  	if(ok){
- 		document.search.action = "fooba.do?command=memberWithdrawal";
-		document.search.submit();
+		location.href="fooba.do?command=memberWithdrawal";
 	}
 }     
  
