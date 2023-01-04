@@ -49,6 +49,22 @@ body {margin: 0; position:relative;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
+
+
+    .admin_list{text-align: center;}
+    nav#sub_menu ul{font-weight: 700;  width:810px; height: 40px;  margin: auto; }
+    nav#sub_menu ul li { list-style-type: none; float: left;}
+    nav#sub_menu a { text-decoration: none; color: black; position: relative; float: left; text-align: center; line-height: 40px;
+    display: block; width: 200px; height: 40px; font-weight: 700;}
+    nav#sub_menu a:hover { color: rgb(99, 123, 153);}
+    #admin_searchres {margin:auto;  width:510px;}
+    #admin_searchres td {font-weight: 700; }
+    .admin_searchres_btn{background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }
+    
+    #admin_list_table{margin: auto; border: 1px solid; width:810px; }
+
+    #admin_list_table th{background-color:rgb(99, 123, 153); font-size: 17px; color: white;}
+    #admin_list_table td{background-color: white; text-align: center; font-weight: 600;}
 </style>
 <body>
     <div class="headback" id="adminheadback">
