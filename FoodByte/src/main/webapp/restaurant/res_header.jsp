@@ -9,8 +9,22 @@
 <meta charset="UTF-8">
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+
+function resCheck(){
+
+	  if(document.res_loginForm.resid.value==""){
+	      	alert("아이디를 입력하세요.");
+	  }else if(document.res_loginForm.respw.value==""){
+	     	alert("비밀번호를 입력하세요.");
+	  }else{document.res_loginForm.submit();} 
+
+}
+
+
+</script>
 <script src = "../script/jquery-3.6.1.js"></script>
-<script src="script/res.js"></script>
+<script src="/script/res.js"></script>
 <style type="text/css">
 body {margin:0}
 
@@ -51,6 +65,8 @@ body {margin:0}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
+
+
 
 </style>
 </head>

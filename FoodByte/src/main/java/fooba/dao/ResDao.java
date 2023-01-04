@@ -92,6 +92,7 @@ public class ResDao {
 			pstmt.setString(1, rid);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
+				
 				rvo=new RestaurantVO();
 				rvo.setRid(rs.getString("rid"));
 				rvo.setRname(rs.getString("rname"));
@@ -105,9 +106,7 @@ public class ResDao {
 				rvo.setRseq(rs.getInt("rseq"));
 				rvo.setRbiznum(rs.getString("rbiznum"));
 				rvo.setKind(rs.getInt("kind"));
-				rvo.setRtip(rs.getInt("rtip"));
-				rvo.setRyn(rs.getInt("ryn"));
-				
+				rvo.setRtip(rs.getInt("rtip"));				
 			}
 			
 		} catch (SQLException e) {e.printStackTrace();

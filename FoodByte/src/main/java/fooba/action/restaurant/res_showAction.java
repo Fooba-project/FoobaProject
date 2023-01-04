@@ -17,11 +17,13 @@ public class res_showAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  String url="restaurant/showres.jsp";
+		
+		String url="restaurant/res_show.jsp";
+		
 	      HttpSession session=request.getSession();
 	      RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginUser");
 	      if(rvo==null) {
-	         url="fooba.do?command=res_loginFrom";
+	         url="fooba.do?command=res_loginForm";
 	      }else {
 	    	  
 	    	ResDao rdao=ResDao.getInstance();
@@ -30,11 +32,9 @@ public class res_showAction implements Action {
 	  		
 	  		request.setAttribute("RestaurantVO", rvo);
 	  		request.setAttribute("FoodList", FoodList);
-	  		
-	    	  
+    	  
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
-
 
 	}
 

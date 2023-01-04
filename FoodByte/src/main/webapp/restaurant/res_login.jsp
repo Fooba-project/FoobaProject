@@ -2,7 +2,7 @@
 <%@ include file="res_header.jsp"%>
 
 
-<form method="post" action="fooba.do" name="loginForm">
+<form method="post" action="fooba.do" name="res_loginForm">
 <input type="hidden" name="command" value="res_login">
 	<div class="login_form">
 			<div id="logspace"><br>restaurant login</div>
@@ -13,16 +13,16 @@
 	        <div id="login_box">
 	            <div id="text_button_box">
 	                <div id="login_idpw_box">
-	                    <input type="text" id="login_id" name="resid" placeholder="아이디" title="아이디"
-	                maxlength="30" value="">
+	                    <input type="text" id="login_id" name="resid" placeholder="아이디" 
+	                maxlength="30">
 	    
-	                    <input type="password" id="login_pw" name="respw" placeholder="비밀번호" title="비밀번호"
-	                maxlength="16" value="">
+	                    <input type="password" id="login_pw" name="respw" placeholder="비밀번호" 
+	                maxlength="16">
 	                </div>
 	    
 	                <div id="log_buttonbox">
-	                    <button type="submit" id="log_button" >
-	                        <span class="btn_text" onClick="return resCheck();">로그인</span>
+	                    <button type="button" id="log_button"  onClick="resCheck();">
+	                        <span class="btn_text">로그인</span>
 	                    </button>
 	                </div>
 	            </div>
