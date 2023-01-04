@@ -204,35 +204,30 @@ function go_update(){
 	if ((document.member_update_form.pwd.value != document.member_update_form.pwdCheck.value)) {
 	    alert("비밀번호가 일치하지 않습니다.");
 	    document.member_update_form.pwd.focus();
-	}else if (document.member_update_form.name.value == "") {
-	    alert("이름을 입력해 주세요.");
-	    document.member_update_form.name.focus();
-	} else if (document.member_update_form.phone.value == "") {
-	    alert("전화번호를 입력해 주세요.");
-	    document.member_update_form.email.focus();
-	}else {
+	}
+	else {
 	    document.member_update_form.action = "fooba.do";
 	    document.member_update_form.submit();
 	}
 }
 
 var menunumm=0;
-         function menumove(x){
-            if(x==-1&&menunumm==0)return;
-            if(x==1&&menunumm==1)return;
+function menumove(x){
+    if(x==-1&&menunumm==0)return;
+    if(x==1&&menunumm==1)return;
 
-            if(x==-1)menunumm--;
-            if(x==1)menunumm++;
-            var dist=menunumm*700*-1;
-            document.getElementById("tul").style.left=dist+'px';
-        }
+    if(x==-1)menunumm--;
+    if(x==1)menunumm++;
+    var dist=menunumm*700*-1;
+    document.getElementById("tul").style.left=dist+'px';
+}
 
         
-function go_search( comm ){
+function go_search(){
 	
-	var url = "fooba.do?command=" + comm + "&page=1";  
-	document.serch.action = url;
-	document.serch.submit();
+	var url = "fooba.do?command=search";  
+	document.search.action = url;
+	document.search.submit();
 }       
 
   $(function () {

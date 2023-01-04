@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
+    
 	<div id="mainlist">
-        <div id="search">
-            <input id="searchtextlist" placeholder="   검색어를 입력하세요"
-            size="30px"/>
-            <div id="searchiconlist">
-                <img src="images/search.png">
-            </div>
-        </div>
+	
+        <form id="search" name="search" method="post">
+       	 	<input type="text" name="search" id="searchtext" placeholder="검색어를 입력하세요"
+        	size="30px" value="${search}"/>
+        	<div id="searchicon">
+           		<img src="images/search.png" onClick="go_search('serch')">
+        	</div>
+    	</form>
+    	
     	
         <div id="kindboxeslist">
 	        <a href="fooba.do?command=category&kind=1">

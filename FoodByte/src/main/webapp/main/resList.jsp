@@ -3,20 +3,7 @@
 <%@ include file="sub_head.jsp"%>
 
     <div class="row">
-    
-     <!-- 
-                <c:forEach items="${productKindList}"  var="productVo">
-					<div id="item">
-						<a href="shop.do?command=productDetail&pseq=${productVo.pseq}">
-						<img src="product_images/${productVo.image}"/>
-						<h3>${productVo.name}</h3>
-						<p>${productVo.price2}</p>
-						</a>
-					</div>	
-				</c:forEach>
-				 -->
-				 
-				 
+ 
        		<c:forEach items="${RList}" var="RestaurantVO">
        		
        		<div class="resList">
@@ -50,87 +37,8 @@
         </div>
 			</c:forEach> 
 		
-        <!-- <div class="resList">
-            <a href="#" class="rimage">
-                
-                <div class="res_imgbox">
-                    <img src="images/title/2.jpg" alt="가게이름명" id="rtitle">
-                </div>
-                
-                <div class="rtext">
-                    <p class="res_name">가게 이름명1</p>
-                    <p class="res_kind">가게설명</p>
-                    <p class="res_tag">해시태그
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="resList">
-            <a href="#" class="rimage">
-                
-                <div class="res_imgbox">
-                    <img src="images/title/3.jpg" alt="가게이름명" id="rtitle">
-                </div>
-                
-                <div class="rtext">
-                    <p class="res_name">가게 이름명1</p>
-                    <p class="res_kind">가게설명</p>
-                    <p class="res_tag">해시태그
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="resList">
-            <a href="#" class="rimage">
-                
-                <div class="res_imgbox">
-                    <img src="images/title/4.jpg" alt="가게이름명" id="rtitle">
-                </div>
-                
-                <div class="rtext">
-                    <p class="res_name">가게 이름명1</p>
-                    <p class="res_kind">가게설명</p>
-                    <p class="res_tag">해시태그
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="resList">
-            <a href="#" class="rimage">
-                
-                <div class="res_imgbox">
-                    <img src="images/title/5.jpg" alt="가게이름명" id="rtitle">
-                </div>
-                
-                <div class="rtext">
-                    <p class="res_name">가게 이름명1</p>
-                    <p class="res_kind">가게설명</p>
-                    <p class="res_tag">해시태그
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="resList">
-            <a href="#" class="rimage">
-                
-                <div class="res_imgbox">
-                    <img src="images/title/6.jpg" alt="가게이름명" id="rtitle">
-                </div>
-                
-                <div class="rtext">
-                    <p class="res_name">가게 이름명1</p>
-                    <p class="res_kind">가게설명</p>
-                    <p class="res_tag">해시태그
-                    </p>
-                </div>
-            </a>
-        </div> -->
-
-        
+      
+      
 
     </div>
 

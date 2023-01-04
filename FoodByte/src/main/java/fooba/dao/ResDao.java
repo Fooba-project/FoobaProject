@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 import fooba.VO.FoodmenuVO;
 import fooba.VO.OrderViewVO;
 import fooba.VO.RestaurantVO;
