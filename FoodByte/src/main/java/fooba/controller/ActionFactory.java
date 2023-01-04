@@ -36,7 +36,7 @@ import fooba.action.member.memberOrderListAction;
 import fooba.action.member.memberReviewWriteAction;
 import fooba.action.member.memberUpdateAction;
 import fooba.action.member.memberUpdateFormAction;
-import fooba.action.member.memberWithdrawalMemberAction;
+import fooba.action.member.memberWithdrawalAction;
 import fooba.action.restaurant.res_editFormAction;
 import fooba.action.restaurant.res_findZipNumAction;
 import fooba.action.restaurant.res_foodmenuAction;
