@@ -11,7 +11,7 @@ select rname,rseq,rimage,kind,hash from search where fname like '%피자%' or ha
 
 select rname, rseq, rimage, kind, hash from search  where fname like '%치킨%' group
 
-
+select*from admin;
 select*from review;
 select*from order_view;
 
@@ -20,3 +20,4 @@ values(review_seq_seq.nextVal,'bsc1234',23,3,'그냥 저냥 먹을만 합니다'
 
 insert into review(review_seq,id,rseq,star,content,oseq)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1);
+

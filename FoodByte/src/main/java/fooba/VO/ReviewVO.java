@@ -9,7 +9,7 @@ public class ReviewVO {
    private int rseq;
    private Timestamp indate;
    private int star;
-   private String images;
+   private String image;
    private String content;
    private int oseq;
    private String reply;
@@ -45,12 +45,7 @@ public class ReviewVO {
    public void setStar(int star) {
       this.star = star;
    }
-   public String getImages() {
-      return images;
-   }
-   public void setImages(String images) {
-      this.images = images;
-   }
+   
    public String getContent() {
       return content;
    }
@@ -75,6 +70,12 @@ public class ReviewVO {
    public void setReplyyn(int replyyn) {
       this.replyyn = replyyn;
    }
+public String getImage() {
+	return image;
+}
+public void setImage(String image) {
+	this.image = image;
+}
    
    
    

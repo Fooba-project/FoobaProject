@@ -54,17 +54,28 @@
                     <c:forEach items="${ReviewList}" var="ReviewVO">
 	                    <div class="reviewdel">
 	                        <div class="rvnaeyong">
-	                        <a class="rvnick">꿀돼지</a>님 &nbsp; 
-	                        <a class="grayy">2022년 12월 16일</a><br>
-	                        <a class="starr">★★★★★ 5.0</a><br>
-	                        <a class="grayy">황금올리브/자메이카 </a><br>
+	                        <a class="rvnick">${ReviewVO.id }</a>님 &nbsp; 
+	                        <a class="grayy"><fmt:formatDate value="${orderVO.indate }" type="date"/></a><br>
+	                        <a class="starr">
+								<c:choose>
+			                    	<c:when test="${ReviewVO.star==1}">★ 1.0</c:when>
+			                    	<c:when test="${ReviewVO.star==2}">★★ 2.0</c:when>
+			                    	<c:when test="${ReviewVO.star==3}">★★★ 3.0</c:when>
+			                    	<c:when test="${ReviewVO.star==4}">★★★★ 4.0</c:when>
+			                    	<c:otherwise>★★★★★ 5.0</c:otherwise>
+			                    </c:choose>
+							</a><br><br>
 	                        <br>
-	                        맛있어요!!!!<br>
-	                        뻥이에요!!!!
+								${ReviewVO.content }
 	                        </div>
-	                        <div class="rvsajin">
-	                            <img class="reviewimage" src="/images/Chicken/bbq/26000_5890f998d7d53c05daaa574d5531380b1615794251.jpg">
-	                        </div>
+	                        <c:choose>
+		                        <c:when test="${ReviewVO.image==null}"></c:when>
+		                        <c:otherwise>
+			                        <div class="rvsajin">
+			                            <img class="reviewimage" src="/images/${ReviewVO.image}">
+			                        </div>
+		                        </c:otherwise>
+	                        </c:choose>
 	                    </div>
 	                </c:forEach>
                  </div>
