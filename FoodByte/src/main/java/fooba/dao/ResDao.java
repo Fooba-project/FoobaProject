@@ -415,4 +415,40 @@ public class ResDao {
 			}finally {Dbman.close(con, pstmt, rs);}
 			return list;
 		}
+
+
+		public ArrayList<RestaurantVO> searchKey(String key) {
+			ArrayList<RestaurantVO>list=new ArrayList<>();
+			
+		      con=Dbman.getConnection();
+		      
+		      String sql = "select rname, rseq, rimage, kind, hash from search  "
+		      		+ " where fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%'  "
+		      		+ "group by rname,rseq,rimage,kind,hash";
+		      
+		      
+		      
+		      try {
+		         pstmt=con.prepareStatement(sql);
+		         System.out.println(key);
+		         pstmt.setString(1, key);
+		         pstmt.setString(2, key);
+		         pstmt.setString(3, key);		       
+		         rs=pstmt.executeQuery();
+	         
+		         while(rs.next()) {
+		        	 
+		            RestaurantVO rvo=new RestaurantVO();		      
+		            rvo.setRseq(rs.getInt("rseq"));
+		            rvo.setRname(rs.getString("rname"));
+		            rvo.setRimage(rs.getString("rimage"));
+		            rvo.setKind(rs.getInt("kind"));
+		            rvo.setHash(rs.getString("hash"));
+		            list.add(rvo);
+		      }
+		      } catch (SQLException e) {e.printStackTrace();
+		      } finally {Dbman.close(con, pstmt, rs);}
+		      return list;
+			
+		}
 }

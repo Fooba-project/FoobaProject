@@ -25,20 +25,13 @@ public class searchAction implements Action {
 		String key="";
 		if(request.getParameter("search")!=null) {
 			key=request.getParameter("search");
-			
-			System.out.println("request key 값 :"+ key);
-			
 			session.setAttribute("search", key);
-			
-			
-			
 		}else if(session.getAttribute("search")!=null) {
 			key=(String)session.getAttribute("search");
 			
-			System.out.println("session key 값 :"+ key);
-			
+	
 		}else {
-			session.removeAttribute("key");
+			session.removeAttribute("search");
 		}
 		
 		

@@ -230,6 +230,13 @@ function go_search(){
 	document.search.submit();
 }       
 
+function go_search(hash){
+	
+	var url = "fooba.do?command="+ hash;  
+	document.search.action = url;
+	document.search.submit();
+}       
+
   $(function () {
     $(".pbox input[count_range]").click(function (e) {
       e.preventDefault();

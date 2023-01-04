@@ -9,25 +9,43 @@
 </div>
     
 <div id="hash">
+
     <div class="hashboxes">
+    
         <div class="hashbox">
-        <span class="hashtext">#푸짐해요</span>
+        	<a href="#" onclick="search('푸짐해요')">
+        	<span class="hashtext">#푸짐해요</span>
+        	</a>
+        </div>
+        
+        <div class="hashbox">
+	        <a href="#" onclick="go_search('매워요')">
+	        <span class="hashtext">#매워요</span>
+        	</a>
+        </div>
+        
+        <div class="hashbox">
+	        <a href="#" onclick="go_search('소울푸드')">
+	        <span class="hashtext">#소울푸드</span>
+	        </a>
         </div>
         <div class="hashbox">
-        <span class="hashtext">#매워요</span>
-        </div>
-        <div class="hashbox">
-        <span class="hashtext">#소울푸드</span>
-        </div>
-        <div class="hashbox">
+        <a href="#" onclick="go_search('건강한맛집')">
         <span class="hashtext">#건강한맛집</span>
         </div>
+        
         <div class="hashbox">
-        <span class="hashtext">#가성비</span>
+	        <a href="#" onclick="go_search('가성비')">
+	        <span class="hashtext">#가성비</span>
+	        </a>
         </div>
+        
         <div class="hashbox">
-        <span class="hashtext">#나눠먹어요</span>
+	        <a href="#" onclick="go_search('나눠먹어요')">
+	        <span class="hashtext">#나눠먹어요</span>
+	        </a>
         </div>
+        
     </div>
 </div>
 
