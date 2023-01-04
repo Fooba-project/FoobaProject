@@ -151,3 +151,13 @@ transform: translate(-50%, -50%);border: 1px solid gray;background-color: #fffcf
 .popupbutton {position: fixed;width: 460px;border: none;font-size: 16px;font-weight: bold;margin: 0;}
 #plbutton {position: relative;float: left;height: 48px;width: 50%;background-color: #515050;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}
 #prbutton {position: relative;height: 48px;width: 50%;background-color: #d53651;float: right;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}
+
+nav#sub_menu {text-align: center; width:20%; float: left;}
+nav#sub_menu ul {list-style:none; margin: 0; padding:0; padding-right: 20px;}
+nav#sub_menu a {text-decoration: none; color: #fa6146; font-family: verdana; font-weight: bold; font-size: 16px; display: block; height: 30px;  line-height: 30px; width:100%; padding:10px 0; border-bottom: 1px dotted #999;}
+nav#sub_menu a:hover {color: #F90; font-size: 17px;}
+
+table#memberOrderList {margin: 0 auto; border-collapse:collapse; border-top:2px solid #333; border-bottom:2px solid #333; width:75%; margin-bottom:20px}
+#orderArticle h2 {text-align: center;}
+#orderArticle hr {width: 200px; border: 1px solid gray;}
+table#memberOrderList th, td {border-bottom:1px solid rgb(215, 215, 215); text-align: center; padding-top: 10px; padding-bottom: 10px;}
