@@ -88,4 +88,30 @@ float: left;}
 #loginform_linetextbox{height:25px; width:450px; margin:0 auto;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
+#jenche{position: relative; width:700px; height: 100%; border: 1px solid black; overflow: hidden;}
+#gageirm{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;text-align: center;line-height: 50px;}
+#gagemain{height: 140px; border-bottom: 1px solid black; }
+.smlogo{height: 120px; width: 120px; position: relative; float: left;margin: 10px;}
+#gibon{font-size: 100%; position: absolute; left: 150px;line-height: 33px;}
 
+.redd{color: orange; font-weight: bold;}
+#gagemenu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+.grayy{color: gray; font-weight: normal; font-size: 100%; }
+h2{font-weight: bold; }
+.smmenu{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
+#menujengbo{height: 50px;  }
+.menujengbotab{background-color: #fa6146;
+height:50px; width:348px ;position: relative;float:left ;border :1px solid red;line-height: 50px;text-align: center; font-weight: bold;font-size: 110%;}
+#menudel{ width: 700px;}
+#gagejengbo{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid black;}
+#reviewbogi{text-align: center;}
+h1{color: orange;}
+.reviewimage{ height: 200px;  }
+.reviewdel{position: relative;border-bottom: 1px solid rgb(231, 231, 231); height: 210px;}
+.rvsajin{margin: 0 auto; position: absolute;right: 5px; top: 5px;}
+.rvnaeyong{margin: 0 auto; position: absolute;left: 5px; top: 5px; text-align: left;}
+.rvnick{font-size: 150%; margin-left:5px ; margin-right: 8px; font-weight: bold;}
+.starr{color: orange; margin-left: 7px; }
+#tul{ width: 1400px; float: left; position: relative;}
+#jengboreview{width:700px; position:absolute; top:0px; right: 0px;}
+#reviewww{border-bottom: 1px solid black;}
