@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<%@ include file="mypage_sub.jsp"%>
 
-<nav id="sub_menu">
-    <ul>
-        <li><a href="fooba.do?command=memberOrderList">진행중인 주문내역</a></li>
-        <li><a href="fooba.do?command=memberOrderAll">총 주문내역</a></li>		
-        <li><a href="fooba.do?command=memberUpdateForm">회원정보수정</a></li>
-        <li><a onclick="withdrawalMember()" a href="#">회원탈퇴</a></li>
-    </ul>
-</nav>
 
 <article  id="orderArticle">
     <h2>진행중인 주문내역</h2>
