@@ -32,13 +32,14 @@
 </div>
 
 <div id="main">
-    <div id="search">
-        <input id="searchtext" placeholder="   검색어를 입력하세요"
-        size="30px"/>
+
+    <form id="search" name="search" method="post">
+        <input type="text" name="search" id="searchtext" placeholder="검색어를 입력하세요"
+        size="30px" value="${search}"/>
         <div id="searchicon">
-            <img src="images/search.png">
+            <img src="images/search.png" onClick="go_search('serch')">
         </div>
-    </div>
+    </form>
 
     <div id="kindboxes">
 	        <a href="fooba.do?command=category&kind=1">
