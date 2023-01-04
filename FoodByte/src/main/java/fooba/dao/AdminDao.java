@@ -54,7 +54,7 @@ public class AdminDao {
 		
 		con=Dbman.getConnection();
 		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' and result=?";
-		//key °ª¸¸ µû·Î ÇÏ´Â ÀÌÀ¯´Â null ÀÌ µé¾î°¬À»¶§ ¿À·ù°¡ ³¯ ¼öÀÖ±â¶§¹®
+		//key ê°’ë§Œ ë”°ë¡œ í•˜ëŠ” ì´ìœ ëŠ” null ì´ ë“¤ì–´ê°”ì„ë•Œ ì˜¤ë¥˜ê°€ ë‚  ìˆ˜ìˆê¸°ë•Œë¬¸
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
@@ -75,7 +75,7 @@ public class AdminDao {
 				+ "select rownum as rn, r.* from((select * from restaurant where rname like '%'||?||'%' and result=? order by rseq desc) r )"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
-		//¿ÀÅ¸ Á¦´ë·Î È®ÀÎ
+		//ì˜¤íƒ€ ì œëŒ€ë¡œ í™•ì¸
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
@@ -95,12 +95,11 @@ public class AdminDao {
 				rvo.setContent(rs.getString("content"));
 				rvo.setHash(rs.getString("hash"));
 				rvo.setRseq(rs.getInt("rseq"));
-				rvo.setRbiznum(rs.getInt("rbiznum"));
+				rvo.setRbiznum(rs.getString("rbiznum"));
 				rvo.setKind(rs.getInt("kind"));
 				rvo.setRtip(rs.getInt("rtrip"));
 				rvo.setRyn(rs.getInt("ryn"));
 				list.add(rvo);
-			
 			}
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
@@ -112,7 +111,7 @@ public class AdminDao {
 		
 		con=Dbman.getConnection();
 		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' ";
-		//key °ª¸¸ µû·Î ÇÏ´Â ÀÌÀ¯´Â null ÀÌ µé¾î°¬À»¶§ ¿À·ù°¡ ³¯ ¼öÀÖ±â¶§¹®
+		//key ê°’ë§Œ ë”°ë¡œ í•˜ëŠ” ì´ìœ ëŠ” null ì´ ë“¤ì–´ê°”ì„ë•Œ ì˜¤ë¥˜ê°€ ë‚  ìˆ˜ìˆê¸°ë•Œë¬¸
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
@@ -167,7 +166,7 @@ public class AdminDao {
 				+ "select rownum as rn, o.* from((select * from order_view where id like '%'||?||'%' order by odseq desc) o )"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
-		//¿ÀÅ¸ Á¦´ë·Î È®ÀÎ
+		//ì˜¤íƒ€ ì œëŒ€ë¡œ í™•ì¸
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
