@@ -19,17 +19,15 @@ public class memberUpdateFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url="member/updateForm.jsp";
+		String url="member/memberUpdate.jsp";
 	    HttpSession session = request.getSession();
 	      
 	    MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
-	    if(mvo == null) {
+	    if(mvo == null) 
 	       url = "fooba.do?command=loginForm";
-	    }else {         
-
-	    }
 	    request.getRequestDispatcher(url).forward(request, response);
 		
 	}
 
-}
+
+	}
