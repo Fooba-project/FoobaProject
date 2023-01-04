@@ -228,11 +228,11 @@ var menunumm=0;
         }
 
         
-function go_search( comm ){
+function go_search(){
 	
-	var url = "fooba.do?command=" + comm + "&page=1";  
-	document.serch.action = url;
-	document.serch.submit();
+	var url = "fooba.do?command=search";  
+	document.search.action = url;
+	document.search.submit();
 }       
 
   $(function () {
