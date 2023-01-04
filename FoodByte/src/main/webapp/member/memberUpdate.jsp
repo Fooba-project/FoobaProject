@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-
+<%@ include file="mypage_sub.jsp"%>
     <div class="member_join">
         <div class="member_join_title">회원정보수정</div>
         <div style="border-top: 2px solid #fa6146; margin-top:15px;"></div>
