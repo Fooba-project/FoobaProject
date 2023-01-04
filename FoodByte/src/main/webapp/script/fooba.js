@@ -212,6 +212,7 @@ function go_update(){
 }
 
 var menunumm=0;
+
 function menumove(x){
     if(x==-1&&menunumm==0)return;
     if(x==1&&menunumm==1)return;

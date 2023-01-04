@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/restaurant/res_header.jsp"%>
 
-<div id="dummy">
+<!-- <div id="dummy">
 
-</div>
+</div> -->
 
 <!-- RestaurantVO, FoodmenuList, ReviewList-->
-<%-- 
+
         <div id="res_main">
         <div id="res_name">${RestaurantVO.rname}</div>
+        
         <div id="res_info">
-           		<img class="res_logo"src="../images/title/${RestaurantVO.rimage}" ></img>
+           		<img class="res_logo"src="images/title/${RestaurantVO.rimage}" ></img>
          
             <div id="res_basic">
             <a class="res_total">★★★★☆</a> 4.4<br>
@@ -28,18 +29,21 @@
         
         <div id="res_menuall">
             <div id="res_menuinfo">
-            	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
+            	<c:forEach items="${FoodList}" var="FoodmenuVO">
 	                <div id="res_menu">
 	                    <h3>${FoodmenuVO.fname }</h3>
 	                    <a class="basic">${FoodmenuVO.fcontent }</a><br>
 	                    ${FoodmenuVO.fprice}원
-	                    <img class="res_meima" src="../images/foodmenu/${FoodmenuVO.fimage}">
+	                    <img class="res_meima" src="images/foodmenu/${FoodmenuVO.fimage}">
 	                </div>
                 </c:forEach>
             </div>
 
             <div id="info_rev">
-                <div id="res_info">
+            	
+            
+            	
+            	    <div id="rest_info">
                 
                     <div id="res_cont">
                                             <h3>사장님 알림</h3><hr>
@@ -47,12 +51,14 @@
                     </div>
                     
                     <br>
+                    
                     <div id="res_num">
                         <h3>업체 정보</h3><hr>
                         <a class="basic">사업자 번호</a>&nbsp; ${RestaurantVO.rbiznum}<br>
                         <a class="basic">전화 번호</a>&nbsp; ${RestaurantVO.rphone}<br>
                         <a class="basic">가게 주소</a>&nbsp; ${RestaurantVO.raddress}<br><br>
                     </div>
+                    
                 </div>
                 
                 <div id="res_revbogi">
@@ -60,6 +66,7 @@
                         <h2>클린리뷰</h2>
                         <h1>★★★★☆ 4.4</h1>
                     </div>
+                    
                     <c:forEach items="${ReviewList}" var="ReviewVO">
 	                    <div class="res_review_nae">
 	                        <div class="res_revcon">
@@ -88,10 +95,15 @@
 	                    </div>
 	                </c:forEach>
                  </div>
+                 
+                
+                 
             </div>
+            
         </div>
+        
     </div>
-     --%>
+
 
 
 

@@ -21,6 +21,18 @@ function resCheck(){
 
 }
 
+var menunumm=0;
+
+function menumove(x){
+    if(x==-1&&menunumm==0)return;
+    if(x==1&&menunumm==1)return;
+
+    if(x==-1)menunumm--;
+    if(x==1)menunumm++;
+    var dist=menunumm*700*-1;
+    document.getElementById("res_menuall").style.left=dist+'px';
+}
+
 
 </script>
 <script src = "../script/jquery-3.6.1.js"></script>
@@ -66,7 +78,41 @@ body {margin:0}
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
 
-#dummy{height:745px; width:100%;  }
+/* #dummy{height:745px; width:100%;  } */
+
+#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto; overflow: hidden;}
+#res_name{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;
+text-align: center;line-height: 50px;}
+#res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
+.res_logo{height: 120px; width: 120px; position: relative; float: left;margin: 10px;}
+#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 33px;}
+.basic{color: gray; font-weight: normal; font-size: 100%; }
+#res_tab{height: 50px; }
+.res_infotab{background-color: rgb(255,204,0); height:50px; width:348px ;position: relative; float:left ;
+border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
+.res_infotab:hover{cursor: pointer;}
+#res_menuall{ width: 1400px; float: left; position: relative;}
+#res_menuinfo{ width: 700px;}
+#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+.res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
+#info_rev{width:700px; position:absolute; top:0px; right: 0px;}
+#rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid black; position: relative;}
+
+#res_num{position: relative; margin:0 auto;}
+
+#res_revbogi{text-align: center; position: relative;  }
+.res_total{color: orange; font-weight: bold;}
+#res_star h2{font-weight: bold; }
+#res_star{border-bottom: 1px solid black;}
+
+.res_review_nae{position: relative;border-bottom: 1px solid rgb(231, 231, 231); height: 210px;}
+.res_revcon{margin: 0 auto; position: absolute;left: 5px; top: 5px; text-align: left;}
+.res_revnick{font-size: 150%; margin-left:5px ; margin-right: 8px; font-weight: bold;}
+.res_star{color: orange; margin-left: 7px; }
+.rev_image{margin: 0 auto; position: absolute;right: 5px; top: 5px;}
+.reviewimage{ height: 200px;  }
+#res_star h1{color: orange;}
+
 
 </style>
 </head>

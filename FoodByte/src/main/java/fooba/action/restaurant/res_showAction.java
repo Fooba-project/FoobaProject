@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import fooba.VO.FoodmenuVO;
 import fooba.VO.RestaurantVO;
+import fooba.VO.ReviewVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
 
@@ -28,9 +29,11 @@ public class res_showAction implements Action {
 	    	  
 	    	ResDao rdao=ResDao.getInstance();
 	  		ArrayList<FoodmenuVO>FoodList=rdao.foodList(rvo.getRseq());
+	  		ArrayList<ReviewVO>reviewList=rdao.reviewList(rvo.getRseq());
 	  		
 	  		request.setAttribute("RestaurantVO", rvo);
 	  		request.setAttribute("FoodList", FoodList);
+	  		request.setAttribute("ReviewList",reviewList);
     	  
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
