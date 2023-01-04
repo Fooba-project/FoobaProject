@@ -233,4 +233,23 @@ function go_search( comm ){
 	var url = "fooba.do?command=" + comm + "&page=1";  
 	document.serch.action = url;
 	document.serch.submit();
-}        
+}       
+
+  $(function () {
+    $(".pbox input[count_range]").click(function (e) {
+      e.preventDefault();
+      var type = $(this).attr("count_range");
+      var $count = $(this).parent().children("input.count");
+      var count_val = $count.val(); 
+      if (type == "m") {
+        if (count_val < 2) {
+          // 기본값 1에서 더이상 내려가지 못하게 합니다.
+          return;
+        }
+        $count.val(parseInt(count_val) - 1);
+      } else if (type == "p") {
+        $count.val(parseInt(count_val) + 1);
+      }
+    });
+  });
+ 
