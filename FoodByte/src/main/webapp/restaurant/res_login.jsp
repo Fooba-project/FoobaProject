@@ -20,7 +20,7 @@
 	    
 	                <div id="log_buttonbox">
 	                    <button type="submit" id="log_button" >
-	                        <span class="btn_text">로그인</span>
+	                        <span class="btn_text" onClick="return resCheck();">로그인</span>
 	                    </button>
 	                </div>
 	            </div>

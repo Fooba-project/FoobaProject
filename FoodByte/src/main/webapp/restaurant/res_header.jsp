@@ -14,6 +14,8 @@
 <style type="text/css">
 body {margin:0}
 
+/* 레스토랑 css  */
+
 .headback {width: 100%; height: 100px; background-color: rgb(255,204,0); margin: 0;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
