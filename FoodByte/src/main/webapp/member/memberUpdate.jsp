@@ -4,7 +4,7 @@
     <div class="member_join">
         <div class="member_join_title">회원정보수정</div>
         <div style="border-top: 2px solid #fa6146; margin-top:15px;"></div>
-        <form name="member_update_form" id="member_join_send_form" method="post" action="fooba.do?command=join">
+        <form name="member_update_form" id="member_join_send_form" method="post">
             <table class="member_join_table">
                 <div class="join_list">
                     <input type="text" class="input_text" name="userid" value="${loginUser.id}" readonly/>

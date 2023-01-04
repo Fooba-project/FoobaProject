@@ -22,36 +22,34 @@ public class memberUpdateAction implements Action {
 			MemberDao mdao=MemberDao.getInstance();
 			MemberVO mvo=new MemberVO();
 			
-			String id = request.getParameter("id");
+			String id = request.getParameter("userid");
 			mvo = mdao.getMember(id);
-			
-			String name = request.getParameter("name");
-			mvo = mdao.getMember(name);
-			
-			String zip_num = request.getParameter("zip_num");
-			mvo = mdao.getMember(zip_num);
-			
-			String pwd = request.getParameter("pwd");
+				
+			String pwd = request.getParameter("userpwd");
 			if (pwd==null || pwd=="") {
 			} else mvo.setPwd(pwd);
 			
-			String email = request.getParameter("email");
+			String email = request.getParameter("useremail");
 			if (email==null || email=="") {
 			} else mvo.setEmail(email);
+
+			String zip_num = request.getParameter("userzip_num");
+			if(zip_num==null || zip_num=="") {
+			}else mvo.setZip_num(zip_num);
 			
-			String address1 = request.getParameter("address1");
+			String address1 = request.getParameter("useraddress1");
 			if(address1==null || address1=="") {
 			}else mvo.setAddress1(address1);
 			
-			String address2 = request.getParameter("address2");
+			String address2 = request.getParameter("useraddress2");
 			if(address2==null || address2=="") {
 			}else mvo.setAddress2(address2);
 			
-			String phone = request.getParameter("phone");
+			String phone = request.getParameter("userphone");
 			if(phone==null || phone=="") {
 			}else mvo.setPhone(phone);
 			
-			String nick = request.getParameter("nick");
+			String nick = request.getParameter("usernick");
 			if(nick==null || nick=="") {
 			}else mvo.setNick(nick);
 				

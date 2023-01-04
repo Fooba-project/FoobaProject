@@ -41,7 +41,7 @@ public class MemberDao {
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				mvo=new MemberVO();
-				mvo.setId(rs.getString("id"));
+				mvo.setId(id);
 				mvo.setName(rs.getString("name"));
 				mvo.setPwd(rs.getString("pwd"));
 				mvo.setPhone(rs.getString("phone"));
@@ -111,20 +111,19 @@ public class MemberDao {
 	public int updateMember(MemberVO mvo) {
 		int result=0;
 		con=Dbman.getConnection();
-		String sql="update member set name=?, pwd=?, email=? , phone=?, zip_num=?,address1=?,address2=? ,nick=? where id = ? ";
+		String sql="update member set pwd=?, email=? , phone=?, zip_num=?,address1=?,address2=? ,nick=? where id = ? ";
 		
 		try {
 			pstmt=con.prepareStatement(sql);
 			
-			pstmt.setString(1,mvo.getName());
-			pstmt.setString(2,mvo.getPwd());
-			pstmt.setString(3,mvo.getEmail());
-			pstmt.setString(4,mvo.getPhone());
-			pstmt.setString(5,mvo.getZip_num());
-			pstmt.setString(6, mvo.getAddress1());
-			pstmt.setString(7, mvo.getAddress2());
-			pstmt.setString(8, mvo.getNick());
-			pstmt.setString(9,mvo.getId());
+			pstmt.setString(1,mvo.getPwd());
+			pstmt.setString(2,mvo.getEmail());
+			pstmt.setString(3,mvo.getPhone());
+			pstmt.setString(4,mvo.getZip_num());
+			pstmt.setString(5, mvo.getAddress1());
+			pstmt.setString(6, mvo.getAddress2());
+			pstmt.setString(7, mvo.getNick());
+			pstmt.setString(8,mvo.getId());
 			
 			result=pstmt.executeUpdate();
 		} catch (SQLException e) {

@@ -201,12 +201,12 @@ function result( zip_num, sido, gugun, dong){
 
 
 function go_update(){
-	if ((document.member_update_form.pwd.value != document.member_update_form.pwdCheck.value)) {
+	if ((document.member_update_form.userpwd.value != document.member_update_form.userpwdchk.value)) {
 	    alert("비밀번호가 일치하지 않습니다.");
-	    document.member_update_form.pwd.focus();
+	    document.member_update_form.userpwd.focus();
 	}
 	else {
-	    document.member_update_form.action = "fooba.do";
+	    document.member_update_form.action = "fooba.do?command=memberUpdate";
 	    document.member_update_form.submit();
 	}
 }
