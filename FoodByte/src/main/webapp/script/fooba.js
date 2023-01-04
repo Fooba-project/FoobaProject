@@ -254,4 +254,9 @@ function go_search(hash){
       }
     });
   });
+  
+ function withdrawalMember(){
+	document.search.action = "fooba.do?command=memberWithdrawalMember";
+	document.search.submit();
+}     
  
