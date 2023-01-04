@@ -26,7 +26,7 @@ public class memberOrderAllAction implements Action {
 	         url = "fooba.do?command=loginForm";
 	      }else {         
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, ""); // 0 - ��޿Ϸ� ��
+	         ArrayList<OrderViewVO>list = odao.selectOrdersById(id, ""); // 0 - ��޿Ϸ� ��
 	      
 	         request.setAttribute("memberOrderList", list);
 	         
