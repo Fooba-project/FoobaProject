@@ -18,17 +18,17 @@ public class memberOrderListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		  String url = "mypage/orderList.jsp";
+		  String url = "mypage/memberOrderList.jsp";
 	      HttpSession session = request.getSession();
-	      String nick = request.getParameter("nick");
 	      
 	      MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
 	      if(mvo == null) {
 	         url = "fooba.do?command=loginForm";
-	      }else {         
+	      }else {
+	    	
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderViewVO>list = odao.selectOrdersByNick(nick, "0");
-	         request.setAttribute("memberOrderList", list);   
+	         ArrayList<OrderViewVO>list = odao.selectOrdersById(mvo.getId(),"0");
+	         request.setAttribute("memberOrderList", list);
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	      
