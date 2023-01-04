@@ -51,8 +51,11 @@ body {margin:0}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
+
 </style>
 </head>
+
+
 <body>
 
     <div class="headback" id="resheadback">

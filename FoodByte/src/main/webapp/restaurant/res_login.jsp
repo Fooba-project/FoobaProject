@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ include file="res_header.jsp"%>
 
-<form method="post" action="fooba.do?command=res_login" name="loginForm">
+
+<form method="post" action="fooba.do" name="loginForm">
+<input type="hidden" name="command" value="res_login">
 	<div class="login_form">
 			<div id="logspace"><br>restaurant login</div>
 	        <div id="loginmain_logo">
