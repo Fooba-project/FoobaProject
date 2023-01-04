@@ -10,13 +10,14 @@
 <script src="script/fooba.js"></script>
 </head>
 <body>
-<h1>ID 중복 확인</h1>
-<form method="post" name="idCheckForm" action="fooba.do">
-	<input type="hidden" name="command" value="idCheckForm" />
-	아이디 : <input type="text" name="userid" value="${userid}" >
-	<input type="submit" value="검색" class="submit"><br><br><br>
+<div id="idcheck_box">
+    <div id="idcheck_text">
+        <h1>ID 중복 확인</h1>
+        <form method="post" name="idCheckForm" action="fooba.do">
+	    <input type="hidden" name="command" value="idCheckForm" />
+    	아이디 : <input type="text" name="userid" value="${userid}" >
+	    <input type="submit" value="검색" class="submit"><br><br><br>
 	
-	<div>
 		<c:if test="${result == 1}">
 			<script type="text/javascript">
 				opener.document.member_join_send_form.userid.value="";
@@ -27,9 +28,9 @@
 		<c:if test="${result == -1}">
 			${userid}는 사용 가능한 ID입니다.    
 			<input type="button" value="사용" class="cancel" onclick="idok('${userid}');">
-		</c:if>
-		
-	</div>
+        </c:if>
+    </div>
+</div>
 </form>
 </body>
 </html>

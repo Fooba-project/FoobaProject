@@ -12,14 +12,13 @@
 <script src="script/fooba.js"></script>
 </head>
 <body>
-	<div id="popup">
+<div id="popup">
+    <div id="popup_text">
 		<h1>우편번호 검색</h1>
 		<form method="post" name="formm" action="fooba.do">
 			<input type="hidden" name="command" value="findZipNum">
 			동 이름 : <input name="dong" type="text"><input type="submit" value="찾기" class="submit">
 		</form> 
-		
-		<!--  검색된 우편번호와 동 표시 -->
 		<table id="zipcode">
 			<tr><th width="100">우편번호</th><th>주소</th></tr>
 			<c:forEach items="${addressList }" var="add">
@@ -32,13 +31,12 @@
 					<td>
 						<a href="#" onClick="result('${add.zip_num}','${add.sido }','${add.gugun }','${add.dong }');">
 							${add.sido } ${add.gugun } ${add.dong }
-							<!-- 함수의 호출 형태 - result('123-123', '서울시', '서대문구', '대현동') -->
-							<!-- 호출된 result함수는 '우편번호123-123'를 zip_num 입력란에 들어가고, '서울시 서대문구 대현동' 이라는 주소를 address1 입력란에 넣음 -->
-						</a>
+						 </a>
 					</td>
 				</tr>	
 			</c:forEach>
-		</table>
-	</div>
+		 </table>
+    </div>
+</div>
 </body>
 </html>
