@@ -215,3 +215,14 @@ function go_update(){
 	    document.member_update_form.submit();
 	}
 }
+
+var menunumm=0;
+         function menumove(x){
+            if(x==-1&&menunumm==0)return;
+            if(x==1&&menunumm==1)return;
+
+            if(x==-1)menunumm--;
+            if(x==1)menunumm++;
+            var dist=menunumm*700*-1;
+            document.getElementById("tul").style.left=dist+'px';
+        }
