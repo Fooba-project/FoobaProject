@@ -42,7 +42,7 @@ public class ResDao {
 			rvo.setContent(rs.getString("content"));
 			rvo.setHash(rs.getString("hash"));
 			rvo.setRseq(rs.getInt("rseq"));
-			rvo.setRbiznum(rs.getInt("biznum"));
+			rvo.setRbiznum(rs.getString("Rbiznum"));
 			rvo.setKind(rs.getInt("kind"));
 			rvo.setRtip(rs.getInt("rtip"));
 			}
@@ -104,7 +104,7 @@ public class ResDao {
 				rvo.setHash(rs.getString("hash"));
 				rvo.setOwnername(rs.getString("ownername"));
 				rvo.setRseq(rs.getInt("rseq"));
-				rvo.setRbiznum(rs.getInt("rbiznum"));
+				rvo.setRbiznum(rs.getString("rbiznum"));
 				rvo.setKind(rs.getInt("kind"));
 				rvo.setRtip(rs.getInt("rtip"));
 				rvo.setRyn(rs.getInt("ryn"));
@@ -134,7 +134,7 @@ public class ResDao {
 			pstmt.setString(7,rvo.getRimage() );
 			pstmt.setString(8,rvo.getContent() );
 			pstmt.setString(9,rvo.getHash());
-			pstmt.setInt(10, rvo.getRbiznum());
+			pstmt.setString(10, rvo.getRbiznum());
 			pstmt.setInt(11, rvo.getKind());
 			pstmt.setInt(12, rvo.getRtip());
 			result=pstmt.executeUpdate();

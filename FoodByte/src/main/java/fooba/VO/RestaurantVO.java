@@ -11,13 +11,16 @@ public class RestaurantVO {
 	private String content;
 	private String hash;
 	private int rseq;
-	private int rbiznum;
+	private String rbiznum;
 	private int kind;
 	private int rtip;
 	private int ryn;
 	
 	
 	
+	public void setRbiznum(String rbiznum) {
+		this.rbiznum = rbiznum;
+	}
 	public int getRyn() {
 		return ryn;
 	}
@@ -86,11 +89,9 @@ public class RestaurantVO {
 	public void setRseq(int rseq) {
 		this.rseq = rseq;
 	}
-	public int getRbiznum() {
+	
+	public String getRbiznum() {
 		return rbiznum;
-	}
-	public void setRbiznum(int rbiznum) {
-		this.rbiznum = rbiznum;
 	}
 	public int getKind() {
 		return kind;
