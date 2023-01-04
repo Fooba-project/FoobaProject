@@ -24,7 +24,7 @@ public class res_joinAction implements Action {
 		
 		HttpSession session=request.getSession();
 		ServletContext context=session.getServletContext();
-		String path=context.getRealPath("resimage"); //Æú´õÀÌ¸§À¸·Î º¯°æ
+		String path=context.getRealPath("resimage"); //ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		MultipartRequest multi = new MultipartRequest(
 				request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
@@ -39,14 +39,14 @@ public class res_joinAction implements Action {
 		rvo.setRimage(multi.getFilesystemName("image"));
 		rvo.setContent(request.getParameter("content"));
 		rvo.setHash(request.getParameter("hash"));
-		rvo.setRbiznum(Integer.parseInt(request.getParameter("rbiznum")));
+		rvo.setRbiznum(request.getParameter("rbiznum")));
 		rvo.setKind(Integer.parseInt(request.getParameter("kind")));
 		rvo.setRtip(Integer.parseInt(request.getParameter("rtip")));
 		
 		int result=rdao.insertRes(rvo);
 		
-		if(result==1)session.setAttribute("message","È¸¿ø°¡ÀÔ ¿Ï·á! ·Î±×ÀÎÇÏ¼¼¿ä.");
-		else session.setAttribute("message","È¸¿ø°¡ÀÔ ½ÇÆÐ.  °è¼Ó ½ÇÆÐÇÏ¸é °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ¼¼¿ä.");
+		if(result==1)session.setAttribute("message","È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½! ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+		else session.setAttribute("message","È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.  ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		
 		response.sendRedirect("fooba.do?command=res_loginForm");
 
