@@ -30,7 +30,7 @@ public class res_loginAction implements Action {
 		else if(rvo.getRpwd()==null)request.setAttribute("message","패스워드 DB 오류. 관리자에게 문의하세요.");
 		else if(!rvo.getRpwd().equals(rpwd))request.setAttribute("message","비밀번호가 틀렸습니다.");
 		else if(rvo.getRpwd().equals(rpwd)) {
-			url="fooba.do?command=res_show";
+			url="fooba.do?command=res_foodmenu";
 			HttpSession session=request.getSession();
 			session.setAttribute("loginRes", rvo );
 			System.out.println("로그인 성공");

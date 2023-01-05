@@ -137,7 +137,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout'">
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
 	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
-	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_menu'">
+	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
 	    		<input type="button" value="미리보기" class="headbutton" onclick="location.href='fooba.do?command=res_show'">    		
 	    	</c:otherwise>
     	</c:choose>
