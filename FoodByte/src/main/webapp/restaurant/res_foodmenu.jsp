@@ -21,8 +21,8 @@
         
         <br>
         <div id="res_tab">
-            <div class="res_infotab" >메뉴</div>
-            <div class="res_infotab" onclick="location.href='fooba.do?command=res_foodmenuAdd'">
+            <div class="res_infotab" style="color:white;">메뉴</div>
+            <div class="res_infotab" onclick="location.href='fooba.do?command=res_foodmenuAddForm'">
             메뉴 추가</div>
         </div>
         

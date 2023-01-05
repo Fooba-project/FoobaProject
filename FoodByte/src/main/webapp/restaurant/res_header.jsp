@@ -103,6 +103,10 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 .reviewimage{ height: 200px;  }
 #res_star h1{color: orange;}
 
+.food_text{position:relative; width:300px; height:50px; border:1px solid rgb(211, 210, 210); background:white;   
+line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius:5px ;}
+#res_menuall_a{width: 700px; float: left; position: relative; height:700px; overflow:hidden; overflow-y: scroll;}
+
 .member_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
 .join_list { position: relative; height: 50px; padding: 0; margin: 0; overflow: hidden; border-radius: 3px; margin: 10px;}
@@ -120,6 +124,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 #textarea_box{margin-left: 10px; margin-top: 10px; height: 100px; width: 100%;}
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
 .res_text_boxs{margin-top: 10px;  padding-left: 10px;}
+
 
 
 </style>

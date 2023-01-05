@@ -23,9 +23,9 @@ public class res_foodmenuAddAction implements Action {
 		
 		String url="fooba.do?command=res_foodmenu";
         HttpSession session=request.getSession();
-        RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginUser");
+        RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");
         if(rvo==null) {
-           url="fooba.do?command=res_loginFrom";
+           url="fooba.do?command=res_loginForm";
         }else {
            FoodmenuVO fvo=new FoodmenuVO();
            ServletContext context=session.getServletContext();
