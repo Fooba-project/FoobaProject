@@ -93,7 +93,9 @@ text-align: center;line-height: 50px;}
 border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
 .res_infotab:hover{cursor: pointer;}
 #res_menuall{ width: 1400px; float: left; position: relative;}
-#res_menuinfo{ width: 700px;}
+#res_menuinfo{ width: 700px; border:1px solid green;}
+#res_menu_icon{width:20px; height:20px; }
+#res_menu_icon:hover{cursor: pointer; opacity:0.6;}
 #res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
 #info_rev{width:700px; position:absolute; top:0px; right: 0px;}
@@ -138,7 +140,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
 	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
 	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
-	    		<input type="button" value="미리보기" class="headbutton" onclick="location.href='fooba.do?command=res_show'">    		
+	    		    		
 	    	</c:otherwise>
     	</c:choose>
     </div>
