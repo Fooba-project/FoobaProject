@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fooba.VO.MemberVO;
+import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
 import fooba.action.Action;
 import fooba.dao.OrderDao;
@@ -32,8 +33,9 @@ public class memberOrderListAction implements Action {
 	         
 	         String oname = "";
 	         for (OrderVO ovo : list) {
+	        	 ArrayList<OrderDetailVO> detailList = new ArrayList<>();
+	        	 detailList = odao.getOrderDetailbyOseq(ovo.getOseq());
 	        	 
-	        	 ovo.getOseq();
 	        	 
 	        	 
 	        	 finalList.add(ovo);

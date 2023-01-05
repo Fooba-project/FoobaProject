@@ -42,8 +42,6 @@ public class OrderViewVO {
 	public void setTotalprice(int totalprice) {
 		this.totalprice = totalprice;
 	}
-	
-	
 	public int getFsideprice3() {
 		return fsideprice3;
 	}

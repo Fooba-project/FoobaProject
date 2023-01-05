@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.util.Dbman;
@@ -179,6 +180,31 @@ public class OrderDao {
 				ovo.setPlasticyn(rs.getInt("plasticyn"));
 				ovo.setPayment(rs.getInt("payment"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
+				list.add(ovo);
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return list;
+	}
+
+
+	public ArrayList<OrderDetailVO> getOrderDetailbyOseq(int oseq) {
+		ArrayList<OrderDetailVO> list=new ArrayList<>();
+		con=Dbman.getConnection();
+		String sql="select * from order_detail where oseq=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, oseq);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				OrderDetailVO ovo=new OrderDetailVO();
+				ovo.setFseq(oseq);
+				ovo.setOdseq(oseq);
+				ovo.setOseq(oseq);
+				ovo.setQuantity(oseq);
+				ovo.setSideyn1(oseq);
+				ovo.setSideyn2(oseq);
+				ovo.setSideyn3(oseq);
 				list.add(ovo);
 			}
 		} catch (SQLException e) {	e.printStackTrace();
