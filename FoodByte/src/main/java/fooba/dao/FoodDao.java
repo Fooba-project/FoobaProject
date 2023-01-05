@@ -59,6 +59,7 @@ public class FoodDao {
 			pstmt.setInt(1, fseq);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
+				fvo = new FoodmenuVO();
 				fvo.setRseq(rs.getInt("rseq"));
 				fvo.setFseq(rs.getInt("fseq"));
 				fvo.setFname(rs.getString("fname"));
@@ -74,7 +75,6 @@ public class FoodDao {
 			}
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
-		
 		return fvo;
 	}
 
