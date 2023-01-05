@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
-
+<script src = "../script/jquery-3.6.1.js"></script>
 <script type="text/javascript">
 
 function resCheck(){
@@ -22,9 +22,20 @@ function resCheck(){
 
 }
 
+function res_idcheck(){
+		if( document.res_join_send_form.rid.value=="" ){
+			alert("아이디를 입력하고 중복체크를 진행하세요" );
+			documnet.res_join_send_form.rid.focus();
+			return;
+		}
+		var url = "fooba.do?command=res_idCheckForm&rid=" + document.res_join_send_form.rid.value;
+		var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
+		window.open(url, "IdCheck", opt);	
+	}
+
 </script>
-<script src = "../script/jquery-3.6.1.js"></script>
-<script src="/script/res.js"></script>
+
+
 <style type="text/css">
 body {margin:0}
 

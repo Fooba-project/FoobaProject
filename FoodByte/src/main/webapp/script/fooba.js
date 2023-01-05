@@ -161,17 +161,6 @@ function idcheck(){
 }
 
 
-function res_idcheck(){
-	if( document.res_join_send_form.rid.value=="" ){
-		alert("아이디를 입력하고 중복체크를 진행하세요" );
-		documnet.res_join_send_form.rid.focus();
-		return;
-	}
-	var url = "fooba.do?command=res_idCheckForm&rid=" + document.res_join_send_form.rid.value;
-	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
-	window.open(url, "IdCheck", opt);	
-}
-
 function loginCheck(){
 	if(document.loginFrm.id.value==""){
 		alert("아이디는 필수입력사항입니다");
