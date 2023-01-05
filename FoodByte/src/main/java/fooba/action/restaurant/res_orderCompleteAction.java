@@ -25,7 +25,6 @@ public class res_orderCompleteAction implements Action {
 		if(loginUser==null) {
 			url="fooba.do?command=res_loginForm";
 		}else {
-			
 			OrderDao odao=OrderDao.getInstance();
 			odao.nextOrderStatement(oseq);
 			url="restaurant/orderDetail.jsp";

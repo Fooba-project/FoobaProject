@@ -26,7 +26,7 @@
                     금액
                 </td>
                 <td>
-                    주문일
+                    <fmt:formatDate value="${orderVO.indate }" type="date"/>
                 </td>
                 <td>
                     주문확인중
@@ -42,5 +42,4 @@
         
     </table>
 </article>
-
 <%@ include file="../footer.jsp"%>
