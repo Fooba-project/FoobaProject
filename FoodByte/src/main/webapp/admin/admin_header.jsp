@@ -74,11 +74,11 @@ body {margin: 0; position:relative;}
 	    		<input type="button" value="Home" class="headbutton" onclick="location.href='fooba.do?command=index'">
     		</c:when>
     		<c:otherwise>
-    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=admin_logout'">
-	    		<input type="button" value="가게관리" class="headbutton" onclick="location.href='fooba.do?command=admin_restaurantList'">
-	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=admin_memberKick'">
-	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=admin_orderList'">
-	    		<input type="button" value="QnA" class="headbutton" onclick="location.href='fooba.do?command=admin_qnaList'">
+    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=admin_logout&page=1&search=&key='">
+	    		<input type="button" value="가게관리" class="headbutton" onclick="location.href='fooba.do?command=admin_restaurantList&page=1&search=&key='">
+	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=admin_memberKick&page=1&search=&key='">
+	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=admin_orderList&page=1&search=&key='">
+	    		<input type="button" value="QnA" class="headbutton" onclick="location.href='fooba.do?command=admin_qnaList&page=1&search=&key='">
     		</c:otherwise>
     	</c:choose>
     </div>
