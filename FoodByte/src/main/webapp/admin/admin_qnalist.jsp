@@ -7,7 +7,7 @@
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr>
-                <td width="642">질문 번호: <input type="text" name="key" value="${key}">
+                <td style="font-size:17px; width:642;">질문 번호: <input class="keyy" type="text" name="key" value="${key}">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
@@ -21,8 +21,8 @@
         <c:forEach items="${qnaList}" var="QnaVO">
                 <tr>
                     <td style="text-align:center;">${QnaVO.qseq}</td>
-                    <td style="text-align:left; padding-left:20px;">
-                    <a href="#" onClick="go_detail('${QnaVO.qseq}');">${QnaVO.subject}</a>                
+                    <td style="text-align:center; padding-left:20px;">
+                    <a style="text-decoration-line: none;"href="#" onClick="go_detail('${QnaVO.qseq}');">${QnaVO.subject}</a>                
                 </tr>
          </c:forEach>
          </table>
@@ -33,6 +33,5 @@
 <jsp:include page="/admin/paging/paging.jsp">
 <jsp:param name="command" value="fooba.do?command=admin_qnaList"/>
 </jsp:include>	
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <%@ include file="admin_footer.jsp"%>

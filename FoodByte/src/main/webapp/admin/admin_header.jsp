@@ -57,7 +57,7 @@ body {margin: 0; position:relative;}
     #admin_list_table{margin: auto; border: 1px solid; width:810px; }
     #admin_list_table th{background-color:rgb(99, 123, 153); font-size: 17px; color: white;}
 
-
+.keyy{border-radius:9px; height:17px; outline:none; border:2px solid rgb(76, 94, 134);}
 
 </style>
 <body>

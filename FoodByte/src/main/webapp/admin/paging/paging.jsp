@@ -16,7 +16,7 @@
 			<c:forEach begin="${paging.beginPage}" end="${paging.endPage}" var="index">
 				<c:choose>
 					<c:when test="${paging.page==index}">
-						<span style="color:red">${index}&nbsp;</span>
+						<span style="color:blue">${index}&nbsp;</span>
 					</c:when>
 					<c:otherwise>
 						<a href="${action}&page=${index}">${index}</a>&nbsp;

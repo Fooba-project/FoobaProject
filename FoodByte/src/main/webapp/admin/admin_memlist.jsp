@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
 
+
 <article>
     <h2 class="admin_list">회원 리스트</h2>   
     <br> 
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr>
-                <td width="642">회원 ID: <input type="text" name="key" value="${key}">
+                <td style="font-size:17px; width:642;">회원 ID: <input class="keyy" type="text" name="key" value="${key}">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
