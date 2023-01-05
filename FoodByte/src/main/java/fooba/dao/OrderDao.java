@@ -198,13 +198,13 @@ public class OrderDao {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderDetailVO ovo=new OrderDetailVO();
-				ovo.setFseq(oseq);
-				ovo.setOdseq(oseq);
-				ovo.setOseq(oseq);
-				ovo.setQuantity(oseq);
-				ovo.setSideyn1(oseq);
-				ovo.setSideyn2(oseq);
-				ovo.setSideyn3(oseq);
+				ovo.setFseq(rs.getInt("fseq"));
+				ovo.setOdseq(rs.getInt("odseq"));
+				ovo.setOseq(rs.getInt("oseq"));
+				ovo.setQuantity(rs.getInt("quantity"));
+				ovo.setSideyn1(rs.getInt("sideyn1"));
+				ovo.setSideyn2(rs.getInt("sideyn2"));
+				ovo.setSideyn3(rs.getInt("sideyn3"));
 				list.add(ovo);
 			}
 		} catch (SQLException e) {	e.printStackTrace();

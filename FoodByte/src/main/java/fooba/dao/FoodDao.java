@@ -68,10 +68,10 @@ public class FoodDao {
 				fvo.setFcontent(rs.getString("fcontent"));
 				fvo.setFside1(rs.getString("fside1"));
 				fvo.setFsideprice1(rs.getInt("fsideprice1"));
-				fvo.setFside1(rs.getString("fside2"));
-				fvo.setFsideprice1(rs.getInt("fsideprice2"));
-				fvo.setFside1(rs.getString("fside3"));
-				fvo.setFsideprice1(rs.getInt("fsideprice3"));
+				fvo.setFside2(rs.getString("fside2"));
+				fvo.setFsideprice2(rs.getInt("fsideprice2"));
+				fvo.setFside3(rs.getString("fside3"));
+				fvo.setFsideprice3(rs.getInt("fsideprice3"));
 			}
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
