@@ -10,11 +10,18 @@ public class OrderVO {
 	private int plasticyn;
 	private int payment;
 	private int result;
+	private String Oname;
 	private String address1;
 	private String address2;
 	private int totalprice;
 	private String phone;
 	
+	public String getOname() {
+		return Oname;
+	}
+	public void setOname(String oname) {
+		Oname = oname;
+	}
 	public String getAddress1() {
 		return address1;
 	}

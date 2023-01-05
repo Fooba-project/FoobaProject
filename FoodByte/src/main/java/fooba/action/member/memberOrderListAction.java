@@ -25,9 +25,26 @@ public class memberOrderListAction implements Action {
 	      if(mvo == null) {
 	         url = "fooba.do?command=loginForm";
 	      }else {
+	    	 ArrayList<OrderVO> finalList = new ArrayList<>();
+	    	 
 	         OrderDao odao = OrderDao.getInstance();
 	         ArrayList<OrderVO> list = odao.selectOrdersIngById(mvo.getId());
+	         
+	         String oname = "";
+	         for (OrderVO ovo : list) {
+	        	 
+	        	 ovo.getOseq();
+	        	 
+	        	 
+	        	 finalList.add(ovo);
+	        	 
+	        	 ovo.setOname(oname);
+	         }
+	         
+	     
 	         request.setAttribute("memberOrderList", list);
+	         
+	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	      
