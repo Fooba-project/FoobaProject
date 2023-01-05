@@ -33,7 +33,7 @@
             </div>
 
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="10" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
+                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="15" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
             </div>
 
             <div class="join_list">
