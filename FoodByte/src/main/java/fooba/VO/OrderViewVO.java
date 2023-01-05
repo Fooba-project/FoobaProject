@@ -34,7 +34,7 @@ public class OrderViewVO {
 	private int totalprice;
 	private String rname;
 	private int rseq;
-	
+
 	
 	public int getTotalprice() {
 		return totalprice;

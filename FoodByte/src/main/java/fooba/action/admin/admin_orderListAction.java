@@ -17,9 +17,8 @@ public class admin_orderListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 
-		String url="admin/admin_orderList.jsp";
+		String url="admin/admin_orderlist.jsp";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");

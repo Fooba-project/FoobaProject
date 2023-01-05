@@ -183,9 +183,9 @@ public class AdminDao {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderViewVO ovo=new OrderViewVO();
-				ovo.setFsideprice1(rs.getInt("fsideprice"));
-				ovo.setFsideprice2(rs.getInt("fsideprice"));
-				ovo.setFsideprice3(rs.getInt("fsideprice"));
+				ovo.setFsideprice1(rs.getInt("fsideprice1"));
+				ovo.setFsideprice2(rs.getInt("fsideprice2"));
+				ovo.setFsideprice3(rs.getInt("fsideprice3"));
 				ovo.setFside1(rs.getString("fside1"));
 				ovo.setFside2(rs.getString("fside2"));
 				ovo.setFside3(rs.getString("fside3"));
@@ -212,6 +212,7 @@ public class AdminDao {
 				ovo.setOphone(rs.getString("ophone"));
 				ovo.setOdseq(rs.getInt("odseq"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
+
 				list.add(ovo);	
 			
 			}

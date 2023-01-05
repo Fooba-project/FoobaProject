@@ -18,7 +18,7 @@ public class admin_qnaListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="admin/admin_qnaList.jsp";
+		String url="admin/admin_qnalist.jsp";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");

@@ -2,60 +2,38 @@
 <%@ include file="admin_header.jsp"%>
 
 <article>
+    <h2 class="admin_list">주문 리스트</h2>   
+    <br> 
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr>
-                <td width="642">주문번호: <input type="text" name="key" value="${key}">
+                <td width="642">주문 번호: <input type="text" name="key" value="${key}">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
-                        onClick="go_search( 'memberKick' );">
+                        onClick="go_search( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
-                        onClick="go_total( 'memberKick' );">
+                        onClick="go_total( 'admin_restaurantList' );">
                 </td>
             </tr>
         </table><br>
         <table id="admin_list_table">
-            <tr><th>주문번호</th><th>아이디</th><th>주문명</th><th>수량</th><th>주문일</th></tr>
-            <tr>
-                <td>1</td><td>회원1</td><td>1</td><td>1</td><td>2023-01-04</td>        
-            </tr>
-            <tr>
-                <td>2</td><td>회원1</td><td>1</td><td>1</td><td>2023-01-04</td>        
-            </tr>
-            <tr>
-                <td>3</td><td>회원1</td><td>1</td><td>1</td><td>2023-01-04</td>        
-            </tr>
-            <tr>
-                <td>4</td><td>회원1</td><td>1</td><td>1</td><td>2023-01-04</td>        
-            </tr>
-            
-
-            
-        </table>
-        <!-- <c:forEach items="${productList}" var="productVO">
+            <tr><th>주문번호</th><th>주문자 ID</th><th>가게이름</th><th>가격</th><th>주문시간</th>      
+        <c:forEach items="${orderList}" var="OrderViewVO">
                 <tr>
-                    <td height="23" align="center">${productVO.pseq}</td>
-                    <td style="text-align:left; padding-left:50px;">
-                        <a href="#" onClick="go_detail('${productVO.pseq}');">${productVO.name}</a>
-                    </td>
-                    <td><fmt:formatNumber value="${productVO.price1}"/></td>
-                    <td><fmt:formatNumber value="${productVO.price2}"/></td>
-                    <td><fmt:formatDate value="${productVO.indate}"/></td>
-                    <td>
-                        <c:choose>
-                              <c:when test='${productVO.useyn=="N"}'>미사용</c:when>
-                                <c:otherwise>사용</c:otherwise>
-                            </c:choose>
-                        </td> 
+                    <td style="text-align:center;">${OrderViewVO.oseq}</td>
+                    <td style="text-align:center;">${OrderViewVO.id}</td>
+                    <td style="text-align:center;">${OrderViewVO.rname}</td>
+                    <td style="text-align:center;">${OrderViewVO.totalprice}</td>                    
+                    <td style=text-align:center;><fmt:formatDate value="${OrderViewVO.indate}"/></td> 
                 </tr>
-            </c:forEach>-->
-
-
-
-
+         </c:forEach>
+         </table>
+	</form>
+		<div class="clear"></div>
 </article>
-
-
-
-
+<br>
+<jsp:include page="/admin/paging/paging.jsp">
+<jsp:param name="command" value="fooba.do?command=admin_orderList"/>
+</jsp:include>	
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <%@ include file="admin_footer.jsp"%>

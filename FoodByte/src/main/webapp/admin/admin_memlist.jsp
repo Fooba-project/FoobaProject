@@ -12,7 +12,7 @@
                         onClick="go_search( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_restaurantList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_write" value="가게등록"  onClick="go_wrt();">
+                    <input class="admin_searchres_btn" type="button" name="btn_write" value="회원등록"  onClick="go_wrt();">
                 </td>
             </tr>
         </table><br>
