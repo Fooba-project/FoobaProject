@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ 
 	<div id="paging" style="font-size:110%; font-weight:bold; margin-left:900px;">
 			<c:url var="action" value="${param.command}" />
 			<c:if test="${paging.prev}">
