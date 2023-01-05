@@ -30,7 +30,6 @@ body {margin:0}
 
 /* 레스토랑 css  */
 
-
 .headback {width: 100%; height: 100px; background-color: rgb(255,204,0); margin: 0;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
@@ -69,8 +68,7 @@ body {margin:0}
 
 /* #dummy{height:745px; width:100%;  } */
 
-#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto;
- overflow: hidden;}
+#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto; overflow: hidden;}
 #res_name{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
@@ -85,10 +83,10 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 
 #res_menu_icon{width:20px; height:20px; }
 #res_menu_icon:hover{cursor: pointer; opacity:0.6;}
-#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231);
- padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
- #res_menu1{height: 140px;
- padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+#res_menu1{height: 140px;
+padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
 #info_rev{width:700px; position:relative; top:0px; right: 0px; height:700px;}
 #rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;  position: relative;}
@@ -112,10 +110,10 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius:5px ;}
 #res_menuall_a{width: 700px; float: left; position: relative; height:700px; overflow:hidden; overflow-y: scroll;}
 
-.member_join {width: 700px; overflow: hidden; margin:50px auto;}
+.res_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
 .join_list { position: relative; height: 50px; padding: 0; margin: 0; overflow: hidden; border-radius: 3px; margin: 10px;}
-.member_join_title { text-align: left; font-size: 26px;font-weight: bold; }
+.res_join_title { text-align: left; font-size: 26px;font-weight: bold; }
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
 .input_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border: 1px solid #BCBCBC;}
 .join_list #id_btn {  position: absolute;  width: 180px;  height: 45px;  top: 0px; right: 0;  border: 0; border-radius: 3px;}
@@ -129,7 +127,6 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 #textarea_box{margin-left: 10px; margin-top: 10px; height: 100px; width: 100%;}
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
 .res_text_boxs{margin-top: 10px;  padding-left: 10px;}
-
 
 
 </style>
