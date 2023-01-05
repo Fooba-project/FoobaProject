@@ -12,9 +12,11 @@ import fooba.VO.FoodmenuVO;
 import fooba.VO.MemberVO;
 import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
+import fooba.VO.OrderViewVO;
 import fooba.action.Action;
 import fooba.dao.FoodDao;
 import fooba.dao.OrderDao;
+import fooba.util.Paging;
 
 public class memberOrderListAction implements Action {
 
@@ -29,9 +31,27 @@ public class memberOrderListAction implements Action {
 	         url = "fooba.do?command=loginForm";
 	      }else {
 	    	 ArrayList<OrderVO> finalList = new ArrayList<>();
-	    	 
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderVO> list = odao.selectOrdersIngById(mvo.getId());
+	         
+	         int page=1;
+				if(request.getParameter("page")!=null) { 
+					page=Integer.parseInt(request.getParameter("page"));
+					session.setAttribute("page", page);
+				}else if(session.getAttribute("page")!=null) { 
+					page=(Integer)session.getAttribute("page");
+				}else { 
+					session.removeAttribute("page");
+				}
+			 
+			Paging paging = new Paging();
+			paging.setPage(page);
+			paging.setDisplayRow(10);
+			paging.setDisplayPage(10);
+			
+			int count = odao.getOrderIngCount(mvo.getId());
+			paging.setTotalCount(count);
+			
+	         ArrayList<OrderVO> list = odao.selectOrdersIngById(mvo.getId(), paging);
 	         
 	         int total = 0; // 총 주문금액
 	         String oname = ""; // 주문내역
@@ -77,8 +97,12 @@ public class memberOrderListAction implements Action {
 	        	 finalList.add(ovo);
 	         }
 	         request.setAttribute("memberOrderList", finalList);
+	         request.setAttribute("paging", paging);
+	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
+	      
+	      
 	      
 	}
 }
