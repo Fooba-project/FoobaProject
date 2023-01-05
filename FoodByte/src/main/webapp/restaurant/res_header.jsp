@@ -86,7 +86,8 @@ body {margin:0}
 
 /* #dummy{height:745px; width:100%;  } */
 
-#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto; overflow: hidden;}
+#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto;
+ overflow: hidden;}
 #res_name{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
@@ -101,10 +102,10 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 
 #res_menu_icon{width:20px; height:20px; }
 #res_menu_icon:hover{cursor: pointer; opacity:0.6;}
-#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
-padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
-#res_menu1{height: 140px;
-padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231);
+ padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+ #res_menu1{height: 140px;
+ padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
 #info_rev{width:700px; position:relative; top:0px; right: 0px; height:700px;}
 #rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;  position: relative;}
@@ -127,6 +128,7 @@ padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .food_text{position:relative; width:300px; height:50px; border:1px solid rgb(211, 210, 210); background:white;   
 line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius:5px ;}
 #res_menuall_a{width: 700px; float: left; position: relative; height:700px; overflow:hidden; overflow-y: scroll;}
+
 
 .res_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
@@ -166,11 +168,11 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=index'">
     		</c:when>
     		<c:otherwise>
-    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout'">
-	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
-	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
-	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
-	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show'">   		
+    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout&page=1&search=&key='">
+	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order&page=1&search=&key='">
+	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review&page=1&search=&key='">
+	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu&page=1&search=&key='">
+	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show&page=1&search=&key='">   		
 	    	</c:otherwise>
     	</c:choose>
     </div>
