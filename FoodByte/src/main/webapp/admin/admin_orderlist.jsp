@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
-
+ 
 <article>
     <h2 class="admin_list">주문 리스트</h2>   
     <br> 

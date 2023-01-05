@@ -40,7 +40,7 @@ public class AdminDao {
 		return pwd;
 	}
 	
-
+ 
 	public String AdminCheck(String id) {	
 		String pwd=null;
 		String sql= "select*from admin where id=?";
