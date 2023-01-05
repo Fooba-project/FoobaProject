@@ -27,7 +27,7 @@
                     <td style=text-align:center;>
                         <c:choose>
                               <c:when test='${RestaurantVO.ryn=="0"}'>신청</c:when>
-                                <c:otherwise>신청안함</c:otherwise>
+                                <c:otherwise>신청안함 </c:otherwise>
                             </c:choose>
                     </td> 
                 </tr>
