@@ -29,7 +29,7 @@ insert into admin values('admin', 'admin', '관리자1', '010-3757-7878');
 insert into admin values('scott', 'tiger', '관리자2', '010-6511-8521');
 
 -- 회원입력(5명)
-
+select* from restaurant;
 
 
 insert into member(id, pwd, name, phone, email, zip_num, address1,address2,nick)
@@ -49,6 +49,7 @@ values('ccc2222','1234','한시바','010-1234-2345','ccc222@naver.com', '135-512
 
 select*from member;
 
+delete from restaurant;
 
 -- 레스토랑 (kind 당 6개)
 select*from restaurant;

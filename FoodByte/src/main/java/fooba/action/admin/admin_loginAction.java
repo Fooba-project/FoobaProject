@@ -15,21 +15,21 @@ public class admin_loginAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String workId=request.getParameter("workId");
-		String workPwd=request.getParameter("workPwd");
+		String adminid=request.getParameter("adminid");
+		String adminpw=request.getParameter("adminpw");
 		
 		String url="fooba.do?command=admin_loginForm"; //관리자 로그인창
 		
 		AdminDao adao =AdminDao.getInstance();
-		String adminUserPwd=adao.AdminCheck(workId);
+		String adminUserPwd=adao.AdminCheck(adminid);
 		
 		if(adminUserPwd==null)
 			request.setAttribute("message", "아이디가 없습니다.");
-		else if(!adminUserPwd.equals(workPwd))
+		else if(!adminUserPwd.equals(adminpw))
 			request.setAttribute("message", "비밀번호가 맞지 않습니다.");
-		else if(adminUserPwd.equals(workPwd)) {
+		else if(adminUserPwd.equals(adminpw)) {
 			HttpSession session=request.getSession();
-			session.setAttribute("loginAdmin", workId);
+			session.setAttribute("loginAdmin",adminid);			
 			url="fooba.do?command=admin_restaurantList";
 			request.removeAttribute("message");
 		}

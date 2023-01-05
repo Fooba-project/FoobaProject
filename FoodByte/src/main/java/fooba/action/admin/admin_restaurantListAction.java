@@ -17,7 +17,7 @@ public class admin_restaurantListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="admin/admin_restaurantList.jsp";
+		String url="admin/admin_reslist.jsp";
 		
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");

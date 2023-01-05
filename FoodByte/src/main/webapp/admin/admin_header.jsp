@@ -18,8 +18,8 @@ body {margin: 0; position:relative;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
 
-.headbuttons {position:absolute; width: 320px; top:23px; left:calc(50% + 300px); }
-.headbutton {width: 150px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
+.headbuttons {position:absolute; width: 380px; top:23px; left:calc(50% + 300px); }
+.headbutton {width: 70px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 90%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
 .headbutton:hover {background-color: white; color: rgb(23,55,94); cursor: pointer;}
 
 .footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
@@ -49,20 +49,11 @@ body {margin: 0; position:relative;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
-
-
     .admin_list{text-align: center;}
-    nav#sub_menu ul{font-weight: 700;  width:810px; height: 40px;  margin: auto; }
-    nav#sub_menu ul li { list-style-type: none; float: left;}
-    nav#sub_menu a { text-decoration: none; color: black; position: relative; float: left; text-align: center; line-height: 40px;
-    display: block; width: 200px; height: 40px; font-weight: 700;}
-    nav#sub_menu a:hover { color: rgb(99, 123, 153);}
     #admin_searchres {margin:auto;  width:510px;}
     #admin_searchres td {font-weight: 700; }
-    .admin_searchres_btn{background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }
-    
+    .admin_searchres_btn{background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }   
     #admin_list_table{margin: auto; border: 1px solid; width:810px; }
-
     #admin_list_table th{background-color:rgb(99, 123, 153); font-size: 17px; color: white;}
     #admin_list_table td{background-color: white; text-align: center; font-weight: 600;}
 </style>
@@ -82,7 +73,8 @@ body {margin: 0; position:relative;}
     		<c:otherwise>
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=adminLogout'">
 	    		<input type="button" value="가게관리" class="headbutton" onclick="location.href='fooba.do?command=adminRestaurantList'">
-	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=adminMemberList'">
+	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=adminMemberKick'">
+	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=adminorderList'">
 	    		<input type="button" value="QnA" class="headbutton" onclick="location.href='fooba.do?command=adminQnaList'">
     		</c:otherwise>
     	</c:choose>

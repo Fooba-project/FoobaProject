@@ -22,16 +22,24 @@ public class AdminDao {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	public void Method() {
+	public String workerCheck(String workId) {
+		String pwd = null;
+		
+		String sql = "select * from admin where id = ?";
 		con = Dbman.getConnection();
-		String sql = ""; 
+		
 		try {
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, workId);
 			rs = pstmt.executeQuery();
-		} catch (SQLException e) {e.printStackTrace();}
-		catch (Exception e) {e.printStackTrace();} 
-		finally {Dbman.close(con, pstmt, rs);}
+			if( rs.next() )
+				pwd = rs.getString("pwd");
+		} catch (SQLException e) { e.printStackTrace();
+		} finally { Dbman.close(con, pstmt, rs);
+		}
+		return pwd;
 	}
+	
 
 	public String AdminCheck(String id) {	
 		String pwd=null;
