@@ -16,8 +16,8 @@ public class res_logoutAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session=request.getSession();
-		session.removeAttribute("loginUser");
-		RequestDispatcher dp=request.getRequestDispatcher("fooba.do?command=index");
+		session.removeAttribute("loginRes");
+		RequestDispatcher dp=request.getRequestDispatcher("fooba.do?command=res_loginForm");
 		dp.forward(request, response);
 
 	}

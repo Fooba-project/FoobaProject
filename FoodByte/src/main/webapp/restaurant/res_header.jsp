@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
+
 <script type="text/javascript">
 
 function resCheck(){
