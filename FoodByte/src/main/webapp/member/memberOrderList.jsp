@@ -2,7 +2,7 @@
 <%@ include file="../header.jsp"%>
 <%@ include file="mypage_sub.jsp"%>
 
-<div id="memberOrderList">
+<div id="memberOrderListdiv">
 <article  id="orderArticle">
     <h2>진행중인 주문내역</h2>
     <hr><br>

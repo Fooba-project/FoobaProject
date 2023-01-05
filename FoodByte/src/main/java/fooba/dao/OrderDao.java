@@ -10,6 +10,7 @@ import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.util.Dbman;
+import fooba.util.Paging;
 
 public class OrderDao {
 	private OrderDao() {}
@@ -162,13 +163,19 @@ public class OrderDao {
 		}
 
 
-	public ArrayList<OrderVO> selectOrdersIngById(String id) {
+	public ArrayList<OrderVO> selectOrdersIngById(String id, Paging paging) {
 		ArrayList<OrderVO> list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select * from orders where id=? and result in(0,1) order by oseq desc";
+		String sql = "select * from ("
+				+ "select * from ("
+				+ "select rownum as rn, b.* from ((select * from orders where id=? and result in(0,1) order by oseq desc) b)"
+				+ ") where rn>=?"
+				+ ") where rn<=?";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, id);
+			pstmt.setInt(2, paging.getStartNum());
+			pstmt.setInt(3, paging.getEndNum());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderVO ovo=new OrderVO();
@@ -210,6 +217,28 @@ public class OrderDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		return list;
+	}
+
+
+	public int getOrderIngCount(String id) {
+			int cnt = 0;
+			con = Dbman.getConnection();
+			String sql = "select count(rownum) as cnt from orders where id=?";
+			try {
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				if (rs.next()) {
+					cnt = rs.getInt("cnt");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				Dbman.close(con, pstmt, rs);
+			}
+			return cnt;
 	}
 
 	
