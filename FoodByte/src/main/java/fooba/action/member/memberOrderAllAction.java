@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fooba.VO.MemberVO;
-import fooba.VO.OrderViewVO;
+import fooba.VO.OrderVO;
 import fooba.action.Action;
 import fooba.dao.OrderDao;
 
@@ -25,7 +25,7 @@ public class memberOrderAllAction implements Action {
 	         url = "fooba.do?command=loginForm";
 	      }else {
 	         OrderDao odao = OrderDao.getInstance();
-	         ArrayList<OrderViewVO>list = odao.selectOrdersById(mvo.getId()); 
+	         ArrayList<OrderVO>list = odao.selectOrdersById(mvo.getId()); 
 	         request.setAttribute("memberOrderList", list);
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
