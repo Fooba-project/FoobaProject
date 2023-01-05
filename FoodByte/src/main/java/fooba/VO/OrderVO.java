@@ -15,13 +15,13 @@ public class OrderVO {
 	private String address2;
 	private int totalprice;
 	private String phone;
-	private int total;
+	private String rname;
 	
-	public int getTotal() {
-		return total;
+	public String getRname() {
+		return rname;
 	}
-	public void setTotal(int total) {
-		this.total = total;
+	public void setRname(String rname) {
+		this.rname = rname;
 	}
 	public String getOname() {
 		return Oname;

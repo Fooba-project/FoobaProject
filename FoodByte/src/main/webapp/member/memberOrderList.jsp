@@ -14,10 +14,10 @@
             <th width="70">주문일</th>
             <th width="80">진행상태</th>
         </tr>
-        <c:forEach items="${orderList }" var="orderVO">
+        <c:forEach items="${memberOrderList }" var="orderVO">
             <tr>
                 <td>
-                    가게
+                    
                 </td>
                 <td>
                     메뉴

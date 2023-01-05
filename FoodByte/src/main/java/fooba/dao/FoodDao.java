@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import fooba.VO.FoodmenuVO;
+import fooba.VO.OrderDetailVO;
 import fooba.util.Dbman;
 
 public class FoodDao {
@@ -75,6 +76,21 @@ public class FoodDao {
 		}finally {Dbman.close(con, pstmt, rs);}
 		
 		return fvo;
+	}
+
+	public String getRname(int rseq) {
+		String rname="";
+		con=Dbman.getConnection();
+		String sql="select rname from restaurant where rseq=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, rseq);
+			rs=pstmt.executeQuery();
+			rs.next();
+			rname = rs.getString("rname");
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return rname;
 	}
 	
 	
