@@ -24,7 +24,7 @@ public class res_idCheckFormAction implements Action {
 		
 		request.setAttribute("rid", rid);
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/idcheck.jsp");
+		RequestDispatcher dp=request.getRequestDispatcher("restaurant/res_idcheck.jsp");
 		dp.forward(request, response);
 
 	}
