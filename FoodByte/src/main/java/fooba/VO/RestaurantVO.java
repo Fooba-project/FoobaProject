@@ -15,7 +15,14 @@ public class RestaurantVO {
 	private int kind;
 	private int rtip;
 	private int ryn;
+	private String fimage;
 	
+	public String getFimage() {
+		return fimage;
+	}
+	public void setFimage(String fimage) {
+		this.fimage = fimage;
+	}
 	public void setRbiznum(String rbiznum) {
 		this.rbiznum = rbiznum;
 	}

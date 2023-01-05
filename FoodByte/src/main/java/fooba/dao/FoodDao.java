@@ -50,7 +50,6 @@ public class FoodDao {
 			fvo.setFsideprice2(rs.getInt("fsideprice2"));
 			fvo.setFsideprice3(rs.getInt("fsideprice3"));
 			fvo.setRseq(rs.getInt("rseq"));
-			
 		} catch (SQLException e) {e.printStackTrace();}
 		catch (Exception e) {e.printStackTrace();} 
 		finally {Dbman.close(con, pstmt, rs);}

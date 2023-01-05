@@ -27,18 +27,11 @@ public class searchAction implements Action {
 		ResDao rdao=ResDao.getInstance();
 		ArrayList<RestaurantVO>searchList=rdao.searchKey(search);
 		
-		
+		for (RestaurantVO rvo : searchList) {
+			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
+		}
 		request.setAttribute("RList", searchList);
 		request.setAttribute("key", search);
-		
-		FoodDao fdao=FoodDao.getInstance();
-		ArrayList<FoodmenuVO> Foodlist =new ArrayList<FoodmenuVO>();
-		
-		for(RestaurantVO rvo : searchList) {	
-			Foodlist.add(fdao.selectFood(rvo.getRseq()));
-		}
-		
-		request.setAttribute("FList", Foodlist);
 		request.getRequestDispatcher(url).forward(request, response);
 
 	}

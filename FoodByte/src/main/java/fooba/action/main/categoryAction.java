@@ -24,22 +24,14 @@ public class categoryAction implements Action {
 		String kind= request.getParameter("kind");
 		
 		ResDao rdao=ResDao.getInstance();
-		ArrayList<RestaurantVO>KindList=rdao.searchKind(kind);
+		ArrayList<RestaurantVO>kindList=rdao.searchKind(kind);
 		
-		request.setAttribute("RList", KindList);
-
-		FoodDao fdao=FoodDao.getInstance();
-		ArrayList<FoodmenuVO> Foodlist =new ArrayList<FoodmenuVO>();
-		
-		for(RestaurantVO rvo : KindList) {	
-			Foodlist.add(fdao.selectFood(rvo.getRseq()));
-			
+		for (RestaurantVO rvo : kindList) {
+			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
 		}
-		
-		request.setAttribute("FList", Foodlist);
+				
+		request.setAttribute("RList", kindList);
 		request.getRequestDispatcher(url).forward(request, response);
-
-		
 
 	}
 

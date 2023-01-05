@@ -8,14 +8,9 @@
        		
        		<div class="resList">
             <a href="fooba.do?command=restaurantDetail&rseq=${RestaurantVO.rseq }" class="rimage">                
-              	 	<div class="res_imgbox">
-              	 	<c:forEach items="${FList}" var="FoodmenuVO" >
-              	 	<c:if test="${FoodmenuVO.rseq==RestaurantVO.rseq}">
-              	 		<img src="images/foodmenu/${FoodmenuVO.fimage}" alt="${FoodmenuVO.fimage}" id="rtitle">
-              	 	</c:if>
-              	 	</c:forEach>              	 	
-                    	
-                	</div>
+              	 <div class="res_imgbox">
+	             	 	<img src="images/foodmenu/${RestaurantVO.fimage}" alt="${RestaurantVO.fimage}" id="rtitle">
+                </div>
            
                 <div class="rtext">
                     <p class="res_name">${RestaurantVO.rname}</p>

@@ -173,7 +173,7 @@ public class ResDao {
 
 	public void withDrawalRes(String rid) {
 		con=Dbman.getConnection();
-		String sql="update restaurant set result='3' where rid=?"; //3�� �޸�(Ż��)
+		String sql="update restaurant set result='3' where rid=?";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,rid);
@@ -216,18 +216,18 @@ public class ResDao {
 				pstmt.setInt(3,paging.getEndNum());
 				rs=pstmt.executeQuery();
 				while(rs.next()) {
-					ReviewVO rvvo=new ReviewVO();
-					rvvo.setReview_seq(rs.getInt("review_seq"));
-					rvvo.setId(rs.getString("id"));
-					rvvo.setRseq(rs.getInt("rseq"));
-					rvvo.setIndate(rs.getTimestamp("indate"));
-					rvvo.setStar(rs.getInt("star"));
-					rvvo.setImage(rs.getString("image"));
-					rvvo.setContent(rs.getString("content"));
-					rvvo.setOseq(rs.getInt("Oseq"));
-					rvvo.setReply(rs.getString("reply"));
-					rvvo.setReplyyn(rs.getInt("replyyn"));
-					list.add(rvvo);
+					ReviewVO rvo=new ReviewVO();
+					rvo.setReview_seq(rs.getInt("review_seq"));
+					rvo.setId(rs.getString("id"));
+					rvo.setRseq(rs.getInt("rseq"));
+					rvo.setIndate(rs.getTimestamp("indate"));
+					rvo.setStar(rs.getInt("star"));
+					rvo.setImage(rs.getString("image"));
+					rvo.setContent(rs.getString("content"));
+					rvo.setOseq(rs.getInt("Oseq"));
+					rvo.setReply(rs.getString("reply"));
+					rvo.setReplyyn(rs.getInt("replyyn"));
+					list.add(rvo);
 				}
 			} catch (SQLException e) {	e.printStackTrace();
 			}finally {Dbman.close(con, pstmt, rs);}
@@ -361,17 +361,13 @@ public class ResDao {
 
 		public ArrayList<RestaurantVO> searchKind(String kind) {
 			ArrayList<RestaurantVO>list=new ArrayList<RestaurantVO>();
-			
 			con=Dbman.getConnection();
-			
 			String sql="select*from restaurant where kind=?";
-			
 			try {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setString(1,kind);
 				rs=pstmt.executeQuery();
 				while(rs.next()) {
-					
 					RestaurantVO rvo = new RestaurantVO();
 					rvo.setRseq(rs.getInt("rseq"));
 					rvo.setRname(rs.getString("rname"));
@@ -382,7 +378,6 @@ public class ResDao {
 				}
 			} catch (SQLException e) {e.printStackTrace();
 			} finally { Dbman.close(con, pstmt, rs); }
-
 			return list;
 		}
 
@@ -390,7 +385,6 @@ public class ResDao {
 		public ArrayList<ReviewVO> reviewList(int rseq) {
 			ArrayList<ReviewVO> list=new ArrayList<>();
 			String sql="select*from review where rseq=? order by review_seq desc";
-		
 			con=Dbman.getConnection();
 			try {
 				pstmt=con.prepareStatement(sql);
@@ -418,15 +412,10 @@ public class ResDao {
 
 		public ArrayList<RestaurantVO> searchKey(String key) {
 			ArrayList<RestaurantVO>list=new ArrayList<>();
-			
 		      con=Dbman.getConnection();
-		      
 		      String sql = "select rname, rseq, rimage, kind, hash from search  "
 		      		+ " where fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%'  "
 		      		+ "group by rname,rseq,rimage,kind,hash";
-		      
-		      
-		      
 		      try {
 		         pstmt=con.prepareStatement(sql);
 		         System.out.println(key);
@@ -434,9 +423,7 @@ public class ResDao {
 		         pstmt.setString(2, key);
 		         pstmt.setString(3, key);		       
 		         rs=pstmt.executeQuery();
-	         
 		         while(rs.next()) {
-		        	 
 		            RestaurantVO rvo=new RestaurantVO();		      
 		            rvo.setRseq(rs.getInt("rseq"));
 		            rvo.setRname(rs.getString("rname"));
@@ -448,6 +435,21 @@ public class ResDao {
 		      } catch (SQLException e) {e.printStackTrace();
 		      } finally {Dbman.close(con, pstmt, rs);}
 		      return list;
-			
+		}
+
+
+		public String FimagebyRseq(int rseq) {
+			String fimage = "";
+			con=Dbman.getConnection();
+			String sql="select fimage from foodmenu where rseq=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,rseq);
+				rs=pstmt.executeQuery();
+				rs.next();
+				fimage = rs.getString("fimage");
+			} catch (SQLException e) {e.printStackTrace();
+			} finally { Dbman.close(con, pstmt, rs); }
+			return fimage;
 		}
 }
