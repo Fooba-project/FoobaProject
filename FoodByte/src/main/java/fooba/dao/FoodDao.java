@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import fooba.VO.FoodmenuVO;
-import fooba.VO.OrderDetailVO;
 import fooba.util.Dbman;
 
 public class FoodDao {
@@ -29,20 +28,29 @@ public class FoodDao {
 		finally {Dbman.close(con, pstmt, rs);}
 	}
 
-	public FoodmenuVO selectFood(int rseq) {
+	public FoodmenuVO selectFood(int fseq) {
 		con = Dbman.getConnection();
 		FoodmenuVO fvo = null;
-		String sql = "select * from foodmenu where rseq=?"; 
+		String sql = "select * from foodmenu where fseq=?"; 
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1,rseq);
+			pstmt.setInt(1,fseq);
 			rs = pstmt.executeQuery();
 			rs.next();
 			fvo=new FoodmenuVO();
-			fvo.setFimage(rs.getString("fimage").replace(".jfif",""));
-			fvo.setRseq(rs.getInt("rseq"));
+			fvo.setFcontent(rs.getString("fcontent"));
+			fvo.setFimage(rs.getString("fimage"));
 			fvo.setFname(rs.getString("fname"));
-			System.out.println(rs.getString("fname"));
+			fvo.setFprice(rs.getInt("fprice"));
+			fvo.setFseq(rs.getInt("fseq"));
+			fvo.setFside1(rs.getString("fside1"));
+			fvo.setFside2(rs.getString("fside2"));
+			fvo.setFside3(rs.getString("fside3"));
+			fvo.setFsideprice1(rs.getInt("fsideprice1"));
+			fvo.setFsideprice2(rs.getInt("fsideprice2"));
+			fvo.setFsideprice3(rs.getInt("fsideprice3"));
+			fvo.setRseq(rs.getInt("rseq"));
+			
 		} catch (SQLException e) {e.printStackTrace();}
 		catch (Exception e) {e.printStackTrace();} 
 		finally {Dbman.close(con, pstmt, rs);}
@@ -92,6 +100,7 @@ public class FoodDao {
 		}finally {Dbman.close(con, pstmt, rs);}
 		return rname;
 	}
+
 	
 	
 }

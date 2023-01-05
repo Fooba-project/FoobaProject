@@ -35,7 +35,6 @@ public class res_foodmenuAddAction implements Action {
                  request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
            );
            
-           System.out.println("rseq :"+multi.getParameter("rseq") );
            
            fvo.setRseq(Integer.parseInt(multi.getParameter("rseq")) );
            fvo.setFname(multi.getParameter("fname"));
