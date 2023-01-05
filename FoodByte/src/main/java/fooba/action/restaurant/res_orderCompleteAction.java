@@ -27,8 +27,7 @@ public class res_orderCompleteAction implements Action {
 		}else {
 			
 			OrderDao odao=OrderDao.getInstance();
-			odao.Complete(oseq);
-				
+			odao.nextOrderStatement(oseq);
 			url="restaurant/orderDetail.jsp";
 		}
 		request.getRequestDispatcher(url).forward(request, response);
