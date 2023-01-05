@@ -30,6 +30,7 @@ body {margin:0}
 
 /* 레스토랑 css  */
 
+
 .headback {width: 100%; height: 100px; background-color: rgb(255,204,0); margin: 0;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
 #mainlogo img {width: 100px; height: 100px;}
@@ -68,7 +69,8 @@ body {margin:0}
 
 /* #dummy{height:745px; width:100%;  } */
 
-#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto; overflow: hidden;}
+#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto;
+ overflow: hidden;}
 #res_name{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
@@ -80,10 +82,13 @@ text-align: center;line-height: 50px;}
 border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
 .res_infotab:hover{cursor: pointer;}
 #res_menuall{ width: 700px; float: left; position: relative; }
-#res_menuinfo{ width: 700px;}
+
 #res_menu_icon{width:20px; height:20px; }
 #res_menu_icon:hover{cursor: pointer; opacity:0.6;}
-#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+#res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231);
+ padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
+ #res_menu1{height: 140px;
+ padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
 #info_rev{width:700px; position:relative; top:0px; right: 0px; height:700px;}
 #rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;  position: relative;}
