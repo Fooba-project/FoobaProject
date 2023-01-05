@@ -33,6 +33,13 @@ function res_idcheck(){
 		window.open(url, "IdCheck", opt);	
 	}
 
+function res_post_zip(){
+	var url = "fooba.do?command=res_findZipNum";
+	var opt = "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=550, height=300, top=300, left=300";
+	window.open( url, "우편번호 찾기", opt);
+}
+
+
 </script>
 
 

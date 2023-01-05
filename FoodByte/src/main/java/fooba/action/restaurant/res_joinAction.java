@@ -24,7 +24,7 @@ public class res_joinAction implements Action {
 		
 		HttpSession session=request.getSession();
 		ServletContext context=session.getServletContext();
-		String path=context.getRealPath("resimage"); //�����̸����� ����
+		String path=context.getRealPath("resimage");
 		
 		MultipartRequest multi = new MultipartRequest(
 				request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
@@ -35,7 +35,7 @@ public class res_joinAction implements Action {
 		rvo.setRname(request.getParameter("rname"));
 		rvo.setOwnername(request.getParameter("ownername"));
 		rvo.setRphone(request.getParameter("rphone"));
-		rvo.setRaddress(request.getParameter("raddress"));
+		rvo.setRaddress(request.getParameter("raddress1")+" "+request.getParameter("raddress2"));
 		rvo.setRimage(multi.getFilesystemName("image"));
 		rvo.setContent(request.getParameter("content"));
 		rvo.setHash(request.getParameter("hash"));
@@ -45,8 +45,8 @@ public class res_joinAction implements Action {
 		
 		int result=rdao.insertRes(rvo);
 		
-		if(result==1)session.setAttribute("message","ȸ������ �Ϸ�! �α����ϼ���.");
-		else session.setAttribute("message","ȸ������ ����.  ��� �����ϸ� �����ڿ��� �����ϼ���.");
+		if(result==1)session.setAttribute("message","가입이 완료되었습니다. 승인을 기다리세요");
+		else session.setAttribute("message","가입 실패, 다시 시도하세요.");
 		
 		response.sendRedirect("fooba.do?command=res_loginForm");
 

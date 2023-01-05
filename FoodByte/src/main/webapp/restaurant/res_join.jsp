@@ -45,10 +45,21 @@
             <p class="error_text" id="error2"></p>
 
             <div class="join_list">
-                <input type="text" class="input_text" style="width: 490px;" name="raddress" placeholder="사업장 주소" readonly/>
-                <input type="button" id="id_btn" value="우편번호 검색" onclick="post_zip()"> 
+                <input type="text" class="input_text" style="width: 490px;" name="zip_num" placeholder="우편번호" readonly/>
+                <input type="button" id="id_btn" value="우편번호 검색" onclick="res_post_zip()"> 
             </div>
-
+			
+			<div class="join_list">
+                <input type="text" class="input_text" name="raddress1"
+                id="raddress"
+                 placeholder="사업장 주소" readonly/>
+            </div>
+            
+			<div class="join_list">
+                <input type="text" class="input_text" name="raddress2"
+                id="raddress"
+                 placeholder="상세 주소"/>
+            </div>
  
             <div class="member_join">
                 <div class="member_join_title">

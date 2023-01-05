@@ -28,7 +28,7 @@ public class res_findZipNumAction implements Action {
 		}
 		
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/findZipNum.jsp");
+		RequestDispatcher dp=request.getRequestDispatcher("restaurant/res_findZipnum.jsp");
 		dp.forward(request, response);
 
 	}
