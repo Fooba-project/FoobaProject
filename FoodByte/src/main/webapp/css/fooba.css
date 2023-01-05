@@ -107,7 +107,7 @@ float: left;}
 .redd{color: orange; font-weight: bold;}
 #gagemenu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .grayy{color: gray; font-weight: normal; font-size: 100%; }
-#조정요망 h2{font-weight: bold; }
+#cleanreview{font-weight: bold; }
 .smmenu{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
 #menujengbo{height: 50px;  }
 .menujengbotab{background-color: #fa6146;
@@ -115,7 +115,7 @@ height:50px; width:348px ;position: relative;float:left ;border :1px solid red;l
 #menudel{ width: 700px;}
 #gagejengbo{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid black;}
 #reviewbogi{text-align: center;}
-#조정요망 h1{color: orange;}
+#bigstarr{color: orange;}
 .reviewimage{ height: 200px;  }
 .reviewdel{position: relative;border-bottom: 1px solid rgb(231, 231, 231); height: 210px;}
 .rvsajin{margin: 0 auto; position: absolute;right: 5px; top: 5px;}
@@ -126,8 +126,7 @@ height:50px; width:348px ;position: relative;float:left ;border :1px solid red;l
 #jengboreview{width:700px; position:absolute; top:0px; right: 0px;}
 #reviewww{border-bottom: 1px solid black;}
 
- .popup {position: absolute; width: 460px;height: 760px;top: 50%;left: 50%;margin: 0 auto;
-transform: translate(-50%, -50%);border: 1px solid gray;background-color: #fffcfd;}
+ .popup {position: absolute; width: 460px;height: 760px;top: 50%;left: 50%;margin: 0 auto; transform: translate(-50%, -50%);border: 1px solid gray;background-color: #fffcfd;}
 .popupheader {width: 460px;height: 60px;background-color: #d53651;color: white;opacity: 0.9;padding: 25px 0 0 0;z-index: 2;text-align: center;font-weight: 700;font-size: 21px;}
 .popupimgg {height: 220px;margin: auto;display: block;padding-top: 14px;}
 .popupcontext {padding-inline: 5%;}
@@ -147,7 +146,7 @@ transform: translate(-50%, -50%);border: 1px solid gray;background-color: #fffcf
 .pcount {outline: none;border: none;font-size: 17px;background-color: #fffcfd;text-align: center;width: 30px;height: 30px;}
 .popuptotal {position: relative;height: 58.5px;font-weight: 700;}
 .ptotal {position: absolute;left: 0px;line-height: 58.5px;}
-.pwon {position: absolute;line-height: 58.5px;right: 0px;font-size: 23px;color: #d53651;}
+.pwon {border: 1px solid white; font-weight: bold; position: absolute; right: 0px; font-size: 23px; color: #d53651; text-align: center;}
 .popupbutton {position: fixed;width: 460px;border: none;font-size: 16px;font-weight: bold;margin: 0;}
 #plbutton {position: relative;float: left;height: 48px;width: 50%;background-color: #515050;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}
 #prbutton {position: relative;height: 48px;width: 50%;background-color: #d53651;float: right;cursor: pointer;font-weight: 700;border: none;color: white;font-size: 16px;}

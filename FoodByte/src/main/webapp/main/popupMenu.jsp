@@ -35,14 +35,14 @@
               <div class="optionprice">+500원 &nbsp;</div></label
             >
           </div>
-          <div class="checks">
+          <div class="popupchecks">
             <input type="checkbox" id="option2" />
             <label for="option2"
               >소스2
               <div class="optionprice">+500원 &nbsp;</div></label
             >
           </div>
-          <div class="checks">
+          <div class="popupchecks">
             <input type="checkbox" id="option3" />
             <label for="option3"
               >소스3

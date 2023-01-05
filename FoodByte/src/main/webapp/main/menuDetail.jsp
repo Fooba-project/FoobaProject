@@ -48,8 +48,8 @@
                 </div>
                 <div id="reviewbogi">
                     <div id="reviewww">
-                        <h2>클린리뷰</h2>
-                        <h1>★★★★☆ 4.4</h1>
+                        <h2 id="cleanreview">클린리뷰</h2>
+                        <h1 id="bigstarr">★★★★☆ 4.4</h1>
                     </div>
                     <c:forEach items="${ReviewList}" var="ReviewVO">
 	                    <div class="reviewdel">
@@ -66,7 +66,7 @@
 			                    </c:choose>
 							</a><br><br>
 	                        <br>
-								${ReviewVO.content }
+								&nbsp;${ReviewVO.content }
 	                        </div>
 	                        <c:choose>
 		                        <c:when test="${ReviewVO.image==null}"></c:when>
