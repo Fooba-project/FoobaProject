@@ -20,7 +20,7 @@ public class res_loginFormAction implements Action {
 		HttpSession session=request.getSession();
 		RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");
 		
-		if(rvo!=null) url="fooba.do?command=res_show";
+		if(rvo!=null) url="fooba.do?command=res_foodmenu";
 
 		request.getRequestDispatcher(url).forward(request, response);
 	}
