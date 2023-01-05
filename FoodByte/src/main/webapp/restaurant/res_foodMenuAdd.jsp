@@ -76,11 +76,16 @@
                                 style="width:120px; height:35px;" name="fsideprice3" placeholder=" 예) 3000"/> 원
                             </div><hr>
                                 
-                                
-                    	</div>
+                            <div id="res_tab">
+            					<div class="res_infotab"  style="width:100%; height:50px; border-radius:5px; background:rgb(255,204,0);"
+            					onclick="location.href='fooba.do?command=res_foodmenuAdd'" >등록</div>                                
+                    		</div>
 	        
 	                </div>                
               
+              
+             </div>
+          
             </form>
             </div>   
         </div>
