@@ -16,8 +16,6 @@ public class RestaurantVO {
 	private int rtip;
 	private int ryn;
 	
-	
-	
 	public void setRbiznum(String rbiznum) {
 		this.rbiznum = rbiznum;
 	}
@@ -27,8 +25,6 @@ public class RestaurantVO {
 	public void setRyn(int ryn) {
 		this.ryn = ryn;
 	}
-	
-	
 	public String getRid() {
 		return rid;
 	}
