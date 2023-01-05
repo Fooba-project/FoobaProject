@@ -40,12 +40,10 @@ public class MemberDao {
 				mvo.setAddress2(rs.getString("address2"));
 				mvo.setNick(rs.getString("nick"));
 				mvo.setIndate(rs.getTimestamp("indate"));
-				
 			}
 			
 		} catch (SQLException e) {e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
-		
 		return mvo;
 	}
 
@@ -89,11 +87,8 @@ public class MemberDao {
 			pstmt.setString(8,mvo.getPhone() );
 			pstmt.setString(9, mvo.getNick());
 			result=pstmt.executeUpdate();
-			
-			
 		} catch (SQLException e) {e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
-		
 		return result;
 	}
 
@@ -101,10 +96,8 @@ public class MemberDao {
 		int result=0;
 		con=Dbman.getConnection();
 		String sql="update member set pwd=?, email=? , phone=?, zip_num=?,address1=?,address2=? ,nick=? where id = ? ";
-		
 		try {
 			pstmt=con.prepareStatement(sql);
-			
 			pstmt.setString(1,mvo.getPwd());
 			pstmt.setString(2,mvo.getEmail());
 			pstmt.setString(3,mvo.getPhone());
@@ -113,13 +106,10 @@ public class MemberDao {
 			pstmt.setString(6, mvo.getAddress2());
 			pstmt.setString(7, mvo.getNick());
 			pstmt.setString(8,mvo.getId());
-			
 			result=pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
-		
-		
 		return result;
 
 	}
@@ -134,6 +124,4 @@ public class MemberDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 	}
-	
-	
 }
