@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
+
 <script src = "../script/jquery-3.6.1.js"></script>
 <script src="../script/fooba.js"></script>
 </head>
@@ -55,7 +56,9 @@ body {margin: 0; position:relative;}
     .admin_searchres_btn{background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }   
     #admin_list_table{margin: auto; border: 1px solid; width:810px; }
     #admin_list_table th{background-color:rgb(99, 123, 153); font-size: 17px; color: white;}
-    #admin_list_table td{background-color: white; text-align: center; font-weight: 600;}
+
+
+
 </style>
 <body>
     <div class="headback" id="adminheadback">
@@ -67,15 +70,15 @@ body {margin: 0; position:relative;}
     <div class="headbuttons" id="adminheadbuttons">
     	<c:choose>
     		<c:when test="${empty loginAdmin}">
-	    		<input type="button" value="Restaurant" class="headbutton" onclick="location.href='fooba.do?command=res_info'">
+	    		<input type="button" value="Res" class="headbutton" onclick="location.href='fooba.do?command=res_login'">
 	    		<input type="button" value="Home" class="headbutton" onclick="location.href='fooba.do?command=index'">
     		</c:when>
     		<c:otherwise>
-    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=adminLogout'">
-	    		<input type="button" value="가게관리" class="headbutton" onclick="location.href='fooba.do?command=adminRestaurantList'">
-	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=adminMemberKick'">
-	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=adminorderList'">
-	    		<input type="button" value="QnA" class="headbutton" onclick="location.href='fooba.do?command=adminQnaList'">
+    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=admin_logout'">
+	    		<input type="button" value="가게관리" class="headbutton" onclick="location.href='fooba.do?command=admin_restaurantList'">
+	    		<input type="button" value="회원관리" class="headbutton" onclick="location.href='fooba.do?command=admin_memberKick'">
+	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=admin_orderList'">
+	    		<input type="button" value="QnA" class="headbutton" onclick="location.href='fooba.do?command=admin_qnaList'">
     		</c:otherwise>
     	</c:choose>
     </div>

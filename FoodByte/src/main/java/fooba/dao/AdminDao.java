@@ -61,12 +61,12 @@ public class AdminDao {
 		int count=0;
 		
 		con=Dbman.getConnection();
-		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' and result=?";
+		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%'";// and ryn=?;
 		//key 값만 따로 하는 이유는 null 이 들어갔을때 오류가 날 수있기때문
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
-			pstmt.setString(2, result);
+			//pstmt.setString(2, result);
 			rs=pstmt.executeQuery();
 			if(rs.next())count=rs.getInt("cnt");
 		} catch (SQLException e) {	e.printStackTrace();
@@ -80,16 +80,16 @@ public class AdminDao {
 		con=Dbman.getConnection();
 		String sql="select * from ("
 				+"select * from("
-				+ "select rownum as rn, r.* from((select * from restaurant where rname like '%'||?||'%' and result=? order by rseq desc) r )"
+				+ "select rownum as rn, r.* from((select * from restaurant where rname like '%'||?||'%' order by rseq desc) r )"
 				+ ") where rn>=?"
-				+ ") where rn<=?";
+				+ ") where rn<=?"; //ryn=?
 		//오타 제대로 확인
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
-			pstmt.setString(2, result);
-			pstmt.setInt(3,paging.getStartNum());
-			pstmt.setInt(4,paging.getEndNum());
+			//pstmt.setString(2, result);
+			pstmt.setInt(2,paging.getStartNum());
+			pstmt.setInt(3,paging.getEndNum());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				RestaurantVO rvo=new RestaurantVO();
@@ -105,7 +105,7 @@ public class AdminDao {
 				rvo.setRseq(rs.getInt("rseq"));
 				rvo.setRbiznum(rs.getString("rbiznum"));
 				rvo.setKind(rs.getInt("kind"));
-				rvo.setRtip(rs.getInt("rtrip"));
+				rvo.setRtip(rs.getInt("rtip"));
 				rvo.setRyn(rs.getInt("ryn"));
 				list.add(rvo);
 			}

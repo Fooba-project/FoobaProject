@@ -52,19 +52,17 @@ public class admin_restaurantListAction implements Action {
 			}else {
 				session.removeAttribute("key");
 			}
-						
-			
-			
+									
 			Paging paging = new Paging();
 			paging.setPage(page);
 			paging.setDisplayRow(10);
 			paging.setDisplayPage(10);
 			
-			int count = adao.getAllCount("restaurant","rname",key,"1");
+			int count = adao.getAllCount("restaurant","rname",key,"");
 			paging.setTotalCount(count);
 			
 			
-			ArrayList<RestaurantVO>resList=adao.selectRes(paging,key,"1");
+			ArrayList<RestaurantVO>resList=adao.selectRes(paging,key,"");
 			
 			request.setAttribute("resList", resList);
 			request.setAttribute("paging", paging); 

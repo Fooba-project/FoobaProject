@@ -2,6 +2,7 @@ package fooba.action.admin;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +17,8 @@ public class admin_logoutAction implements Action {
 		
 		HttpSession session=request.getSession();
 		session.removeAttribute("loginAdmin");
-		session.removeAttribute("message");
-		request.getRequestDispatcher("fooba.do?command=admin_loginForm").forward(request, response);
-		
+		RequestDispatcher dp=request.getRequestDispatcher("fooba.do?command=admin_loginForm");
+		dp.forward(request, response);
 	}
 
 }
