@@ -18,12 +18,8 @@ public class menupopupAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session=request.getSession();
-		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");
 		String url="main/popupMenu.jsp";
-		if(mvo==null) {
-			url="fooba.do?command=loginForm";
-		}else {
+		
 			
 			int fseq=Integer.parseInt(request.getParameter("fseq"));
 			FoodDao fdao=FoodDao.getInstance();
@@ -31,7 +27,7 @@ public class menupopupAction implements Action {
 			
 			request.setAttribute("FoodmenuVO", fvo);
 			
-		}
+		
 		RequestDispatcher dp=request.getRequestDispatcher(url);
 		dp.forward(request, response);
 	}

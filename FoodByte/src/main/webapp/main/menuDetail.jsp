@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 	<!-- RestaurantVO, FoodmenuList, ReviewList-->
+	<div id="realjenche">
         <div id="jenche">
         <div id="gageirm">${RestaurantVO.rname}</div>
         <div id="gagemain">
@@ -9,15 +10,15 @@
          
             <div id="gibon">
             <a class="redd">★★★★☆</a> 4.4<br>
-            <a class="grayy">배달팁</a>&nbsp;&nbsp;  ${RestaurantVO.rtip}<br>
+            <a class="grayy">배달팁</a>&nbsp;&nbsp;  ${RestaurantVO.rtip} 원<br>
             <a class="grayy">결제</a>&nbsp;&nbsp; 신용카드, 현금<br>            
             <a class="grayy">해시태그</a>&nbsp;&nbsp; #${RestaurantVO.hash}<br>
             </div>
         </div>
         <br>
         <div id="menujengbo">
-            <div class="menujengbotab" onclick="menumove(-1);" >메뉴</div>
-            <div class="menujengbotab" onclick="menumove(1);">가게 정보/리뷰</div>
+            <div class="menujengbotab" onclick="menumove(-1);" id="menutabb">메뉴</div>
+            <div class="menujengbotab" onclick="menumove(1);" id="jengbotabb">가게 정보/리뷰</div>
         </div>
         
         <div id="tul">
@@ -83,5 +84,35 @@
         </div>
     </div>
     
+    <div id="jangbagunitul">
+        <div id="jbtitle">주문표</div>
+        
+        <div class="jbitem" id="jb5">
+            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
+            <div class="jbitemprice">
+                35000 원&nbsp;
+                <input type="button" class="jbcancel" value="X" onclick="deletejb(5);">
+            </div>
+        </div>
+        <div class="jbitem" id="jb6">
+            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
+            <div class="jbitemprice">
+                30000 원&nbsp;
+                <input type="button" class="jbcancel" value="X" onclick="deletejb(6);">
+            </div>
+        </div>
+        <div class="jbitem" id="jb7">
+            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
+            <div class="jbitemprice">
+                25000 원&nbsp;
+                <input type="button" class="jbcancel" value="X" onclick="deletejb(7);">
+            </div>
+        </div>
+
+        <div class="baedaltip">배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;</div>
+        <div class="jbtotal">합계 : <input type="text" value="100000" id="jbtotalprice">원&nbsp;&nbsp;</div>
+        <input type="button" value="주문하기" class="jbwanryo">
+    </div>
+  </div>  
 
 <%@ include file="../footer.jsp"%>

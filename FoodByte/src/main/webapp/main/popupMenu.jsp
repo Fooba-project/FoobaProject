@@ -6,9 +6,238 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-<div class="popup">
+<style type="text/css">
+      .popup {
+        position: absolute;
+        width: 460px;
+        height: 760px;
+        top: 50%;
+        left: 50%;
+        margin: 0 auto;
+        transform: translate(-50%, -50%);
+        
+        background-color: #fffcfd;
+      }
+
+      .popupheader {
+        width: 460px;
+        height: 60px;
+        background-color: #fa6146;;
+        color: white;
+        opacity: 0.9;
+        padding: 25px 0 0 0;
+        z-index: 2;
+        text-align: center;
+        font-weight: 700;
+        font-size: 21px;
+      }
+      .popupimgg {
+        height: 200px;
+        margin: auto;
+        display: block;
+        padding-top: 14px;
+      }
+
+      .popupcontext {
+        padding-inline: 5%;
+      }
+
+      #contextsub {
+        text-align: center;
+      }
+      .contextsub2 {
+        line-height: 10%;
+      }
+
+      .contextprice {
+        position: relative;
+        height: 58.5px;
+        font-weight: 700;
+      }
+
+      .contextprice1 {
+        position: absolute;
+        left: 0px;
+        line-height: 58.5px;
+      }
+      .contextprice2 {
+        position: absolute;
+        right: 0px;
+        line-height: 58.5px;
+      }
+
+      .contextoption {
+        border: 1px solid black;
+        position: relative;
+        font-weight: 700;
+        height: 120px;
+      }
+
+      .optionnn {
+        position: relative;
+        left: 0px;
+        line-height: 30px;
+      }
+
+      .optionprice {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        font-size: 15px;
+      }
+      .popupchecks {
+        margin-left: 10px;
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .popupquantity {
+        line-height: 58.5px;
+        position: relative;
+        height: 58.5px;
+        font-weight: 700;
+      }
+      .pquantity {
+        width: 100px;
+      }
+
+      .pbox {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        line-height: 32px;
+      }
+
+      .pbox_button {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 3px;
+        border: none;
+        background: #f2f0f1;
+      }
+
+      .pcount {
+        outline: none;
+        border: none;
+        font-size: 17px;
+        background-color: #fffcfd;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+      }
+
+
+      .popuptotal {
+        position: relative;
+        height: 58.5px;
+        font-weight: 700;
+      }
+      .ptotal {
+        position: absolute;
+        left: 0px;
+        line-height: 58.5px;
+      }
+      #sumprice{
+        line-height: 50px;
+      }
+      #sumwon{
+        line-height: 55px;
+      }
+
+      .pwon {
+        border: 1px solid white;
+        font-weight: bold;
+        position: absolute;
+        right: 0px;
+        font-size: 23px;
+        color: #d53651;
+        text-align: center;
+      }
+
+      .popupbutton {
+        position: fixed;
+        width: 460px;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      #plbutton {
+        position: relative;
+        float: left;
+        height: 48px;
+        width: 50%;
+        background-color: #515050;
+        cursor: pointer;
+        font-weight: 700;
+        border: none;
+        color: white;
+        font-size: 16px;
+      }
+      #prbutton {
+        position: relative;
+        height: 48px;
+        width: 50%;
+        background-color: #fa6146;
+        float: right;
+        cursor: pointer;
+        font-weight: 700;
+        border: none;
+        color: white;
+        font-size: 16px;
+      }
+    </style>
+    <script src="../script/jquery-3.6.1.js"></script> 
+    <script type="text/javascript">
+        
+        
+        var menunum=1;
+        var total=0;
+        function menucount(x){
+          if(x==-1&&menunum==1)return;
+          if(x==1&&menunum==99)return;
+          if(x==-1) {menunum--;
+            document.getElementById("sumprice").value =
+            parseInt(document.getElementById("sumprice").value) - parseInt(document.getElementById("nomal").value)
+          }
+          if(x==1) {menunum++;
+            document.getElementById("sumprice").value =
+            parseInt(document.getElementById("sumprice").value) + parseInt(document.getElementById("nomal").value)
+          }
+          document.getElementById("menusuryang").value=menunum;
+
+          var summmmm=0;
+            total = menunum*parseInt(document.getElementById("nomal").value);
+            a = document.getElementsByClassName("c");
+            for(i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    summmmm += parseInt(a[i].value)*menunum;
+                }
+            }
+          document.getElementById("sumprice").value = summmmm+total;
+        }
+        
+        function calc(){
+            var summmmm=0;
+            total = menunum*parseInt(document.getElementById("nomal").value);
+            a = document.getElementsByClassName("c");
+            for(i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    summmmm += parseInt(a[i].value)*menunum;
+                }
+            }
+            document.getElementById("sumprice").value = summmmm+total;
+        }
+          
+    </script>
+  </head>
+  <body>
+    <form>
+    <div class="popup">
       <div class="popupheader">메뉴상세</div>
       <div class="popupcontext">
         <img class="popupimgg"
@@ -17,35 +246,34 @@
         <div id="contextsub">
           <h2 class="contextsub2">${FoodmenuVO.fname }</h2>
           <p>
-           ${FoodmenuVO.fcontent }
+				${FoodmenuVO.fcontent }
           </p>
         </div>
         <div class="contextprice">
           <div class="contextprice1">&nbsp; 가격</div>
-          <div class="contextprice2">${FoodmenuVO.fprice }원 &nbsp;</div>
+          <div class="contextprice2">${FoodmenuVO.fprice}원 &nbsp;</div>
         </div>
         <div class="contextoption">
           <div class="optionnn">&nbsp; 옵션&nbsp;(추가선택 가능)</div>
+          <input type="hidden" value="${FoodmenuVO.fprice}" id="nomal"><!--value 음식가격 -->
           <div class="popupchecks">
-            <input type="checkbox" id="option1" />
-            <label for="option1"
-              >${FoodmenuVO.fside1 }
-              <div class="optionprice">+${FoodmenuVO.sideprice }원 &nbsp;</div></label
-            >
+            <input type="checkbox"   
+            class="c" onclick="calc()" value="${FoodmenuVO.fsideprice1 }"/>
+            ${FoodmenuVO.fside1 }
+              <div class="optionprice">+${FoodmenuVO.fsideprice1 }원 &nbsp;</div>
           </div>
+
           <div class="popupchecks">
-            <input type="checkbox" id="option2" />
-            <label for="option2"
-              >소스2
-              <div class="optionprice">+500원 &nbsp;</div></label
-            >
+            
+            <input type="checkbox" class="c" onclick="calc()" value="${FoodmenuVO.fsideprice2 }"/>
+           ${FoodmenuVO.fside2 }
+              <div class="optionprice">+${FoodmenuVO.fsideprice2 }원 &nbsp;</div>
           </div>
+
           <div class="popupchecks">
-            <input type="checkbox" id="option3" />
-            <label for="option3"
-              >소스3
-              <div class="optionprice">+500원 &nbsp;</div></label
-            >
+            <input class="c" type="checkbox"  onclick="calc()" value="${FoodmenuVO.fsideprice3 }"/>
+            ${FoodmenuVO.fside3 }
+              <div class="optionprice">+${FoodmenuVO.fsideprice3 }원 &nbsp;</div>
           </div>
         </div>
 
@@ -55,23 +283,22 @@
             <input
               class="pbox_button"
               value="-"
-              count_range="m"
-              type="button"
+              type="button" onclick="menucount(-1)"
             />
-            <input class="pcount" value="1" maxlength="2" readonly />
+            <input type="text" class="pcount" value="1" maxlength="2" readonly id="menusuryang" />
             <!--읽기전용으로 readonly 표시-->
             <input
               class="pbox_button"
               value="+"
-              count_range="p"
-              type="button"
+              type="button" onclick="menucount(1)"
             />
           </div>
         </div>
 
         <div class="popuptotal">
           <div class="ptotal">&nbsp; 총 주문금액</div>
-          <div class="pwon">20000원 &nbsp;</div>
+          <input id="sumprice" value="${FoodmenuVO.fprice }" class="pwon" size="6" readonly>
+          <a class="pwon" id="sumwon">원</a>
         </div>
       </div>
 
@@ -80,6 +307,8 @@
         <button id="prbutton">주문하기</button>
       </div>
     </div>
+    </form>
 
-</body>
+   
+  </body>
 </html>

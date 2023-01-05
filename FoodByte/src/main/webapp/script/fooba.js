@@ -217,8 +217,19 @@ function menumove(x){
     if(x==-1&&menunumm==0)return;
     if(x==1&&menunumm==1)return;
 
-    if(x==-1)menunumm--;
-    if(x==1)menunumm++;
+    if(x==-1){menunumm--;
+                document.getElementById("menutabb").style.background='#fa6146';
+                document.getElementById("menutabb").style.border='1px solid #fa6146';
+                document.getElementById("jengbotabb").style.background='#ffb6a9';
+                document.getElementById("jengbotabb").style.border='1px solid #ffb6a9';
+
+            }
+            if(x==1){menunumm++;
+                document.getElementById("menutabb").style.background='#ffb6a9';
+                document.getElementById("menutabb").style.border='1px solid #ffb6a9';
+                document.getElementById("jengbotabb").style.background='#fa6146';
+                document.getElementById("jengbotabb").style.border='1px solid #fa6146';
+            }
     var dist=menunumm*700*-1;
     document.getElementById("tul").style.left=dist+'px';
 }
@@ -238,25 +249,7 @@ function go_search(hash){
 	document.search.submit();
 }       
 
-  $(function () {
-    $(".pbox input[count_range]").click(function (e) {
-      e.preventDefault();
-      var type = $(this).attr("count_range");
-      var $count = $(this).parent().children("input.count");
-      var count_val = $count.val(); 
-      if (type == "m") {
-        if (count_val < 2) {
-          // 기본값 1에서 더이상 내려가지 못하게 합니다.
-          return;
-        }
-        $count.val(parseInt(count_val) - 1);
-      } else if (type == "p") {
-        $count.val(parseInt(count_val) + 1);
-      }
-    });
-    
 
-  });
   
  function withdrawalMember(){
  	var ok=confirm("정말 탈퇴하겠습니까?");
@@ -266,6 +259,15 @@ function go_search(hash){
 }    
 
   function menupopup(fseq){
-            window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no");
+  
+	var popupX = (window.screen.width / 2) - 230;
+     window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no, top=100 , left="+ popupX);
   } 
+  
+  function deletejb(ths){
+            
+            const div = document.getElementById('jb'+ths);
+  
+            div.remove();
+   }
  
