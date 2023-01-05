@@ -21,7 +21,7 @@
         <c:forEach items="${resList}" var="RestaurantVO">
                 <tr>
                     <td height="23" align="center">${RestaurantVO.rseq}</td>
-                    <td style="text-align:center; padding-left:40px;">
+                    <td style="text-align:left; padding-left:40px;">
                         <a style="text-decoration-line: none;"href="#" onClick="go_detail('${RestaurantVO.rseq}');">${RestaurantVO.rname}</a>
                     </td>
                     <td style=text-align:center;>

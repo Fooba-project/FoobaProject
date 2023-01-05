@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
- 
+
 <article>
     <h2 class="admin_list">질문 리스트</h2>   
     <br> 
@@ -21,7 +21,7 @@
         <c:forEach items="${qnaList}" var="QnaVO">
                 <tr>
                     <td style="text-align:center;">${QnaVO.qseq}</td>
-                    <td style="text-align:center; padding-left:20px;">
+                    <td style="text-align:left; padding-left:20px;">
                     <a style="text-decoration-line: none;"href="#" onClick="go_detail('${QnaVO.qseq}');">${QnaVO.subject}</a>                
                 </tr>
          </c:forEach>
