@@ -47,6 +47,35 @@ public class FoodDao {
 		finally {Dbman.close(con, pstmt, rs);}
 		return fvo;
 	}
+
+	public FoodmenuVO getFoodDetail(int fseq) {
+		FoodmenuVO fvo=null;
+		con=Dbman.getConnection();
+		String sql="select*from foodmenu where fseq=?";
+			
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, fseq);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				fvo.setRseq(rs.getInt("rseq"));
+				fvo.setFseq(rs.getInt("fseq"));
+				fvo.setFname(rs.getString("fname"));
+				fvo.setFprice(rs.getInt("fprice"));
+				fvo.setFimage(rs.getString("fimage"));
+				fvo.setFcontent(rs.getString("fcontent"));
+				fvo.setFside1(rs.getString("fside1"));
+				fvo.setFsideprice1(rs.getInt("fsideprice1"));
+				fvo.setFside1(rs.getString("fside2"));
+				fvo.setFsideprice1(rs.getInt("fsideprice2"));
+				fvo.setFside1(rs.getString("fside3"));
+				fvo.setFsideprice1(rs.getInt("fsideprice3"));
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
+		return fvo;
+	}
 	
 	
 }
