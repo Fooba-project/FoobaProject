@@ -14,29 +14,33 @@
             <th width="70">주문일</th>
             <th width="80">진행상태</th>
         </tr>
-        <c:forEach items="${memberOrderList }" var="orderVO">
+        <c:forEach items="${memberOrderList }" var="ovo">
             <tr>
                 <td>
-                    
+                    ${ovo.rname }
                 </td>
                 <td>
-                    메뉴
+                    ${ovo.oname }
                 </td>
                 <td>
-                    금액
+                    ${ovo.totalprice }
                 </td>
                 <td>
-                    <fmt:formatDate value="${orderVO.indate }" type="date"/>
+                    <fmt:formatDate value="${ovo.indate }" type="date"/>
                 </td>
                 <td>
-                    주문확인중
+                    <c:choose>
+                    	<c:when test="${ovo.result==0}">
+                    		주문확인중
+                    	</c:when>
+                    	<c:when test="${ovo.result==1}">
+                    		배송중
+                    	</c:when>
+                    	<c:when test="${ovo.result==2}">
+                    		배송완료
+                    	</c:when>
+                    </c:choose>                  
                 </td>
-                <!-- <td><a href="fooba.do?command=memberOrderDetail&oseq=${orderVO.oseq }">
-                <h3>${orderVO.pname }</h3></a></td>
-                <td>${orderVO.quantity }</td>
-                <td><fmt:formatNumber value="${orderVO.price2*orderVO.quantity }" type="currency"/></td>
-                <td><fmt:formatDate value="${orderVO.indate }" type="date"/></td>
-                <td>처리 진행중</td> -->
             </tr>
         </c:forEach>
         
