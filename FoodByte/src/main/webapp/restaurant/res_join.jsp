@@ -9,7 +9,7 @@
             <div class="join_list">
                 <input type="text" class="input_text" style="width: 490px;" name="rid" placeholder="아이디" onkeyup="chkIdCode(event)"/>
                 <input type="hidden" name="reid" value=""/>
-                <input type="button" id="id_btn" value="중복 확인" onclick="alert('a')">
+                <input type="button" id="id_btn" value="중복 확인" onclick="res_idcheck()">
             </div>
 
             <div class="join_list">
