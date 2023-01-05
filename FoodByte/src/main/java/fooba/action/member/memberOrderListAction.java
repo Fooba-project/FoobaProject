@@ -25,7 +25,6 @@ public class memberOrderListAction implements Action {
 	      if(mvo == null) {
 	         url = "fooba.do?command=loginForm";
 	      }else {
-	    	
 	         OrderDao odao = OrderDao.getInstance();
 	         ArrayList<OrderViewVO>list = odao.selectOrdersById(mvo.getId(),"0");
 	         request.setAttribute("memberOrderList", list);

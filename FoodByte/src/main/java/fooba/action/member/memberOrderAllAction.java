@@ -20,14 +20,13 @@ public class memberOrderAllAction implements Action {
 		
 		  String url = "member/memberOrderList.jsp";
 	      HttpSession session = request.getSession();
-	      String nick = request.getParameter("nick");
+	      String id = request.getParameter("id");
 	      MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
 	      if(mvo == null) {
 	         url = "fooba.do?command=loginForm";
-	      }else {         
+	      }else {
 	         OrderDao odao = OrderDao.getInstance();
 	         ArrayList<OrderViewVO>list = odao.selectOrdersById(id, ""); // 0 - ��޿Ϸ� ��
-	      
 	         request.setAttribute("memberOrderList", list);
 	         
 	      }

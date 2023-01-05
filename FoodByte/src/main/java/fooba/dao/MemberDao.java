@@ -18,17 +18,6 @@ public class MemberDao {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	/*
-	public void Method() {
-		con = Dbman.getConnection();
-		String sql = ""; 
-		try {
-			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-		} catch (SQLException e) {e.printStackTrace();}
-		catch (Exception e) {e.printStackTrace();} 
-		finally {Dbman.close(con, pstmt, rs);}
-	}*/
 
 	public MemberVO getMember(String id) {
 		MemberVO mvo=null;
