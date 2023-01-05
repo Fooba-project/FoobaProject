@@ -1,40 +1,14 @@
-/* Drop Triggers */
-
-DROP TRIGGER TRI_NEW_TABLE_fseq;
-
-
-select*from order_view
-select*from restaurant;
 
 /* Drop Tables */
-drop view order_view
-DROP TABLE order_view CASCADE CONSTRAINTS;
-DROP TABLE Admin CASCADE CONSTRAINTS;
+DROP TABLE admin CASCADE CONSTRAINTS;
 DROP TABLE cart CASCADE CONSTRAINTS;
 DROP TABLE order_detail CASCADE CONSTRAINTS;
 DROP TABLE foodmenu CASCADE CONSTRAINTS;
 DROP TABLE review CASCADE CONSTRAINTS;
 DROP TABLE orders CASCADE CONSTRAINTS;
-DROP TABLE Member CASCADE CONSTRAINTS;
+DROP TABLE member CASCADE CONSTRAINTS;
 DROP TABLE qna CASCADE CONSTRAINTS;
 DROP TABLE restaurant CASCADE CONSTRAINTS;
-
-select*from review
-
-/* Drop Sequences */
-
-DROP SEQUENCE SEQ_NEW_TABLE_fseq;
-
-
-
-
-/* Create Sequences */
-
-CREATE SEQUENCE SEQ_NEW_TABLE_fseq INCREMENT BY 1 START WITH 1;
-
-select*from admin
-
-/* Create Tables */
 
 
 
@@ -231,8 +205,6 @@ ALTER TABLE review
 alter table review add reviewyn number(2);
 
 
-select * from admin;
-
 
 create or replace view order_view
 as
@@ -267,3 +239,9 @@ ALTER TABLE qna MODIFY subject VARCHAR2(200);
 ALTER TABLE qna MODIFY content VARCHAR2(2000);
 
 
+ create or replace view search
+   as
+   select a.rseq, a.rname, a.hash, a.rimage, a.kind,
+      b.fname, b.fimage
+   from restaurant a, foodmenu b
+   where a.rseq=b.rseq;
