@@ -1,6 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> 
 <%@ include file="res_header.jsp"%>
+<script type="text/javascript">
+
+function joincheck() {
+	if(document.res_join_send_form.rid.value.length==0){
+		alert("아이디를 입력하세요");
+		document.res_join_send_form.rid.focus();
+	}
+	else if(document.res_join_send_form.reid.value.length==0){
+		alert("아이디 중복확인을 하지 않았습니다.");
+		document.res_join_send_form.rid.focus();		
+	}
+	else if(document.res_join_send_form.reid.value != document.res_join_send_form.rid.value){
+		alert("아이디 중복확인을 하지 않았습니다.");
+		document.res_join_send_form.rid.focus();	
+	}
+	else if(document.res_join_send_form.rpwd.value.length==0){
+		alert("비밀번호를 입력하세요.");
+		document.res_join_send_form.rpwd.focus();
+	}
+	else if(document.res_join_send_form.rpwd.value != document.res_join_send_form.respwdchk.value){
+		alert("비밀번호 확인이 일치하지 않습니다.");
+		document.res_join_send_form.respwdchk.focus();
+	}
+	else if(document.res_join_send_form.ownername.length==0){
+		alert("사업자 이름을 입력하세요.");
+		document.res_join_send_form.ownername.focus();
+	}
+	else if(document.res_join_send_form.rname.length==0){
+		alert("가게 이름을 입력하세요.");
+		document.res_join_send_form.rname.focus();
+	}
+	else if(document.res_join_send_form.rbiznum.length==0){
+		alert("사업자 등록번호를 입력하세요.");
+		document.res_join_send_form.rbiznum.focus();
+	}
+	else if(document.res_join_send_form.rphone.value.length==0){
+		alert("가게 전화번호를 입력하세요.");
+		document.res_join_send_form.rphone.focus();
+	} 
+	else if(document.res_join_send_form.raddress1.value.length==0){
+		alert("주소를 입력하세요.");
+		res_post_zip();
+	}
+	else if(document.res_join_send_form.raddress2.value.length==0){
+		alert("주소를 입력하세요.");
+		document.res_join_send_form.raddress2.focus();
+	}
+	else if( document.res_join_send_form.res_agree.checked==false){
+		alert("약관에 동의하셔야 회원가입이 가능합니다.");
+		document.res_join_send_form.res_agree.focus();
+	}
+	else {
+		document.res_join_send_form.submit();
+	}
+}
+
+
+</script>
 <div class="res_join">
     <div class="res_join_title">사업자 회원가입</div>
     <div style="border-top: 2px solid  rgb(255,204,0); margin-top:15px;"></div>
@@ -33,12 +91,12 @@
             </div>
 
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="15" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
+                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
             </div>
 
             <div class="join_list">
                 <input type="text" class="input_text" name="rphone"
-                id="rphone"
+                maxlength="13" id="rphone"
                  placeholder="가게 전화번호"/>
             </div>
 
@@ -74,7 +132,7 @@
                 </div> 
                 <div class="join_list">
                     <div id="images_upload_box">
-                         <input type="file" class="input_text" name="rimage">
+                         <input type="file" class="input_text" name="image">
                     </div>
                 </div>
                    
@@ -98,7 +156,7 @@
                     <textarea placeholder="사업장 소개글을 작성해주세요" name="content"></textarea>
                 </div>
                 <div class="join_list">
-                    <input type="text" class="input_text" name="rtip" placeholder="기본배달료를 입력하세요">
+                    <input type="text" class="input_text" name="rtip" maxlength="4" placeholder="기본배달료를 입력하세요">
                 </div>
                 <div class="join_list">
                     <input type="text" class="input_text" name="hash" placeholder="해시태그">
@@ -110,7 +168,7 @@
  
                 <br>
                 <div id="join_agree_btn">
-                    <input type="checkbox" name="useragree" id="join_agree" value="Y">
+                    <input type="checkbox" name="res_agree" id="join_agree" value="Y">
                     <label for="join_agree">이용약관</label>
                 </div>
                 <div id="join_agree_text">

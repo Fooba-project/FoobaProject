@@ -7,7 +7,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="css/fooba.css" rel="stylesheet"> 
-<script src="script/fooba.js"></script>
+<script type="text/javascript">
+
+function idok( rid ){
+	opener.res_join_send_form.rid.value = rid;
+	opener.res_join_send_form.reid.value = rid;
+	self.close();
+}
+
+</script>
 </head>
 <body>
 <div id="idcheck_box">
