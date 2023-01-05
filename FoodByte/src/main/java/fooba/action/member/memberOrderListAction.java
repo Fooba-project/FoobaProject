@@ -63,9 +63,9 @@ public class memberOrderListAction implements Action {
 		        		 oname = oname + ") ";
 	        		 } else oname = oname+" ";
 	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
+	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
 	        	 }
-	        	 
-	        	 ovo.setTotal(total);
+	        	 ovo.setTotalprice(total);
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
 	         }
