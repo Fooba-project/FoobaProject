@@ -2,7 +2,7 @@
 <%@ include file="../header.jsp"%>
 <%@ include file="mypage_sub.jsp"%>
 
-
+<div id="memberOrderList">
 <article  id="orderArticle">
     <h2>진행중인 주문내역</h2>
     <hr><br>
@@ -43,7 +43,11 @@
                 </td>
             </tr>
         </c:forEach>
-        
     </table>
 </article>
+
+<jsp:include page="paging/paging.jsp">
+	<jsp:param name="command" value="fooba.do?command=memberOrderList"/>
+</jsp:include>	
+</div>
 <%@ include file="../footer.jsp"%>
