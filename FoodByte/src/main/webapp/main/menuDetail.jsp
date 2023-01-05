@@ -88,7 +88,7 @@
         <div id="jbtitle">주문표</div>
         
         <div class="jbitem" id="jb5">
-            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
+            <a class="jbitemname">샘피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
             <div class="jbitemprice">
                 35000 원&nbsp;
                 <input type="button" class="jbcancel" value="X" onclick="deletejb(5);">
