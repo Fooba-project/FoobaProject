@@ -165,7 +165,7 @@ public class OrderDao {
 	public ArrayList<OrderVO> selectOrdersIngById(String id) {
 		ArrayList<OrderVO> list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select *from order where id=? and result in(0,1) order by oseq desc";
+		String sql="select * from orders where id=? and result in(0,1) order by oseq desc";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, id);
