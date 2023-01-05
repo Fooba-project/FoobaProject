@@ -28,12 +28,12 @@ public class res_showAction implements Action {
 	      }else {
 	    	  
 	    	ResDao rdao=ResDao.getInstance();
-	  		ArrayList<FoodmenuVO>FoodList=rdao.foodList(rvo.getRseq());
-	  		ArrayList<ReviewVO>reviewList=rdao.reviewList(rvo.getRseq());
+	  		//ArrayList<FoodmenuVO>FoodList=rdao.foodList(rvo.getRseq());
+	  		//ArrayList<ReviewVO>reviewList=rdao.reviewList(rvo.getRseq());
 	  		
 	  		request.setAttribute("RestaurantVO", rvo);
-	  		request.setAttribute("FoodList", FoodList);
-	  		request.setAttribute("ReviewList",reviewList);
+	  		
+	  		// request.setAttribute("ReviewList",reviewList);
     	  
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);

@@ -79,14 +79,14 @@ text-align: center;line-height: 50px;}
 .res_infotab{background-color: rgb(255,204,0); height:50px; width:348px ;position: relative; float:left ;
 border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
 .res_infotab:hover{cursor: pointer;}
-#res_menuall{ width: 1400px; float: left; position: relative;}
-#res_menuinfo{ width: 700px; border:1px solid green;}
+#res_menuall{ width: 700px; float: left; position: relative; }
+#res_menuinfo{ width: 700px;}
 #res_menu_icon{width:20px; height:20px; }
 #res_menu_icon:hover{cursor: pointer; opacity:0.6;}
 #res_menu{height: 140px; border-bottom: 1px solid rgb(231, 231, 231); padding-left:20px; font-weight: bold; line-height: 30px; position: relative;}
 .res_meima{height: 120px;width: 120px; position: absolute; right: 10px;top: 0px;}
-#info_rev{width:700px; position:absolute; top:0px; right: 0px;}
-#rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid black; position: relative;}
+#info_rev{width:700px; position:relative; top:0px; right: 0px; height:700px;}
+#rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;  position: relative;}
 
 #res_num{position: relative; margin:0 auto;}
 
@@ -127,7 +127,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
 	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
 	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
-	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_info'">   		
+	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show'">   		
 	    	</c:otherwise>
     	</c:choose>
     </div>
