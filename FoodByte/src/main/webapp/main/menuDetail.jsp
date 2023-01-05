@@ -23,7 +23,7 @@
         <div id="tul">
             <div id="menudel">
             	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
-	                <div id="gagemenu">
+	                <div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
 	                    <h3>${FoodmenuVO.fname }</h3>
 	                    <a class="grayy">${FoodmenuVO.fcontent }</a><br>
 	                    ${FoodmenuVO.fprice}원

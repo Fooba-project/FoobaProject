@@ -12,27 +12,25 @@
       <div class="popupheader">메뉴상세</div>
       <div class="popupcontext">
         <img class="popupimgg"
-          src="/images/Chicken\bbq\23000_72606988a4ff18e71f4f7f82d5ef75b31615794552.jpg"
+          src="images/foodmenu/${FoodmenuVO.fimage}"
         />
         <div id="contextsub">
-          <h2 class="contextsub2">bbq 황금올리브</h2>
+          <h2 class="contextsub2">${FoodmenuVO.fname }</h2>
           <p>
-            맛있는 치킨입니다. 맛있는 치킨입니다. 맛있는 치킨입니다. 맛있는
-            치킨입니다. 맛있는 치킨입니다. 맛있는 치킨입니다. 맛있는 치킨입니다.
-            맛있는 치킨입니다. 맛있는 치킨.
+           ${FoodmenuVO.fcontent }
           </p>
         </div>
         <div class="contextprice">
           <div class="contextprice1">&nbsp; 가격</div>
-          <div class="contextprice2">20000원 &nbsp;</div>
+          <div class="contextprice2">${FoodmenuVO.fprice }원 &nbsp;</div>
         </div>
         <div class="contextoption">
           <div class="optionnn">&nbsp; 옵션&nbsp;(추가선택 가능)</div>
           <div class="popupchecks">
             <input type="checkbox" id="option1" />
             <label for="option1"
-              >소스1
-              <div class="optionprice">+500원 &nbsp;</div></label
+              >${FoodmenuVO.fside1 }
+              <div class="optionprice">+${FoodmenuVO.sideprice }원 &nbsp;</div></label
             >
           </div>
           <div class="popupchecks">

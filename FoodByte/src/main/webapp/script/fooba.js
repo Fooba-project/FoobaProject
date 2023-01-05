@@ -254,6 +254,8 @@ function go_search(hash){
         $count.val(parseInt(count_val) + 1);
       }
     });
+    
+
   });
   
  function withdrawalMember(){
@@ -261,5 +263,9 @@ function go_search(hash){
  	if(ok){
 		location.href="fooba.do?command=memberWithdrawal";
 	}
-}     
+}    
+
+  function menupopup(fseq){
+            window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no");
+  } 
  
