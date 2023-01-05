@@ -15,7 +15,7 @@ public class res_foodmenuUpdateFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="restaurant/resfoodMenuAdd.jsp";
+		String url="restaurant/res_foodmenuUpdateForm.jsp";
 	      
 	      HttpSession session=request.getSession();
 	      RestaurantVO rvo=(RestaurantVO) session.getAttribute("loginRes");

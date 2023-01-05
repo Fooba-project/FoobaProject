@@ -22,19 +22,6 @@ function resCheck(){
 
 }
 
-var menunumm=0;
-
-function menumove(x){
-    if(x==-1&&menunumm==0)return;
-    if(x==1&&menunumm==1)return;
-
-    if(x==-1)menunumm--;
-    if(x==1)menunumm++;
-    var dist=menunumm*700*-1;
-    document.getElementById("res_menuall").style.left=dist+'px';
-}
-
-
 </script>
 <script src = "../script/jquery-3.6.1.js"></script>
 <script src="/script/res.js"></script>
@@ -140,7 +127,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
 	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
 	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
-	    		    		
+	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_info'">   		
 	    	</c:otherwise>
     	</c:choose>
     </div>
