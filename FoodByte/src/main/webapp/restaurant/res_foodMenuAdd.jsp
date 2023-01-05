@@ -1,7 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ include file="/restaurant/res_header.jsp"%>
+<script type="text/javascript">
+function menu_insert(){
+	
+	document.food_menu.action="fooba.do?command=res_foodmenuAdd";
+	document.food_menu.submit();
+	
+}
+</script>
+
+
 
 <div id="res_main">
+
         <div id="res_name">${RestaurantVO.rname}</div>
         
         <div id="res_info">
@@ -24,7 +35,8 @@
         
         <div id="res_menuall_a">
         
-        <form id="res_menuall_a" name="menuadd" method="post" enctype="multipart/form-data" >
+        <form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" >
+        	<input type="hidden" name="rseq" value="${RestaurantVO.rseq}"> 
             	<div id="res_menuinfo">
 
 	            	<div id="res_menu1">	                	
@@ -42,7 +54,7 @@
                             
                             <h3>메뉴 소개</h3>
                             <div id="food_text">
-                            	<textarea rows="5" cols="50" style="border-radius:10px;"> </textarea>
+                            	<textarea name="fcontent" rows="5" cols="50" style="border-radius:10px;"> </textarea>
                                 
                             </div><hr>
 	                    			  
@@ -78,10 +90,10 @@
                                 
                             <div id="res_tab">
             					<div class="res_infotab"  style="width:100%; height:50px; border-radius:5px; background:rgb(255,204,0);"
-            					onclick="location.href='fooba.do?command=res_foodmenuAdd'" >등록</div>                                
+            					onclick="menu_insert()" >등록</div>                                
                     		</div>
 	        
-	                </div>                
+	                </div>               
               
               
              </div>

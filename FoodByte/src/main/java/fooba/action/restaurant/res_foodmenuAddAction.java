@@ -29,13 +29,15 @@ public class res_foodmenuAddAction implements Action {
         }else {
            FoodmenuVO fvo=new FoodmenuVO();
            ServletContext context=session.getServletContext();
-           String path=context.getRealPath("foodmenu_images");
+           String path=context.getRealPath("images/foodmenu");
            
            MultipartRequest multi = new MultipartRequest(
                  request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
            );
            
-           fvo.setRseq(Integer.parseInt(multi.getParameter("rseq")));
+           System.out.println("rseq :"+multi.getParameter("rseq") );
+           
+           fvo.setRseq(Integer.parseInt(multi.getParameter("rseq")) );
            fvo.setFname(multi.getParameter("fname"));
            fvo.setFprice(Integer.parseInt(multi.getParameter("fprice")));
            fvo.setFcontent(multi.getParameter("fcontent"));
@@ -45,17 +47,14 @@ public class res_foodmenuAddAction implements Action {
            fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice2")));
            fvo.setFside1(multi.getParameter("fside3"));
            fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice3")));
-           if(multi.getFilesystemName("fimage")==null)fvo.setFimage(multi.getParameter("oldImage"));
-           else fvo.setFimage(multi.getFilesystemName("fimage"));
+           fvo.setFimage(multi.getFilesystemName("fimage"));
            
            ResDao rdao=ResDao.getInstance();
            rdao.addFoodMenu(fvo);
            url=url+"&rseq="+fvo.getRseq();
            
         }
-        request.getRequestDispatcher(url).forward(request, response);
-
-
+        response.sendRedirect(url);
 	}
 
 }
