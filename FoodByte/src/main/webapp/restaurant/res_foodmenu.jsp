@@ -28,8 +28,12 @@
         <div id="res_menuall">
             <div id="res_menuinfo">
             	<c:forEach items="${FoodList}" var="FoodmenuVO">
-	                <div id="res_menu">
-	                    <h3>${FoodmenuVO.fname }</h3>
+	                <div id="res_menu">	                	
+	                    	<h3>${FoodmenuVO.fname }
+	                    		<img id="res_menu_icon" src="images/update.png" onClick="location.href='fooba.do?command=#'">	 
+	                    		<img id="res_menu_icon" src="images/delete.png" onClick="location.href='fooba.do?command=#'">	                    
+	                    	</h3>
+	                    			  
 	                    <a class="basic">${FoodmenuVO.fcontent }</a><br>
 	                    ${FoodmenuVO.fprice}원
 	                    <img class="res_meima" src="images/foodmenu/${FoodmenuVO.fimage}">
