@@ -15,7 +15,14 @@ public class OrderVO {
 	private String address2;
 	private int totalprice;
 	private String phone;
+	private int total;
 	
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	public String getOname() {
 		return Oname;
 	}
