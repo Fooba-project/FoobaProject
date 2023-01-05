@@ -23,6 +23,7 @@ import fooba.action.main.categoryAction;
 import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
 import fooba.action.main.logoutAction;
+import fooba.action.main.menupopupAction;
 import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
 import fooba.action.member.findZipNumAction;
@@ -80,6 +81,7 @@ public class ActionFactory {
 		else if (command.equals("search")) ac = new searchAction();// 검색 후 가게 리스팅
 		else if (command.equals("category")) ac = new categoryAction();// 카테고리별 가게 리스팅
 		else if (command.equals("restaurantDetail")) ac = new restaurantDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
+		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
 		else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
 //		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
