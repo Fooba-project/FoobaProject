@@ -212,7 +212,9 @@ public class AdminDao {
 				ovo.setOphone(rs.getString("ophone"));
 				ovo.setOdseq(rs.getInt("odseq"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
-
+				ovo.setRname(rs.getString("rname"));
+				ovo.setRseq(rs.getInt("rseq"));
+				
 				list.add(ovo);	
 			
 			}

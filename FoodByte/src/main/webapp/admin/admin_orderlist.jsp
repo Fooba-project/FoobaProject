@@ -23,7 +23,7 @@
                     <td style="text-align:center;">${OrderViewVO.id}</td>
                     <td style="text-align:center;">${OrderViewVO.rname}</td>
                     <td style="text-align:center;">${OrderViewVO.totalprice}</td>                    
-                    <td style=text-align:center;><fmt:formatDate value="${OrderViewVO.indate}"/></td> 
+                    <td style="text-align:center;"><fmt:formatDate value="${OrderViewVO.indate}"/></td> 
                 </tr>
          </c:forEach>
          </table>
