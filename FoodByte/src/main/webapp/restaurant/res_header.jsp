@@ -166,11 +166,11 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=index'">
     		</c:when>
     		<c:otherwise>
-    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout'">
-	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order'">
-	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review'">
-	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu'">
-	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show'">   		
+    			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout&page=1&search=&key='">
+	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order&page=1&search=&key='">
+	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review&page=1&search=&key='">
+	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu&page=1&search=&key='">
+	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show&page=1&search=&key='">   		
 	    	</c:otherwise>
     	</c:choose>
     </div>
