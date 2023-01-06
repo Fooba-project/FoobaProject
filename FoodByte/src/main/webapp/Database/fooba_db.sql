@@ -201,15 +201,12 @@ ALTER TABLE review
 	REFERENCES restaurant (rseq)
 ;
 
-
 alter table review add reviewyn number(2);
-
-select*from order_view
 
 create or replace view order_view
 as
 select a.oseq, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.address1 as oadd1, a.address2 as oadd2, a.phone as ophone, a.totalprice,
-      b.odseq, b.quantity, b.result, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
+      b.odseq, b.quantity, a.result, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
       c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
       d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3 ,
       e.rname,e.rseq

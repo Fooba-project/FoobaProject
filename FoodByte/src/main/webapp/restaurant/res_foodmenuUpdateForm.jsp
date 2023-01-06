@@ -26,61 +26,64 @@
         
         <form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" >
         	<input type="hidden" name="rseq" value="${RestaurantVO.rseq}"> 
+        	<input type="hidden" name="fseq" value="${FoodmenuVO.fseq}"> 
+        	<input type="hidden" name="oldImage" value="${FoodmenuVO.fimage}">
             	<div id="res_menuinfo">
 
 	            	<div id="res_menu1">	                	
 	                    	<h2>메뉴 수정</h2><hr>
                             <h3>메뉴 이름</h3>
                             <div id="food_text">
-                                <input type="text" class="food_text" name="fname" placeholder="${FoodmenuVO.fname}"/>
+                                <input type="text" class="food_text" name="fname" value="${FoodmenuVO.fname}"/>
                             </div><hr>
                             
 
                             <h3>메뉴 가격</h3>
                             <div id="food_text">
-                                <input type="text" class="food_text" name="fprice" placeholder=" ${FoodmenuVO.fprice}"/> 원
+                                <input type="text" class="food_text" name="fprice" value=" ${FoodmenuVO.fprice}"/> 원
                             </div><hr>
                             
                             <h3>메뉴 소개</h3>
                             <div id="food_text">
-                            	<textarea name="fcontent" rows="5" cols="50" style="border-radius:10px;
-                            	placeholder="${FoodmenuVO.fcontent}"> </textarea>
+                            	<textarea name="fcontent" rows="5" cols="50" style="border-radius:10px;"
+                            	>${FoodmenuVO.fcontent}</textarea>
                                 
                             </div><hr>
 	                    			  
-                            <h3>메뉴 사진</h3>                    
+                            <h3>메뉴 사진</h3>        
+                            	<img src="images/foodmenu/${FoodmenuVO.fimage}" width="100px"><br>            
                                 <input type="file" name="fimage" />
                                 
                              <h3>사이드메뉴 1</h3>
                             <div id="food_text">
                            		<input type="text" class="food_text" 
-                           		style="width:120px; height:35px;" name="fside1" placeholder=" ${FoodmenuVO.fside1}"/>
+                           		style="width:120px; height:35px;" name="fside1" value=" ${FoodmenuVO.fside1}"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice1" placeholder=" ${FoodmenuVO.fsideprice1}"/> 원
+                                style="width:120px; height:35px;" name="fsideprice1" value=" ${FoodmenuVO.fsideprice1}"/> 원
                             </div><hr>
                             
                              <h3>사이드메뉴 2</h3>
                             <div id="food_text">
                            		<input type="text" class="food_text" 
-                           		style="width:120px; height:35px;" name="fside2" placeholder=" ${FoodmenuVO.fside2}"/>
+                           		style="width:120px; height:35px;" name="fside2" value=" ${FoodmenuVO.fside2}"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice2" placeholder=" ${FoodmenuVO.fsideprice2}"/> 원
+                                style="width:120px; height:35px;" name="fsideprice2" value=" ${FoodmenuVO.fsideprice2}"/> 원
                             </div><hr>
                             
                              <h3>사이드메뉴 3</h3>
                             <div id="food_text">
                            		<input type="text" class="food_text" 
-                           		style="width:120px; height:35px;" name="fside3" placeholder="${FoodmenuVO.fside3}"/>
+                           		style="width:120px; height:35px;" name="fside3" value="${FoodmenuVO.fside3}"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice3" placeholder="${FoodmenuVO.fsideprice3}"/> 원
+                                style="width:120px; height:35px;" name="fsideprice3" value="${FoodmenuVO.fsideprice3}"/> 원
                             </div><hr>
                                 
                             <div id="res_tab">
             					<div class="res_infotab"  style="width:100%; height:50px; border-radius:5px; background:rgb(255,204,0);"
-            					onclick="menu_insert()" >등록</div>                                
+            					onclick="menu_update()" >수정</div>                                
                     		</div>
 	        
 	                </div>               

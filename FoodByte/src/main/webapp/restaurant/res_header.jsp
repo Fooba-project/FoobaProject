@@ -39,11 +39,14 @@ function res_post_zip(){
 	window.open( url, "우편번호 찾기", opt);
 }
 
-function menu_insert(){
-	
+function menu_insert(){	
 	document.food_menu.action="fooba.do?command=res_foodmenuAdd";
-	document.food_menu.submit();
-	
+	document.food_menu.submit();	
+}
+
+function menu_update(){
+	document.food_menu.action="fooba.do?command=res_foodmenuUpdate";
+	document.food_menu.submit();	
 }
 
 </script>

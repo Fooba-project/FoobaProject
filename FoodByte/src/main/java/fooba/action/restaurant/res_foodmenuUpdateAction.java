@@ -22,13 +22,13 @@ public class res_foodmenuUpdateAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="fooba.do?command=res_foodmenu";
         HttpSession session=request.getSession();
-        RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginUser");
+        RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");
         if(rvo==null) {
            url="fooba.do?command=res_loginForm";
         }else {
            FoodmenuVO fvo=new FoodmenuVO();
            ServletContext context=session.getServletContext();
-           String path=context.getRealPath("foodmenu_images");
+           String path=context.getRealPath("images/foodmenu");
            
            MultipartRequest multi = new MultipartRequest(
                  request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()

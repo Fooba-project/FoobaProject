@@ -25,7 +25,7 @@ public class res_foodmenuUpdateFormAction implements Action {
 	         if(rvo==null) 
 	            url="fooba.do?command=res_loginForm";
 	         else {
-	        	 System.out.println("fseq : "+request.getParameter("fseq") );
+	        	 
 	        	 int fseq=Integer.parseInt(request.getParameter("fseq"));
 	        	 
 		        	 
