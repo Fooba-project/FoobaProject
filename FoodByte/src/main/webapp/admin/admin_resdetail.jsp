@@ -1,41 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ include file="admin_header.jsp"%>
     
 <div class="res_join">
-    <div class="res_join_title">사업자 회원가입</div>
-    <div style="border-top: 2px solid  rgb(255,204,0); margin-top:15px;"></div>
+    <div class="res_join_title">레스토랑 정보</div>
+    <div style="border-top: 2px solid   rgb(23,55,94); margin-top:15px;"></div>
     <form name="res_join_send_form" id="res_join_send_form" method="post" action="fooba.do?command=res_join" enctype="multipart/form-data">
         <table class="member_join_table">
             <div class="join_list">
-                <input type="text" class="input_text" name="rid" value="${rvo.resid}" onkeyup="chkIdCode(event)" readonly/>
-            
-            </div>
-
+                <input type="text" class="input_text" value=" 아이디 : ${rvo.rid}" readonly/>            
+            </div> 
             <div class="join_list">
-                <input type="password" class="input_text" name="rpwd" 
-                id="rpwd"
-                placeholder="비밀번호"/>
+                <input type="text" class="input_text" value="사장님 이름 : ${rvo.ownername}" readonly/> 
             </div>
-
             <div class="join_list">
-                <input type="password" class="input_text" name="respwdchk" id="respwdchk" placeholder="비밀번호 확인"/>
+                <input type="text" class="input_text" value="가게 번호 : ${rvo.rphone}" readonly/> 
             </div>
-
-            <p class="error_text" id="error1"></p>
-    
             <div class="join_list">
-                <input type="text" class="input_text" name="ownername" placeholder="사업자 이름"/>
+                <input type="text" id="rbiznum" class="input_text" value="사업자 번호 : ${rvo.rbiznum}" readonly/>
             </div>
-
-            <div class="join_list">
-                <input type="text" class="input_text" name="rname" placeholder="가게 이름"/>
-            </div>
-
-            <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
-            </div>
-
             <div class="join_list">
                 <input type="text" class="input_text" name="rphone"
                 maxlength="13" id="rphone"
@@ -65,7 +48,7 @@
                 <div class="member_join_title">
                     사업장 정보 입력
                 </div>
-                <div style="border-top:2px solid  rgb(255,204,0); margin-top:15px;">
+                <div style="border-top:2px solid  rgb(23,55,94); margin-top:15px;">
                 </div>
                 
             
@@ -127,3 +110,5 @@
             </div>
     </form>
 </div>
+
+<%@ include file="admin_footer.jsp"%>

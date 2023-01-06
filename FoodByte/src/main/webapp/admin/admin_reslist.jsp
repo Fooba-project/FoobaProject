@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
  
+ <script type="text/javascript">
+ function go_detail( rseq ){
+	var url = "fooba.do?command=admin_restaurantDetail&rseq=" + rseq;
+	document.frm.action = url; 
+	document.frm.submit();
+}
+ 
+ </script>
+ 
+ 
+ 
+ 
  <article>
     <h2 class="admin_list">가게 리스트</h2>   
     <br> 
