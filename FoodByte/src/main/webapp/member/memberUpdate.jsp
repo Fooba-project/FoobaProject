@@ -7,7 +7,7 @@
         <form name="member_update_form" id="member_join_send_form" method="post">
             <table class="member_join_table">
                 <div class="join_list">
-                    <input type="text" class="input_text" name="userid" value="${loginUser.id}" readonly/>
+                    <input type="text" class="input_text" name="userid" value="id : ${loginUser.id}" style="color:black" readonly/>
                 </div>
 
                 <div class="join_list">
@@ -21,36 +21,36 @@
                 <p class="error_text" id="error1"></p>
     
                 <div class="join_list">
-                    <input type="text" class="input_text" name="username" placeholder="${loginUser.name}" style="color:red;" readonly/>
+                    <input type="text" class="input_text" name="username" value="이름 : ${loginUser.name}" style="color:black" readonly/>
                 </div>
 
                 <div class="join_list">
-                    <input type="text" id="userphone" class="input_text" name="userphone" maxlength="13" placeholder="${loginUser.phone}" onkeyup="chkPhoneCode(event)" style="color:red;"/>
+                    <input type="text" id="userphone" class="input_text" name="userphone" maxlength="13" placeholder="전화번호 : ${loginUser.phone}" onkeyup="chkPhoneCode(event)" style="color:red;"/>
                 </div>
 
                 <div class="join_list">
                     <input type="text" class="input_text" name="useremail"
                     id="useremail"
-                    placeholder="${loginUser.email}" style="color:red;"/>
+                    placeholder="이메일 : ${loginUser.email}" style="color:red;"/>
                 </div>
 
                 <p class="error_text" id="error2"></p>
 
                 <div class="join_list">
-                    <input type="text" class="input_text" style="width: 490px; color:red;" name="userzip_num"  placeholder="${loginUser.zip_num}" readonly />
+                    <input type="text" class="input_text" style="width: 490px; color:red;" name="userzip_num"  placeholder="우편번호  : ${loginUser.zip_num}" readonly />
                     <input type="button" id="id_btn" value="우편번호 검색" onclick="post_zip()"> 
                 </div>
 
                 <div class="join_list">
-                    <input type="text" class="input_text" name="useraddress1" placeholder="${loginUser.address1}" style="color:red;"/>
+                    <input type="text" class="input_text" name="useraddress1" placeholder="주소 : ${loginUser.address1}" style="color:red;"/>
                 </div>
 
                 <div class="join_list">
-                    <input type="text" class="input_text" name="useraddress2" placeholder="${loginUser.address2}" style="color:red;"/>
+                    <input type="text" class="input_text" name="useraddress2" placeholder="상세 주소 : ${loginUser.address2}" style="color:red;"/>
                 </div>
 
                 <div class="join_list" margin="20px">
-                    <input type="text" class="input_text" name="usernick" placeholder="${loginUser.nick}" style="color:red;"/>
+                    <input type="text" class="input_text" name="usernick" placeholder="닉네임 : ${loginUser.nick}" style="color:red;"/>
                 </div>
 
                 <p class="error_text">* 입력하지 않을 시 이름으로 사용됩니다.</p>

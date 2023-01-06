@@ -32,7 +32,6 @@ import fooba.action.member.findZipNumAction;
 import fooba.action.member.idCheckFormAction;
 import fooba.action.member.memberJoinAction;
 import fooba.action.member.memberJoinFormAction;
-import fooba.action.member.memberMypageAction;
 import fooba.action.member.memberOrderAllAction;
 import fooba.action.member.memberOrderDetailAction;
 import fooba.action.member.memberOrderListAction;
@@ -100,7 +99,6 @@ public class ActionFactory {
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
 		else if (command.equals("memberJoin")) ac = new memberJoinAction();
 		// 마이페이지 (회원정보, 주문내역확인, 리뷰작성)
-		else if (command.equals("memberMypage")) ac = new memberMypageAction();
 		else if (command.equals("memberUpdateForm")) ac = new memberUpdateFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
 		else if (command.equals("memberWithdrawal")) ac = new memberWithdrawalAction();
