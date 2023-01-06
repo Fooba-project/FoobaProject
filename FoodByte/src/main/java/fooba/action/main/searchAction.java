@@ -18,20 +18,29 @@ public class searchAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 
 		String url="main/resList.jsp";
 		HttpSession session=request.getSession();
+
+		String hash=request.getParameter("hash");
+		String search = request.getParameter("searchtext");
+		System.out.println("search : "+search);
+		if (search==null) {
+			search = hash;
+		}
 			
-		String search=request.getParameter("search");
-		
 		ResDao rdao=ResDao.getInstance();
 		ArrayList<RestaurantVO>searchList=rdao.searchKey(search);
 		
 		for (RestaurantVO rvo : searchList) {
 			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
 		}
+		
+		if (hash==null) {
+			request.setAttribute("search", search);
+		}
+		
 		request.setAttribute("RList", searchList);
-		request.setAttribute("key", search);
 		request.getRequestDispatcher(url).forward(request, response);
 
 	}
