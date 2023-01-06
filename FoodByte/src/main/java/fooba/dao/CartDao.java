@@ -75,22 +75,7 @@ public class CartDao {
 		return list;
 	}
 
-	public void insertCart(CartVO cvo) {
-		String sql="insert into cart (cseq,id,fseq,quantity,sideyn1,sideyn2,sideyn3) values(cart_seq.nextVal,?,?,?,?,?,?)";
-		con=Dbman.getConnection();
-		
-		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1,cvo.getId());
-			pstmt.setInt(2, cvo.getFseq());
-			pstmt.setInt(3, cvo.getQuantity());
-			pstmt.setInt(4, cvo.getSideyn1());
-			pstmt.setInt(5, cvo.getSideyn2());
-			pstmt.setInt(6, cvo.getSideyn3());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {	e.printStackTrace();
-		}finally {Dbman.close(con, pstmt, rs);}
-	}
+	
 
 	public void deleteCart(int cseq) {
 		

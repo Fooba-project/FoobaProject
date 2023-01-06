@@ -33,7 +33,7 @@ public class cartInsertAction implements Action {
 			cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			
 			CartDao cdao=CartDao.getInstance();
-			cdao.insertCart(cvo);
+			//cdao.insertCart(cvo);
 			url="fooba.do?command=cartList";
 			
 		}

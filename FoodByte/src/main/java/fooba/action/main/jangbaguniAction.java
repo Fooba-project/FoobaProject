@@ -23,15 +23,13 @@ public class jangbaguniAction implements Action {
 			url="fooba.do?command=miniLoginForm";
 			request.setAttribute("fseq", request.getParameter("fseq"));
 		}else {
-		
-		
 		url="main/popupMenu.jsp";
-		
-		
-		
 		CartVO cvo=new CartVO();
-		request.setAttribute("jangresult", "1");
+		cvo.setFseq(Integer.parseInt(request.getParameter("fseq")));
+		cvo.setId(mvo.getId());		
+		cvo.setSideyn1(null);
 		
+		request.setAttribute("jangresult", "1");
 		
 		}
 		request.setAttribute("rseq", request.getParameter("rseq"));

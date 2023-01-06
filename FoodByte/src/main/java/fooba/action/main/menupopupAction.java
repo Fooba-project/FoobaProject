@@ -21,11 +21,11 @@ public class menupopupAction implements Action {
 		String url="main/popupMenu.jsp";
 		
 			
-			int fseq=Integer.parseInt(request.getParameter("fseq"));
-			FoodDao fdao=FoodDao.getInstance();
-			FoodmenuVO fvo=fdao.getFoodDetail(fseq);
-			
-			request.setAttribute("FoodmenuVO", fvo);
+		int fseq=Integer.parseInt(request.getParameter("fseq"));
+		FoodDao fdao=FoodDao.getInstance();
+		FoodmenuVO fvo=fdao.getFoodDetail(fseq);
+		
+		request.setAttribute("FoodmenuVO", fvo);
 			
 		
 		RequestDispatcher dp=request.getRequestDispatcher(url);
