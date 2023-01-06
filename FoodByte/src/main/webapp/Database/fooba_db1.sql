@@ -56,7 +56,7 @@ select*from foodmenu;
 
 --ryn = 0 으로 샘플데이터 하나 변경
 update restaurant set ryn=0 where rseq=48;
-
+ 
 
 
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
