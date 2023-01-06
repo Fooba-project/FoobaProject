@@ -56,7 +56,49 @@ function joincheck() {
 		document.res_join_send_form.submit();
 	}
 }
+function autoHypenPhone(str){
+    str = str.replace(/[^0-9]/g, '');
+    var tmp = '';
+    if( str.length < 4){
+        return str;
+    }else if(str.length < 7){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3);
+        return tmp;
+    }else if(str.length < 11){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 3);
+        tmp += '-';
+        tmp += str.substr(6);
+        return tmp;
+    }else{              
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 4);
+        tmp += '-';
+        tmp += str.substr(7);
+        return tmp;
+    }
+    return str;
+}
+function chkPhoneCode(event){
+    const regExp1 = /[^0-9a-zA-Z]/g;
+    if (regExp1.test(event.target.value)) {
+        event.target.value = event.target.value.replace(regExp1, '');
+    }
+    const regExp2 = /[0-9]/g;
+    if (regExp2.test(event.target.value)) {
+        var _val =  event.target.value.trim();
+        event.target.value = autoHypenPhone(_val);
+    }
 
+    const regExp3 = /^[a-zA-Z]*$/;
+    if (regExp3.test(event.target.value)) {
+        event.target.value = event.target.value.replace(regExp3, '');
+    }
+}
 
 </script>
 <div class="res_join">
@@ -91,13 +133,13 @@ function joincheck() {
             </div>
 
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" onkeyup="chkPhoneCode(event)"/>
+                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" />
             </div>
 
             <div class="join_list">
                 <input type="text" class="input_text" name="rphone"
                 maxlength="13" id="rphone"
-                 placeholder="가게 전화번호"/>
+                 placeholder="가게 전화번호" onkeyup="chkPhoneCode(event)"/>
             </div>
 
             <p class="error_text" id="error2"></p>

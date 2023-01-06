@@ -20,28 +20,29 @@ public class res_joinAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ResDao rdao=ResDao.getInstance();
+
 		RestaurantVO rvo=new RestaurantVO();
 		
 		HttpSession session=request.getSession();
 		ServletContext context=session.getServletContext();
-		String path=context.getRealPath("resimage");
+		String path=context.getRealPath("images/title");
 		
 		MultipartRequest multi = new MultipartRequest(
 				request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
 		);
 		
-		rvo.setRid(request.getParameter("rid"));
-		rvo.setRpwd(request.getParameter("rpwd"));
-		rvo.setRname(request.getParameter("rname"));
-		rvo.setOwnername(request.getParameter("ownername"));
-		rvo.setRphone(request.getParameter("rphone"));
-		rvo.setRaddress(request.getParameter("raddress1")+" "+request.getParameter("raddress2"));
-		rvo.setRimage(multi.getFilesystemName("image"));
-		rvo.setContent(request.getParameter("content"));
-		rvo.setHash(request.getParameter("hash"));
-		rvo.setRbiznum(request.getParameter("rbiznum"));
-		rvo.setKind(Integer.parseInt(request.getParameter("kind")));
-		rvo.setRtip(Integer.parseInt(request.getParameter("rtip")));
+		rvo.setRid(multi.getParameter("rid"));
+		rvo.setRpwd(multi.getParameter("rpwd"));
+		rvo.setRname(multi.getParameter("rname"));
+		rvo.setOwnername(multi.getParameter("ownername"));
+		rvo.setRphone(multi.getParameter("rphone"));
+		rvo.setRaddress(multi.getParameter("raddress1")+" "+request.getParameter("raddress2"));
+		rvo.setRimage(multi.getFilesystemName("rimage"));
+		rvo.setContent(multi.getParameter("content"));
+		rvo.setHash(multi.getParameter("hash"));
+		rvo.setRbiznum(multi.getParameter("rbiznum"));
+		rvo.setKind(Integer.parseInt(multi.getParameter("kind")));
+		rvo.setRtip(Integer.parseInt(multi.getParameter("rtip")));
 		
 		int result=rdao.insertRes(rvo);
 		
