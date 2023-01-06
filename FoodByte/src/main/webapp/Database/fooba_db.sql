@@ -27,7 +27,7 @@ ALTER TABLE cart
 	REFERENCES Member (id)
 ;
 
-/*여기까지*/
+/*여기까지*/ 
 
 
 
