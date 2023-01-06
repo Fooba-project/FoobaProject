@@ -183,7 +183,12 @@ nav#sub_menu a {text-decoration: none; color: #fa6146; font-family: verdana; fon
 nav#sub_menu a:first-child {border-top: 1px dotted #999}
 nav#sub_menu a:hover {color:white; font-size: 17px; background-color:#fa6146}
 
-table#memberOrderList {margin: 0 auto; border-collapse:collapse; border-top:2px solid #333; border-bottom:2px solid #333; width:75%; margin-bottom:20px}
+table#memberOrderList {margin: 0 auto; border-collapse:collapse; width:75%; margin-bottom:20px}
 #orderArticle h2 {text-align: center;}
 #orderArticle hr {width: 200px; border: 1px solid gray;}
-table#memberOrderList th, td {border-bottom:1px solid rgb(215, 215, 215); text-align: center; padding-top: 10px; padding-bottom: 10px;}
+table#memberOrderList td {border-bottom:1px solid rgb(215, 215, 215); text-align: center; padding-top: 10px; padding-bottom: 10px;  font-family: Verdana; border-top:2px solid #333; border-bottom:2px solid #333; padding:0}
+#memberOrderListimg img {width: 50px; height: 50px;}
+#memberOrderListMenu, #memberOrderListPrice {text-align: left; font-size: 100%; margin-top: 0; margin: 10px;}
+#memberOrderListIntime {text-align: left; font-size: 60%; margin: 10px;}
+#memberOrderListStatement {margin: 10px;}
+#memberOrderListDetail {margin: 10px;}
