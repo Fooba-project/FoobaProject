@@ -250,6 +250,7 @@
   	  	
     <form method="post" name="jangbaguni">
     <input type="hidden" value="${FoodmenuVO.rseq}" name="rseq">
+    <input type="hidden" value="${FoodmenuVO.fseq}" name="fseq">
     
     <div class="popup">
       <div class="popupheader">메뉴상세</div>

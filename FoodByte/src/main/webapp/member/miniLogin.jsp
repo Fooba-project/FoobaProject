@@ -30,10 +30,10 @@
 	                    <input type="password" id="login_pw" name="userpw" placeholder="비밀번호" title="비밀번호"
 	                maxlength="16" value="">
 	                </div>
-	    			<input type="hidden" name="fseq" >
+	    			<input type="hidden" name="fseq" value="${param.fseq}" >
 	                <div id="log_buttonbox">
 	                    <button type="submit" id="log_button" >
-	                        <span class="btn_text">로그인</span>
+	                        <span class="btn_text">로그인 ${param.fseq} a</span>
 	                    </button>
 	                </div>
 	            </div>
