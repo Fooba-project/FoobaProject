@@ -14,13 +14,13 @@ import fooba.action.admin.admin_qnaUpdateFormAction;
 import fooba.action.admin.admin_qnaViewAction;
 import fooba.action.admin.admin_qnaWriteAction;
 import fooba.action.admin.admin_qnaWriteFormAction;
+import fooba.action.admin.admin_restaurantDetailAction;
 import fooba.action.admin.admin_restaurantKickAction;
 import fooba.action.admin.admin_restaurantListAction;
 import fooba.action.admin.admin_restaurantOkAction;
 import fooba.action.main.cartDeleteAction;
 import fooba.action.main.cartInsertAction;
 import fooba.action.main.categoryAction;
-import fooba.action.main.jangbaguniAction;
 import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
 import fooba.action.main.logoutAction;
@@ -83,7 +83,6 @@ public class ActionFactory {
 		else if (command.equals("category")) ac = new categoryAction();// 카테고리별 가게 리스팅
 		else if (command.equals("restaurantDetail")) ac = new restaurantDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
 		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
-		else if (command.equals("jangbaguni")) ac=new jangbaguniAction();
 		else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
 //		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
@@ -148,6 +147,8 @@ public class ActionFactory {
 		else if (command.equals("admin_restaurantList")) ac = new admin_restaurantListAction(); // 가게관리 result 1 운영 가능 가게 
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
 		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
+		
+		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
 		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
 		else if (command.equals("admin_orderList")) ac = new admin_orderListAction();

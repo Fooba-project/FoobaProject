@@ -54,6 +54,11 @@ select*from restaurant;
 select*from foodmenu;
 -- 한식(1) -- 비빔밥
 
+--ryn = 0 으로 샘플데이터 하나 변경
+update restaurant set ryn=0 where rseq=48;
+
+
+
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
 values(restaurant_seq.nextVal, 1, 'bibim', 'bibim', '통큰 비빔밥', '123-12-12345',
 '최비빔' ,'070-1111-7878', '용산구 이태원동 225-67, 1층', '25.jpg', 

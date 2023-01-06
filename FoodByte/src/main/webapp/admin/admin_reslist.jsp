@@ -17,7 +17,7 @@
             </tr>
         </table><br>
         <table id="admin_list_table">
-            <tr><th>번호</th><th>가게명</th><th>가입현황</th></tr>       
+            <tr><th>번호</th><th>가게명</th><th>가입현황</th><th>승인현황</th></tr>       
         <c:forEach items="${resList}" var="RestaurantVO">
                 <tr>
                     <td height="23" align="center">${RestaurantVO.rseq}</td>
@@ -26,9 +26,15 @@
                     </td>
                     <td style=text-align:center;>
                         <c:choose>
-                              <c:when test='${RestaurantVO.ryn=="0"}'>신청</c:when>
-                                <c:otherwise>신청안함  </c:otherwise>
-                            </c:choose>
+                              <c:when test='${RestaurantVO.ryn=="1"}'>운영중
+   								 <td style="text-align:center;"><input type="button" value="2 승인거부"></td>
+                              </c:when>
+                              <c:when test='${RestaurantVO.ryn=="0"}'>미승인
+	                              <td style="text-align:center;"><input type="button" value="2 승인거부">
+	                              <input type="button" value="1 승인"></td>
+	                   		  </c:when>
+                              <c:otherwise><td style="text-align:center;">승인거부</td></c:otherwise>
+                        </c:choose>   
                     </td> 
                 </tr>
             </c:forEach>

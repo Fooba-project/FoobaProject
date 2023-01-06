@@ -1,3 +1,4 @@
+
 /* Drop Tables */
 DROP TABLE admin CASCADE CONSTRAINTS;
 DROP TABLE cart CASCADE CONSTRAINTS;
@@ -52,7 +53,7 @@ CREATE TABLE foodmenu
 	PRIMARY KEY (fseq)
 );
 
-
+select * from restaurant
 CREATE TABLE member
 (
 	id varchar2(20) NOT NULL,
