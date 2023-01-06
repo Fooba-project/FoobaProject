@@ -28,6 +28,7 @@
 			
 				<form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" >
 					<input type="hidden" name="rseq" value="${RestaurantVO.rseq}">	
+					<input type="hidden" name="oldImage" value="${RestaurantVO.rimage}">
            		
            		 <div id="info_rev">
 	       	    	<div id="rest_info">
@@ -61,6 +62,10 @@
 	                        <a class="basic">해시태그</a>&nbsp; 
 	                        	# <input type="text" name="hash" style="border-radius:5px; width:100px; height:20px;"
 	                        	value="${RestaurantVO.hash}"/><br><hr>
+	                        <a class="basic">가게로고</a>&nbsp; 
+	                        		<img src="images/title/${RestaurantVO.rimage}" width="100px"><br>            
+                                <input type="file" name="fimage" /><br><hr>
+	                        	
 	                    </div><br>
                     	
 					</div>
