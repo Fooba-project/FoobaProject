@@ -241,7 +241,7 @@ function go_search2(){
 }       
 
 function go_search(hash){
-	var url = "fooba.do?command=search&search="+ hash;  
+	var url = "fooba.do?command=search&hash="+ hash;  
 	document.search.action = url;
 	document.search.submit();
 }       

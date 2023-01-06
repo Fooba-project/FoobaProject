@@ -25,22 +25,28 @@ public class searchAction implements Action {
 		String hash=request.getParameter("hash");
 		String search = request.getParameter("searchtext");
 		System.out.println("search : "+search);
-		if (search==null) {
-			search = hash;
+		System.out.println("hash : " +hash);
+		
+		ResDao rdao=ResDao.getInstance();
+		
+		if (search!=null && !search.equals("")) {
+			ArrayList<RestaurantVO>searchList=rdao.searchKey(search);
+			for (RestaurantVO rvo : searchList) {
+				rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
+			}
+			request.setAttribute("search", search);
+			request.setAttribute("RList", searchList);
 		}
 			
-		ResDao rdao=ResDao.getInstance();
-		ArrayList<RestaurantVO>searchList=rdao.searchKey(search);
-		
-		for (RestaurantVO rvo : searchList) {
-			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
+		if (hash!=null && !hash.equals("")) {
+			ArrayList<RestaurantVO>searchList=rdao.searchKey(hash);
+			for (RestaurantVO rvo : searchList) {
+				rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
+			}
+			request.setAttribute("search", "#"+hash );
+			request.setAttribute("RList", searchList);
 		}
 		
-		if (hash==null) {
-			request.setAttribute("search", search);
-		}
-		
-		request.setAttribute("RList", searchList);
 		request.getRequestDispatcher(url).forward(request, response);
 
 	}
