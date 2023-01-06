@@ -47,42 +47,7 @@
                     
                 </div>
                 
-                <%-- <div id="res_revbogi">
-                    <div id="res_star">
-                        <h2>클린리뷰</h2>
-                        <h1>★★★★☆ 4.4</h1>
-                    </div>
-                    
-                    <c:forEach items="${ReviewList}" var="ReviewVO">
-	                    <div class="res_review_nae">
-	                        <div class="res_revcon">
-	                        <a class="res_revnick">${ReviewVO.id }</a>님 &nbsp; 
-	                        <a class="basic"><fmt:formatDate value="${orderVO.indate }" type="date"/></a><br>
-	                        <a class="res_star">
-								<c:choose>
-			                    	<c:when test="${ReviewVO.star==1}">★ 1.0</c:when>
-			                    	<c:when test="${ReviewVO.star==2}">★★ 2.0</c:when>
-			                    	<c:when test="${ReviewVO.star==3}">★★★ 3.0</c:when>
-			                    	<c:when test="${ReviewVO.star==4}">★★★★ 4.0</c:when>
-			                    	<c:otherwise>★★★★★ 5.0</c:otherwise>
-			                    </c:choose>
-							</a><br><br>
-	                        <br>
-								${ReviewVO.content }
-	                        </div>
-	                        <c:choose>
-		                        <c:when test="${ReviewVO.image==null}"></c:when>
-		                        <c:otherwise>
-			                        <div class="rev_image">
-			                            <img class="reviewimage" src="../images/${ReviewVO.image}">
-			                        </div>
-		                        </c:otherwise>
-	                        </c:choose>
-	                    </div>
-	                </c:forEach>
-                 </div> --%>
-                 
-                
+               
                 
             </div>
             

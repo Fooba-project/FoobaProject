@@ -32,7 +32,7 @@
 	                <div id="res_menu">	                	
 	                    	<h3>${FoodmenuVO.fname }
 	                    		<img id="res_menu_icon" src="images/update.png" onClick="location.href='fooba.do?command=res_foodmenuUpdateForm&fseq=${FoodmenuVO.fseq}'">	 
-	                    		<img id="res_menu_icon" src="images/delete.png" onClick="location.href='fooba.do?command=#'">	                    
+	                    		<img id="res_menu_icon" src="images/delete.png" onClick="location.href='fooba.do?command=res_foodmenuDelete&fseq=${FoodmenuVO.fseq}'">	                    
 	                    	</h3>
 	                    			  
 	                    <a class="basic">${FoodmenuVO.fcontent }</a><br>

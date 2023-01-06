@@ -36,15 +36,15 @@ public class res_foodmenuUpdateAction implements Action {
            
            fvo.setRseq(Integer.parseInt(multi.getParameter("rseq")));
            fvo.setFseq(Integer.parseInt(multi.getParameter("fseq")));
-           fvo.setFname(multi.getParameter("fname"));
+           fvo.setFname(multi.getParameter("fname"));         
            fvo.setFprice(Integer.parseInt(multi.getParameter("fprice")));
            fvo.setFcontent(multi.getParameter("fcontent"));
            fvo.setFside1(multi.getParameter("fside1"));
            fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice1")));
-           fvo.setFside1(multi.getParameter("fside2"));
-           fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice2")));
-           fvo.setFside1(multi.getParameter("fside3"));
-           fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice3")));
+           fvo.setFside2(multi.getParameter("fside2"));
+           fvo.setFsideprice2(Integer.parseInt(multi.getParameter("fsideprice2")));
+           fvo.setFside3(multi.getParameter("fside3"));
+           fvo.setFsideprice3(Integer.parseInt(multi.getParameter("fsideprice3")));
            if(multi.getFilesystemName("fimage")==null)fvo.setFimage(multi.getParameter("oldImage"));
            else fvo.setFimage(multi.getFilesystemName("fimage"));
            
