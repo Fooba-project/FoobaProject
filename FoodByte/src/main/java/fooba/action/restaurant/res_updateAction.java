@@ -28,7 +28,7 @@ public class res_updateAction implements Action {
 			url="fooba.do?command=res_loginForm";
 		}else {
 			ServletContext context=session.getServletContext();
-			String path=context.getRealPath("images/title"); //폴더 이미지로 변경
+			String path=context.getRealPath("images/title"); 
 			
 			MultipartRequest multi = new MultipartRequest(
 					request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()

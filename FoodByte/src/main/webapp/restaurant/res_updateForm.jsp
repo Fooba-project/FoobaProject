@@ -67,7 +67,7 @@
                                 <input type="file" name="fimage" /><br><hr>
 	                        	
 	                    </div><br>
-	                    <input type="submit" value="수정 완료" class="res_infotab">
+	                    <input type="submit" value="수정 완료" class="res_infotab"  style="width:700px;">
 	                    </div>
                     	
 					</div>
