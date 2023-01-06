@@ -32,7 +32,6 @@ import fooba.action.member.findZipNumAction;
 import fooba.action.member.idCheckFormAction;
 import fooba.action.member.memberJoinAction;
 import fooba.action.member.memberJoinFormAction;
-import fooba.action.member.memberMypageAction;
 import fooba.action.member.memberOrderAllAction;
 import fooba.action.member.memberOrderDetailAction;
 import fooba.action.member.memberOrderListAction;
@@ -100,7 +99,6 @@ public class ActionFactory {
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
 		else if (command.equals("memberJoin")) ac = new memberJoinAction();
 		// 마이페이지 (회원정보, 주문내역확인, 리뷰작성)
-		else if (command.equals("memberMypage")) ac = new memberMypageAction();
 		else if (command.equals("memberUpdateForm")) ac = new memberUpdateFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
 		else if (command.equals("memberWithdrawal")) ac = new memberWithdrawalAction();
@@ -149,7 +147,6 @@ public class ActionFactory {
 		else if (command.equals("admin_restaurantList")) ac = new admin_restaurantListAction(); // 가게관리 result 1 운영 가능 가게 
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
 		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
-		
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
 		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
