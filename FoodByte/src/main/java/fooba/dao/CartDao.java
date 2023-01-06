@@ -76,7 +76,7 @@ public class CartDao {
 	}
 
 	
-
+/*
 	public void deleteCart(int cseq) {
 		
 		String sql="delete from cart where cseq=?";
@@ -90,6 +90,8 @@ public class CartDao {
 		}finally {Dbman.close(con,pstmt,rs);}
 		
 	}
+*/
+	
 	
 	
 }

@@ -17,7 +17,7 @@ public class cartDeleteAction implements Action {
 		
 		CartDao cdao=CartDao.getInstance();
 		for(String cseq : cseqArr) {
-			cdao.deleteCart(Integer.parseInt(cseq));
+			//cdao.deleteCart(Integer.parseInt(cseq));
 			System.out.println(cseq);
 		}
 		response.sendRedirect("fooba.do?command=cartList");
