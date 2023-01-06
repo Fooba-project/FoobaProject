@@ -53,10 +53,10 @@
 <div id="main">
 
     <form id="search" name="search" method="post">
-        <input type="text" name="search" id="searchtext" placeholder="검색어를 입력하세요"
-        size="30px" value="${search}"/>
+        <input type="text" name="searchtext" id="searchtext" placeholder="검색어를 입력하세요"
+        size="30px"/>
         <div id="searchicon">
-            <img src="images/search.png" onClick="go_search('serch')">
+            <img src="images/search.png" onClick="go_search2()">
         </div>
     </form>
 

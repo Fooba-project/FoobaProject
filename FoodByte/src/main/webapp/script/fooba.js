@@ -235,15 +235,12 @@ function menumove(x){
 }
 
         
-function go_search(){
-	
-	var url = "fooba.do?command=search";  
-	document.search.action = url;
+function go_search2(){
+	document.search.action = "fooba.do?command=search";
 	document.search.submit();
 }       
 
 function go_search(hash){
-	
 	var url = "fooba.do?command=search&search="+ hash;  
 	document.search.action = url;
 	document.search.submit();
