@@ -20,8 +20,8 @@
         
         <br>
         <div id="res_tab">
-            <div class="res_infotab" >정보</div>
-            <div class="res_infotab" onclick="location.href='fooba.do?command=#'">정보수정</div>
+            <div class="res_infotab" style="color:white;" >정보</div>
+            <div class="res_infotab" onclick="location.href='fooba.do?command=res_editForm'">정보수정</div>
         </div>
 
 			<div id="res_menuall">

@@ -57,7 +57,7 @@
                              <h3>사이드메뉴 1</h3>
                             <div id="food_text">
                            		<input type="text" class="food_text" 
-                           		style="width:120px; height:35px;" name="fside1" value=" ${FoodmenuVO.fside1}"/>
+                           		style="width:120px; height:35px;" name="fside1" value="${FoodmenuVO.fside1}"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
                                 style="width:120px; height:35px;" name="fsideprice1" value=${FoodmenuVO.fsideprice1}> 원
@@ -66,7 +66,7 @@
                              <h3>사이드메뉴 2</h3>
                             <div id="food_text">
                            		<input type="text" class="food_text" 
-                           		style="width:120px; height:35px;" name="fside2" value=" ${FoodmenuVO.fside2}"/>
+                           		style="width:120px; height:35px;" name="fside2" value="${FoodmenuVO.fside2}"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
                                 style="width:120px; height:35px;" name="fsideprice2" value=${FoodmenuVO.fsideprice2}> 원
