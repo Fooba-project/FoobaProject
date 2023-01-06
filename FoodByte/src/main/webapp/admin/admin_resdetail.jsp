@@ -23,7 +23,34 @@
                 <input type="text" class="input_text" value="사업장 주소 : ${restaurantVO.raddress}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="사업장 업종 : ${restaurantVO.kind}" readonly/>
+         
+             <c:choose>
+                       <c:when test='${restaurantVO.kind=="1"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 한식" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="2"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 중식" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="3"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 양식" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="4"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 일식" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="5"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 피자" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="6"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 치킨" readonly/>	
+                       </c:when>
+                       <c:when test='${restaurantVO.kind=="7"}'>
+				<input type="text" class="input_text" value="사업장 업종 : 분식" readonly/>	
+                       </c:when>
+                       <c:otherwise>
+				<input type="text" class="input_text" value="사업장 업종 : 디저트" readonly/>	
+                       </c:otherwise>
+             </c:choose>
+                                
             </div>
             <div class="join_list">
                 <input type="text" class="input_text" value="사업장 소개글 : ${restaurantVO.content}" readonly/>
