@@ -449,4 +449,38 @@ public class ResDao {
 			} finally { Dbman.close(con, pstmt, rs); }
 			return fimage;
 		}
+
+
+		public RestaurantVO getRseq(String rseq) {
+			RestaurantVO rvo=null;
+			
+			con=Dbman.getConnection();
+			String sql="select * from restaurant where rseq=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, rseq);
+				rs=pstmt.executeQuery();
+				if(rs.next()) {
+					
+					rvo=new RestaurantVO();
+					rvo.setRid(rs.getString("rid"));
+					rvo.setRname(rs.getString("rname"));
+					rvo.setRpwd(rs.getString("rpwd"));
+					rvo.setRphone(rs.getString("rphone"));
+					rvo.setRimage(rs.getString("rimage"));
+					rvo.setRaddress(rs.getString("raddress"));
+					rvo.setContent(rs.getString("content"));
+					rvo.setHash(rs.getString("hash"));
+					rvo.setOwnername(rs.getString("ownername"));
+					rvo.setRseq(rs.getInt("rseq"));
+					rvo.setRbiznum(rs.getString("rbiznum"));
+					rvo.setKind(rs.getInt("kind"));
+					rvo.setRtip(rs.getInt("rtip"));				
+				}
+				
+			} catch (SQLException e) {e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
+			
+			return rvo;
+		}
 }
