@@ -19,15 +19,15 @@ public class res_orderAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  
-		  String url = "restaurant/orderList.jsp";
+		  String url = "restaurant/res_orderList.jsp";
 	      HttpSession session = request.getSession();
-	      Integer rseq = Integer.parseInt(request.getParameter("rseq"));
-	      RestaurantVO mvo = (RestaurantVO) session.getAttribute("loginUser");
-	      if(mvo == null) {
+	     
+	      RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
+	      if(rvo == null) {
 	         url = "fooba.do?command=res_loginForm";
 	      }else {         
 	         ResDao rdao = ResDao.getInstance();
-	         ArrayList<OrderViewVO>list = rdao.selectOrdersByRseq(rseq);
+	         ArrayList<OrderViewVO>list = rdao.selectOrdersByRseq(rvo.getRseq());
 	      
 	         request.setAttribute("orderList", list);
 	         

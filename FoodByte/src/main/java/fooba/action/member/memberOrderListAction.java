@@ -98,7 +98,7 @@ public class memberOrderListAction implements Action {
 	        	 ovo.setTotalprice(total);
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
-	        	 System.out.println(ovo.getFimage());
+	        	 
 	         }
 	         request.setAttribute("memberOrderList", finalList);
 	         request.setAttribute("paging", paging);
