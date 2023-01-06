@@ -21,7 +21,7 @@ public class res_reviewAction implements Action {
 		
 		HttpSession session = request.getSession();
 		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginUser");
-		String url="restaurant/reviewList.jsp";
+		String url="restaurant/res_reviewList.jsp";
 		
 		if(rvo==null) {
 			url="fooba.do?command=res_loginForm";
