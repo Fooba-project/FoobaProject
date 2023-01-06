@@ -13,10 +13,8 @@ public class jangbaguniAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="main/popupMenu.jsp";
-
 		
 		
-		request.setAttribute(url, response);
 		request.setAttribute("rseq", request.getParameter("rseq"));
 		request.setAttribute("jangresult", "1");
 		request.getRequestDispatcher(url).forward(request, response);
