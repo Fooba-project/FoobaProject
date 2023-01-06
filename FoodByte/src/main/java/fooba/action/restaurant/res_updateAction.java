@@ -21,31 +21,26 @@ public class res_updateAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url="fooba.do?command=res_info";
+		String url="fooba.do?command=res_show";
 		HttpSession session=request.getSession();
-		String avo=(String)session.getAttribute("loginUser");
-		if(avo==null) {
+        RestaurantVO rvo=(RestaurantVO)session.getAttribute("loginRes");
+        if(rvo==null) {
 			url="fooba.do?command=res_loginForm";
 		}else {
-			RestaurantVO rvo=new RestaurantVO();
 			ServletContext context=session.getServletContext();
-			String path=context.getRealPath("resimage"); //폴더 이미지로 변경
+			String path=context.getRealPath("images/title"); 
 			
 			MultipartRequest multi = new MultipartRequest(
 					request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
 			);
-			ResDao rdao=ResDao.getInstance();
 			
-			rvo.setRid(request.getParameter("rid"));
-			rvo.setRpwd(request.getParameter("rpwd"));
-			rvo.setRname(request.getParameter("rname"));
-			rvo.setOwnername(request.getParameter("ownername"));
-			rvo.setRphone(request.getParameter("rphone"));
-			rvo.setRaddress(request.getParameter("raddress"));
-			rvo.setContent(request.getParameter("content"));
-			rvo.setHash(request.getParameter("hash"));
-			rvo.setKind(Integer.parseInt(request.getParameter("kind")));
-			rvo.setRtip(Integer.parseInt(request.getParameter("rtip")));
+			ResDao rdao=ResDao.getInstance();
+			rvo.setRseq(Integer.parseInt(multi.getParameter("rseq")));
+			rvo.setRphone(multi.getParameter("rphone"));
+			rvo.setRaddress(multi.getParameter("raddress"));
+			rvo.setContent(multi.getParameter("content"));
+			rvo.setHash(multi.getParameter("hash"));
+			rvo.setRtip(Integer.parseInt(multi.getParameter("rtip")));
 			if(multi.getFilesystemName("rimage")==null)rvo.setRimage(multi.getParameter("oldImage"));
 			else rvo.setRimage(multi.getFilesystemName("rimage"));
 			
