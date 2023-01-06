@@ -162,13 +162,13 @@ function idcheck(){
 
 
 function loginCheck(){
-	if(document.loginFrm.id.value==""){
+	if(document.loginForm.userid.value==""){
 		alert("아이디는 필수입력사항입니다");
-		document.userloginFrm.userid.focus();
+		document.loginForm.userid.focus();
 		return false;
-	}else if(document.loginFrm.pwd.value==""){
+	}else if(document.loginForm.userpw.value==""){
 		alert("비밀번호는 필수입력사항입니다");
-		document.userloginFrm.userpwd.focus();
+		document.loginForm.userpw.focus();
 		return false;
 	}else{
 		return true;	
@@ -256,18 +256,16 @@ function go_search(hash){
  	if(ok){
 		location.href="fooba.do?command=memberWithdrawal";
 	}
-}    
+}
 
-  function menupopup(fseq){
+ function menupopup(fseq){
   
 	var popupX = (window.screen.width / 2) - 230;
      window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no, top=100 , left="+ popupX);
-  } 
+ } 
   
   function deletejb(ths){
-            
-            const div = document.getElementById('jb'+ths);
-  
+            const div = document.getElementById('jb'+ths); 
             div.remove();
    }
  

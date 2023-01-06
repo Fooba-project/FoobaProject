@@ -19,7 +19,7 @@
 	                </div>
 	    
 	                <div id="log_buttonbox">
-	                    <button type="submit" id="log_button" >
+	                    <button type="submit" id="log_button" onclick="return loginCheck()" >
 	                        <span class="btn_text">로그인</span>
 	                    </button>
 	                </div>
