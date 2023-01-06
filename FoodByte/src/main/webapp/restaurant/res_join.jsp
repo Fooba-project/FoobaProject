@@ -132,7 +132,7 @@ function joincheck() {
                 </div> 
                 <div class="join_list">
                     <div id="images_upload_box">
-                         <input type="file" class="input_text" name="image">
+                         <input type="file" class="input_text" name="rimage">
                     </div>
                 </div>
                    
@@ -180,7 +180,7 @@ function joincheck() {
         </table>
             <br><br>
             <div id="join_btn">
-                <input class="join_btn" type="button" value="가입" onclick="joincheck()">
+                <input class="join_btn" type="submit" value="가입" onclick="joincheck()">
                 <input class="join_btn" type="button" value="홈으로" onclick="location.href='fooba.do?command=res_login'">
             </div>
     </form>
