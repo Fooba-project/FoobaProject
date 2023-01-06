@@ -8,7 +8,8 @@
 </head>
 <body>
  
-	<div id="paging" style="font-size:110%; font-weight:bold; margin-left:900px;">
+	<div id="paging" style="font-size:110%; font-weight:bold;  text-align: center; 
+  width: 200px; margin: 0 auto;">
 			<c:url var="action" value="${param.command}" />
 			<c:if test="${paging.prev}">
 				<a href="${action}&page=${paging.beginPage-1}">◀</a>&nbsp;
@@ -19,7 +20,7 @@
 						<span style="color:blue">${index}&nbsp;</span>
 					</c:when>
 					<c:otherwise>
-						<a href="${action}&page=${index}">${index}</a>&nbsp;
+						<a style="text-decoration:none;" href="${action}&page=${index}">${index}</a>&nbsp;
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>

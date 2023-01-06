@@ -50,14 +50,14 @@ body {margin: 0; position:relative;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
 #logspace {font-size: 30px; font-weight:bold; text-align:center;}
-    .admin_list{text-align: center;}
-    #admin_searchres {margin:auto;  width:510px;}
+    .admin_list{text-align: center; margin-top:30px;}
+    #admin_searchres {margin:auto;  width:700px;}
     #admin_searchres td {font-weight: 700; }
-    .admin_searchres_btn{background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }   
-    #admin_list_table{margin: auto; border: 1px solid; width:810px; }
+    .admin_searchres_btn{height:35px; background-color: rgb(76, 94, 134); float: right; margin-right: 5px; border: 2px solid black ; color: white; box-shadow: 1px 1px black; border-radius: 4px;  }   
+    #admin_list_table{margin: auto; border: 1px solid; width:810px;}
     #admin_list_table th{background-color:rgb(99, 123, 153); font-size: 17px; color: white;}
 
-.keyy{border-radius:9px; height:17px; outline:none; border:2px solid rgb(76, 94, 134);}
+.keyy{border-radius:9px; height:20px; margin-top:10px; outline:none; border:2px solid rgb(76, 94, 134);}
 
 </style>
 <body>
