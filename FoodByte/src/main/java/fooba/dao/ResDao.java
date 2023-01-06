@@ -146,22 +146,19 @@ public class ResDao {
 
 
 	public void updateRes(RestaurantVO rvo) {
-		String sql="update restaurant set  rpwd=?, rname=?, ownername=?, rphone=?, raddress=?, rimage=? ,  content=? ,hash=?,  kind=? , rtip=?"
-				+ " where id=?";
+		String sql="update restaurant set rphone=?, raddress=?, rimage=? , content=? ,hash=?,  rtip=?"
+				+ " where rseq=?";
 		con=Dbman.getConnection();
 		try {
 			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1,rvo.getRpwd());
-			pstmt.setString(2,rvo.getRname());
-			pstmt.setString(3,rvo.getOwnername() );
-			pstmt.setString(4,rvo.getRphone() );
-			pstmt.setString(5,rvo.getRaddress() );
-			pstmt.setString(6,rvo.getRimage() );
-			pstmt.setString(7,rvo.getContent() );
-			pstmt.setString(8,rvo.getHash());
-			pstmt.setInt(9, rvo.getKind());
-			pstmt.setInt(10, rvo.getRtip());
-			pstmt.setString(11,rvo.getRid() );
+	
+			pstmt.setString(1,rvo.getRphone() );
+			pstmt.setString(2,rvo.getRaddress() );
+			pstmt.setString(3,rvo.getRimage() );
+			pstmt.setString(4,rvo.getContent() );
+			pstmt.setString(5,rvo.getHash());
+			pstmt.setInt(6, rvo.getRtip());
+			pstmt.setInt(7,rvo.getRseq() );
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {e.printStackTrace();
