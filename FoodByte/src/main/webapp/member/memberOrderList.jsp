@@ -12,7 +12,7 @@
                     <tr  >
                         <td width="80">
                             <div id="memberOrderListimg">
-                                <img src="title\${ovo.rimage }" width="50" height="50">
+                                <img src="images/foodmenu/${ovo.fimage }" width="50" height="50">
                             </div>
                             <div>${ovo.rname }</div>
                         </td>

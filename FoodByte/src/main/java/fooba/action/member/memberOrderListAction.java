@@ -58,13 +58,15 @@ public class memberOrderListAction implements Action {
 	         
 	         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
 	        	 ArrayList<OrderDetailVO> detailList = new ArrayList<>();
+	        	 int j = 0;
 	        	 detailList = odao.getOrderDetailbyOseq(ovo.getOseq());
+	        	 int size = detailList.size();
 	        	 for (OrderDetailVO odvo : detailList) { // 주문한 메뉴별(odseq 수만큼)로 반복
+	        		 j++;
 	        		 FoodDao fdao = FoodDao.getInstance();
 	        		 FoodmenuVO fvo = new FoodmenuVO();
 	        		 fvo = fdao.getFoodDetail(odvo.getFseq());
 	        		 oname = oname+fvo.getFname();
-	        		 System.out.println("fvo.getFname() : "+fvo.getFname());
 	        		 if (odvo.getSideyn1()+odvo.getSideyn2()+odvo.getSideyn3()>0) {
 	        			 oname = oname + "(";
 		        		 if (odvo.getSideyn1()==1) {
@@ -85,14 +87,18 @@ public class memberOrderListAction implements Action {
 		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice3());
 		        			 oname = oname + fvo.getFside3();
 		        		 }
-		        		 oname = oname + "), ";
+		        		 if(size==j) oname=oname+")";
+		        		 else oname = oname + "), ";
 	        		 } else oname = oname+", ";
 	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
 	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
+	        		 ovo.setFimage(fvo.getFimage());
 	        	 }
+	        	 
 	        	 ovo.setTotalprice(total);
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
+	        	 System.out.println(ovo.getFimage());
 	         }
 	         request.setAttribute("memberOrderList", finalList);
 	         request.setAttribute("paging", paging);

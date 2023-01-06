@@ -16,7 +16,22 @@ public class OrderVO {
 	private int totalprice;
 	private String phone;
 	private String rname;
+	private String fimage;
+	private String rimage;
 	
+	
+	public String getFimage() {
+		return fimage;
+	}
+	public void setFimage(String fimage) {
+		this.fimage = fimage;
+	}
+	public String getRimage() {
+		return rimage;
+	}
+	public void setRimage(String rimage) {
+		this.rimage = rimage;
+	}
 	public String getRname() {
 		return rname;
 	}
