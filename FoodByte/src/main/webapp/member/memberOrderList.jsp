@@ -9,26 +9,26 @@
             <table id="memberOrderList">
 
                 <c:forEach items="${memberOrderList }" var="ovo">
-                    <tr>
+                    <tr  >
                         <td width="80">
                             <div id="memberOrderListimg">
-                                <img src="title\${ovo.rimage }">
+                                <img src="title\${ovo.rimage }" width="50" height="50">
                             </div>
                             <div>${ovo.rname }</div>
                         </td>
                         <td width="300">
-                            <div id="memberOrderListIntime">
+                            <div id="memberOrderListIntime" style="text-align: left; font-size: 70%; margin: 10px;">
                                 <fmt:formatDate value="${ovo.indate }" type="date"/>
                             </div>
-                            <div id="memberOrderListMenu">
+                            <div id="memberOrderListMenu" style="text-align: left; margin: 10px;">
                                 ${ovo.oname }
                             </div>
-                            <div id="memberOrderListPrice">
+                            <div id="memberOrderListPrice" style="text-align: left; margin: 10px;">
                                 ${ovo.totalprice } 원
                             </div>
                         </td>
                         <td width="80">
-                            <div id="memberOrderListStatement">
+                            <div id="memberOrderListStatement" style="margin: 10px">
 	                            <c:choose>
 			                    	<c:when test="${ovo.result==0}">
 			                    		주문확인중
@@ -41,7 +41,7 @@
 			                    	</c:when>
 		                    	</c:choose>	
                             </div>
-                            <div id="memberOrderListDetail">
+                            <div id="memberOrderListDetail" margin="10" >
                                 <a href="#">주문 상세</a>
                             </div>            
                         </td>
