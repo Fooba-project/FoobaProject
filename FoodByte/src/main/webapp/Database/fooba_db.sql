@@ -1,26 +1,6 @@
 
-/* Drop Tables */
-DROP TABLE admin CASCADE CONSTRAINTS;
+/*cart 테이블 변경*/
 DROP TABLE cart CASCADE CONSTRAINTS;
-DROP TABLE order_detail CASCADE CONSTRAINTS;
-DROP TABLE foodmenu CASCADE CONSTRAINTS;
-DROP TABLE review CASCADE CONSTRAINTS;
-DROP TABLE orders CASCADE CONSTRAINTS;
-DROP TABLE member CASCADE CONSTRAINTS;
-DROP TABLE qna CASCADE CONSTRAINTS;
-DROP TABLE restaurant CASCADE CONSTRAINTS;
-
- 
-
-CREATE TABLE admin
-(
-	id varchar2(20) NOT NULL,
-	pwd varchar2(20) NOT NULL,
-	name varchar2(30) NOT NULL,
-	phone varchar2(20) NOT NULL,
-	PRIMARY KEY (id)
-);
-
 
 CREATE TABLE cart
 (
@@ -29,10 +9,49 @@ CREATE TABLE cart
 	indate date DEFAULT sysdate,
 	id varchar2(20) NOT NULL,
 	fseq number(5) NOT NULL,
-	sideyn1 number(2) DEFAULT 0,
-	sideyn2 number(2) DEFAULT 0,
-	sideyn3 number(2) DEFAULT 0,
+	sideyn1 varchar2(30) ,
+	sideyn2 varchar2(30) ,
+	sideyn3 varchar2(30) ,
+	cprice number(10),
 	PRIMARY KEY (cseq)
+);
+
+ALTER TABLE cart
+	ADD FOREIGN KEY (fseq)
+	REFERENCES foodmenu (fseq)
+;
+
+
+ALTER TABLE cart
+	ADD FOREIGN KEY (id)
+	REFERENCES Member (id)
+;
+
+/*여기까지*/
+
+
+
+
+
+/* Drop Tables */
+DROP TABLE admin CASCADE CONSTRAINTS;
+DROP TABLE order_detail CASCADE CONSTRAINTS;
+DROP TABLE foodmenu CASCADE CONSTRAINTS;
+DROP TABLE review CASCADE CONSTRAINTS;
+DROP TABLE orders CASCADE CONSTRAINTS;
+DROP TABLE member CASCADE CONSTRAINTS;
+DROP TABLE qna CASCADE CONSTRAINTS;
+DROP TABLE restaurant CASCADE CONSTRAINTS;
+
+ select*from cart;
+
+CREATE TABLE admin
+(
+	id varchar2(20) NOT NULL,
+	pwd varchar2(20) NOT NULL,
+	name varchar2(30) NOT NULL,
+	phone varchar2(20) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 
@@ -148,23 +167,12 @@ CREATE TABLE review
 
 /* Create Foreign Keys */
 
-ALTER TABLE cart
-	ADD FOREIGN KEY (fseq)
-	REFERENCES foodmenu (fseq)
-;
 
 
 ALTER TABLE order_detail
 	ADD FOREIGN KEY (fseq)
 	REFERENCES foodmenu (fseq)
 ;
-
-
-ALTER TABLE cart
-	ADD FOREIGN KEY (id)
-	REFERENCES Member (id)
-;
-
 
 ALTER TABLE orders
 	ADD FOREIGN KEY (id)
