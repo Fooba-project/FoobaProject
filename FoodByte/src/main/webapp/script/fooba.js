@@ -1,4 +1,4 @@
-function autoHypenPhone(str){ 
+function autoHypenPhone(str){  
             str = str.replace(/[^0-9]/g, '');
             var tmp = '';
             if( str.length < 4){
