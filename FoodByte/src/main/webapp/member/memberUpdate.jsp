@@ -7,7 +7,7 @@
         <form name="member_update_form" id="member_join_send_form" method="post">
             <table class="member_join_table">
                 <div class="join_list">
-                    <input type="text" class="input_text" name="userid" value="id : ${loginUser.id}" style="color:black" readonly/>
+                    <input type="text" class="input_text" name="userid" value="id : ${loginUser.id} (수정 불가)" style="color:black" readonly/>
                 </div>
 
                 <div class="join_list">
@@ -21,7 +21,7 @@
                 <p class="error_text" id="error1"></p>
     
                 <div class="join_list">
-                    <input type="text" class="input_text" name="username" value="이름 : ${loginUser.name}" style="color:black" readonly/>
+                    <input type="text" class="input_text" name="username" value="이름 : ${loginUser.name} (수정 불가)" style="color:black" readonly/>
                 </div>
 
                 <div class="join_list">
@@ -29,9 +29,7 @@
                 </div>
 
                 <div class="join_list">
-                    <input type="text" class="input_text" name="useremail"
-                    id="useremail"
-                    placeholder="이메일 : ${loginUser.email}" style="color:red;"/>
+                    <input type="text" class="input_text" name="useremail"  id="useremail" placeholder="이메일 : ${loginUser.email}" style="color:red;"/>
                 </div>
 
                 <p class="error_text" id="error2"></p>
@@ -42,7 +40,7 @@
                 </div>
 
                 <div class="join_list">
-                    <input type="text" class="input_text" name="useraddress1" placeholder="주소 : ${loginUser.address1}" style="color:red;"/>
+                    <input type="text" class="input_text" name="useraddress1" placeholder="주소 : ${loginUser.address1}" style="color:red;" readonly/>
                 </div>
 
                 <div class="join_list">
@@ -52,8 +50,6 @@
                 <div class="join_list" margin="20px">
                     <input type="text" class="input_text" name="usernick" placeholder="닉네임 : ${loginUser.nick}" style="color:red;"/>
                 </div>
-
-                <p class="error_text">* 입력하지 않을 시 이름으로 사용됩니다.</p>
 
                 <br>
                 
