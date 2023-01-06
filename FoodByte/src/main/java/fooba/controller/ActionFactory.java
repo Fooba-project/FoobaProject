@@ -26,6 +26,8 @@ import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
 import fooba.action.main.logoutAction;
 import fooba.action.main.menupopupAction;
+import fooba.action.main.miniLoginAction;
+import fooba.action.main.miniLoginFormAction;
 import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
 import fooba.action.member.findZipNumAction;
@@ -76,6 +78,8 @@ public class ActionFactory {
 		if(command.equals("index")) ac=new indexAction(); // 메인화면 표시
 		else if(command.equals("loginForm"))ac=new loginFormAction();
 		else if (command.equals("login")) ac = new loginAction();
+		else if(command.equals("miniLoginForm")) ac=new miniLoginFormAction(); //팝업
+		else if(command.equals("miniLogin")) ac=new miniLoginAction();
 		else if (command.equals("logout")) ac = new logoutAction();
 		// restaurant-foodmenu-cart-order
 		// 장바구니넣기, 수정, 삭제, 주문하기,

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-
+ 
 <form method="post" action="fooba.do?command=login" name="loginForm">
 	<div class="login_form">
 			<div id="logspace"></div>
@@ -19,7 +19,7 @@
 	                </div>
 	    
 	                <div id="log_buttonbox">
-	                    <button type="submit" id="log_button" >
+	                    <button type="submit" id="log_button" onclick="return loginCheck()" >
 	                        <span class="btn_text">로그인</span>
 	                    </button>
 	                </div>

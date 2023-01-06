@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-
+ 
 <fmt:setLocale value="ko_KR"/>
 <!DOCTYPE html>
 <html>
@@ -10,8 +10,8 @@
 <title>Fooba</title>
 <link href="css/fooba.css" rel="stylesheet">
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src = "script/jquery-3.6.1.js"></script>
-<script src="script/fooba.js"></script>
+<script type="text/javascript" src="script/jquery-3.6.1.js"></script>
+<script type="text/javascript" src="script/fooba.js"></script>
 </head>
 <body>
 
