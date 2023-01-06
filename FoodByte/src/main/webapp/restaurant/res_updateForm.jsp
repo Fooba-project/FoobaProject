@@ -26,7 +26,7 @@
 
 			<div id="res_menuall">
 			
-				<form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" >
+				<form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" action="fooba.do?command=res_Update">
 					<input type="hidden" name="rseq" value="${RestaurantVO.rseq}">	
 					<input type="hidden" name="oldImage" value="${RestaurantVO.rimage}">
            		
@@ -67,13 +67,13 @@
                                 <input type="file" name="fimage" /><br><hr>
 	                        	
 	                    </div><br>
+	                    <input type="submit" value="수정 완료" class="res_infotab"  style="width:700px;">
+	                    </div>
                     	
 					</div>
-
-            	</div>
-            </form>
+				</form>
+            </div>            
         </div>
         
-    </div>
 
 <%@ include file="/restaurant/res_footer.jsp"%>

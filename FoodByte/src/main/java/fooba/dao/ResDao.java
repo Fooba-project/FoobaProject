@@ -146,22 +146,19 @@ public class ResDao {
 
 
 	public void updateRes(RestaurantVO rvo) {
-		String sql="update restaurant set  rpwd=?, rname=?, ownername=?, rphone=?, raddress=?, rimage=? ,  content=? ,hash=?,  kind=? , rtip=?"
-				+ " where id=?";
+		String sql="update restaurant set rphone=?, raddress=?, rimage=? , content=? ,hash=?,  rtip=?"
+				+ " where rseq=?";
 		con=Dbman.getConnection();
 		try {
 			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1,rvo.getRpwd());
-			pstmt.setString(2,rvo.getRname());
-			pstmt.setString(3,rvo.getOwnername() );
-			pstmt.setString(4,rvo.getRphone() );
-			pstmt.setString(5,rvo.getRaddress() );
-			pstmt.setString(6,rvo.getRimage() );
-			pstmt.setString(7,rvo.getContent() );
-			pstmt.setString(8,rvo.getHash());
-			pstmt.setInt(9, rvo.getKind());
-			pstmt.setInt(10, rvo.getRtip());
-			pstmt.setString(11,rvo.getRid() );
+	
+			pstmt.setString(1,rvo.getRphone() );
+			pstmt.setString(2,rvo.getRaddress() );
+			pstmt.setString(3,rvo.getRimage() );
+			pstmt.setString(4,rvo.getContent() );
+			pstmt.setString(5,rvo.getHash());
+			pstmt.setInt(6, rvo.getRtip());
+			pstmt.setInt(7,rvo.getRseq() );
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {e.printStackTrace();
@@ -451,39 +448,5 @@ public class ResDao {
 			} catch (SQLException e) {e.printStackTrace();
 			} finally { Dbman.close(con, pstmt, rs); }
 			return fimage;
-		}
-
-
-		public RestaurantVO getRseq(String rseq) {
-			RestaurantVO rvo=null;
-			
-			con=Dbman.getConnection();
-			String sql="select * from restaurant where rseq=?";
-			try {
-				pstmt=con.prepareStatement(sql);
-				pstmt.setString(1, rseq);
-				rs=pstmt.executeQuery();
-				if(rs.next()) {
-					
-					rvo=new RestaurantVO();
-					rvo.setRid(rs.getString("rid"));
-					rvo.setRname(rs.getString("rname"));
-					rvo.setRpwd(rs.getString("rpwd"));
-					rvo.setRphone(rs.getString("rphone"));
-					rvo.setRimage(rs.getString("rimage"));
-					rvo.setRaddress(rs.getString("raddress"));
-					rvo.setContent(rs.getString("content"));
-					rvo.setHash(rs.getString("hash"));
-					rvo.setOwnername(rs.getString("ownername"));
-					rvo.setRseq(rs.getInt("rseq"));
-					rvo.setRbiznum(rs.getString("rbiznum"));
-					rvo.setKind(rs.getInt("kind"));
-					rvo.setRtip(rs.getInt("rtip"));				
-				}
-				
-			} catch (SQLException e) {e.printStackTrace();
-			}finally {Dbman.close(con, pstmt, rs);}
-			
-			return rvo;
 		}
 }
