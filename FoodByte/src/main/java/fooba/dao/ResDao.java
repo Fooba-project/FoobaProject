@@ -460,8 +460,7 @@ public class ResDao {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setString(1, rseq);
 				rs=pstmt.executeQuery();
-				if(rs.next()) {
-					
+				if(rs.next()) {	
 					rvo=new RestaurantVO();
 					rvo.setRid(rs.getString("rid"));
 					rvo.setRname(rs.getString("rname"));

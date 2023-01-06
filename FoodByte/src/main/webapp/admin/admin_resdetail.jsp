@@ -8,31 +8,31 @@
     <form name="res_join_send_form" id="res_join_send_form" method="post" action="fooba.do?command=res_join" enctype="multipart/form-data">
         <table class="member_join_table">
             <div class="join_list">
-                <input type="text" class="input_text" value=" 아이디 : ${rvo.rid}" readonly/>            
+                <input type="text" class="input_text" value=" 아이디 : ${restaurantVO.rid}" readonly/>            
             </div> 
             <div class="join_list">
-                <input type="text" class="input_text" value="사장님 이름 : ${rvo.ownername}" readonly/> 
+                <input type="text" class="input_text" value="사장님 이름 : ${restaurantVO.ownername}" readonly/> 
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="가게 번호 : ${rvo.rphone}" readonly/> 
+                <input type="text" class="input_text" value="가게 번호 : ${restaurantVO.rphone}" readonly/> 
             </div>
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" value="사업자 번호 : ${rvo.rbiznum}" readonly/>
+                <input type="text" id="rbiznum" class="input_text" value="사업자 번호 : ${restaurantVO.rbiznum}" readonly/>
             </div>			
 			<div class="join_list">
-                <input type="text" class="input_text" value="사업장 주소 : ${rvo.raddress}" readonly/>
+                <input type="text" class="input_text" value="사업장 주소 : ${restaurantVO.raddress}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="사업장 업종 : ${rvo.rkind}" readonly/>
+                <input type="text" class="input_text" value="사업장 업종 : ${restaurantVO.kind}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="사업장 소개글 : ${rvo.content}" readonly/>
+                <input type="text" class="input_text" value="사업장 소개글 : ${restaurantVO.content}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="배달료 : ${rvo.rtip}" readonly/>
+                <input type="text" class="input_text" value="배달료 : ${restaurantVO.rtip}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="해시태그 : ${rvo.hash}" readonly/>
+                <input type="text" class="input_text" value="해시태그 : ${restaurantVO.hash}" readonly/>
             </div>      
 
         </table>
