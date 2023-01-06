@@ -23,7 +23,7 @@ body {margin: 0; position:relative;}
 .headbutton {width: 70px; height: 50px;border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 90%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fff; line-height: 50px; color:#fff; background-color: transparent; border: 2px solid white; }
 .headbutton:hover {background-color: white; color: rgb(23,55,94); cursor: pointer;}
 
-.footerbox{position:relative; height: 100px; width: 100%; background-color: white;}
+.footerbox{position:relative; height: 100px; width: 100%; background-color: white; }
 .footerbox #copy{position:absolute; top: 50px; text-align: center; right:20px; font-size: 15px; opacity: 80%; color: rgb(23,55,94);}
 .footerbox  #logo{position:absolute; width:80px; height: 90px;  left: 15px; opacity: 60%; }
 .footerbox #logotextbox{position:absolute; top:10px; left: 110px; line-height:25px; width: 500px; }
@@ -80,12 +80,6 @@ body {margin: 0; position:relative;}
 .res_join_title { text-align: left; font-size: 26px;font-weight: bold; }
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
 .input_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border-bottom: 1px solid #BCBCBC;}
-
-#join_btn {margin-left: 200px;}
-#join_btn .join_btn {width: 150px; height: 50px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color:  rgb(255,204,0); line-height: 40px; color:#fff; border: 1px solid white; text-align: center;}
-#join_btn .join_btn:hover {background-color: white; color:  rgb(255,204,0); cursor: pointer; border:2px solid  rgb(255,204,0)}
-#join_agree_text {width: 680px; height: 120px; overflow-y: auto; border: 1px solid #ccc;  margin: 10px; }
-#join_agree_btn {margin:10px; }
 #res_select_box{ margin-left: 10px; margin-top: 10px;}
 #textarea_box{margin-left: 10px; margin-top: 10px; height: 100px; width: 100%;}
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
