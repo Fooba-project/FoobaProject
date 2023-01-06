@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import fooba.VO.CartVO;
 import fooba.VO.MemberVO;
 import fooba.action.Action;
+import fooba.dao.CartDao;
 
 public class jangbaguniAction implements Action {
 
@@ -27,7 +28,16 @@ public class jangbaguniAction implements Action {
 		CartVO cvo=new CartVO();
 		cvo.setFseq(Integer.parseInt(request.getParameter("fseq")));
 		cvo.setId(mvo.getId());		
-		cvo.setSideyn1(null);
+		cvo.setSideyn1(request.getParameter("fside1"));
+		cvo.setSideyn2(request.getParameter("fside2"));
+		cvo.setSideyn3(request.getParameter("fside3"));
+		cvo.setCprice(Integer.parseInt(request.getParameter("totalprice")));
+		cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		cvo.setCfname(request.getParameter("fname"));
+		
+		CartDao cdao=CartDao.getInstance();
+		
+		cdao.insertCart(cvo);
 		
 		request.setAttribute("jangresult", "1");
 		

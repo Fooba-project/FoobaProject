@@ -13,6 +13,7 @@ CREATE TABLE cart
 	sideyn2 varchar2(30) ,
 	sideyn3 varchar2(30) ,
 	cprice number(10),
+	cfname varchar2(20),
 	PRIMARY KEY (cseq)
 );
 
@@ -27,6 +28,7 @@ ALTER TABLE cart
 	REFERENCES Member (id)
 ;
 
+select*from cart;
 /*여기까지*/ 
 
 

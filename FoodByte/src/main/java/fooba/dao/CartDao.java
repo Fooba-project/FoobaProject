@@ -57,7 +57,7 @@ public class CartDao {
 	public ArrayList<RestaurantVO> searchKind(String kind) {
 		ArrayList<RestaurantVO>list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select from restaurant where kind=? and result='1'";
+		String sql="select* from restaurant where kind=? and result='1'";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, kind);
@@ -73,6 +73,26 @@ public class CartDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		return list;
+	}
+
+	public void insertCart(CartVO cvo) {
+		con=Dbman.getConnection();
+		String sql="insert into cart(cseq,quantity,id,fseq,sideyn1,sideyn2,sideyn3,cprice,cfname)"
+				+ " values(cart_seq.nextVal,?,?,?,?,?,?,?,?)";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,cvo.getQuantity());
+			pstmt.setString(2, cvo.getId());
+			pstmt.setInt(3,cvo.getFseq());
+			pstmt.setString(4, cvo.getSideyn1());
+			pstmt.setString(5, cvo.getSideyn2());
+			pstmt.setString(6, cvo.getSideyn3());
+			pstmt.setInt(7, cvo.getCprice());
+			pstmt.setString(8, cvo.getCfname());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
 	}
 
 	

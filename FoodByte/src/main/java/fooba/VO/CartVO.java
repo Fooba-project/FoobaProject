@@ -7,10 +7,12 @@ public class CartVO {
 		private Integer quantity;
 		private String id;
 		private Integer fseq;
-		private Integer sideyn1;
-		private Integer sideyn2;
-		private Integer sideyn3;	
+		private String sideyn1;
+		private String sideyn2;
+		private String sideyn3;
+		private int cprice;
 		private Timestamp indate;
+		private String cfname;
 		
 		public Integer getCseq() {
 			return cseq;
@@ -36,29 +38,42 @@ public class CartVO {
 		public void setFseq(Integer fseq) {
 			this.fseq = fseq;
 		}
-		public Integer getSideyn1() {
+		
+		public String getSideyn1() {
 			return sideyn1;
 		}
-		public void setSideyn1(Integer sideyn1) {
+		public void setSideyn1(String sideyn1) {
 			this.sideyn1 = sideyn1;
 		}
-		public Integer getSideyn2() {
+		public String getSideyn2() {
 			return sideyn2;
 		}
-		public void setSideyn2(Integer sideyn2) {
+		public void setSideyn2(String sideyn2) {
 			this.sideyn2 = sideyn2;
 		}
-		public Integer getSideyn3() {
+		public String getSideyn3() {
 			return sideyn3;
 		}
-		public void setSideyn3(Integer sideyn3) {
+		public void setSideyn3(String sideyn3) {
 			this.sideyn3 = sideyn3;
+		}
+		public int getCprice() {
+			return cprice;
+		}
+		public void setCprice(int cprice) {
+			this.cprice = cprice;
 		}
 		public Timestamp getIndate() {
 			return indate;
 		}
 		public void setIndate(Timestamp indate) {
 			this.indate = indate;
+		}
+		public String getCfname() {
+			return cfname;
+		}
+		public void setCfname(String cfname) {
+			this.cfname = cfname;
 		}
 		
 		

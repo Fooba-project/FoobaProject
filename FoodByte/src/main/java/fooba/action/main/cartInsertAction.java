@@ -27,9 +27,9 @@ public class cartInsertAction implements Action {
 			int rseq=Integer.parseInt(request.getParameter("rseq"));
 			cvo.setId(mvo.getId());
 			cvo.setFseq(Integer.parseInt(request.getParameter("fseq")));
-			cvo.setSideyn1(Integer.parseInt(request.getParameter("sideyn1")));
-			cvo.setSideyn2(Integer.parseInt(request.getParameter("sideyn2")));
-			cvo.setSideyn3(Integer.parseInt(request.getParameter("sideyn3")));
+			//cvo.setSideyn1(Integer.parseInt(request.getParameter("sideyn1")));
+			//cvo.setSideyn2(Integer.parseInt(request.getParameter("sideyn2")));
+			//cvo.setSideyn3(Integer.parseInt(request.getParameter("sideyn3")));
 			cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			
 			CartDao cdao=CartDao.getInstance();
