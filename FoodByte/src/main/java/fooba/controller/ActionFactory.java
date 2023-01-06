@@ -20,6 +20,7 @@ import fooba.action.admin.admin_restaurantOkAction;
 import fooba.action.main.cartDeleteAction;
 import fooba.action.main.cartInsertAction;
 import fooba.action.main.categoryAction;
+import fooba.action.main.jangbaguniAction;
 import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
 import fooba.action.main.logoutAction;
@@ -82,6 +83,7 @@ public class ActionFactory {
 		else if (command.equals("category")) ac = new categoryAction();// 카테고리별 가게 리스팅
 		else if (command.equals("restaurantDetail")) ac = new restaurantDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
 		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
+		else if (command.equals("jangbaguni")) ac=new jangbaguniAction();
 		else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
 //		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
