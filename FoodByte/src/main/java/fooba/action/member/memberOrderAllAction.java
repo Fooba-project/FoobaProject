@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fooba.VO.FoodmenuVO;
 import fooba.VO.MemberVO;
-import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
+import fooba.VO.OrderViewVO;
 import fooba.action.Action;
-import fooba.dao.FoodDao;
 import fooba.dao.OrderDao;
 import fooba.util.Paging;
 
@@ -47,61 +45,51 @@ public class memberOrderAllAction implements Action {
 			paging.setDisplayRow(10);
 			paging.setDisplayPage(10);
 			
-			int count = odao.getOrderIngCount(mvo.getId());
+			int count = odao.getOrderAllCount(mvo.getId());
 			paging.setTotalCount(count);
 			
 	         ArrayList<OrderVO> list = odao.selectOrdersById(mvo.getId(), paging);
 	         
-	         int total = 0; // 총 주문금액
-	         String oname = ""; // 주문내역
-	         
+	         String oname = ""; // 주문메뉴(서브메뉴)
+
 	         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
-	        	 ArrayList<OrderDetailVO> detailList = new ArrayList<>();
-	        	 int j = 0;
-	        	 detailList = odao.getOrderDetailbyOseq(ovo.getOseq());
-	        	 int size = detailList.size();
-	        	 for (OrderDetailVO odvo : detailList) { // 주문한 메뉴별(odseq 수만큼)로 반복
-	        		 j++;
-	        		 FoodDao fdao = FoodDao.getInstance();
-	        		 FoodmenuVO fvo = new FoodmenuVO();
-	        		 fvo = fdao.getFoodDetail(odvo.getFseq());
-	        		 oname = oname+fvo.getFname();
-	        		 if (odvo.getSideyn1()+odvo.getSideyn2()+odvo.getSideyn3()>0) {
+	        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
+	        	 int i = 0;
+	        	 int size = ovList.size();
+	        	 
+	        	 for (OrderViewVO ovvo : ovList) { // 주문한 메뉴별(odseq 수만큼)로 반복
+	        		 i++;
+	        		 oname = oname+ovvo.getFname();
+	        		 if (ovvo.getSideyn1()+ovvo.getSideyn2()+ovvo.getSideyn3()>0) {
 	        			 oname = oname + "(";
-		        		 if (odvo.getSideyn1()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice1());
-		        			 oname = oname + fvo.getFside1();
-		        			 if (odvo.getSideyn2()==1 || odvo.getSideyn3()==1) {
+		        		 if (ovvo.getSideyn1()==1) {
+		        			 oname = oname + ovvo.getFside1();
+		        			 if (ovvo.getSideyn2()==1 || ovvo.getSideyn3()==1) {
 		        				 oname = oname + ", ";
 		        			 }
 		        		 }
-		        		 if (odvo.getSideyn2()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice2());
-		        			 oname = oname + fvo.getFside2();
-		        			 if (odvo.getSideyn3()==1) {
+		        		 if (ovvo.getSideyn2()==1) {
+		        			 oname = oname + ovvo.getFside2();
+		        			 if (ovvo.getSideyn3()==1) {
 		        				 oname = oname + ", ";
 		        			 }
 		        		 }
-		        		 if (odvo.getSideyn3()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice3());
-		        			 oname = oname + fvo.getFside3();
+		        		 if (ovvo.getSideyn3()==1) {
+		        			 oname = oname + ovvo.getFside3();
 		        		 }
-		        		 if(size==j) oname=oname+")";
-		        		 else oname = oname + "), ";
-	        		 } else oname = oname+", ";
-	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
-	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
-	        		 ovo.setRseq(fvo.getRseq());
-	        		 RestaurantDao rdao = RestaurantDao rdao
+		        		 if(size==i) oname=oname+")"; // 주문한메뉴갯수==반복횟수 일때
+		        		 else oname = oname + "), "; // 주문한메뉴갯수>반복횟수일 때
+	        		 } else if (size!=i) {oname = oname+", ";}// 주문한메뉴갯수>반복횟수일 때
+	        		 
+	        		 ovo.setRname(ovvo.getRname());
+	        		 ovo.setRimage(ovvo.getRimage());
+	        		 ovo.setRseq(ovvo.getRseq());
 	        	 }
-	        	 ovo.setRimage()
-	        	 ovo.setTotalprice(total);
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
 	         }
 	         request.setAttribute("memberOrderList", finalList);
-	         request.setAttribute("paging", paging);
-	         
+	         request.setAttribute("paging", paging);	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	}

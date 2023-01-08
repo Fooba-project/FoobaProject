@@ -29,10 +29,12 @@ public class memberOrderDetailAction implements Action {
 		if(mvo==null) {
 			url="fooba.do?command=loginForm";
 		}else if(mvo.getId()!=ovo.getId()) {
+			session.removeAttribute("loginUser");
+			session.setAttribute("message", "잘못된 접근입니다. 다시 로그인하세요.");
 			url="fooba.do?command=loginForm";
-		}else {	
-			ArrayList<OrderViewVO> orderDetailList=odao.selectOrdersByOseq(oseq);
-			request.setAttribute("orderDetailList", orderDetailList);
+		}else {
+			ArrayList<OrderViewVO> ovList=odao.selectOrderViewByOseq(oseq);
+			request.setAttribute("ovList", ovList);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 

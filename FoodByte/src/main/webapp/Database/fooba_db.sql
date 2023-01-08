@@ -206,9 +206,10 @@ select a.oseq, a.result, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.ad
       b.odseq, b.quantity, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
       c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
       d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3, d.fimage, d.fcontent,
-      e.rname, e.rseq, e.rimage, e.rtip, e.ryn
-from orders a, order_detail b, member c, foodmenu d, restaurant e
-where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
+      e.rname, e.rseq, e.rimage, e.rtip, e.ryn,
+      f.review_seq, f.id as reviewer, f.indate as review_indate, f.star, f.image as review_image, f.content as review_content, f.reply as review_reply, f.replyyn as review_replyyn
+from orders a, order_detail b, member c, foodmenu d, restaurant e, review f
+where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq and a.oseq=f.oseq;
 
    ---------
 

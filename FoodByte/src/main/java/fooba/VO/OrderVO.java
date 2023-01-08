@@ -16,7 +16,6 @@ public class OrderVO {
 	private int totalprice;
 	private String phone;
 	private String rname;
-	private String fimage;
 	private String rimage;
 	private int rseq;
 	
@@ -26,12 +25,6 @@ public class OrderVO {
 	}
 	public void setRseq(int rseq) {
 		this.rseq = rseq;
-	}
-	public String getFimage() {
-		return fimage;
-	}
-	public void setFimage(String fimage) {
-		this.fimage = fimage;
 	}
 	public String getRimage() {
 		return rimage;

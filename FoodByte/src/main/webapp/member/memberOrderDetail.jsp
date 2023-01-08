@@ -6,65 +6,65 @@
     <div class="menuorderdetaildiv" id="menuorderdetaildiv1">
         <div id="menuorderdetaildiv1_1">
             <c:choose>
-                <c:when test="${ovo.result==0}">
+                <c:when test="${ovvo.result==0}">
                     주문확인중
                 </c:when>
-                <c:when test="${ovo.result==1}">
+                <c:when test="${ovvo.result==1}">
                     배달중
                 </c:when>
-                <c:when test="${ovo.result==2}">
+                <c:when test="${ovvo.result==2}">
                     배달완료(후기를 작성해주세요)
                 </c:when>
-                <c:when test="${ovo.result==3}">
+                <c:when test="${ovvo.result==3}">
                     후기작성완료
                 </c:when>
             </c:choose>
         </div>
-        <div id="menuorderdetaildiv1_2">${ovo.rname}</div>
-        <div id="menuorderdetaildiv1_3">주문번호 : ${ovo.oseq}</div>
-        <div id="menuorderdetaildiv1_3">주문일시 : ${ovo.intime}</div>
-        <div id="menuorderdetaildiv1_3">총주문가격 : ${ovo.totalprice}원(포매터)</div>
+        <div id="menuorderdetaildiv1_2">${ovvo.rname}</div>
+        <div id="menuorderdetaildiv1_3">주문번호 : ${ovvo.oseq}</div>
+        <div id="menuorderdetaildiv1_3">주문일시 : ${ovvo.intime}</div>
+        <div id="menuorderdetaildiv1_3">총주문가격 : ${ovvo.totalprice}원(포매터)</div>
     </div>
 <br>
     <div class="menuorderdetaildiv">
-        <div id="menuorderdetaildiv2_1">${odvo.fname} ${odvo.quantity}개</div>
-        <div id="menuorderdetaildiv2_2">${odvo.side} : 
-            <c:if test=""></c:if>${odvo.sideyn}</div>
+        <div id="menuorderdetaildiv2_1">${ovvo.fname} ${ovvo.quantity}개</div>
+        <div id="menuorderdetaildiv2_2">${ovvo.side} : 
+            <c:if test=""></c:if>${ovvo.sideyn}</div>
         <div id="menuorderdetaildiv2_2">2옵션 여부</div>
         <div id="menuorderdetaildiv2_2">3옵션 여부</div>
         <div id="menuorderdetaildiv2_3">가격</div>
     </div>
 <br>
     <div class="menuorderdetaildiv">
-        <div id="menuorderdetaildiv3">배달주소 : ${ovo.address} ${ovo.address2}</div>
-        <div id="menuorderdetaildiv3">전화번호 : ${ovo.phone}</div>
+        <div id="menuorderdetaildiv3">배달주소 : ${ovvo.address} ${ovvo.address2}</div>
+        <div id="menuorderdetaildiv3">전화번호 : ${ovvo.phone}</div>
         <div id="menuorderdetaildiv3">배달/포장여부 : 
-            <c:if test="${ovo.rideryn==0}">
+            <c:if test="${ovvo.rideryn==0}">
                 포장
             </c:if>
-            <c:if test="${ovo.rideryn==1}">
+            <c:if test="${ovvo.rideryn==1}">
                 배달
             </c:if>
         </div>
         <div id="menuorderdetaildiv3">일회용품 여부 : 
-            <c:if test="${ovo.rideryn==0}">
+            <c:if test="${ovvo.rideryn==0}">
                 포함
             </c:if>
-            <c:if test="${ovo.rideryn==1}">
+            <c:if test="${ovvo.rideryn==1}">
                 미포함
             </c:if>
         </div>
         <div id="menuorderdetaildiv3">결제방법 : 
-            <c:if test="${ovo.rideryn==0}">
+            <c:if test="${ovvo.rideryn==0}">
                 현금결제
             </c:if>
-            <c:if test="${ovo.rideryn==1}">
+            <c:if test="${ovvo.rideryn==1}">
                 카드결제
             </c:if>
         </div>
     </div>
 <br>
-    <c:if test="${ovo.result==2}">
+    <c:if test="${ovvo.result==2}">
         <form class="review" name="review_form" id="review_form" method="post">
             <fieldset>
                 <span class="star_text" id="star_text">
@@ -91,7 +91,7 @@
         </form>
     </c:if>
 
-    <c:if test="${ovo.result==3}">
+    <c:if test="${ovvo.result==3}">
         <form class="review" name="review_form" id="review_form" method="post">
             <fieldset>
                 <div id="star_box">

@@ -32,7 +32,7 @@ public class memberOrderListAction implements Action {
 	      }else {
 	    	 ArrayList<OrderVO> finalList = new ArrayList<>();
 	         OrderDao odao = OrderDao.getInstance();
-	         
+	      
 	         int page=1;
 				if(request.getParameter("page")!=null) { 
 					page=Integer.parseInt(request.getParameter("page"));
@@ -53,57 +53,46 @@ public class memberOrderListAction implements Action {
 			
 	         ArrayList<OrderVO> list = odao.selectOrdersIngById(mvo.getId(), paging);
 	         
-	         int total = 0; // 총 주문금액
-	         String oname = ""; // 주문내역
-	         
+	         String oname = ""; // 주문메뉴(서브메뉴)
+
 	         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
-	        	 ArrayList<OrderDetailVO> detailList = new ArrayList<>();
-	        	 int j = 0;
-	        	 detailList = odao.getOrderDetailbyOseq(ovo.getOseq());
-	        	 int size = detailList.size();
-	        	 for (OrderDetailVO odvo : detailList) { // 주문한 메뉴별(odseq 수만큼)로 반복
-	        		 j++;
-	        		 FoodDao fdao = FoodDao.getInstance();
-	        		 FoodmenuVO fvo = new FoodmenuVO();
-	        		 fvo = fdao.getFoodDetail(odvo.getFseq());
-	        		 oname = oname+fvo.getFname();
-	        		 if (odvo.getSideyn1()+odvo.getSideyn2()+odvo.getSideyn3()>0) {
-	        			 oname = oname + "(";
-		        		 if (odvo.getSideyn1()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice1());
-		        			 oname = oname + fvo.getFside1();
-		        			 if (odvo.getSideyn2()==1 || odvo.getSideyn3()==1) {
-		        				 oname = oname + ", ";
-		        			 }
-		        		 }
-		        		 if (odvo.getSideyn2()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice2());
-		        			 oname = oname + fvo.getFside2();
-		        			 if (odvo.getSideyn3()==1) {
-		        				 oname = oname + ", ";
-		        			 }
-		        		 }
-		        		 if (odvo.getSideyn3()==1) {
-		        			 fvo.setFprice(fvo.getFprice()+fvo.getFsideprice3());
-		        			 oname = oname + fvo.getFside3();
-		        		 }
-		        		 if(size==j) oname=oname+")";
-		        		 else oname = oname + "), ";
-	        		 } else oname = oname+", ";
-	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
-	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
-	        		 ovo.setFimage(fvo.getFimage());
-	        		 ovo.setRseq(fvo.getRseq());
-	        	 }
+	        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
+	        	 int i = 0;
+	        	 int size = ovList.size();
 	        	 
-	        	 ovo.setTotalprice(total);
+	        	 for (OrderViewVO ovvo : ovList) { // 주문한 메뉴별(odseq 수만큼)로 반복
+	        		 i++;
+	        		 oname = oname+ovvo.getFname();
+	        		 if (ovvo.getSideyn1()+ovvo.getSideyn2()+ovvo.getSideyn3()>0) {
+	        			 oname = oname + "(";
+		        		 if (ovvo.getSideyn1()==1) {
+		        			 oname = oname + ovvo.getFside1();
+		        			 if (ovvo.getSideyn2()==1 || ovvo.getSideyn3()==1) {
+		        				 oname = oname + ", ";
+		        			 }
+		        		 }
+		        		 if (ovvo.getSideyn2()==1) {
+		        			 oname = oname + ovvo.getFside2();
+		        			 if (ovvo.getSideyn3()==1) {
+		        				 oname = oname + ", ";
+		        			 }
+		        		 }
+		        		 if (ovvo.getSideyn3()==1) {
+		        			 oname = oname + ovvo.getFside3();
+		        		 }
+		        		 if(size==i) oname=oname+")"; // 주문한메뉴갯수==반복횟수 일때
+		        		 else oname = oname + "), "; // 주문한메뉴갯수>반복횟수일 때
+	        		 } else if (size!=i) {oname = oname+", ";}// 주문한메뉴갯수>반복횟수일 때
+	        		 
+	        		 ovo.setRname(ovvo.getRname());
+	        		 ovo.setRimage(ovvo.getRimage());
+	        		 ovo.setRseq(ovvo.getRseq());
+	        	 }
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
-	        	 
 	         }
 	         request.setAttribute("memberOrderList", finalList);
-	         request.setAttribute("paging", paging);
-	         
+	         request.setAttribute("paging", paging);	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	      

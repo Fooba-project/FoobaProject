@@ -34,7 +34,7 @@ public class OrderDao {
 	}
 
 
-	public ArrayList<OrderViewVO> selectOrdersByOseq(int oseq) {
+	public ArrayList<OrderViewVO> selectOrderViewByOseq(int oseq) {
 		ArrayList<OrderViewVO> list=new ArrayList<>();
 		String sql="select*from order_view where oseq=?";
 		con=Dbman.getConnection();
@@ -44,7 +44,7 @@ public class OrderDao {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderViewVO ovo=new OrderViewVO();
-				ovo.setOseq(rs.getInt("oseq"));
+				ovo.setOseq(oseq);
 				ovo.setResult(rs.getInt("result"));
 				ovo.setIndate(rs.getTimestamp("indate"));
 				ovo.setId(rs.getString("id"));
@@ -80,6 +80,14 @@ public class OrderDao {
 				ovo.setRimage(rs.getString("rimage"));
 				ovo.setRtip(rs.getInt("rtip"));
 				ovo.setRyn(rs.getInt("ryn"));
+				ovo.setReview_seq(rs.getInt("review_seq"));
+				ovo.setReviewer(rs.getString("reviewer"));
+				ovo.setReview_indate(rs.getTimestamp("review_indate"));
+				ovo.setStar(rs.getInt("star"));
+				ovo.setReview_image(rs.getString("review_image"));
+				ovo.setReview_content(rs.getString("review_content"));
+				ovo.setReview_reply(rs.getString("review_reply"));
+				ovo.setReview_replyyn(rs.getInt("review_replyyn"));			
 				list.add(ovo);	
 			}
 		} catch (SQLException e) {	e.printStackTrace();
@@ -140,7 +148,7 @@ public class OrderDao {
 		con=Dbman.getConnection();
 		String sql = "select * from ("
 				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from orders where id=? and result in(0,1) order by oseq desc) b)"
+				+ "select rownum as rn, b.* from ((select * from orders where id=? and result in(0,1,2) order by oseq desc) b)"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
@@ -170,26 +178,6 @@ public class OrderDao {
 	}
 
 
-	public int getOrderIngCount(String id) {
-			int cnt = 0;
-			con = Dbman.getConnection();
-			String sql = "select count(rownum) as cnt from orders where id=?";
-			try {
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
-				rs = pstmt.executeQuery();
-				if (rs.next()) {
-					cnt = rs.getInt("cnt");
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				Dbman.close(con, pstmt, rs);
-			}
-			return cnt;
-	}
 
 
 	public OrderVO getOrderbyOseq(int oseq) {
@@ -217,6 +205,51 @@ public class OrderDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		return ovo;
+	}
+
+	
+
+	public int getOrderIngCount(String id) {
+			int cnt = 0;
+			con = Dbman.getConnection();
+			String sql = "select count(rownum) as cnt from orders where id=? and result in(0,1,2)";
+			try {
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				if (rs.next()) {
+					cnt = rs.getInt("cnt");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				Dbman.close(con, pstmt, rs);
+			}
+			return cnt;
+	}
+	
+
+	public int getOrderAllCount(String id) {
+		int cnt = 0;
+		con = Dbman.getConnection();
+		String sql = "select count(rownum) as cnt from orders where id=?";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Dbman.close(con, pstmt, rs);
+		}
+		return cnt;
 	}
 
 	
