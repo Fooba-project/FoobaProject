@@ -29,7 +29,7 @@ public class res_orderDetailAction implements Action {
 		}else {
 			
 			OrderDao odao=OrderDao.getInstance();
-			ArrayList<OrderViewVO> orderList=odao.selectOrdersByOseq(oseq);
+			ArrayList<OrderViewVO> orderList=odao.selectOrderViewByOseq(oseq);
 			
 			request.setAttribute("orderList", orderList);
 			request.setAttribute("orderDetail",orderList.get(0));

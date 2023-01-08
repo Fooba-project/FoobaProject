@@ -23,7 +23,7 @@
         <div id="menuorderdetaildiv1_2">${ovvo.rname}</div>
         <div id="menuorderdetaildiv1_3">주문번호 : ${ovvo.oseq}</div>
         <div id="menuorderdetaildiv1_3">주문일시 : ${ovvo.intime}</div>
-        <div id="menuorderdetaildiv1_3">총주문가격 : ${ovvo.totalprice}원(포매터)</div>
+        <div id="menuorderdetaildiv1_3">총주문가격 : <fmt:formatNumber value="${ovvo.totalprice}" pattern="#,###"/>원</div>
     </div>
 <br>
     <div class="menuorderdetaildiv">
