@@ -437,7 +437,7 @@ values(foodmenu_seq.nextVal, 13, '빅 머쉬룸버거',7000,'_2079a41608599d05ae
 insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsideprice1, fside2, fsideprice2, fside3, fsideprice3)
 values(foodmenu_seq.nextVal, 13, '빅 스페셜버거',6500,'--_df3f549f6d096f9b2f0c8d0ae86d3aa81671363923.jpg',
 '브리오슈번 + 피클 + 양배추 + 5일장햄버거소스 + 와규함박패티 +체다치즈 + 계란후라이','패티추가',2000,'감자튀김',2000,'펩시(500ml)',2000);
-
+		
 -- 양식(3) -- 뚜띠쿠치나
 
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
@@ -1393,35 +1393,9 @@ insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsidep
 values(foodmenu_seq.nextVal, 48, '시나몬 밀크쉐이크',7000,'_9963b65ba51c663f33a33b74325f18e61581904335.jpg',
 '3대 향신료 중 하나인 시나몬을 블랜딩하여 풍미를 더한 시나몬밀크쉐이크','덜 달게',0,'초코칩 추가',500,'휘핑추가',1500);
 
-select*from orders;
-select*from RESTAURANT;
-select*from FOODMENU;
--- 오더스 rideyn 0 배달 1 포장 , plasticyn 0 필요 없어요 1 주세요 payment 0 카드 1 현금 result 0 배달중, 1 배달완료	 (기본값0)
 
-
-insert into orders(oseq,id,rideryn,plasticyn,payment)
-values(orders_seq.nextVal,'abc1234',0,0,0 );
-
--- 오더 디테일  (시퀀스와 매칭 잘 해서 만들기) --  sideyn 0 선택x 1 선택
-insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
-values(order_detail_seq.nextVal,1,242,2,0,0,0);
-
-
--- 오더 2
-
-insert into orders(oseq,id,rideryn,plasticyn,payment)
-values(orders_seq.nextVal,'bsc1234',0,1,1 );
-
-insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
-values(order_detail_seq.nextVal,2,118,1,1,1,0);
-
-insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
-values(order_detail_seq.nextVal,2,119,2,1,1,0);
 
 -- qna 등록
-
-select*from foodmenu;
-
 insert into qna(qseq,subject,content)
 values(qna_seq.nextVal,'푸바는 어떤 서비스인가요?','저희 회사는 서울에 있는 음식점과 고객 사이에 친화적인 음식배달 서비스를 제공하는 회사 입니다. 
 저희는 고객분들이 웹을 통하여 음식 주문을 하실수 있도록 서비스를 제공하고 있습니다. 
@@ -1485,3 +1459,18 @@ values(review_seq_seq.nextVal,'bsc1234',23,3,'그냥 저냥 먹을만 합니다'
 
 insert into review(review_seq,id,rseq,star,content,oseq)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1);
+
+
+-- 오더스1 rideyn 0 배달 1 포장 , plasticyn 0 필요 없어요 1 주세요 payment 0 카드 1 현금 result 0 배달중, 1 배달완료	 (기본값0)
+insert into orders(oseq,id,rideryn,plasticyn,payment,result,address1,address2,totalprice,phone)
+values(orders_seq.nextVal,'abc1234',1,0,1,1,'서울특별시 서대문구','신촌 이젠아카데미 2층 404호', 10000,'010-1234-4321');
+insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
+values(order_detail_seq.nextVal,1,242,2,0,0,0);
+
+-- 오더스 2
+insert into orders(oseq,id,rideryn,plasticyn,payment,result,address1,address2,totalprice,phone)
+values(orders_seq.nextVal,'bsc1234',0,1,1,0,'서울특별시 서대문구','신촌 이젠아카데미 2층 404호', 70000, '010-1234-1234' );
+insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
+values(order_detail_seq.nextVal,2,118,1,1,1,0);
+insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
+values(order_detail_seq.nextVal,2,119,2,1,0,1);

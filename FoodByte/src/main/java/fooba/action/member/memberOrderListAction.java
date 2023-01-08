@@ -93,6 +93,7 @@ public class memberOrderListAction implements Action {
 	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
 	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
 	        		 ovo.setFimage(fvo.getFimage());
+	        		 ovo.setRseq(fvo.getRseq());
 	        	 }
 	        	 
 	        	 ovo.setTotalprice(total);

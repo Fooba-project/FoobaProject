@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fooba.VO.MemberVO;
+import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.action.Action;
 import fooba.dao.OrderDao;
@@ -20,22 +21,20 @@ public class memberOrderDetailAction implements Action {
 		
 		int oseq=Integer.parseInt(request.getParameter("oseq"));
 		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
+		String url="member/orderDetail.jsp";
+		OrderDao odao=OrderDao.getInstance();
+		OrderVO ovo = odao.getOrderbyOseq(oseq);
 		
-		String url="";
-		if(loginUser==null) {
+		if(mvo==null) {
 			url="fooba.do?command=loginForm";
-		}else {
-			OrderDao odao=OrderDao.getInstance();
-			ArrayList<OrderViewVO> orderList=odao.selectOrdersByOseq(oseq);
-		
-			request.setAttribute("orderList", orderList);
-			request.setAttribute("orderDetail",orderList.get(0));
-			
-			url="member/orderDetail.jsp";
+		}else if(mvo.getId()!=ovo.getId()) {
+			url="fooba.do?command=loginForm";
+		}else {	
+			ArrayList<OrderViewVO> orderDetailList=odao.selectOrdersByOseq(oseq);
+			request.setAttribute("orderDetailList", orderDetailList);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
-	
 
 	}
 

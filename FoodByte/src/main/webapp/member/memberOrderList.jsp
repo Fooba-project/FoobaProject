@@ -7,12 +7,11 @@
             <h2>진행중인 주문내역</h2>
             <hr><br>
             <table id="memberOrderList">
-
                 <c:forEach items="${memberOrderList }" var="ovo">
                     <tr  >
                         <td width="80">
                             <div id="memberOrderListimg">
-                                <img src="images/foodmenu/${ovo.fimage }" width="50" height="50">
+                                <a href="fooba.do?command=restaurantDetail&rseq=${ovo.rseq }"><img src="images/foodmenu/${ovo.rimage }" width="80" height="80"></a>
                             </div>
                             <div>${ovo.rname }</div>
                         </td>
@@ -24,7 +23,7 @@
                                 ${ovo.oname }
                             </div>
                             <div id="memberOrderListPrice" style="text-align: left; margin: 10px;">
-                                ${ovo.totalprice } 원
+                                 <fmt:formatNumber value="${ovo.totalprice }" pattern="#,###"/>원
                             </div>
                         </td>
                         <td width="80">
@@ -39,10 +38,13 @@
 			                    	<c:when test="${ovo.result==2}">
 			                    		배송완료
 			                    	</c:when>
+			                    	<c:when test="${ovo.result==3}">
+			                    		후기작성완료
+			                    	</c:when>
 		                    	</c:choose>	
                             </div>
                             <div id="memberOrderListDetail" margin="10" >
-                                <a href="#">주문 상세</a>
+                                <input type="button" value="주문상세" id="memberOrderDetailButton" onclick="location.href='fooba.do?command=memberOrderDetail&oseq=${ovo.oseq}'"/>
                             </div>            
                         </td>
                     </tr>
@@ -52,6 +54,6 @@
 
 <jsp:include page="paging/paging.jsp">
 	<jsp:param name="command" value="fooba.do?command=memberOrderList"/>
-</jsp:include>	
+</jsp:include>
 </div>
 <%@ include file="../footer.jsp"%>

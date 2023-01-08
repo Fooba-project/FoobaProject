@@ -1,8 +1,15 @@
-
-/*cart 테이블 변경*/
+/* Drop Tables */
+DROP TABLE admin CASCADE CONSTRAINTS;
+DROP TABLE order_detail CASCADE CONSTRAINTS;
+DROP TABLE foodmenu CASCADE CONSTRAINTS;
+DROP TABLE review CASCADE CONSTRAINTS;
+DROP TABLE orders CASCADE CONSTRAINTS;
+DROP TABLE member CASCADE CONSTRAINTS;
+DROP TABLE qna CASCADE CONSTRAINTS;
+DROP TABLE restaurant CASCADE CONSTRAINTS;
 DROP TABLE cart CASCADE CONSTRAINTS;
 
-CREATE TABLE cart
+ CREATE TABLE cart
 (
 	cseq number(5) NOT NULL,
 	quantity number(5) NOT NULL,
@@ -16,36 +23,6 @@ CREATE TABLE cart
 	cfname varchar2(20),
 	PRIMARY KEY (cseq)
 );
-
-ALTER TABLE cart
-	ADD FOREIGN KEY (fseq)
-	REFERENCES foodmenu (fseq)
-;
-
-
-ALTER TABLE cart
-	ADD FOREIGN KEY (id)
-	REFERENCES Member (id)
-;
-
-select*from cart;
-/*여기까지*/ 
-
-
-
-
-
-/* Drop Tables */
-DROP TABLE admin CASCADE CONSTRAINTS;
-DROP TABLE order_detail CASCADE CONSTRAINTS;
-DROP TABLE foodmenu CASCADE CONSTRAINTS;
-DROP TABLE review CASCADE CONSTRAINTS;
-DROP TABLE orders CASCADE CONSTRAINTS;
-DROP TABLE member CASCADE CONSTRAINTS;
-DROP TABLE qna CASCADE CONSTRAINTS;
-DROP TABLE restaurant CASCADE CONSTRAINTS;
-
- select*from cart;
 
 CREATE TABLE admin
 (
@@ -193,6 +170,16 @@ ALTER TABLE order_detail
 	REFERENCES orders (oseq)
 ;
 
+ALTER TABLE cart
+	ADD FOREIGN KEY (fseq)
+	REFERENCES foodmenu (fseq)
+;
+
+
+ALTER TABLE cart
+	ADD FOREIGN KEY (id)
+	REFERENCES Member (id)
+;
 
 ALTER TABLE review
 	ADD FOREIGN KEY (oseq)
@@ -215,22 +202,16 @@ alter table review add reviewyn number(2);
 
 create or replace view order_view
 as
-select a.oseq, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.address1 as oadd1, a.address2 as oadd2, a.phone as ophone, a.totalprice,
-      b.odseq, b.quantity, a.result, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
+select a.oseq, a.result, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.address1 as oadd1, a.address2 as oadd2, a.phone as ophone, a.totalprice,
+      b.odseq, b.quantity, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
       c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
-      d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3 ,
-      e.rname,e.rseq
-      
-     from orders a, order_detail b, member c, foodmenu d , RESTAURANT e
-   where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
+      d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3, d.fimage, d.fcontent,
+      e.rname, e.rseq, e.rimage, e.rtip, e.ryn
+from orders a, order_detail b, member c, foodmenu d, restaurant e
+where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
 
    ---------
-   create or replace view search
-   as
-   select a.rseq, a.rname, a.hash, a.rimage, a.kind,
-      b.fname
-   from restaurant a, foodmenu b
-   where a.rseq=b.rseq;
+
  
 ALTER TABLE member MODIFY nick VARCHAR2(100);
 ALTER TABLE foodmenu MODIFY fname VARCHAR2(100);

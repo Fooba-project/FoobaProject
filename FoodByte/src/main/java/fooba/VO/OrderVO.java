@@ -18,8 +18,15 @@ public class OrderVO {
 	private String rname;
 	private String fimage;
 	private String rimage;
+	private int rseq;
 	
 	
+	public int getRseq() {
+		return rseq;
+	}
+	public void setRseq(int rseq) {
+		this.rseq = rseq;
+	}
 	public String getFimage() {
 		return fimage;
 	}

@@ -187,6 +187,7 @@ table#memberOrderList {margin: 0 auto; border-collapse:collapse; width:75%; marg
 #orderArticle h2 {text-align: center;}
 #orderArticle hr {width: 200px; border: 1px solid gray;}
 table#memberOrderList td {text-align: center; font-family: Verdana; border-top:2px solid #333; border-bottom:2px solid #333; padding:0}
+#memberOrderDetailButton {width:100px; height:40px; background:#d0d0d0; cursor: pointer; font-size: 16px; border:0; border-radius:5px;}
 
 #review_form {text-align: center;}
 #review_form fieldset{border:0; display: inline-block; direction: rtl; text-align: center;}

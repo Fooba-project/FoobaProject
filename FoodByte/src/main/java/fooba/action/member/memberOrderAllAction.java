@@ -91,9 +91,10 @@ public class memberOrderAllAction implements Action {
 	        		 } else oname = oname+", ";
 	        		 total = total + (fvo.getFprice()*odvo.getQuantity());
 	        		 ovo.setRname(fdao.getRname(fvo.getRseq()));
-	        		 ovo.setFimage(fvo.getFimage());
+	        		 ovo.setRseq(fvo.getRseq());
+	        		 RestaurantDao rdao = RestaurantDao rdao
 	        	 }
-	        	 
+	        	 ovo.setRimage()
 	        	 ovo.setTotalprice(total);
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import fooba.VO.OrderDetailVO;
@@ -43,25 +44,8 @@ public class OrderDao {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderViewVO ovo=new OrderViewVO();
-				ovo.setFsideprice1(rs.getInt("fsideprice"));
-				ovo.setFsideprice2(rs.getInt("fsideprice"));
-				ovo.setFsideprice3(rs.getInt("fsideprice"));
-				ovo.setFside1(rs.getString("fside1"));
-				ovo.setFside2(rs.getString("fside2"));
-				ovo.setFside3(rs.getString("fside3"));
-				ovo.setFprice(rs.getInt("fprice"));
-				ovo.setFname(rs.getString("fname"));
-				ovo.setMphone(rs.getString("mphone"));
-				ovo.setMadd2(rs.getString("madd2"));
-				ovo.setMadd1(rs.getString("madd1"));
-				ovo.setNick(rs.getString("nick"));
-				ovo.setSideyn3(rs.getInt("sideyn3"));
-				ovo.setSideyn2(rs.getInt("sideyn2"));
-				ovo.setSideyn1(rs.getInt("sideyn1"));
-				ovo.setFseq(rs.getInt("fseq"));
-				ovo.setResult(rs.getInt("result"));
-				ovo.setQuantity(rs.getInt("quantity"));
 				ovo.setOseq(rs.getInt("oseq"));
+				ovo.setResult(rs.getInt("result"));
 				ovo.setIndate(rs.getTimestamp("indate"));
 				ovo.setId(rs.getString("id"));
 				ovo.setRideryn(rs.getInt("rideryn"));
@@ -70,8 +54,32 @@ public class OrderDao {
 				ovo.setOadd1(rs.getString("oadd1"));
 				ovo.setOadd2(rs.getString("oadd2"));
 				ovo.setOphone(rs.getString("ophone"));
-				ovo.setOdseq(rs.getInt("odseq"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
+				ovo.setOdseq(rs.getInt("odseq"));
+				ovo.setQuantity(rs.getInt("quantity"));
+				ovo.setFseq(rs.getInt("fseq"));
+				ovo.setSideyn1(rs.getInt("sideyn1"));
+				ovo.setSideyn2(rs.getInt("sideyn2"));
+				ovo.setSideyn3(rs.getInt("sideyn3"));
+				ovo.setNick(rs.getString("nick"));
+				ovo.setMadd1(rs.getString("madd1"));
+				ovo.setMadd2(rs.getString("madd2"));
+				ovo.setMphone(rs.getString("mphone"));
+				ovo.setFname(rs.getString("fname"));
+				ovo.setFprice(rs.getInt("fprice"));
+				ovo.setFside1(rs.getString("fside1"));
+				ovo.setFsideprice1(rs.getInt("fsideprice1"));
+				ovo.setFside2(rs.getString("fside2"));
+				ovo.setFsideprice2(rs.getInt("fsideprice2"));
+				ovo.setFside3(rs.getString("fside3"));
+				ovo.setFsideprice3(rs.getInt("fsideprice3"));
+				ovo.setFimage(rs.getString("fimage"));
+				ovo.setFcontent(rs.getString("fcontent"));
+				ovo.setRname(rs.getString("rname"));
+				ovo.setRseq(rs.getInt("rseq"));
+				ovo.setRimage(rs.getString("rimage"));
+				ovo.setRtip(rs.getInt("rtip"));
+				ovo.setRyn(rs.getInt("ryn"));
 				list.add(ovo);	
 			}
 		} catch (SQLException e) {	e.printStackTrace();
@@ -108,14 +116,17 @@ public class OrderDao {
 				rs=pstmt.executeQuery();
 				while(rs.next()) {
 					OrderVO ovo=new OrderVO();
-					ovo.setResult(rs.getInt("result"));
 					ovo.setOseq(rs.getInt("oseq"));
 					ovo.setIndate(rs.getTimestamp("indate"));
 					ovo.setId(rs.getString("id"));
 					ovo.setRideryn(rs.getInt("rideryn"));
 					ovo.setPlasticyn(rs.getInt("plasticyn"));
 					ovo.setPayment(rs.getInt("payment"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setAddress1(rs.getString("address1"));
+					ovo.setAddress2(rs.getString("address2"));
 					ovo.setTotalprice(rs.getInt("totalprice"));
+					ovo.setPhone(rs.getString("phone"));
 					list.add(ovo);
 				}
 			} catch (SQLException e) {	e.printStackTrace();
@@ -140,39 +151,17 @@ public class OrderDao {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				OrderVO ovo=new OrderVO();
-				ovo.setResult(rs.getInt("result"));
 				ovo.setOseq(rs.getInt("oseq"));
 				ovo.setIndate(rs.getTimestamp("indate"));
 				ovo.setId(rs.getString("id"));
 				ovo.setRideryn(rs.getInt("rideryn"));
 				ovo.setPlasticyn(rs.getInt("plasticyn"));
 				ovo.setPayment(rs.getInt("payment"));
+				ovo.setResult(rs.getInt("result"));
+				ovo.setAddress1(rs.getString("address1"));
+				ovo.setAddress2(rs.getString("address2"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
-				list.add(ovo);
-			}
-		} catch (SQLException e) {	e.printStackTrace();
-		}finally {Dbman.close(con, pstmt, rs);}
-		return list;
-	}
-
-
-	public ArrayList<OrderDetailVO> getOrderDetailbyOseq(int oseq) {
-		ArrayList<OrderDetailVO> list=new ArrayList<>();
-		con=Dbman.getConnection();
-		String sql="select * from order_detail where oseq=?";
-		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, oseq);
-			rs=pstmt.executeQuery();
-			while(rs.next()) {
-				OrderDetailVO ovo=new OrderDetailVO();
-				ovo.setFseq(rs.getInt("fseq"));
-				ovo.setOdseq(rs.getInt("odseq"));
-				ovo.setOseq(rs.getInt("oseq"));
-				ovo.setQuantity(rs.getInt("quantity"));
-				ovo.setSideyn1(rs.getInt("sideyn1"));
-				ovo.setSideyn2(rs.getInt("sideyn2"));
-				ovo.setSideyn3(rs.getInt("sideyn3"));
+				ovo.setPhone(rs.getString("phone"));
 				list.add(ovo);
 			}
 		} catch (SQLException e) {	e.printStackTrace();
@@ -200,6 +189,34 @@ public class OrderDao {
 				Dbman.close(con, pstmt, rs);
 			}
 			return cnt;
+	}
+
+
+	public OrderVO getOrderbyOseq(int oseq) {
+		OrderVO ovo = null;
+		con=Dbman.getConnection();
+		String sql="select * from orders where oseq=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, oseq);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				ovo=new OrderVO();
+				ovo.setOseq(oseq);
+				ovo.setIndate(rs.getTimestamp("indate"));
+				ovo.setId(rs.getString("id"));
+				ovo.setRideryn(rs.getInt("rideryn"));
+				ovo.setPlasticyn(rs.getInt("plasticyn"));
+				ovo.setPayment(rs.getInt("payment"));
+				ovo.setResult(rs.getInt("result"));
+				ovo.setAddress1(rs.getString("address1"));
+				ovo.setAddress2(rs.getString("address2"));
+				ovo.setTotalprice(rs.getInt("totalprice"));
+				ovo.setPhone(rs.getString("phone"));
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return ovo;
 	}
 
 	
