@@ -111,8 +111,7 @@ public class ActionFactory {
 		else if (command.equals("memberOrderList")) ac = new memberOrderListAction();// 진행중인 주문 내역
 		else if (command.equals("memberOrderAll")) ac = new memberOrderAllAction();// 전체 주문 내역
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
-		else if (command.equals("reviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
-		//보류 review yn, order_view에 review넣을지
+		else if (command.equals("memberReviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
 		
 		
 		

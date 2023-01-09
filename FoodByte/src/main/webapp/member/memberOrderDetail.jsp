@@ -15,6 +15,20 @@ function readURL(obj) {
         $('#previewDiv').append(img);
     }
 }
+
+function review_write() {
+	if(document.review_form.reviewStar.value.length==0) {
+		alert('별점을 눌러주세요');
+		history.scrollRestoration = "auto";
+		return false;
+	}
+	else if (document.review_form.reviewContent.value.length==0) {
+		alert('내용을 입력해주세요');
+		document.review_form.reviewContent.focus();
+		history.scrollRestoration = "auto";
+		return false;
+	} else return true;
+}
 </script>
 <div id="menuorderdetail">
     <div class="menuorderdetaildiv" id="menuorderdetaildiv1">
@@ -123,12 +137,12 @@ function readURL(obj) {
                 <textarea class="review" type="text" id="reviewContent" name="reviewContent"
                     placeholder="음식에 대한 솔직한 리뷰를 남겨주세요!"></textarea>
             </div>
-            <input type="submit" value="리뷰 작성" id="reviewWriteButton">
+            <input type="submit" value="리뷰 작성" id="reviewWriteButton" onclick="return review_write()">
         </form>
     </c:if>
 
     <c:if test="${ovo.result==3}">
-        <form class="review" name="review_form" id="review_form" method="post">
+        <form class="review" name="review_form" id="review_form" method="post" action="fooba.do?command=memberReviewWrite&oseq=${ovo.oseq }">
             <fieldset>
                 <div id="star_box">
                 	<label>
