@@ -83,7 +83,7 @@ body {margin: 0; position:relative;}
 
 
 .qna_subject {margin: 30px;  font-weight: bold; font-family: verdana; font-size: 120%;}
-.qna_content {margin: 40px; margin-top:20px; font-weight: bold; font-family: verdana; font-size: 100%;}
+.qna_content {margin: 30px; margin-top:20px; font-weight: bold; font-family: verdana; font-size: 100%; height:200px; line-height: 170%;}
 
 .res_join_title { text-align: left; font-size: 26px;font-weight: bold; }
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
