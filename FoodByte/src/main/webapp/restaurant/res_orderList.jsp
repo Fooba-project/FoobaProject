@@ -63,8 +63,8 @@
 		                    	
                             </div>
                             <div id="res_OrderListDetail" style="margin: 10px;" >
-                                <input type="button" value="주문상세" id="res_OrderResultButton" 
-                                onclick="location.href='fooba.do?command=resultAdd'" />                             
+                                <input type="button" value="다음으로" id="res_OrderResultButton" 
+                                onclick="location.href='fooba.do?command=res_orderComplete&oseq='+${ovo.oseq}"/>                             
                             </div>            
                         </td>
                     </tr>

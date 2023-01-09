@@ -164,7 +164,7 @@ table#resOrderList{margin: 0 auto; border-collapse:collapse; width:700px; margin
 #res_OrderListStatement{width:70px; height:70px;border:0; 
 text-align:center; line-height:70px; background:rgb(245, 236, 114); border-radius:50%; align:center;}
 
-#res_OrderResultButton {width:100px; height:30px; background:#d0d0d0; 
+#res_OrderResultButton{width:100px; height:30px; background:#d0d0d0; 
 cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 
 </style>
