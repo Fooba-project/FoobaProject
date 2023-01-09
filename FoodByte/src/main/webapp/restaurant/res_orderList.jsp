@@ -2,7 +2,7 @@
 <%@ include file="/restaurant/res_header.jsp"%>
 
 <div id="res_main">
-        <div id="res_name">레스토랑 이름</div>
+        <div id="res_name">${RestaurantVO.rname}</div>
         
         <div id="res_info">
            		<img class="res_logo"src="images/title/${RestaurantVO.rimage}" ></img>
@@ -17,23 +17,59 @@
         
         <br>
         <div id="res_tab">
-            <div class="res_infotab" style="color:white;">주문 현황</div>
-            <div class="res_infotab" onclick="location.href='fooba.do?command=res_foodmenuAddForm'">
-            배달 완료</div>
+            <div class="res_infotab" style="color:white; width:700px;" >주문 현황</div>      
         </div>
         
         <div id="res_menuall">
             <div id="res_menuinfo">
-            	<c:forEach items="${FoodList}" var="FoodmenuVO">
-	                <div id="res_menu">	                	
-	                    	<h3><fmt:formatDate value="${board.writedate}" pattern="(a)hh:mm" />시간이 출력 예정&nbsp;<img src="images/order.png" style="width:20px;"><br>
-	                    			  
-	                    <a class="basic">베리 굿</a><br>
-	                    5000원
-	                    <img class="res_meima" 
-                        >
-	                </div>
+            <table id="resOrderList">
+            	 <c:forEach items="${res_OrderList}" var="ovo">
+                    <tr>
+                        <td width="80">       
+                        	<div id="memberOrderListimg" style="text-align:center; font-weight:bold;">
+                               주문번호: <br>${ovo.oseq} <img src="images/order.png" style="width:20px;" 
+                               onclick="location.href='fooba.do?command=memberOrderDetail&oseq=${ovo.oseq}'">
+                            </div>                 
+                            <div>${ovo.rname}</div>
+                        </td>
+                        <td width="300">
+                            <div id="res_OrderListIntime" style="text-align: left; font-size: 70%; margin: 10px; ">
+                               <h2><fmt:formatDate value="${ovo.indate}" type="date" pattern="(a)hh:mm" /></h2>
+                            </div>
+                            <div id="res_OrderListMenu" style="text-align: left; margin: 10px;">
+                                ${ovo.oname }
+                            </div>
+                            <div id="res_OrderListPrice" style="text-align: left; margin: 10px;">
+                                 <fmt:formatNumber value="${ovo.totalprice }" pattern="#,###"/>원
+                            </div>
+                        </td>
+                        <td width="80">
+                            <div id="res_OrderListStatement" style="margin: 10px;" >
+                  				
+	                            <c:choose>
+			                    	<c:when test="${ovo.result==0}">
+			                    		주문확인중
+			                    	</c:when>
+			                    	<c:when test="${ovo.result==1}">
+			                    		배달중
+			                    	</c:when>
+			                    	<c:when test="${ovo.result==2}">
+			                    		배달완료
+			                    	</c:when>
+			                    	<c:when test="${ovo.result==3}">
+			                    		후기작성완료
+			                    	</c:when>
+		                    	</c:choose>	
+		                    	
+                            </div>
+                            <div id="res_OrderListDetail" style="margin: 10px;" >
+                                <input type="button" value="주문상세" id="res_OrderResultButton" 
+                                onclick="location.href='fooba.do?command=resultAdd'" />                             
+                            </div>            
+                        </td>
+                    </tr>
                 </c:forEach>
+                </table>
             </div>
 
 

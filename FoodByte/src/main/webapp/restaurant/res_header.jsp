@@ -157,6 +157,15 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
 .res_text_boxs{margin-top: 10px;  padding-left: 10px;}
 
+/* 레스토랑 주문확인 css */
+
+#res_OrderListimg img{cursor: pointer;}
+table#resOrderList{margin: 0 auto; border-collapse:collapse; width:700px; margin-bottom:20px}
+#res_OrderListStatement{width:70px; height:70px;border:0; 
+text-align:center; line-height:70px; background:rgb(245, 236, 114); border-radius:50%; align:center;}
+
+#res_OrderResultButton {width:100px; height:30px; background:#d0d0d0; 
+cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 
 </style>
 </head>
