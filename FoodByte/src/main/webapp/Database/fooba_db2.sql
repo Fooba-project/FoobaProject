@@ -33,7 +33,7 @@ alter table cart
 
 -- cart 변경 
 select*from cart;
-select*from member;
+
 
 
 
@@ -89,11 +89,9 @@ select a.oseq, a.result, a.indate, a.id, a.rideryn, a.plasticyn, a.payment, a.ad
       b.odseq, b.quantity, b.fseq, b.sideyn1, b.sideyn2, b.sideyn3,
       c.nick, c.address1 as madd1, c.address2 as madd2, c.phone as mphone,
       d.fname, d.fprice, d.fside1, d.fside2, d.fside3, d.fsideprice1, d.fsideprice2, d.fsideprice3, d.fimage, d.fcontent,
-      e.rname, e.rseq, e.rimage, e.rtip, e.ryn,
-      f.review_seq, f.id as reviewer, f.indate as review_indate, f.star, f.image as review_image, f.content as review_content, f.reply as review_reply, f.replyyn as review_replyyn
-from orders a, order_detail b, member c, foodmenu d, restaurant e, review f
-where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq and a.oseq=f.oseq;
-
+      e.rname, e.rseq, e.rimage, e.rtip, e.ryn
+from orders a, order_detail b, member c, foodmenu d, restaurant e
+where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
 
 
 -- 오더스1 rideyn 0 배달 1 포장 , plasticyn 0 필요 없어요 1 주세요 payment 0 카드 1 현금 result 0 배달중, 1 배달완료	 (기본값0)
@@ -111,7 +109,7 @@ insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,119,2,1,0,1);
 
 DROP TABLE review CASCADE CONSTRAINTS;
-
+select * from ORDER_DETAIL
 CREATE TABLE review
 (
 	review_seq number(5) NOT NULL,
@@ -128,8 +126,6 @@ CREATE TABLE review
 	PRIMARY KEY (review_seq)
 );
 
-insert into review(review_seq,id,rseq,star,content,oseq,nick)
-values(review_seq_seq.nextVal,'bsc1234',23,3,'그냥 저냥 먹을만 합니다',2,'솔직리뷰어');
-
+select * from ORDER_view
 insert into review(review_seq,id,rseq,star,content,oseq,nick)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');

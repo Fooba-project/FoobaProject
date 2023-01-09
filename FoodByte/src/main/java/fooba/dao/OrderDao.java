@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
+import fooba.VO.ReviewVO;
 import fooba.util.Dbman;
 import fooba.util.Paging;
 
@@ -79,15 +80,7 @@ public class OrderDao {
 				ovo.setRseq(rs.getInt("rseq"));
 				ovo.setRimage(rs.getString("rimage"));
 				ovo.setRtip(rs.getInt("rtip"));
-				ovo.setRyn(rs.getInt("ryn"));
-				ovo.setReview_seq(rs.getInt("review_seq"));
-				ovo.setReviewer(rs.getString("reviewer"));
-				ovo.setReview_indate(rs.getTimestamp("review_indate"));
-				ovo.setStar(rs.getInt("star"));
-				ovo.setReview_image(rs.getString("review_image"));
-				ovo.setReview_content(rs.getString("review_content"));
-				ovo.setReview_reply(rs.getString("review_reply"));
-				ovo.setReview_replyyn(rs.getInt("review_replyyn"));			
+				ovo.setRyn(rs.getInt("ryn"));		
 				list.add(ovo);	
 			}
 		} catch (SQLException e) {	e.printStackTrace();
@@ -306,6 +299,34 @@ public class OrderDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		return list;
+	}
+
+
+	public ReviewVO getOrderReviewByOseq(int oseq) {
+		ReviewVO rvo = null;
+		con=Dbman.getConnection();
+		String sql="select * from review where oseq=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, oseq);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				rvo=new ReviewVO();
+				rvo.setContent(rs.getString("content"));
+				rvo.setId(rs.getString("id"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setIndate(rs.getTimestamp("indate"));
+				rvo.setNick(rs.getString("nick"));
+				rvo.setOseq(oseq);
+				rvo.setReply(rs.getString("reply"));
+				rvo.setReplyyn(rs.getInt("replyyn"));
+				rvo.setReview_seq(rs.getInt("review_seq"));
+				rvo.setRseq(rs.getInt("rseq"));
+				rvo.setStar(rs.getInt("star"));
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return rvo;
 	}
 
 

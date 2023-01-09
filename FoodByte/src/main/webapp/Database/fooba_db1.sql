@@ -1454,8 +1454,6 @@ insert into qna(qseq,subject,content)
 values(qna_seq.nextVal,'가게와 갈등이 있었어요',
 '위협적인 가게의 태도에 공포심을 느꼈거나 배달 과정 중 불미스러운 일이 발생했다면 주저하지 말고 고객센터로 신고해주세요');
 
-insert into review(review_seq,id,rseq,star,content,oseq,nick)
-values(review_seq_seq.nextVal,'bsc1234',23,3,'그냥 저냥 먹을만 합니다',2,'솔직리뷰어');
 
 insert into review(review_seq,id,rseq,star,content,oseq,nick)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');

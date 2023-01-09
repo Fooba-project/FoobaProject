@@ -44,63 +44,7 @@ public class OrderViewVO {
 	private int rtip;
 	private int ryn;
 	
-	private int review_seq;
-	private String reviewer;
-	private Timestamp review_indate;
-	private int star;
-	private String review_image;
-	private String review_content;
-	private String review_reply;
-	private int review_replyyn;
 	
-	public int getReview_seq() {
-		return review_seq;
-	}
-	public void setReview_seq(int review_seq) {
-		this.review_seq = review_seq;
-	}
-	public String getReviewer() {
-		return reviewer;
-	}
-	public void setReviewer(String reviewer) {
-		this.reviewer = reviewer;
-	}
-	public Timestamp getReview_indate() {
-		return review_indate;
-	}
-	public void setReview_indate(Timestamp review_indate) {
-		this.review_indate = review_indate;
-	}
-	public int getStar() {
-		return star;
-	}
-	public void setStar(int star) {
-		this.star = star;
-	}
-	public String getReview_image() {
-		return review_image;
-	}
-	public void setReview_image(String review_image) {
-		this.review_image = review_image;
-	}
-	public String getReview_content() {
-		return review_content;
-	}
-	public void setReview_content(String review_content) {
-		this.review_content = review_content;
-	}
-	public String getReview_reply() {
-		return review_reply;
-	}
-	public void setReview_reply(String review_reply) {
-		this.review_reply = review_reply;
-	}
-	public int getReview_replyyn() {
-		return review_replyyn;
-	}
-	public void setReview_replyyn(int review_replyyn) {
-		this.review_replyyn = review_replyyn;
-	}
 	public int getOseq() {
 		return oseq;
 	}

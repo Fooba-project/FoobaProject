@@ -53,7 +53,6 @@ public class memberOrderAllAction implements Action {
 	         String oname = ""; // 주문메뉴(서브메뉴)
 
 	         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
-	        	 System.out.println("여기");
 	        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
 	        	 int i = 0;
 	        	 int size = ovList.size();
@@ -81,16 +80,15 @@ public class memberOrderAllAction implements Action {
 		        		 if(size==i) oname=oname+")"; // 주문한메뉴갯수==반복횟수 일때
 		        		 else oname = oname + "), "; // 주문한메뉴갯수>반복횟수일 때
 	        		 } else if (size!=i) {oname = oname+", ";}// 주문한메뉴갯수>반복횟수일 때
-	        		 
-	        		 ovo.setRname(ovvo.getRname());
-	        		 ovo.setRimage(ovvo.getRimage());
-	        		 ovo.setRseq(ovvo.getRseq());
 	        	 }
+	        	 ovo.setRname(ovList.get(0).getRname());
+	        	 ovo.setRimage(ovList.get(0).getRimage());
+	        	 ovo.setRseq(ovList.get(0).getRseq());
 	        	 ovo.setOname(oname);
 	        	 finalList.add(ovo);
 	         }
 	         request.setAttribute("memberOrderList", finalList);
-	         request.setAttribute("memberOrderListT", "전체");
+	         request.setAttribute("memberOrderListT", "진행중인");
 	         request.setAttribute("paging", paging);	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);

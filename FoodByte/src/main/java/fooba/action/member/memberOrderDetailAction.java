@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import fooba.VO.MemberVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
+import fooba.VO.ReviewVO;
 import fooba.action.Action;
 import fooba.dao.OrderDao;
 
@@ -34,9 +35,10 @@ public class memberOrderDetailAction implements Action {
 			url="fooba.do?command=loginForm";
 		}else {
 			ArrayList<OrderViewVO> ovList=odao.selectOrderViewByOseq(oseq);
+			ReviewVO review = odao.getOrderReviewByOseq(oseq);
 			request.setAttribute("ovo", ovo);
 			request.setAttribute("ovList", ovList);
-			System.out.println(ovList.get(0).getReview_image());
+			request.setAttribute("review", review);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}

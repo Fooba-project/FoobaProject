@@ -149,21 +149,21 @@ function review_write() {
                 <div id="star_box">
                 <div style="font-size:20px; font-weight:bold">내가 작성한 리뷰</div>
                 	<label style="text-shadow: 0 0 0 rgba(255, 111, 44);">
-                		<c:if test="${ovList[0].star==1}">★</c:if>
-                		<c:if test="${ovList[0].star==2}">★★</c:if>
-                		<c:if test="${ovList[0].star==3}">★★★</c:if>
-                		<c:if test="${ovList[0].star==4}">★★★★</c:if>
-                		<c:if test="${ovList[0].star==5}">★★★★★</c:if>                      
+                		<c:if test="${review.star==1}">★</c:if>
+                		<c:if test="${review.star==2}">★★</c:if>
+                		<c:if test="${review.star==3}">★★★</c:if>
+                		<c:if test="${review.star==4}">★★★★</c:if>
+                		<c:if test="${review.star==5}">★★★★★</c:if>                      
                     </label>
                 </div>
             </fieldset>
             <div id="previewDiv">
-            	<c:if test="${not empty ovList[0].review_image }">
-            		<src url="/images/review/${ovList[0].review_image }"/>
+            	<c:if test="${not empty review.review_image }">
+            		<src url="/images/review/${review.review_image }"/>
             	</c:if>
             </div>
             <div>
-                <textarea class="review" type="text" id="reviewContent" readonly>${ovList[0].review_content }${ovList[0].review_image }</textarea>
+                <textarea class="review" type="text" id="reviewContent" readonly>${review.review_content }${review.review_image }</textarea>
             </div>
         </form>
     </c:if>
