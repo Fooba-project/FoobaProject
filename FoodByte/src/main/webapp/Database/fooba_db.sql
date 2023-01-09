@@ -221,7 +221,7 @@ from orders a, order_detail b, member c, foodmenu d, restaurant e, review f
 where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq and a.oseq=f.oseq;
 
    ---------
-
+select * from qna;
  
 ALTER TABLE member MODIFY nick VARCHAR2(100);
 ALTER TABLE foodmenu MODIFY fname VARCHAR2(100);

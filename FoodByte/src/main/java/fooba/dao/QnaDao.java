@@ -20,12 +20,12 @@ public class QnaDao {
 
 	public void insertQna(QnaVO qvo) {
 		con=Dbman.getConnection();
-		String sql="insert into qna(qseq, content, subject) values(qna_seq.nextVal,?,?)";
+		String sql="insert into qna(qseq, subject, content) values(qna_seq.nextVal,?,?)";
 		
 		try {
 			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, qvo.getContent());
-			pstmt.setString(2, qvo.getSubject());
+			pstmt.setString(1, qvo.getSubject());
+			pstmt.setString(2, qvo.getContent());			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}

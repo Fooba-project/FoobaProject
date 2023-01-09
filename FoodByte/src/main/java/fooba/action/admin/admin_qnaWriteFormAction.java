@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fooba.VO.QnaVO;
 import fooba.action.Action;
-import fooba.dao.QnaDao;
 
 public class admin_qnaWriteFormAction implements Action {
 

@@ -93,6 +93,9 @@ body {margin: 0; position:relative;}
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
 .res_text_boxs{margin-top: 10px;  padding-left: 10px;}
 
+.qna_buttons{position: relative;  margin:0 auto;  width: 150px; }
+.qna_button{width:70px; margin-top: 11px; background-color: #859bd6; font-size: 16px; border-radius: 6px;}
+
 </style>
 <body>
     <div class="headback" id="adminheadback">
