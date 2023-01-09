@@ -26,8 +26,23 @@ ALTER TABLE cart
 ;
 
 DROP TABLE order_detail CASCADE CONSTRAINTS;
+DROP TABLE orders CASCADE CONSTRAINTS;
 
-delete from orders;
+CREATE TABLE orders
+(
+	oseq number(5) NOT NULL,
+	indate date DEFAULT sysdate,
+	id varchar2(20) NOT NULL,
+	rideryn number(2) DEFAULT 0 NOT NULL,
+	plasticyn number(2) DEFAULT 0 NOT NULL,
+	payment number(2) DEFAULT 0 NOT NULL,
+	result number(2) DEFAULT 0,
+	address1 varchar2(100),
+	address2 varchar2(100),
+	totalprice number(7),
+	phone varchar2(20),
+	PRIMARY KEY (oseq)
+);
 
 CREATE TABLE order_detail
 (
@@ -65,8 +80,6 @@ from orders a, order_detail b, member c, foodmenu d, restaurant e, review f
 where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq and a.oseq=f.oseq;
 
 
-   
-select * from orders;
 
 -- 오더스1 rideyn 0 배달 1 포장 , plasticyn 0 필요 없어요 1 주세요 payment 0 카드 1 현금 result 0 배달중, 1 배달완료	 (기본값0)
 insert into orders(oseq,id,rideryn,plasticyn,payment,result,address1,address2,totalprice,phone)
