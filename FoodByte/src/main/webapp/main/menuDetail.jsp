@@ -26,8 +26,8 @@
             	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
 	                <div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
 	                    <h3>${FoodmenuVO.fname }</h3>
-	                    <a class="grayy">${FoodmenuVO.fcontent }</a><br>
-	                    ${FoodmenuVO.fprice}원
+	                    <div class="grayyy">${FoodmenuVO.fcontent }</div><br>
+	                    <div class="menugaguk">${FoodmenuVO.fprice}원</div>
 	                    <img class="smmenu" src="images/foodmenu/${FoodmenuVO.fimage}">
 	                </div>
                 </c:forEach>
@@ -89,7 +89,7 @@
           
         <c:forEach items="${clist }" var="CartVO">
         	<div class="jbitem" id="jb${CartVO.cseq}">
-            <a class="jbitemname">${CartVO.cfname}&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1} ${CartVO.sideyn2} ${CartVO.sideyn3}</a><br>
+            <a class="jbitemname">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
                 <input type="button" class="jbcancel" value="X" onclick="deletejb(${CartVO.cseq});">

@@ -28,22 +28,23 @@ public class jangbaguniAction implements Action {
 		url="main/popupMenu.jsp";
 		CartVO cvo=new CartVO();
 		cvo.setFseq(Integer.parseInt(request.getParameter("fseq")));
-		cvo.setId(mvo.getId());		
-		cvo.setSideyn1(request.getParameter("fside1"));
-		cvo.setSideyn2(request.getParameter("fside2"));
-		cvo.setSideyn3(request.getParameter("fside3"));
+		cvo.setId(mvo.getId());
+		if(request.getParameter("fsideprice1")!=null) cvo.setSideyn1(request.getParameter("fside1"));
+		if(request.getParameter("fsideprice2")!=null) cvo.setSideyn2(request.getParameter("fside2"));
+		if(request.getParameter("fsideprice3")!=null) cvo.setSideyn3(request.getParameter("fside3"));
 		cvo.setCprice(Integer.parseInt(request.getParameter("totalprice")));
 		cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 		cvo.setCfname(request.getParameter("fname"));
 		cvo.setRseq(Integer.parseInt(request.getParameter("rseq")));
+		System.out.println(request.getParameter("fsideprice1")+" a "+request.getParameter("fsideprice2")+" b " +request.getParameter("fsideprice3"));
 		
 		CartDao cdao=CartDao.getInstance();
 		
 		cdao.insertCart(cvo);
 		
-		ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),cvo.getRseq());
+		//ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),cvo.getRseq());
 		
-		request.setAttribute("clist", clist);
+		//request.setAttribute("clist", clist);
 		request.setAttribute("jangresult", "1");
 		
 		}

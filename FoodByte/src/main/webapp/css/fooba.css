@@ -110,6 +110,8 @@ float: left;}
 #gagemenu{height: 140px; border: 0.5px solid rgb(241, 241, 241);  padding-left:20px; font-weight: bold; line-height: 30px; position: relative; cursor: pointer;}
 #gagemenu:active{background: rgb(238, 238, 238);}
 .grayy{color: gray; font-weight: normal; font-size: 100%; }
+.grayyy{color: gray; font-weight: normal; font-size: 100%;  width: 500px;position: absolute; top: 50px;}
+.menugaguk{bottom: 3px; position: absolute;}
 #cleanreview{font-weight: bold; }
 .smmenu{height: 120px;width: 120px; position: absolute; right: 10px;top: 10px;}
 #menujengbo{height: 50px;  }

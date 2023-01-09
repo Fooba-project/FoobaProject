@@ -6,11 +6,15 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import fooba.VO.CartVO;
 import fooba.VO.FoodmenuVO;
+import fooba.VO.MemberVO;
 import fooba.VO.RestaurantVO;
 import fooba.VO.ReviewVO;
 import fooba.action.Action;
+import fooba.dao.CartDao;
 import fooba.dao.ResDao;
 
 public class restaurantDetailAction implements Action {
@@ -25,7 +29,15 @@ public class restaurantDetailAction implements Action {
 		RestaurantVO rvo=rdao.getResInfo(rseq);
 		ArrayList<FoodmenuVO>foodmenuList=rdao.foodList(rseq);
 		ArrayList<ReviewVO>reviewList=rdao.reviewList(rseq);
+
+		HttpSession session=request.getSession();
+		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");
+		if(mvo!=null) {
+		CartDao cdao=CartDao.getInstance();
+		ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
 		
+		request.setAttribute("clist", clist);
+		}
 		request.setAttribute("RestaurantVO", rvo);
 		request.setAttribute("FoodmenuList", foodmenuList);
 		request.setAttribute("ReviewList",reviewList);
