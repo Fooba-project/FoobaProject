@@ -33,7 +33,7 @@
 	    			<input type="hidden" name="fseq" value="${param.fseq}" >
 	                <div id="log_buttonbox">
 	                    <button type="submit" id="log_button" >
-	                        <span class="btn_text">로그인 ${param.fseq} a</span>
+	                        <span class="btn_text">로그인</span>
 	                    </button>
 	                </div>
 	            </div>
