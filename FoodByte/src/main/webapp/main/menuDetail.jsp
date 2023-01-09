@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-	<!-- RestaurantVO, FoodmenuList, ReviewList-->
+	<!-- RestaurantVO, FoodmenuList, ReviewList, clist-->
 	<div id="realjenche">
         <div id="jenche">
         <div id="gageirm">${RestaurantVO.rname}</div>
@@ -92,12 +92,12 @@
             <a class="jbitemname">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deletejb(${CartVO.cseq});">
+                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq});">
             </div>
         </div>
         </c:forEach>
  
-        <div class="baedaltip">배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;</div>
+        <div class="baedaltip">배달요금 : ${RestaurantVO.rtip}원 별도&nbsp;&nbsp;&nbsp;</div>
         <div class="jbtotal">합계 : <input type="text" value="100000" id="jbtotalprice">원&nbsp;&nbsp;</div>
         <input type="button" value="주문하기" class="jbwanryo">
     </div>

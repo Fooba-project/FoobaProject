@@ -126,6 +126,31 @@ public class CartDao {
 		return clist;
 	}
 
+	public int deletecart(int cseq) {
+		int rseq = 0;
+		con=Dbman.getConnection();
+		String sql="select *from cart where cseq=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,cseq);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				rseq=rs.getInt("rseq");
+			}
+		} catch (SQLException e1) {	e1.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
+		 sql="delete from cart where cseq=?";
+		 con=Dbman.getConnection();		
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,cseq);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		}finally {Dbman.close(con,pstmt,rs);}
+		return rseq;
+	}
+
 	
 /*
 	public void deleteCart(int cseq) {

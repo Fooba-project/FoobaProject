@@ -261,8 +261,9 @@ function go_search(hash){
      window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no, top=100 , left="+ popupX);
  } 
   
-  function deletejb(ths){
-            const div = document.getElementById('jb'+ths); 
-            div.remove();
+  function deleteejb(cseq){
+	var ok=confirm("장바구니에서 삭제하시겠습니까?");
+	if(ok) location.href="fooba.do?command=deleteCartmenu&cseq="+cseq;
+    else return;
    }
  
