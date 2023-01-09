@@ -35,7 +35,7 @@ public class QnaDao {
 
 	public void updateQna(QnaVO qvo) {
 		con=Dbman.getConnection();
-		String sql="update qna set content=? ,subject=? where qseq=?";
+		String sql="update qna set content=?, subject=? where qseq=?";
 		
 		try {
 			pstmt=con.prepareStatement(sql);

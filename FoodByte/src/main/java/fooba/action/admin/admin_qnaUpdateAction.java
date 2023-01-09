@@ -16,7 +16,7 @@ public class admin_qnaUpdateAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url="fooba.do?command=admin_qnaView&qseq="+request.getParameter("qseq");
+		String url="admin/admin_qnaUpdate.jsp";
 		HttpSession session=request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");
 		
@@ -25,14 +25,15 @@ public class admin_qnaUpdateAction implements Action {
 		
 		else {
 			QnaVO qvo=new QnaVO();
-			qvo.setQseq(Integer.parseInt(request.getParameter("qseq")));
 			qvo.setSubject(request.getParameter("subject"));
 			qvo.setContent(request.getParameter("content"));
+			qvo.setQseq(Integer.parseInt(request.getParameter("qseq")));
+			
 			QnaDao qdao=QnaDao.getInstance();
 			qdao.updateQna(qvo);
 		}
-		
-		response.sendRedirect(url);
+		System.out.println(request.getParameter("qseq"));
+		request.getRequestDispatcher(url).forward(request, response);
 
 	}
 
