@@ -21,6 +21,7 @@ DROP TABLE cart CASCADE CONSTRAINTS;
 	sideyn3 varchar2(30) ,
 	cprice number(10),
 	cfname varchar2(20),
+	rseq number(5) not null,
 	PRIMARY KEY (cseq)
 );
 
@@ -148,6 +149,8 @@ CREATE TABLE review
 
 
 
+
+
 ALTER TABLE order_detail
 	ADD FOREIGN KEY (fseq)
 	REFERENCES foodmenu (fseq)
@@ -180,6 +183,12 @@ ALTER TABLE cart
 	ADD FOREIGN KEY (id)
 	REFERENCES Member (id)
 ;
+
+alter table cart
+	add foreign key (rseq)
+	references restaurant (rseq)
+;
+
 
 ALTER TABLE review
 	ADD FOREIGN KEY (oseq)
