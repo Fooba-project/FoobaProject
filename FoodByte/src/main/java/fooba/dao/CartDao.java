@@ -95,6 +95,34 @@ public class CartDao {
 		
 	}
 
+	public ArrayList<CartVO> CartList(String id) {
+		ArrayList<CartVO> clist=new ArrayList<>();
+		con=Dbman.getConnection();
+		String sql="select * from cart where id=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				CartVO cvo=new CartVO();
+				cvo.setCseq(rs.getInt("cseq"));
+				cvo.setQuantity(rs.getInt("quantity"));
+				cvo.setIndate(rs.getTimestamp("indate"));
+				cvo.setId(rs.getString("id"));
+				cvo.setFseq(rs.getInt("fseq"));
+				cvo.setSideyn1(rs.getString("sideyn1"));
+				cvo.setSideyn2(rs.getString("sideyn2"));
+				cvo.setSideyn3(rs.getString("sideyn3"));
+				cvo.setCprice(rs.getInt("cprice"));
+				cvo.setCfname(rs.getString("cfname"));
+				clist.add(cvo);
+			}
+		} catch (SQLException e) {e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
+		return clist;
+	}
+
 	
 /*
 	public void deleteCart(int cseq) {

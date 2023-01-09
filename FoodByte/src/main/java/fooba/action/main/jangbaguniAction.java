@@ -1,6 +1,7 @@
 package fooba.action.main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +39,8 @@ public class jangbaguniAction implements Action {
 		CartDao cdao=CartDao.getInstance();
 		
 		cdao.insertCart(cvo);
+		
+		ArrayList<CartVO>clist=cdao.CartList(mvo.getId());
 		
 		request.setAttribute("jangresult", "1");
 		
