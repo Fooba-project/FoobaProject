@@ -2,15 +2,18 @@
 <%@ include file="../header.jsp"%>
 <%@ include file="mypage_sub.jsp"%>
 <script type="text/javascript">
-function setThumbnail(event) {
-	var reader = new FileReader();
-    reader.onload = function(event) {
-    	document.review_form.image_container.empty();
-    	var img = document.createElement("img");
-     	img.setAttribute("src", event.target.result);
-    	document.querySelector("div#image_container").appendChild(img);
-    };
-    reader.readAsDataURL(event.target.files[0]);
+function readURL(obj) {
+    let reader = new FileReader();
+    if(!obj.files.length) {
+        return;
+    }
+    $('#previewDiv').empty();
+    reader.readAsDataURL(obj.files[0]);
+    reader.onload = function (e) {
+        let img = $('<img />');
+        $(img).attr('src', e.target.result);
+        $('#previewDiv').append(img);
+    }
 }
 </script>
 <div id="menuorderdetail">
@@ -112,10 +115,10 @@ function setThumbnail(event) {
                     </div>
             </fieldset>
             <div id="review_img">
-            	<label for="review_image" >리뷰 이미지 첨부</label>
-            	<input type="file" id="review_image" onchange="setThumbnail(event);" value="리뷰 이미지 첨부" style="display:none;" accept="image/*" />
+            	<label for="imgInput" >리뷰 이미지 첨부</label>
+            	<input type="file" id="imgInput" onchange="readURL(this)" value="리뷰 이미지 첨부" style="display:none;" accept="image/*" />
             </div>
-    		<div id="image_container"></div>
+    		<div id="previewDiv"></div>
             <div>
                 <textarea class="review" type="text" id="reviewContent" name="reviewContent"
                     placeholder="음식에 대한 솔직한 리뷰를 남겨주세요!"></textarea>
