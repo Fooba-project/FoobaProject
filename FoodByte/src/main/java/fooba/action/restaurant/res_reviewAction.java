@@ -26,7 +26,6 @@ public class res_reviewAction implements Action {
 		if(rvo==null) {
 			url="fooba.do?command=res_loginForm";
 		}else {
-			//�α����� ���̵�� qna ����� ��ȸ�ϰ� ���Ϲ޴´� (�޼��� �̸� selectQna)
 			ResDao rdao=ResDao.getInstance();
 			int page=1;			
 			if(request.getParameter("page")!=null) { 

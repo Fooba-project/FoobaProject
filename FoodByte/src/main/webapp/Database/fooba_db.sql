@@ -52,7 +52,7 @@ CREATE TABLE foodmenu
 	PRIMARY KEY (fseq)
 );
 
-select * from restaurant
+
 CREATE TABLE member
 (
 	id varchar2(20) NOT NULL,

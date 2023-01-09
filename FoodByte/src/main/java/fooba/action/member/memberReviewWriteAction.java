@@ -53,6 +53,7 @@ public class memberReviewWriteAction implements Action {
 			rvvo.setStar(Integer.parseInt(multi.getParameter("reviewStar")));
 	
 			mdao.writeReview(rvvo);
+			odao.nextOrderStatement(oseq);
 		}
 		
 		request.getRequestDispatcher(url).forward(request, response);

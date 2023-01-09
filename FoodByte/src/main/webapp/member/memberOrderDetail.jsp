@@ -140,22 +140,28 @@ function review_write() {
             <input type="submit" value="리뷰 작성" id="reviewWriteButton" onclick="return review_write()">
         </form>
     </c:if>
-
+	
+	<div mar>내가 작성한 리뷰</div>
     <c:if test="${ovo.result==3}">
         <form class="review" name="review_form" id="review_form">
             <fieldset>
                 <div id="star_box">
-                	<label>
+                	<label style="text-shadow: 0 0 0 rgba(255, 111, 44);">
                 		<c:if test="${ovList[0].star==1}">★</c:if>
                 		<c:if test="${ovList[0].star==2}">★★</c:if>
                 		<c:if test="${ovList[0].star==3}">★★★</c:if>
                 		<c:if test="${ovList[0].star==4}">★★★★</c:if>
-                		<c:if test="${ovList[0].star==5}">★★★★★</c:if>                        
+                		<c:if test="${ovList[0].star==5}">★★★★★</c:if>                      
                     </label>
                 </div>
             </fieldset>
+            <div id="previewDiv">
+            	<c:if test="${not empty ovList[0].review_image }">
+            		<src url="images/review/${ovList[0].review_image }" height="300"/>
+            	</c:if>
+            </div>
             <div>
-                <textarea class="review" type="text" id="reviewContent" readonly>${ovo.rcontent }</textarea>
+                <textarea class="review" type="text" id="reviewContent" readonly>${ovList[0].review_content }</textarea>
             </div>
         </form>
     </c:if>
