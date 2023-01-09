@@ -36,6 +36,7 @@ public class memberOrderDetailAction implements Action {
 			ArrayList<OrderViewVO> ovList=odao.selectOrderViewByOseq(oseq);
 			request.setAttribute("ovo", ovo);
 			request.setAttribute("ovList", ovList);
+			System.out.println(ovList.get(0).getReview_image());
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}
