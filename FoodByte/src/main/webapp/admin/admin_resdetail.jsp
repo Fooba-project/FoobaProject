@@ -65,7 +65,7 @@
         </table>
             <br><br>
             <div id="join_btn">
-                <input style="margin-left:80px; background-color:rgb(23,55,94)" class="join_btn" type="button" value="목록" onclick="location.href='fooba.do?command=admin_restaurantList'">
+                <input style="margin-left:80px; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="목록" onclick="location.href='fooba.do?command=admin_restaurantList'">
             </div>
     </form>
 </div>

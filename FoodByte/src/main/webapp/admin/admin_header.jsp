@@ -77,8 +77,13 @@ body {margin: 0; position:relative;}
 .res_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
 
-.qna_subject {margin: 10px; font-weight: bold; font-family: verdana; font-size: 120%;}
-.qna_content {margin: 10px; font-weight: bold; font-family: verdana; font-size: 100%;}
+#join_btn1{margin-left: 200px;}
+#join_btn .join_btn1 {width: 150px; height: 50px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fa6146; line-height: 40px; color:#fff; border: 1px solid white; text-align: center;}
+#join_btn .join_btn1:hover {background-color: white; color: #859bd6; cursor: pointer; border:2px solid #859bd6;}
+
+
+.qna_subject {margin: 30px;  font-weight: bold; font-family: verdana; font-size: 120%;}
+.qna_content {margin: 40px; margin-top:20px; font-weight: bold; font-family: verdana; font-size: 100%;}
 
 .res_join_title { text-align: left; font-size: 26px;font-weight: bold; }
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
