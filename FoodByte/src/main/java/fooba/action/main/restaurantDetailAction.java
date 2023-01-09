@@ -23,7 +23,7 @@ public class restaurantDetailAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int rseq=Integer.parseInt(request.getParameter("rseq"));
-		
+		int carttotalprice=0;
 		ResDao rdao=ResDao.getInstance();
 		
 		RestaurantVO rvo=rdao.getResInfo(rseq);
@@ -37,7 +37,11 @@ public class restaurantDetailAction implements Action {
 		ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
 		
 		request.setAttribute("clist", clist);
+		
+		int sum=cdao.CartListSum(mvo.getId(), rseq);
+		carttotalprice=sum+rvo.getRtip();
 		}
+		request.setAttribute("carttotalprice", carttotalprice);
 		request.setAttribute("RestaurantVO", rvo);
 		request.setAttribute("FoodmenuList", foodmenuList);
 		request.setAttribute("ReviewList",reviewList);

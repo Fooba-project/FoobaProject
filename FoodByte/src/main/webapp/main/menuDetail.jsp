@@ -98,7 +98,7 @@
         </c:forEach>
  
         <div class="baedaltip">배달요금 : ${RestaurantVO.rtip}원 별도&nbsp;&nbsp;&nbsp;</div>
-        <div class="jbtotal">합계 : <input type="text" value="100000" id="jbtotalprice">원&nbsp;&nbsp;</div>
+        <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
         <input type="button" value="주문하기" class="jbwanryo">
     </div>
   </div>  

@@ -151,6 +151,25 @@ public class CartDao {
 		return rseq;
 	}
 
+	public int CartListSum(String id, int rseq) {
+		con=Dbman.getConnection();
+		String sql="select * from cart where id=? and rseq=?";
+		int sum=0;
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, rseq);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				sum=sum+rs.getInt("cprice");
+			}
+		} catch (SQLException e) {e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
+		return sum;
+		
+	}
+
 	
 /*
 	public void deleteCart(int cseq) {
