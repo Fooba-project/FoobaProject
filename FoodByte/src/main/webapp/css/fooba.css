@@ -214,3 +214,20 @@ table#memberOrderList td {text-align: center; font-family: Verdana; border-top:2
 #menuorderdetaildiv3 {margin-bottom: 5px;}
 
 #previewDiv img {height:300px}
+
+#gumae{ height:50px ;color: white; font-size: 120%; font-weight: bold;text-align: center;line-height: 50px;  background: #515050;}
+#juso{  position: relative;float:left ;line-height: 50px;text-align: center; font-weight: bold;font-size: 110%; height: 52px;width: 600px; cursor: pointer;}
+#jusotabb{background-color: #fa6146;border :1px solid #fa6146; color: white; width: 300px ;height:50px; }
+#newjusotabb{background-color: #ffb6a9;border :1px solid #ffb6a9; width: 300px;color: white;position: absolute;top: 0px ;right: 0px;}
+#juso1{width: 590px; height: 175px;font-size: 15px; line-height: 40px;padding-left: 10px; padding-top: 10px; font-weight: 900; border-bottom: 1px solid #fa6146;}
+#juso2{width:598px;position: absolute;right: 1px;top: 5px;border-bottom: 1px solid #fa6146;height: 180px;}
+.grayy2{color: gray; font-weight: bold; font-size: 100%; }
+#xxxx{width:600px; border-left: 1px solid #fa6146; border-right: 1px solid #fa6146;  position: relative; line-height: 180%;font-weight: bold; }
+#realjenche2{position: relative;width: 600px; margin: 0 auto;}
+#jenche2{position: relative; width:600px;  border:1px solid #fa6146; border-top: 0;height: 290px; border-bottom: 0; overflow: hidden;}
+#tul2{ width: 1200px; float: left; position: relative;}
+.jbwanryo2{height: 55px; color: white;width: 600px; font-size: 130%;font-weight: bold;color: white; background: #fa6146; border: 1px solid #fa6146;}
+#jangbagunitul2{width: 600px;border: 1px solid #fa6146;}
+#jbtitle2{width: 598px;border: 1px solid #fa6146;height: 50px;text-align: center;line-height: 50px; font-size: 140%; font-weight: bold; color: white;background:#fa6146 ;}
+.jbitem2{width: 590px; border: 1px solid rgb(241, 241, 241); height: 85px; position: relative;padding: 5px;}
+.gumaeinput_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border: 1px solid rgb(241, 241, 241);}
