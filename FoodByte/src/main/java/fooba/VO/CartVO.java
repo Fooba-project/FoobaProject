@@ -13,6 +13,7 @@ public class CartVO {
 		private int cprice;
 		private Timestamp indate;
 		private String cfname;
+		private int rseq;
 		
 		public Integer getCseq() {
 			return cseq;
@@ -74,6 +75,12 @@ public class CartVO {
 		}
 		public void setCfname(String cfname) {
 			this.cfname = cfname;
+		}
+		public int getRseq() {
+			return rseq;
+		}
+		public void setRseq(int rseq) {
+			this.rseq = rseq;
 		}
 		
 		

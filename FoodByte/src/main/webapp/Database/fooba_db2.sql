@@ -6,11 +6,11 @@ DROP TABLE cart CASCADE CONSTRAINTS;
 	indate date DEFAULT sysdate,
 	id varchar2(20) NOT NULL,
 	fseq number(5) NOT NULL,
-	sideyn1 varchar2(30) ,
-	sideyn2 varchar2(30) ,
-	sideyn3 varchar2(30) ,
+	sideyn1 varchar2(50) ,
+	sideyn2 varchar2(50) ,
+	sideyn3 varchar2(50) ,
 	cprice number(10),
-	cfname varchar2(20),
+	cfname varchar2(50),
 	rseq number(5) not null,
 	PRIMARY KEY (cseq)
 );

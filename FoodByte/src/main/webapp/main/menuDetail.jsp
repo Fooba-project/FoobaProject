@@ -86,29 +86,17 @@
     
     <div id="jangbagunitul">
         <div id="jbtitle">주문표</div>
-        
-        <div class="jbitem" id="jb5">
-            <a class="jbitemname">샘피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
+          
+        <c:forEach items="${clist }" var="CartVO">
+        	<div class="jbitem" id="jb${CartVO.cseq}">
+            <a class="jbitemname">${CartVO.cfname}&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1} ${CartVO.sideyn2} ${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
-                35000 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deletejb(5);">
+                ${CartVO.cprice} 원&nbsp;
+                <input type="button" class="jbcancel" value="X" onclick="deletejb(${CartVO.cseq});">
             </div>
         </div>
-        <div class="jbitem" id="jb6">
-            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
-            <div class="jbitemprice">
-                30000 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deletejb(6);">
-            </div>
-        </div>
-        <div class="jbitem" id="jb7">
-            <a class="jbitemname">샘스테이크피자&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">페페로니추가,포테이토추가, 치즈크러스트</a><br>
-            <div class="jbitemprice">
-                25000 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deletejb(7);">
-            </div>
-        </div>
-
+        </c:forEach>
+ 
         <div class="baedaltip">배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;</div>
         <div class="jbtotal">합계 : <input type="text" value="100000" id="jbtotalprice">원&nbsp;&nbsp;</div>
         <input type="button" value="주문하기" class="jbwanryo">

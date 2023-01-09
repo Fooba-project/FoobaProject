@@ -35,13 +35,15 @@ public class jangbaguniAction implements Action {
 		cvo.setCprice(Integer.parseInt(request.getParameter("totalprice")));
 		cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 		cvo.setCfname(request.getParameter("fname"));
+		cvo.setRseq(Integer.parseInt(request.getParameter("rseq")));
 		
 		CartDao cdao=CartDao.getInstance();
 		
 		cdao.insertCart(cvo);
 		
-		ArrayList<CartVO>clist=cdao.CartList(mvo.getId());
+		ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),cvo.getRseq());
 		
+		request.setAttribute("clist", clist);
 		request.setAttribute("jangresult", "1");
 		
 		}

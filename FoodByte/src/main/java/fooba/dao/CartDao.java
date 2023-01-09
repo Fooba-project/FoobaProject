@@ -77,8 +77,8 @@ public class CartDao {
 
 	public void insertCart(CartVO cvo) {
 		con=Dbman.getConnection();
-		String sql="insert into cart(cseq,quantity,id,fseq,sideyn1,sideyn2,sideyn3,cprice,cfname)"
-				+ " values(cart_seq.nextVal,?,?,?,?,?,?,?,?)";
+		String sql="insert into cart(cseq,quantity,id,fseq,sideyn1,sideyn2,sideyn3,cprice,cfname,rseq)"
+				+ " values(cart_seq.nextVal,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1,cvo.getQuantity());
@@ -89,19 +89,21 @@ public class CartDao {
 			pstmt.setString(6, cvo.getSideyn3());
 			pstmt.setInt(7, cvo.getCprice());
 			pstmt.setString(8, cvo.getCfname());
+			pstmt.setInt(9,cvo.getRseq());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		
 	}
 
-	public ArrayList<CartVO> CartList(String id) {
+	public ArrayList<CartVO> CartList(String id,int rseq) {
 		ArrayList<CartVO> clist=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql="select * from cart where id=?";
+		String sql="select * from cart where id=? and rseq=?";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, id);
+			pstmt.setInt(2, rseq);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				CartVO cvo=new CartVO();
@@ -115,6 +117,7 @@ public class CartDao {
 				cvo.setSideyn3(rs.getString("sideyn3"));
 				cvo.setCprice(rs.getInt("cprice"));
 				cvo.setCfname(rs.getString("cfname"));
+				cvo.setRseq(rs.getInt("rseq"));
 				clist.add(cvo);
 			}
 		} catch (SQLException e) {e.printStackTrace();
