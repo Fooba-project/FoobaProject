@@ -101,6 +101,7 @@
         <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
         <form method="post" name="frm">
         <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
+        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
         <input type="button" value="주문하기" class="jbwanryo" onclick="goPay();">
         </form>
     </div>
