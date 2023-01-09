@@ -9,6 +9,12 @@
 	document.frm.submit();
 }
  
+ 
+ function go_wrt(){
+		document.frm.action = "fooba.do?command=admin_qnaWriteForm";
+		document.frm.submit();
+	}
+ 
 </script>
 
 
