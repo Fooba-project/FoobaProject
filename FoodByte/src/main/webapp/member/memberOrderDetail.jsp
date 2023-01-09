@@ -22,34 +22,37 @@
         </div>
         <div id="menuorderdetaildiv1_2">${ovo.rname}</div>
         <div id="menuorderdetaildiv1_3">주문번호 : ${ovo.oseq}</div>
-        <div id="menuorderdetaildiv1_3">주문일시 : ${ovo.indate}</div>
-        <div id="menuorderdetaildiv1_3">총주문가격 : <fmt:formatNumber value="${ovo.totalprice}" pattern="#,###"/>원</div>
+        <div id="menuorderdetaildiv1_3">주문일시 : <fmt:formatDate value="${ovo.indate }" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+        <div id="menuorderdetaildiv1_3">총주문가격 : <fmt:formatNumber value="${ovo.totalprice}" pattern="#,###원"/></div>
+        <div id="menuorderdetaildiv1_4">(음식가격 : <fmt:formatNumber value="${ovo.totalprice-ovList[0].rtip}" pattern="#,###원"/>, 배달팁 : <fmt:formatNumber value="${ovList[0].rtip}" pattern="#,###원"/>)
+        </div>
     </div>
 <br>
 	<c:forEach  items="${ovList }" var="ovvo">
 	    <div class="menuorderdetaildiv">
-	        <div id="menuorderdetaildiv2_1">${ovvo.fname} <fmt:formatNumber value="${ovvo.fprice }" pattern="#,###"/>원</div>
+	        <div id="menuorderdetaildiv2_1">${ovvo.fname} <fmt:formatNumber value="${ovvo.fprice }" pattern="#,###원"/></div>
 	        <div id="menuorderdetaildiv2_2">
 	            <c:if test="${ovvo.sideyn1==1}">
-	            	${ovvo.fside1} (+<fmt:formatNumber value="${ovvo.fsideprice1 }" pattern="#,###"/>원) 추가
+	            	${ovvo.fside1} (+<fmt:formatNumber value="${ovvo.fsideprice1 }" pattern="#,###원"/>) 추가
 	            </c:if>
 	        </div>
 	        <div id="menuorderdetaildiv2_2">
 	            <c:if test="${ovvo.sideyn2==1}">
-	            	${ovvo.fside2} (+<fmt:formatNumber value="${ovvo.fsideprice2 }" pattern="#,###"/>원) 추가
+	            	${ovvo.fside2} (+<fmt:formatNumber value="${ovvo.fsideprice2 }" pattern="#,###원"/>) 추가
 	            </c:if>
 	        </div>
 	        <div id="menuorderdetaildiv2_2">
 	            <c:if test="${ovvo.sideyn3==1}">
-	            	${ovvo.fside3} (+<fmt:formatNumber value="${ovvo.fsideprice3 }" pattern="#,###"/>원) 추가
+	            	${ovvo.fside3} (+<fmt:formatNumber value="${ovvo.fsideprice3 }" pattern="#,###원"/>) 추가
 	            </c:if>
 	        </div>
-	        <div id="menuorderdetaildiv2_2">주문 수량 : ${ovvo.quantity}개</div>
-	        
+	        <div id="menuorderdetaildiv2_2" style="font-size: 16px; font-weight: bold;">주문 수량 : ${ovvo.quantity}개</div>
 	    </div>
+	<br>
     </c:forEach>
-<br>
+
     <div class="menuorderdetaildiv">
+    	<div id="menuorderdetaildiv3">닉네임 : ${ovList[0].nick}</div>
         <div id="menuorderdetaildiv3">배달주소 : ${ovo.address1}&nbsp;${ovo.address2}</div>
         <div id="menuorderdetaildiv3">전화번호 : ${ovo.phone}</div>
         <div id="menuorderdetaildiv3">배달/포장여부 : 
@@ -57,7 +60,7 @@
                 포장
             </c:if>
             <c:if test="${ovo.rideryn==1}">
-                배달
+                배달 (배달료 : + ${ovList[0].rtip }원)
             </c:if>
         </div>
         <div id="menuorderdetaildiv3">일회용품 여부 : 
@@ -101,7 +104,7 @@
                 <textarea class="review" type="text" id="reviewContent" name="reviewContent"
                     placeholder="음식에 대한 솔직한 리뷰를 남겨주세요!"></textarea>
             </div>
-            <input type="submit" value="확인" id="reviewWriteButton">
+            <input type="submit" value="리뷰 작성" id="reviewWriteButton">
         </form>
     </c:if>
 
@@ -109,6 +112,8 @@
         <form class="review" name="review_form" id="review_form" method="post">
             <fieldset>
                 <div id="star_box">
+                	<c:if test="${ovList[0]==1}">
+                	</c:if>
                         <label>★</label>
                 </div>
             </fieldset>

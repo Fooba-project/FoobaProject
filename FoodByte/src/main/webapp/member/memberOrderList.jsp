@@ -4,7 +4,9 @@
 
 <div id="memberOrderListdiv">
 		<article  id="orderArticle">
-            <h2>진행중인 주문내역</h2>
+			<h2>
+	            ${memberOrderListT } 주문내역
+	         </h2>
             <hr><br>
             <table id="memberOrderList">
                 <c:forEach items="${memberOrderList }" var="ovo">

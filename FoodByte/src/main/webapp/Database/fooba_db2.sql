@@ -103,7 +103,7 @@ values(order_detail_seq.nextVal,1,242,2,0,0,0);
 
 -- 오더스 2
 insert into orders(oseq,id,rideryn,plasticyn,payment,result,address1,address2,totalprice,phone)
-values(orders_seq.nextVal,'bsc1234',0,1,1,0,'서울특별시 서대문구','신촌 이젠아카데미 2층 404호', 71000, '010-1234-1234' );
+values(orders_seq.nextVal,'bsc1234',1,1,1,2,'서울특별시 서대문구','신촌 이젠아카데미 2층 404호', 71000, '010-1234-1234' );
 insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,118,1,1,1,0);
 insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)

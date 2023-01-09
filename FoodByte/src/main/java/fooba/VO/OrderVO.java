@@ -18,8 +18,9 @@ public class OrderVO {
 	private String rname;
 	private String rimage;
 	private int rseq;
+
 	
-	
+
 	public int getRseq() {
 		return rseq;
 	}
