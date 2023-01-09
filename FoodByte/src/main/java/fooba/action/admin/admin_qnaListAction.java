@@ -21,11 +21,9 @@ public class admin_qnaListAction implements Action {
 		String url="admin/admin_qnalist.jsp";
 		
 		HttpSession session=request.getSession();
-		String adminId=(String) session.getAttribute("loginAdmin");
-		
-		if(adminId==null)
-			url="fooba.do?command=admin_loginForm";
-		
+		String avo=(String) session.getAttribute("loginAdmin");		
+		if(avo==null)
+			url="fooba.do?command=admin_loginForm";		
 		else {
 			AdminDao adao=AdminDao.getInstance();
 			
@@ -35,7 +33,7 @@ public class admin_qnaListAction implements Action {
 			}
 			
 			int page=1;
-			if(request.getParameter("page")!=null) {  //������Ʈ�� �Ķ���ͷ� page�� ���޵ȴٸ� page�������� �� ������ ��ü
+			if(request.getParameter("page")!=null) { 
 				page=Integer.parseInt(request.getParameter("page"));
 				session.setAttribute("page", page);
 			}else if(session.getAttribute("page")!=null) { 
@@ -53,8 +51,6 @@ public class admin_qnaListAction implements Action {
 			}else {
 				session.removeAttribute("key");
 			}
-						
-			
 			
 			Paging paging = new Paging();
 			paging.setPage(page);
@@ -66,7 +62,6 @@ public class admin_qnaListAction implements Action {
 			
 			
 			ArrayList<QnaVO>qnaList=adao.selectQna(paging,key);
-			
 			request.setAttribute("qnaList", qnaList);
 			request.setAttribute("paging", paging); 
 			request.setAttribute("key", key);

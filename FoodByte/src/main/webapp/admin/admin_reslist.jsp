@@ -8,11 +8,20 @@
 	document.frm.submit();
 }
  
+ function go_search( comm ){
+		var url = "fooba.do?command=" + comm + "&page=1";
+		document.frm.action = url;
+		document.frm.submit();
+}
+
+	function go_total( comm ){
+		document.frm.key.value="";
+		document.frm.action = "fooba.do?command=" + comm + "&page=1";
+		document.frm.submit();
+} 
+
  </script>
- 
- 
- 
- 
+
  <article>
     <h2 class="admin_list">가게 리스트</h2>   
     <br> 

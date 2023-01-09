@@ -18,11 +18,11 @@ public class admin_qnaViewAction implements Action {
 
 		String url="admin/admin_qnaView.jsp";
 		HttpSession session=request.getSession();
-		String adminId=(String) session.getAttribute("loginAdmin");
-		if(adminId==null)
-			url="fooba.do?command=admin_loginForm";
-		else {
-			int qseq=Integer.parseInt(request.getParameter("qseq"));
+		String avo=(String) session.getAttribute("loginAdmin");
+		if(avo==null) {
+			url="fooba.do?command=admin";
+		}else {
+			int qseq=Integer.parseInt((request.getParameter("qseq")));
 			QnaDao qdao=QnaDao.getInstance();
 			QnaVO qvo=qdao.getQna(qseq);
 			request.setAttribute("qnaVO", qvo);

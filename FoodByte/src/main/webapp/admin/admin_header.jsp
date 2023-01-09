@@ -77,6 +77,9 @@ body {margin: 0; position:relative;}
 .res_join {width: 700px; overflow: hidden; margin:50px auto;}
 #input_warp { margin: 0; width: 700px;}
 
+.qna_subject {margin: 10px; font-weight: bold; font-family: verdana; font-size: 120%;}
+.qna_content {margin: 10px; font-weight: bold; font-family: verdana; font-size: 100%;}
+
 .res_join_title { text-align: left; font-size: 26px;font-weight: bold; }
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
 .input_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border-bottom: 1px solid #BCBCBC;}

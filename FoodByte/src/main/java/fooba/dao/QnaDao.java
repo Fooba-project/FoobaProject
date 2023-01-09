@@ -62,7 +62,7 @@ public class QnaDao {
 
 
 	public QnaVO getQna(int qseq) {
-		QnaVO qvo=new QnaVO();
+		QnaVO qvo=null;
 		String sql="select*from qna where qseq=?";
 		con=Dbman.getConnection();
 		try {
@@ -70,7 +70,8 @@ public class QnaDao {
 			pstmt.setInt(1, qseq);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				qvo.setQseq(qseq);
+				qvo = new QnaVO();
+				qvo.setQseq(rs.getInt("qseq"));
 				qvo.setSubject(rs.getString("subject"));
 				qvo.setContent(rs.getString("content"));
 				
@@ -79,6 +80,4 @@ public class QnaDao {
 		}finally {Dbman.close(con, pstmt, rs);}
 		return qvo;
 	}
-	
-	
 }

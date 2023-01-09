@@ -56,7 +56,7 @@
                 <input type="text" class="input_text" value="사업장 소개글 : ${restaurantVO.content}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="배달료 : ${restaurantVO.rtip}" readonly/>
+                <input type="text" class="input_text" value="배달팁 : ${restaurantVO.rtip}" readonly/>
             </div>
             <div class="join_list">
                 <input type="text" class="input_text" value="해시태그 : ${restaurantVO.hash}" readonly/>
