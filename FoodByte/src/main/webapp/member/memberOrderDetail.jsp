@@ -158,12 +158,12 @@ function review_write() {
                 </div>
             </fieldset>
             <div id="previewDiv">
-            	<c:if test="${not empty review.review_image }">
-            		<src url="/images/review/${review.review_image }"/>
+            	<c:if test="${not empty review.image }">
+            		<img src="images/review/${review.image }">
             	</c:if>
             </div>
             <div>
-                <textarea class="review" type="text" id="reviewContent" readonly>${review.review_content }${review.review_image }</textarea>
+                <textarea class="review" type="text" id="reviewContent" readonly>${review.content }</textarea>
             </div>
         </form>
     </c:if>
