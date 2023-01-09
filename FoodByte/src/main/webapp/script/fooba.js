@@ -307,4 +307,9 @@ function go_search(hash){
         var dist=nummx*600*-1;
         document.getElementById("tul2").style.left=dist+'px';
     }
+    
+    function goPay(){
+    	document.frm.action = "fooba.do?command=orderForm";
+		document.frm.submit();
+    }
  
