@@ -11,7 +11,7 @@
                     <tr  >
                         <td width="80">
                             <div id="memberOrderListimg">
-                                <a href="fooba.do?command=restaurantDetail&rseq=${ovo.rseq }"><img src="images/foodmenu/${ovo.rimage }" width="80" height="80"></a>
+                                <a href="fooba.do?command=restaurantDetail&rseq=${ovo.rseq }"><img src="images/title/${ovo.rimage }" width="80" height="80"></a>
                             </div>
                             <div>${ovo.rname }</div>
                         </td>
