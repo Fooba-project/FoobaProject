@@ -110,7 +110,7 @@ function review_write() {
     </div>
 <br>
     <c:if test="${ovo.result==2}">
-        <form class="review" name="review_form" id="review_form" method="post">
+        <form class="review" name="review_form" id="review_form" method="post" action="fooba.do?command=memberReviewWrite&rseq=${ovList[0].rseq }&oseq=${ovo.oseq }" enctype="multipart/form-data" >
             <fieldset>
                 <span class="star_text" id="star_text">
                     별점을 선택해주세요
@@ -130,7 +130,7 @@ function review_write() {
             </fieldset>
             <div id="review_img">
             	<label for="imgInput" >리뷰 이미지 첨부</label>
-            	<input type="file" id="imgInput" onchange="readURL(this)" value="리뷰 이미지 첨부" style="display:none;" accept="image/*" />
+            	<input type="file" name="reviewImage" id="imgInput" onchange="readURL(this)" value="리뷰 이미지 첨부" style="display:none;" accept="image/*" />
             </div>
     		<div id="previewDiv"></div>
             <div>
@@ -142,7 +142,7 @@ function review_write() {
     </c:if>
 
     <c:if test="${ovo.result==3}">
-        <form class="review" name="review_form" id="review_form" method="post" action="fooba.do?command=memberReviewWrite&oseq=${ovo.oseq }">
+        <form class="review" name="review_form" id="review_form">
             <fieldset>
                 <div id="star_box">
                 	<label>

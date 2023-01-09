@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import fooba.VO.AddressVO;
 import fooba.VO.MemberVO;
+import fooba.VO.ReviewVO;
 import fooba.util.Dbman;
 
 public class MemberDao {
@@ -122,6 +124,23 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+	}
+
+	public void writeReview(ReviewVO rvvo) {
+		String sql="insert into review(review_seq, content, id, image, oseq, rseq, star, nick) values(review_seq_seq.nextVal,?,?,?,?,?,?,?)";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, rvvo.getContent());
+			pstmt.setString(2, rvvo.getId());
+			pstmt.setString(3, rvvo.getImage());
+			pstmt.setInt(4, rvvo.getOseq());
+			pstmt.setInt(5, rvvo.getRseq());
+			pstmt.setInt(6, rvvo.getStar());
+			pstmt.setString(7, rvvo.getNick());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 	}
 }

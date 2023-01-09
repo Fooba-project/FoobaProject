@@ -140,13 +140,14 @@ CREATE TABLE review
 	oseq number(5) NOT NULL,
 	reply varchar2(1000),
 	replyyn number(2) DEFAULT 0 NOT NULL,
+	nick varchar2(30) not null,
 	PRIMARY KEY (review_seq)
 );
 
 
 
-/* Create Foreign Keys */
 
+/* Create Foreign Keys */
 
 
 

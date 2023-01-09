@@ -42,6 +42,7 @@ select*from cart;
 DROP TABLE order_detail CASCADE CONSTRAINTS;
 DROP TABLE orders CASCADE CONSTRAINTS;
 
+
 CREATE TABLE orders
 (
 	oseq number(5) NOT NULL,
@@ -108,3 +109,27 @@ insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,118,1,1,1,0);
 insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,119,2,1,0,1);
+
+DROP TABLE review CASCADE CONSTRAINTS;
+
+CREATE TABLE review
+(
+	review_seq number(5) NOT NULL,
+	id varchar2(20) NOT NULL,
+	rseq number(5) NOT NULL,
+	indate date DEFAULT sysdate,
+	star number(1) DEFAULT 5 NOT NULL,
+	image varchar2(100),
+	content varchar2(500) NOT NULL,
+	oseq number(5) NOT NULL,
+	reply varchar2(1000),
+	replyyn number(2) DEFAULT 0 NOT NULL,
+	nick varchar2(30) not null,
+	PRIMARY KEY (review_seq)
+);
+
+insert into review(review_seq,id,rseq,star,content,oseq,nick)
+values(review_seq_seq.nextVal,'bsc1234',23,3,'그냥 저냥 먹을만 합니다',2,'솔직리뷰어');
+
+insert into review(review_seq,id,rseq,star,content,oseq,nick)
+values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');

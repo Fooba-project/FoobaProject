@@ -14,8 +14,16 @@ public class ReviewVO {
    private int oseq;
    private String reply;
    private int replyyn;
+   private String nick;
    
-   public int getReview_seq() {
+   
+   public String getNick() {
+	return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public int getReview_seq() {
       return review_seq;
    }
    public void setReview_seq(int review_seq) {
