@@ -36,9 +36,33 @@
         </div>
         
         <div id="xxxx">
+        	<div class="toggle1">
+				배달/포장 
+				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked>
+				<label for="toggle1-1">배달</label>
+				<input type="radio" id="toggle1-2" name="rideryn" value="1">
+				<label for="toggle1-2">포장</label>
+			</div>
+		
+			<div class="toggle2">
+				일회용품
+				<input type="radio" id="toggle2-1" name="plasticyn" value="0" checked>
+				<label for="toggle2-1">사용</label>
+				<input type="radio" id="toggle2-2" name="plasticyn" value="1">
+				<label for="toggle2-2">미사용</label>
+			</div>  
+		
+			<div class="toggle3">
+				카드/현금
+				<input type="radio" id="toggle3-1" name="payment" value="0" checked>
+				<label for="toggle3-1">카드</label>
+				<input type="radio" id="toggle3-2" name="payment" value="1">
+				<label for="toggle3-2">현금</label>
+			</div>
+	
             <a class="grayy2">&nbsp;&nbsp;배달/포장</a>
-            <input type="checkbox" value="0" name="rideryn" checked onclick='checkOnlyOne(this)'>배달
-            <input type="checkbox" value="1"name="rideryn" onclick='checkOnlyOne(this)'>포장
+            <input type="radio" value="0" name="rideryn" >배달
+            <input type="radio" value="1"name="rideryn" >포장
 
             <br>
             <a class="grayy2">&nbsp;&nbsp;일회용품 사용</a>
