@@ -1,6 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
 
+<script type="text/javascript">
+
+//여기 작동 ?? 왜 
+function qnaCheck(){
+	if(document.frm.subject.value == ''){
+		alert("제목은 필수입니다")
+		document.frm.subject.focus();
+	} else if (document.frm.content.value == '') {
+		  alert('내용을 입력하세요');	  
+			document.frm.content.focus();
+	}else{
+			 document.frm.action = "fooba.do?command=admin_qnaUpdate";
+			 document.frm.submit();
+		}
+	}
+
+	return true;
+}
+</script>
+
+
+
 <article><br><br><br>
 <h2 style="margin-left:31%"> QnA 게시판 </h2> 
         <form name="formm" method="post"action="fooba.do">
@@ -17,7 +39,7 @@
                 </table>
                 
                 <div class="qna_buttons">
-                    <input type="submit"  value="글쓰기" class="qna_button"> 
+                    <input type="submit"  value="글쓰기" class="qna_button" onclick="qnaCheck()"> 
                     <input type="button"   value="취소"  class="qna_button" onclick="location.href='fooba.do?command=admin_qnaList'">   
                 </div>
             </fieldset>

@@ -25,11 +25,11 @@
         <table id="admin_searchres">
             <tr>
                 <td style="font-size:17px; width:642;">질문 번호: <input class="keyy" type="text" name="key" value="${key}">
+                	<input class="admin_searchres_btn" type="button" name="btn_write" value="QnA등록"  onClick="go_wrt();">           
+                    <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기" 
+                        onClick="go_total( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_restaurantList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
-                        onClick="go_total( 'admin_restaurantList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_write" value="QnA등록"  onClick="go_wrt();">
                 </td>
             </tr>
         </table><br>

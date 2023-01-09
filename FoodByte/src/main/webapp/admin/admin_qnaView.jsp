@@ -17,7 +17,7 @@
             <div id="join_btn" style="margin: auto; width: 470px;">
             	<input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="수정" onclick="location.href='fooba.do?command=admin_qnaUpdateForm&qseq=${qnaVO.qseq}'">
                 <input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="목록" onclick="location.href='fooba.do?command=admin_qnaList'">
-                <input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="삭제" onclick="location.href='fooba.do?command=admin_qnaDelete'">
+                <input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="삭제" onclick="location.href='fooba.do?command=admin_qnaDelete&qseq=${qnaVO.qseq}'">
             </div>
     </form>
 </div>

@@ -9,11 +9,12 @@
         <table id="admin_searchres">
             <tr>
                 <td style="font-size:17px; width:642;">회원 ID: <input class="keyy" type="text" name="key" value="${key}">
-                    <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
-                        onClick="go_search( 'admin_restaurantList' );">
+                	<input class="admin_searchres_btn" type="button" name="btn_write" value="회원등록"  onClick="go_wrt();">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_restaurantList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_write" value="회원등록"  onClick="go_wrt();">
+                    <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
+                        onClick="go_search( 'admin_restaurantList' );">  
+                    
                 </td>
             </tr>
         </table><br>
@@ -26,7 +27,7 @@
                     <td style="text-align:center;">${MemberVO.phone}</td>
                     <td style="text-align:center;">${MemberVO.email}</td>                    
                     <td style=text-align:center;><fmt:formatDate value="${MemberVO.indate}"/></td> 
-                    <td style="text-align:center;"><input type="button" value="탈퇴"></td>
+                    <td style="text-align:center;"><input type="button" value="삭제"></td>
                 </tr>
          </c:forEach>
          </table>
