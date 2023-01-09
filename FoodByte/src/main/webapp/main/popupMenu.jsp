@@ -170,7 +170,7 @@
         position: relative;
         float: left;
         height: 48px;
-        width: 50%;
+        width: 100%;
         background-color: #515050;
         cursor: pointer;
         font-weight: 700;
@@ -178,18 +178,7 @@
         color: white;
         font-size: 16px;
       }
-      #prbutton {
-        position: relative;
-        height: 48px;
-        width: 50%;
-        background-color: #fa6146;
-        float: right;
-        cursor: pointer;
-        font-weight: 700;
-        border: none;
-        color: white;
-        font-size: 16px;
-      }
+      
     </style>
     <script src="../script/jquery-3.6.1.js"></script> 
     <script type="text/javascript">
@@ -323,7 +312,7 @@
 
       <div class="popupbutton">
         <input type="button" id="plbutton" value="주문표에 추가"  onclick="closee()">
-        <button id="prbutton">주문하기</button>
+
       </div>
     </div>
     </form>
