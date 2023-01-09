@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="mypage_sub.jsp"%>
-
+<script type="text/javascript">
+function setThumbnail(event) {
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      var img = document.createElement("img");
+      img.setAttribute("src", event.target.result);
+      document.querySelector("div#image_container").appendChild(img);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+  </script>
 <div id="menuorderdetail">
     <div class="menuorderdetaildiv" id="menuorderdetaildiv1">
         <div id="menuorderdetaildiv1_1">
@@ -13,7 +23,7 @@
                     배달중
                 </c:when>
                 <c:when test="${ovo.result==2}">
-                    배달완료(후기를 작성해주세요)
+                    배달완료
                 </c:when>
                 <c:when test="${ovo.result==3}">
                     후기작성완료
@@ -100,6 +110,10 @@
                         <label for="rate1">★</label>
                     </div>
             </fieldset>
+            <div id="review_img">
+            	<input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
+            </div>
+    		<div id="image_container"></div>
             <div>
                 <textarea class="review" type="text" id="reviewContent" name="reviewContent"
                     placeholder="음식에 대한 솔직한 리뷰를 남겨주세요!"></textarea>
@@ -112,9 +126,13 @@
         <form class="review" name="review_form" id="review_form" method="post">
             <fieldset>
                 <div id="star_box">
-                	<c:if test="${ovList[0]==1}">
-                	</c:if>
-                        <label>★</label>
+                	<label>
+                		<c:if test="${ovList[0].star==1}">★</c:if>
+                		<c:if test="${ovList[0].star==2}">★★</c:if>
+                		<c:if test="${ovList[0].star==3}">★★★</c:if>
+                		<c:if test="${ovList[0].star==4}">★★★★</c:if>
+                		<c:if test="${ovList[0].star==5}">★★★★★</c:if>                        
+                    </label>
                 </div>
             </fieldset>
             <div>
