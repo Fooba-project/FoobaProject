@@ -1,6 +1,7 @@
 package fooba.controller;
 
 import fooba.action.Action;
+
 import fooba.action.indexAction;
 import fooba.action.admin.admin_loginAction;
 import fooba.action.admin.admin_loginFormAction;
@@ -38,7 +39,6 @@ import fooba.action.member.memberJoinFormAction;
 import fooba.action.member.memberOrderAllAction;
 import fooba.action.member.memberOrderDetailAction;
 import fooba.action.member.memberOrderListAction;
-import fooba.action.member.memberQnaViewAction;
 import fooba.action.member.memberQnalistAction;
 import fooba.action.member.memberReviewWriteAction;
 import fooba.action.member.memberUpdateAction;
@@ -115,7 +115,7 @@ public class ActionFactory {
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
 		else if (command.equals("memberReviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
 		else if (command.equals("memberQnalist")) ac = new memberQnalistAction();
-		else if (command.equals("memberQnaview")) ac = new memberQnaViewAction();
+		
 		
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
