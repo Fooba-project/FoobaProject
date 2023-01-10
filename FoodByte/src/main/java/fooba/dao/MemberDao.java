@@ -9,8 +9,10 @@ import java.util.ArrayList;
 
 import fooba.VO.AddressVO;
 import fooba.VO.MemberVO;
+import fooba.VO.QnaVO;
 import fooba.VO.ReviewVO;
 import fooba.util.Dbman;
+import fooba.util.Paging;
 
 public class MemberDao {
 	private MemberDao() {}
@@ -142,5 +144,15 @@ public class MemberDao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
+	}
+
+	public int getAllCountForQna(String key) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public ArrayList<QnaVO> selectQna(Paging paging, String key) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
