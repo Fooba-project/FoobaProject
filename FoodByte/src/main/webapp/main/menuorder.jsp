@@ -47,9 +47,9 @@
 			<div class="toggle2">
 				일회용품
 				<input type="radio" id="toggle2-1" name="plasticyn" value="0" checked>
-				<label for="toggle2-1">사용</label>
+				<label for="toggle2-1">미사용</label>
 				<input type="radio" id="toggle2-2" name="plasticyn" value="1">
-				<label for="toggle2-2">미사용</label>
+				<label for="toggle2-2">사용</label>
 			</div>  
 		
 			<div class="toggle3">

@@ -23,17 +23,19 @@ public class orderFormAction implements Action {
 		MemberVO mvo=(MemberVO)session.getAttribute("loginUser");
 		if(mvo==null) {
 			url="fooba.do?command=loginForm";
+			request.setAttribute("message", "로그인이 필요한 서비스입니다.");
+		}else {
+			int rseq=Integer.parseInt(request.getParameter("rseq"));
+			CartDao cdao=CartDao.getInstance();
+			ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
+			
+			
+			int carttotalprice=Integer.parseInt(request.getParameter("carttotalprice"));
+	
+			request.setAttribute("clist", clist);
+			request.setAttribute("carttotalprice", carttotalprice);
+			request.setAttribute("mvo", mvo);
 		}
-		int rseq=Integer.parseInt(request.getParameter("rseq"));
-		CartDao cdao=CartDao.getInstance();
-		ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
-		
-		
-		int carttotalprice=Integer.parseInt(request.getParameter("carttotalprice"));
-
-		request.setAttribute("clist", clist);
-		request.setAttribute("carttotalprice", carttotalprice);
-		request.setAttribute("mvo", mvo);
 		RequestDispatcher dp=request.getRequestDispatcher(url);
 		dp.forward(request, response);
 	}
