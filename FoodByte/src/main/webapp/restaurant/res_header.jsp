@@ -126,6 +126,7 @@ border :1px solid lightyellow; line-height: 50px; text-align: center; font-weigh
 #rest_info{padding-left: 15px; padding-right: 15px; line-height: 25px;  position: relative;}
 
 #res_num{position: relative; margin:0 auto;}
+#res_nick{}
 
 #res_revbogi{text-align: center; position: relative;  }
 .res_total{color: orange; font-weight: bold;}
@@ -172,6 +173,14 @@ text-align:center; line-height:70px; background:rgb(245, 236, 114); border-radiu
 
 #res_OrderResultButton{width:100px; height:30px; background:#d0d0d0; 
 cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
+
+#review_table{margin-top:0;}
+
+#nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
+background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover;}
+#nick_sa{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
+background-image:url("images/mainlogo1.png"); background-position: center; background-size: cover; 
+background-color: black;}
 
 </style>
 </head>
