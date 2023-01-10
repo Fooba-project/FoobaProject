@@ -15,11 +15,15 @@
             
             <br>
             <div id="res_tab">
-                <div class="res_infotab">전체(전체 카운트)</div>      
-                <div class="res_infotab" >미답변(미답변 카운트)</div>
+                <div class="res_infotab">전체답변</div>      
+                <div class="res_infotab" 
+                onclick="location.href='fooba.do?command=res_review&page=1&search=&key=&replyyn=0'">
+                미답변</div>
             </div>
-
-            <div id="res_menuall_a" >
+		<form action="fooba.do" method="post" name="frm">
+			<input type="hidden" name="command" value="res_reviewReplyWrite"/>
+	 		<input type="hidden" name="review_seq" value="${param.review_seq}"/>
+            <div id="res_menuall_a" style="background-color: rgb(250, 248, 215);">
                 <div id="res_menuinfo" >
                     <c:forEach items="${ReviewList}" var="ReviewVO">
                         <div id="res_review" >
@@ -41,10 +45,10 @@
                             </div>
                             <div id="mrev_conbox" >
                             		
-                                <div id="mrev_img" >
+                                <div id="mrev_img" style="border-radius: 20px;">
                                 	<img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                               
                                 </div>    
-                                <div id="mrev_con" >${ReviewVO.content}</div>   
+                                <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
                             <!-- if문을 이용한 사장님 답글 -->
                             
@@ -53,19 +57,40 @@
                                 <div id="nick_sa" ></div>
                                 <div id="sanick" >&nbsp;&nbsp;사장님</div>                               
                                 </div>
-                                <c:if test="${ReviewVO.replyyn==0}"></c:if>
-                                 <div id="sa_thank" >
-                                    <textarea id="sa_thank_text"name="reply" rows="5" cols="50" > </textarea>
+                                <c:if test="${ReviewVO.replyyn==0}">
+                                 <div id="sa_thank">  
+                                 <script type="text/javascript">
+                                        function addReply(review_seq){
+                                        	if( document.frm.reply.value=="" ){
+                                        		alert("답글을 적어주세요");
+                                        		document.frm.reply.focus();
+                                        		return false;
+                                        	}     
+                                        	
+                                        	document.frm.action = "fooba.do?command=res_reviewReplyWrite&review_seq="+review_seq;
+                                        	document.frm.submit();
+                                        	                                        
+                                        }
+                                        </script>                            
+                                    <textarea id="sa_thank_text" name="reply" rows="5" cols="50" ></textarea><br>
+                                    <input type="hidden" value="${ReviewVO.review_seq }" name="rv">
                                     <div id="rev_buttonbox" >
-                                        <div id="rev_button"  onclick="#">
-                                            답글 달기
-                                        </div>
+                                        <input type="button" value="답글 달기" id="rev_button" style="box-shadow: 2px 1px rgb(231, 231, 151);"  
+                                        onclick="addReply(${param.review_seq})">   
+                                        
                                     </div>
-                                </div><hr>                
+                                </div>
+                                </c:if>    
+                                <c:if test="${ReviewVO.replyyn==1}">
+                                <div id="sa_thank" style=" margin-left:600px;">
+                                	${ReviewVO.reply}
+                                </div>
+                                </c:if>                                            
                             </div>  
-                        </div>
-                    </c:forEach>
+                        </div><br><hr>
+                    </c:forEach>                   
             	</div>
-        </div>
+        	</div>
+        </form>
 </div>
 <%@ include file="/restaurant/res_footer.jsp"%>

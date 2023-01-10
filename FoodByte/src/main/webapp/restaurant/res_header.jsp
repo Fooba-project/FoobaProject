@@ -54,7 +54,8 @@ function go_order_save(oseq){
 	document.rfm.action = "fooba.do?command=res_orderComplete&oseq="+oseq;
 	document.rfm.submit();
 }
-<!-- location.href='fooba.do?command=res_orderComplete&oseq='+${ovo.oseq} -->
+
+
 </script>
 
 
@@ -175,13 +176,6 @@ text-align:center; line-height:70px; background:rgb(245, 236, 114); border-radiu
 cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 
 /*레스토랑 리뷰확인 css*/
-
-#res_orderlistitems {border-bottom: #616161 solid 2px; padding-bottom: 20px;}
-#res_menuall {width: 100%; height: 600px; overflow-y:scroll; }
-.res_order_list {width:80%;position: relative; font-size: 17px; font-weight: bold; line-height: 30px; margin:20px;}
-#res_OrderResultButton{position:absolute; right: 10px; width:100px; height:30px; background:#d0d0d0; top:120px; cursor: pointer; font-size: 16px; border:0; border-radius:5px; text-align:center;}
-#res_OrderListStatement{position:absolute; right: 10px; width:100px; height:100px; border:0; text-align:center; line-height:100px; background:rgb(245, 236, 114); border-radius:50%; text-align: center; top:20px;  text-indent: 0px;}
-.menuorderdetaildiv {width: 80%; background-color: #e7dba6;border-radius: 20px; padding: 20px; overflow: hidden; margin-left: 40px; line-height: 28px;}
 
 #res_menuall_b{width: 100%; float: left; position: relative; height:700px; 
 overflow:hidden; overflow-y: scroll; background-color: rgb(250, 248, 215);}

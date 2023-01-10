@@ -127,7 +127,8 @@ CREATE TABLE restaurant
 	PRIMARY KEY (rseq)
 );
 
-
+SELECT*FROM REVIEW
+update reivew set reply=?,replyyn='1' where review_seq=?
 CREATE TABLE review
 (
 	review_seq number(5) NOT NULL,
