@@ -16,8 +16,8 @@
                 </td>
             </tr>
         </table><br>
-        <table id="admin_list_table">
-            <tr><th>주문번호</th><th>주문자 ID</th><th>가게이름</th><th>가격</th><th>주문시간</th>      
+     	<table id="admin_list_table">
+            <tr><th>주문번호</th><th>주문자 ID</th><th>가게이름</th><th>가격</th><th>주문시간</th><th>주문상태</th></tr>      
         <c:forEach items="${orderList}" var="OrderViewVO">
                 <tr>
                     <td style="text-align:center;">${OrderViewVO.oseq}</td>
@@ -25,11 +25,26 @@
                     <td style="text-align:center;">${OrderViewVO.rname}</td>
                     <td style="text-align:center;">${OrderViewVO.totalprice}</td>                    
                     <td style="text-align:center;"><fmt:formatDate value="${OrderViewVO.indate}"/></td> 
-                </tr>
-         </c:forEach>
+       
+         	<td style=text-align:center;>
+                        <c:choose>
+                              <c:when test='${OrderViewVO.result==0}'>
+   								 <input type="button" value="주문확인중">
+                              </c:when>
+                              <c:when test='${OrderViewVO.result==1}'>           
+	                              <input type="button" value="배달중">  
+	                   		  </c:when>
+	                   		   <c:when test='${OrderViewVO.result==2}'>          
+	                              <input type="button" value="배달완료">  
+	                   		  </c:when>
+                              <c:otherwise><input type="button" value="리뷰작성"></td></c:otherwise>
+                        </c:choose>   
+             </td> 
+			     </tr>
+         </c:forEach>                    
          </table>
 	</form>
-		<div class="clear"></div>
+
 </article>
 <br>
 <jsp:include page="/admin/paging/paging.jsp">
