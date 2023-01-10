@@ -7,10 +7,10 @@
 #member_list_table{margin: auto; width:810px;}
 #member_list_table th{background-color:#fa6146; font-size: 17px; color: white;}
 #qna_image{width: 35px; width: 20px;}
-.qna_title{ padding-left: 10px; height: 30px; margin-top: 13px;}
-.qna_box{border: 1px solid black;}
-.qna_content{padding-left:30px;}
-qna_content:hover{height:120px;}
+.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color: #ffb3a6; font-weight: bold; }
+.qna_box{width:700px; margin:0 auto;}
+.qna_content{padding-left:30px; height: 20px; overflow: hidden; text-overflow: ellipsis; background-color: #fde4df; }
+.qna_content:hover{height:auto;}
 </style>
 
 <article>
@@ -34,6 +34,7 @@ qna_content:hover{height:120px;}
                         </div>
                     </div>
                 </tr>
+                  <br>
                 </c:forEach>
             </table>
         </form>
