@@ -29,9 +29,10 @@ public class orderFormAction implements Action {
 			CartDao cdao=CartDao.getInstance();
 			ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
 			
-			
+			System.out.print(request.getParameter("rtip"));
 			int carttotalprice=Integer.parseInt(request.getParameter("carttotalprice"));
-	
+			request.setAttribute("rtip", request.getParameter("rtip"));
+			request.setAttribute("rseq", rseq);
 			request.setAttribute("clist", clist);
 			request.setAttribute("carttotalprice", carttotalprice);
 			request.setAttribute("mvo", mvo);

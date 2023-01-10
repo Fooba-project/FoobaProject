@@ -3,7 +3,9 @@
 <%@ include file="../header.jsp"%>
 
 <form name="member_join_send_form" id="member_join_send_form" method="post" >
-<input type="hidden" value="" name="command">
+<input type="hidden" value="order" name="command">
+<input type="hidden" value="${rseq }" name="rseq">
+<input type="hidden" value="${rtip }" id="rtip">
 <div id="realjenche2">
         <div id="jenche2">
             <div id="gumae">구매하기</div>
@@ -39,9 +41,9 @@
         <div id="xxxx">
         	<div class="toggle1">
 				&nbsp;배달/포장 &nbsp;
-				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked>
+				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked onclick="baedal('${rtip}')">
 				<label for="toggle1-1">배달</label>&nbsp;&nbsp;
-				<input type="radio" id="toggle1-2" name="rideryn" value="1">
+				<input type="radio" id="toggle1-2" name="rideryn" value="1" onclick="pojang('${rtip}');">
 				<label for="toggle1-2">포장</label>
 			</div>
 		
@@ -73,8 +75,8 @@
                 </div>
             </div>
             </c:forEach>
-            
-            <div class="baedaltip">배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;</div>
+            <input type="hidden" value="0" id="bdjs" name="bdjs">
+            <div class="baedaltip"><input type="text" value="배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;" id="badal" readonly></div>
             <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
             <input type="submit" value="결제" class="jbwanryo2">
 			

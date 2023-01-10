@@ -279,6 +279,7 @@ function go_search(hash){
             document.getElementById("jusotabb").style.border='1px solid #fa6146';
             document.getElementById("newjusotabb").style.background='#ffb6a9';
             document.getElementById("newjusotabb").style.border='1px solid #ffb6a9';
+            document.getElementById("bdjs").value=0;
 
         }
         if(x==1){nummx++;
@@ -286,16 +287,33 @@ function go_search(hash){
             document.getElementById("jusotabb").style.border='1px solid #ffb6a9';
             document.getElementById("newjusotabb").style.background='#fa6146';
             document.getElementById("newjusotabb").style.border='1px solid #fa6146';
+            document.getElementById("bdjs").value=1;
         }
         var dist=nummx*600*-1;
         document.getElementById("tul2").style.left=dist+'px';
     }
     
- function goPay(rtip,price){
-  	if (rtip==price){
+ function goPay(){
+	if (document.getElementById("jbtotalprice").value==document.getElementById("rtip").value){
  	alert('음식을 주문표에 담으세요.');
  	return false;
  	}
  	else  { return true;}
  }
+ 
+var kk=0;
+function pojang(a){
+    if(kk==0){
+        document.getElementById("badal").value='포장   ';
+        document.getElementById("jbtotalprice").value=document.getElementById("jbtotalprice").value-a;
+        kk=1;
+    }
+}
+function baedal(a){
+    if(kk==1){
+        document.getElementById("badal").value='배달요금 : '+a+'원 별도   ';
+        document.getElementById("jbtotalprice").value=parseInt(a)+parseInt(document.getElementById("jbtotalprice").value);
+        kk=0;
+    }
+}
  

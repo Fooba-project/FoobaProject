@@ -234,6 +234,7 @@ table#memberOrderList td {text-align: center; font-family: Verdana; border-top:2
 #oopyon {  position: absolute;  width: 180px;  height: 45px;  top: 0px; right: 0;  border: 0; border-radius: 3px;}
 #oopyon:hover { outline: 0px solid #9191dfab; background-color: rgb(125, 114, 245);}
 
+#badal{border: 0; font-size: 100%; text-align: right;}
 .toggle1 input[type=radio]{display: none;}
 .toggle1 input[type=radio] + label {color: #e0e0e0;font-size: 100%;}
 .toggle1 input[type=radio]:checked + label {color: white; background-color:#fa6146; }
