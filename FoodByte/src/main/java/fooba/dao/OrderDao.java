@@ -407,8 +407,8 @@ public class OrderDao {
 
 	public void insertOrders(OrderVO ovo) {
 		con=Dbman.getConnection();
-		String sql="insert into orders(oseq,id,rideryn,plasticyn,payment,address1,address2,totalprice,phone)"
-				+ " value(orders_seq.nexeVal,?,?,?,?,?,?,?,?)";
+		String sql="insert into orders(oseq,id,rideryn,plasticyn,payment,address1,address2,totalprice,phone) "
+				+ " values(orders_seq.nextVal,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,ovo.getId());

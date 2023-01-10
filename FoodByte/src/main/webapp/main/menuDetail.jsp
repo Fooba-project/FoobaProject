@@ -105,7 +105,7 @@
         	<input type="hidden" value="${RestaurantVO.rtip }" name="rtip">
 	        <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
 	        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
-	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay()"> 
+	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay('${RestaurantVO.rtip }','${carttotalprice }')"> 
 		</form>
     </div>
   </div>  
