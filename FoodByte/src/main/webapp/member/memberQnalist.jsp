@@ -26,7 +26,7 @@ function go_wrt(){
 </script>
 
 <article>
-        <h2 class="member_list">질문 리스트</h2>   
+        <h2 class="member_list">자주 묻는 질문</h2>   
         <br> 
         <form name="frm" method="post">
             <table id="member_searchres">
@@ -46,7 +46,8 @@ function go_wrt(){
                     <tr>
                         <td style="text-align:center;">${QnaVO.qseq}</td>
                         <td style="text-align:left; padding-left:20px;">
-                        <a style="text-decoration-line: none;"href="#" onClick="go_detail('${QnaVO.qseq}');">${QnaVO.subject}</a>                
+                       ${QnaVO.subject}</td>
+                                        
                     </tr>
              </c:forEach>
              </table>
