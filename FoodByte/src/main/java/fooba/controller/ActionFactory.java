@@ -21,6 +21,7 @@ import fooba.action.admin.admin_restaurantListAction;
 import fooba.action.admin.admin_restaurantOkAction;
 import fooba.action.main.categoryAction;
 import fooba.action.main.deleteCartmenuAction;
+import fooba.action.main.fooba_tosAction;
 import fooba.action.main.jangbaguniAction;
 import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
@@ -98,6 +99,7 @@ public class ActionFactory {
 //		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 //		else if (command.equals("qnaList")) ac = new qnaListAction();
 //		else if (command.equals("qnaView")) ac = new qnaViewAction();
+		else if(command.equals("fooba_tos"))ac=new fooba_tosAction();
 		
 		
 		

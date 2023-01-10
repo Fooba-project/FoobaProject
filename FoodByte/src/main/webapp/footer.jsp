@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 
-<footer>
+<footer >
 	<div class="footerbox">
 	    <div class="linemenubox">
 	       <span class="linetext" 
-	       onclick="location.href='fooba.do?command=memberQnalist'">/자주 묻는 질문></span>
+	       onclick="location.href='fooba.do?command=memberQnalist'">/자주 묻는 질문</span>
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext">/개인정보 처리방침</span>
 	    </div>
 	    <div class="linemenubox">
-	        <span class="linetext">/이용약관</span>
+	        <span class="linetext" 
+	        onclick="location.href='fooba.do?command=fooba_tos'">/이용약관</span>
 	    </div>
 	    <div class="linemenubox">
-	        <span class="linetext">/사장님 입점문의</span>
+	        <span class="linetext"
+	         onclick="location.href='fooba.do?command=res_join'">/사장님 입점문의</span>
 	    </div>
 	    <img src="images/mainlogo2.png" id="logo">
 	    <div id="logotextbox">
