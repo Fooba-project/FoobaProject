@@ -8,7 +8,6 @@
            		<img class="res_logo"src="images/title/${RestaurantVO.rimage}" ></img>
          
             <div id="res_basic">
-            <a class="res_total">★★★★☆</a> 4.4<br>
             <a class="basic">배달팁</a>&nbsp;&nbsp;  ${RestaurantVO.rtip}<br>
             <a class="basic">결제</a>&nbsp;&nbsp; 신용카드, 현금<br>            
             <a class="basic">해시태그</a>&nbsp;&nbsp; ${RestaurantVO.hash}<br>
@@ -22,7 +21,6 @@
         </div>
         
         <form id="res_menuall_a" name="rfm" method="post" >
-        	<input type="hidden" name="oseq" value="${ovo.oseq}">
 	        <div id="res_menuall">
 	            <div id="res_menuinfo">
 	            		<table id="resOrderList">
@@ -30,8 +28,7 @@
 	                    <tr>
 	                        <td width="80">       
 	                        	<div id="memberOrderListimg" style="text-align:center; font-weight:bold;">
-	                               주문번호: <br>${ovo.oseq} <img src="images/order.png" style="width:20px;" 
-	                               onclick="location.href='fooba.do?command=memberOrderDetail&oseq=${ovo.oseq}'">
+	                               주문번호: <br>${ovo.oseq} <img src="images/order.png" style="width:20px;">
 	                            </div>                 
 	                            <div>${ovo.rname}</div>
 	                        </td>
@@ -67,9 +64,8 @@
 	                            </div>
 	                            <div id="res_OrderListDetail" style="margin: 10px;" >
 	                            	<c:choose>
-	                            		<c:when test="{ovo.result==2}">
-			                                <input type="button" value="다음으로" id="res_OrderResultButton" 
-			                                onclick="#"/></c:when>
+	                            		<c:when test="${ovo.result==2}">
+			                            </c:when>    
 			                            <c:otherwise>
 			                                <input type="button" value="다음으로" id="res_OrderResultButton" 
 			                                onclick="go_order_save(${ovo.oseq})"/>
@@ -82,7 +78,7 @@
 	                    <tr style="border-top: 1px solid black;">             
 	                    	<div id="menuorderdetail">							  									
 								    <div class="menuorderdetaildiv">
-								    	<div id="menuorderdetaildiv3">닉네임 : ${ovList[0].nick}</div>
+								    	<div id="menuorderdetaildiv3">닉네임 : ${ovo.nick}</div>
 								        <div id="menuorderdetaildiv3">배달주소 : ${ovo.address1}&nbsp;${ovo.address2}</div>
 								        <div id="menuorderdetaildiv3">전화번호 : ${ovo.phone}</div>
 								        <div id="menuorderdetaildiv3">배달/포장여부 : 
@@ -90,7 +86,7 @@
 								                포장
 								            </c:if>
 								            <c:if test="${ovo.rideryn==1}">
-								                배달 (배달료 : + ${ovList[0].rtip }원)
+								                배달
 								            </c:if>
 								        </div>
 								        <div id="menuorderdetaildiv3">일회용품 여부 : 

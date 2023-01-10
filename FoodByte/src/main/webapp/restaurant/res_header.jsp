@@ -10,6 +10,7 @@
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src = "../script/jquery-3.6.1.js"></script>
+<link href="css/fooba.css" rel="stylesheet">
 <script type="text/javascript">
 
 function resCheck(){
