@@ -2,6 +2,7 @@
 <%@ include file="../header.jsp"%>
 <%@ include file="mypage_sub.jsp"%>
 <script type="text/javascript">
+
 function readURL(obj) {
     let reader = new FileReader();
     if(!obj.files.length) {

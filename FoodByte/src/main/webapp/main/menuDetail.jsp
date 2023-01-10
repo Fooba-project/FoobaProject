@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 	<!-- RestaurantVO, FoodmenuList, ReviewList, clist-->
+	
+ 	
 	<div id="realjenche">
         <div id="jenche">
         <div id="gageirm">${RestaurantVO.rname}</div>
@@ -96,15 +98,14 @@
             </div>
         </div>
         </c:forEach>
- 
         <div class="baedaltip">배달요금 : ${RestaurantVO.rtip}원 별도&nbsp;&nbsp;&nbsp;</div>
         <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
-        <form method="post" name="frm">
-        <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
-        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
-        <input type="button" value="주문하기" class="jbwanryo" onclick="goPay();">
-        </form>
+        <form method="post" name="frm" action="fooba.do">
+        <input type="hidden" value="orderForm" name="command">
+	        <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
+	        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
+	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay('${RestaurantVO.rtip}','${carttotalprice}')"> 
+		</form>
     </div>
   </div>  
-
 <%@ include file="../footer.jsp"%>

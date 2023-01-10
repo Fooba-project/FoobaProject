@@ -55,7 +55,7 @@ select*from foodmenu;
 -- 한식(1) -- 비빔밥
 
 --ryn = 0 으로 샘플데이터 하나 변경
-update restaurant set ryn=0 where rseq=48;
+update orders set result=1 where oseq=1;
  
 
 

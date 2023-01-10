@@ -10,6 +10,7 @@
 <title>Fooba</title>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src = "../script/jquery-3.6.1.js"></script>
+<link href="css/fooba.css" rel="stylesheet">
 <script type="text/javascript">
 
 function resCheck(){
@@ -49,6 +50,11 @@ function menu_update(){
 	document.food_menu.submit();	
 }
 
+function go_order_save(oseq){
+	document.rfm.action = "fooba.do?command=res_orderComplete&oseq="+oseq;
+	document.rfm.submit();
+}
+<!-- location.href='fooba.do?command=res_orderComplete&oseq='+${ovo.oseq} -->
 </script>
 
 

@@ -109,7 +109,7 @@ insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,119,2,1,0,1);
 
 DROP TABLE review CASCADE CONSTRAINTS;
-select * from ORDER_DETAIL
+select * from ORDER_DETAIL;
 CREATE TABLE review
 (
 	review_seq number(5) NOT NULL,
@@ -126,6 +126,6 @@ CREATE TABLE review
 	PRIMARY KEY (review_seq)
 );
 
-select * from ORDER_view
+select * from ORDER_view;
 insert into review(review_seq,id,rseq,star,content,oseq,nick)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');

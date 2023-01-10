@@ -308,8 +308,11 @@ function go_search(hash){
         document.getElementById("tul2").style.left=dist+'px';
     }
     
-    function goPay(){
-    	document.frm.action = "fooba.do?command=orderForm";
-		document.frm.submit();
-    }
+ function goPay(rtip,price){
+  	if (rtip==price){
+ 	alert('음식을 주문표에 담으세요.');
+ 	return false;
+ 	}
+ 	else  { return true;}
+ }
  
