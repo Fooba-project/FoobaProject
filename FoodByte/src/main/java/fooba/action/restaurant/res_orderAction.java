@@ -8,15 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fooba.VO.FoodmenuVO;
-import fooba.VO.MemberVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.VO.RestaurantVO;
 import fooba.action.Action;
-import fooba.dao.MemberDao;
 import fooba.dao.OrderDao;
-import fooba.dao.ResDao;
 import fooba.util.Paging;
 
 public class res_orderAction implements Action {
@@ -46,17 +42,12 @@ public class res_orderAction implements Action {
 				paging.setDisplayRow(10);
 				paging.setDisplayPage(10);
 				OrderDao odao = OrderDao.getInstance();
-				System.out.println("rv.getid"+rvo.getRid());
-				System.out.println("rseq"+rvo.getRseq());
-				int count = odao.getOrderIngCountByRseq( rvo.getRseq());
-				paging.setTotalCount(count);
+				ArrayList<Integer> count = odao.getOrderIngCountByRseq( rvo.getRseq());
+				paging.setTotalCount(count.size());
 				
 				ArrayList<OrderVO> finalList = new ArrayList<>();
-				
 		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
-		         
 		         String oname = ""; // 주문메뉴(서브메뉴)
-
 		         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
 		        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
 		        	 int i = 0;

@@ -4,10 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import fooba.VO.OrderDetailVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.VO.ReviewVO;
@@ -246,17 +244,16 @@ public class OrderDao {
 	}
 
 
-	public int getOrderIngCountByRseq(int rseq) {
-		int cnt = 0;
+	public ArrayList<Integer> getOrderIngCountByRseq(int rseq) {
+		ArrayList<Integer> oseq = new ArrayList<>();
 		con = Dbman.getConnection();
-		String sql = "select count(distinct oseq) as cnt from order_view where rseq=? and result in(0,1)";
+		String sql = "select distinct oseq from order_view where rseq=? and result in(0,1)";
 		try {
 			pstmt = con.prepareStatement(sql);
-			System.out.println("rseq"+rseq);
 			pstmt.setInt(1, rseq);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				cnt = rs.getInt("cnt");
+			while (rs.next()) {
+				oseq.add(rs.getInt("oseq"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -265,19 +262,19 @@ public class OrderDao {
 		} finally {
 			Dbman.close(con, pstmt, rs);
 		}
-		return cnt;
+		return oseq;
 	}
 	
-	public int getOrderAllCountByRseq(int rseq) {
-		int cnt = 0;
+	public ArrayList<Integer> getOrderAllCountByRseq(int rseq) {
+		ArrayList<Integer> oseq = new ArrayList<>();
 		con = Dbman.getConnection();
-		String sql = "select count(distinct oseq) as cnt from order_view where rseq=?";
+		String sql = "select distinct oseq from order_view where rseq=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, rseq);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				cnt = rs.getInt("cnt");
+			while (rs.next()) {
+				oseq.add(rs.getInt("oseq"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -286,38 +283,92 @@ public class OrderDao {
 		} finally {
 			Dbman.close(con, pstmt, rs);
 		}
-		return cnt;
+		return oseq;
 	}
 
+	
 
-	public ArrayList<OrderVO> selectOrdersIngByRseq(int oseq, Paging paging) {
+	public ArrayList<OrderVO> selectOrdersIngByRseq(int rseq, Paging paging) {
 		ArrayList<OrderVO> list=new ArrayList<>();
 		con=Dbman.getConnection();
 		String sql = "select * from ("
 				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from orders where oseq=? and result in(0,1) order by oseq desc) b)"
+				+ "select rownum as rn, b.* from ((select * from order_view where rseq=? and result in (0,1) order by oseq desc) b)"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
 			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, oseq);
+			pstmt.setInt(1, rseq);
 			pstmt.setInt(2, paging.getStartNum());
 			pstmt.setInt(3, paging.getEndNum());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				OrderVO ovo=new OrderVO();
-				ovo.setOseq(rs.getInt("oseq"));
-				ovo.setAddress1(rs.getString("address1"));
-				ovo.setAddress2(rs.getString("address2"));
-				ovo.setPhone(rs.getString("phone"));
-				ovo.setResult(rs.getInt("result"));
-				ovo.setIndate(rs.getTimestamp("indate"));
-				ovo.setId(rs.getString("id"));
-				ovo.setRideryn(rs.getInt("rideryn"));
-				ovo.setPlasticyn(rs.getInt("plasticyn"));
-				ovo.setPayment(rs.getInt("payment"));
-				ovo.setTotalprice(rs.getInt("totalprice"));
-				list.add(ovo);
+				if (list.size()==0) {
+					OrderVO ovo=new OrderVO();
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setAddress1(rs.getString("oadd1"));
+					ovo.setAddress2(rs.getString("oadd2"));
+					ovo.setPhone(rs.getString("ophone"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);
+				} else if ( list.get(list.size()-1).getOseq()!=rs.getInt("oseq") ) {
+					OrderVO ovo=new OrderVO();
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setAddress1(rs.getString("oadd1"));
+					ovo.setAddress2(rs.getString("oadd2"));
+					ovo.setPhone(rs.getString("ophone"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);
+				}
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return list;
+	}
+	
+	
+	public ArrayList<OrderVO> selectOrdersAllByRseq(int rseq, Paging paging) {
+		ArrayList<OrderVO> list=new ArrayList<>();
+		con=Dbman.getConnection();
+		String sql = "select * from ("
+				+ "select * from ("
+				+ "select rownum as rn, b.* from ((select * from order_view where rseq=? order by oseq desc) b)"
+				+ ") where rn>=?"
+				+ ") where rn<=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, rseq);
+			pstmt.setInt(2, paging.getStartNum());
+			pstmt.setInt(3, paging.getEndNum());
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				if (list.get(list.size()-1).getOseq()!=rs.getInt("oseq")) {
+					OrderVO ovo=new OrderVO();
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setAddress1(rs.getString("address1"));
+					ovo.setAddress2(rs.getString("address2"));
+					ovo.setPhone(rs.getString("phone"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);
+				}
 			}
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
