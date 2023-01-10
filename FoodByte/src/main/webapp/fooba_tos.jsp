@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 
 <style type="text/css">
-#fooba_boxs{width: 750px; height: 700px; overflow-y: auto; border: 1px solid #ccc; margin: 0 auto;margin-bottom: 50px;}
+#fooba_boxs{width: 750px; height: 750px; overflow-y: auto; border: 1px solid #ccc; margin: 0 auto;}
 </style>
 
 <div id="fooba_boxs">
