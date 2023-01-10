@@ -138,7 +138,7 @@ float: left;}
 
 #jangbagunitul{width: 352px;border: 1px solid #fa6146;position: absolute;top: 150px;right: 0;}
 #jbtitle{width: 350px;border: 1px solid #fa6146;height: 50px;text-align: center;line-height: 50px; font-size: 140%; font-weight: bold; color: white;background:#fa6146 ;}
-.jbitem{width: 340px;border: 1px solid rgb(241, 241, 241); height: 85px; position: relative;padding: 5px;}
+.jbitem{width: 340px;border: 1px solid rgb(241, 241, 241); height: 100px; position: relative;padding: 5px;}
 .jbitemname{font-size: 160%;}
 .jbitemsub{font-size: 110%; color: rgb(136, 136, 136);}
 .jbitemprice{position:absolute;bottom: 10px;right: 10px; font-weight: bold;font-size: 120%;color:#fa6146 ;}
@@ -148,7 +148,7 @@ float: left;}
 color: white;font-size: 115%; text-align: right;line-height: 52px;font-weight: bold;}
 .jbwanryo{height: 55px; border: 1px solid #fa6146;color: white;width: 352px;background: #fa6146; font-size: 130%;font-weight: bold;}
 #jbtotalprice{border: 0;background: #fd9c8b; color: white; font-size: 120%;font-weight: bold; width: 85px; text-align: right; outline:none;}
-
+#jbtotalprice:focus{outline:none;}
 
 
 
