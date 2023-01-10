@@ -18,9 +18,14 @@ public class OrderVO {
 	private String rname;
 	private String rimage;
 	private int rseq;
+	private String nick;
 
-	
-
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
 	public int getRseq() {
 		return rseq;
 	}

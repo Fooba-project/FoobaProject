@@ -183,7 +183,7 @@ public class OrderDao {
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				ovo=new OrderVO();
-				ovo.setOseq(oseq);
+				ovo.setOseq(rs.getInt("oseq"));
 				ovo.setIndate(rs.getTimestamp("indate"));
 				ovo.setId(rs.getString("id"));
 				ovo.setRideryn(rs.getInt("rideryn"));
@@ -249,7 +249,28 @@ public class OrderDao {
 	public int getOrderIngCountByRseq(int rseq) {
 		int cnt = 0;
 		con = Dbman.getConnection();
-		String sql = "select count(rownum) as cnt from order_view where rseq=? and result in(0,1,2)";
+		String sql = "select count(rownum) as cnt from orders where rseq=? and result in(0,1)";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, rseq);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Dbman.close(con, pstmt, rs);
+		}
+		return cnt;
+	}
+	
+	public int getOrderAllCountByRseq(int rseq) {
+		int cnt = 0;
+		con = Dbman.getConnection();
+		String sql = "select count(rownum) as cnt from orders where rseq=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, rseq);
@@ -273,7 +294,7 @@ public class OrderDao {
 		con=Dbman.getConnection();
 		String sql = "select * from ("
 				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from order_view where rseq=? and result in(0,1,2) order by oseq desc) b)"
+				+ "select rownum as rn, b.* from ((select * from orders where rseq=? and result in(0,1) order by oseq desc) b)"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
@@ -285,14 +306,15 @@ public class OrderDao {
 			while(rs.next()) {
 				OrderVO ovo=new OrderVO();
 				ovo.setOseq(rs.getInt("oseq"));
+				ovo.setAddress1(rs.getString("address1"));
+				ovo.setAddress2(rs.getString("address2"));
+				ovo.setPhone(rs.getString("phone"));
+				ovo.setResult(rs.getInt("result"));
 				ovo.setIndate(rs.getTimestamp("indate"));
 				ovo.setId(rs.getString("id"));
 				ovo.setRideryn(rs.getInt("rideryn"));
 				ovo.setPlasticyn(rs.getInt("plasticyn"));
 				ovo.setPayment(rs.getInt("payment"));
-				ovo.setResult(rs.getInt("result"));
-				ovo.setAddress1(rs.getString("oadd1"));
-				ovo.setAddress2(rs.getString("oadd2"));
 				ovo.setTotalprice(rs.getInt("totalprice"));
 				list.add(ovo);
 			}

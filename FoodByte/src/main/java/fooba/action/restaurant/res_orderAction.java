@@ -26,18 +26,11 @@ public class res_orderAction implements Action {
 			throws ServletException, IOException {
 		  
 		  String url = "restaurant/res_orderList.jsp";		// 레스토랑 주문현황으로 이동
-		  
 	      HttpSession session = request.getSession();
-	            
 	      RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
 	      if(rvo == null) {
 	         url = "fooba.do?command=res_loginForm";
-	    
 	      }else {
-		    	 ArrayList<OrderVO> finalList = new ArrayList<>();
-		         OrderDao odao = OrderDao.getInstance();
-		
-		         
 		         int page=1;
 					if(request.getParameter("page")!=null) { 
 						page=Integer.parseInt(request.getParameter("page"));
@@ -52,14 +45,13 @@ public class res_orderAction implements Action {
 				paging.setPage(page);
 				paging.setDisplayRow(10);
 				paging.setDisplayPage(10);
-								
-				
+				OrderDao odao = OrderDao.getInstance();
 				int count = odao.getOrderIngCountByRseq(rvo.getRseq());
 				paging.setTotalCount(count);
 				
-		         ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
-		         ResDao rdao=ResDao.getInstance();
-		         ArrayList<FoodmenuVO>FoodList=rdao.foodList(rvo.getRseq());
+				ArrayList<OrderVO> finalList = new ArrayList<>();
+				
+		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
 		         
 		         String oname = ""; // 주문메뉴(서브메뉴)
 
@@ -78,7 +70,7 @@ public class res_orderAction implements Action {
 			        			 if (ovvo.getSideyn2()==1 || ovvo.getSideyn3()==1) {
 			        				 oname = oname + ", ";
 			        			 }
-			        		 
+			        		 }
 			        		 if (ovvo.getSideyn2()==1) {
 			        			 oname = oname + ovvo.getFside2();
 			        			 if (ovvo.getSideyn3()==1) {
@@ -88,30 +80,21 @@ public class res_orderAction implements Action {
 			        		 if (ovvo.getSideyn3()==1) {
 			        			 oname = oname + ovvo.getFside3();
 			        		 }
-			        		 if(size==i) oname=oname+")"; // 주문한메뉴갯수==반복횟수 일때
-			        		 else oname = oname + "), "; // 주문한메뉴갯수>반복횟수일 때
-		        		 } else if (size!=i) {oname = oname+", ";}// 주문한메뉴갯수>반복횟수일 때
-		        		 
-		        		 ovo.setRname(ovvo.getRname());
-		        		 ovo.setRimage(ovvo.getRimage());
-		        		 ovo.setRseq(ovvo.getRseq());
+			        		 if(size==i) oname=oname+") "+ovvo.getQuantity()+"개"; // 주문한메뉴갯수==반복횟수 일때
+			        		 else oname = oname + ") "+ovvo.getQuantity()+"개, "; // 주문한메뉴갯수>반복횟수일 때
+		        		 } else if (size!=i) {oname = oname+" "+ovvo.getQuantity()+"개, ";}
+		        		 else oname = oname+" "+ovvo.getQuantity()+"개";// 주문한메뉴갯수>반복횟수일 때
 		        	 }
 		        	 ovo.setOname(oname);
+		        	 ovo.setNick(ovList.get(0).getNick());
 		        	 finalList.add(ovo);
 		         }
-		        	 
-		         request.setAttribute("res_OrderList", finalList);
-		         request.setAttribute("paging", paging);	       
-		         request.setAttribute("RestaurantVO", rvo);
-		         request.setAttribute("FoodList",FoodList);
-		     }
-	      
-	      
-	         
+		        request.setAttribute("res_OrderList", finalList);
+		        request.setAttribute("paging", paging);	       
+		        request.setAttribute("RestaurantVO", rvo);
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
-	      
-		
+	     
 	}
 
 }
