@@ -18,7 +18,7 @@
             </tr>
         </table><br>
         <table id="admin_list_table">
-            <tr><th>회원 ID</th><th>회원 닉네임</th><th>전화번호</th><th>이메일</th><th>가입날짜</th><th>회원정보삭제</th></tr>       
+            <tr><th>회원 ID</th><th>회원 닉네임</th><th>전화번호</th><th>이메일</th><th>가입날짜</th></tr>       
         <c:forEach items="${memberList}" var="MemberVO">
                 <tr>
                     <td style="text-align:center;">${MemberVO.id}</td>
@@ -26,7 +26,6 @@
                     <td style="text-align:center;">${MemberVO.phone}</td>
                     <td style="text-align:center;">${MemberVO.email}</td>                    
                     <td style=text-align:center;><fmt:formatDate value="${MemberVO.indate}"/></td> 
-                    <td style="text-align:center;"><input type="button" value="삭제"></td>
                 </tr>
          </c:forEach>
          </table>

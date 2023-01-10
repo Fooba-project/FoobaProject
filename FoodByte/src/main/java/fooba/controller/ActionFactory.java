@@ -152,7 +152,7 @@ public class ActionFactory {
 		else if (command.equals("admin_logout")) ac = new admin_logoutAction();
 		else if (command.equals("admin_restaurantList")) ac = new admin_restaurantListAction(); // 가게관리 result 1 운영 가능 가게 
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
-		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
+		//else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
 		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
