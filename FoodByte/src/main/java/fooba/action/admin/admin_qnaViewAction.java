@@ -22,7 +22,8 @@ public class admin_qnaViewAction implements Action {
 		if(avo==null) {
 			url="fooba.do?command=admin";
 		}else {
-			int qseq=Integer.parseInt((request.getParameter("qseq")));
+			int qseq=Integer.parseInt(request.getParameter("qseq"));
+			System.out.println(qseq);
 			QnaDao qdao=QnaDao.getInstance();
 			QnaVO qvo=qdao.getQna(qseq);
 			request.setAttribute("qnaVO", qvo);
