@@ -166,7 +166,7 @@ public class ActionFactory {
 		else if (command.equals("admin_qnaUpdateForm")) ac = new admin_qnaUpdateFormAction(); // 수정 폼
 		else if (command.equals("admin_qnaUpdate")) ac = new admin_qnaUpdateAction(); // 수정명령
 		else if (command.equals("admin_qnaDelete")) ac = new admin_qnaDeleteAction(); // 삭제
-		
+		 
 		
 		return ac;
 	}
