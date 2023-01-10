@@ -54,7 +54,7 @@
                                 <div id="sanick" >&nbsp;&nbsp;사장님</div>                               
                                 </div>
                                 <c:if test="${ReviewVO.replyyn==0}"></c:if>
-                                <div id="sa_thank" >
+                                 <div id="sa_thank" >
                                     <textarea id="sa_thank_text"name="reply" rows="5" cols="50" > </textarea>
                                     <div id="rev_buttonbox" >
                                         <div id="rev_button"  onclick="#">

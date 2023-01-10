@@ -15,7 +15,7 @@ import fooba.dao.ResDao;
 import fooba.util.Paging;
 
 public class res_reviewAction implements Action {
-
+ 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
