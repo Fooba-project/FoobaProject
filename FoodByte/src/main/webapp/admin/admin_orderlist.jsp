@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp"%>
+ 
+  <script type="text/javascript">
   
+  </script>
 <article>
     <h2 class="admin_list">주문 리스트</h2>   
     <br> 
@@ -27,18 +30,29 @@
                     <td style="text-align:center;"><fmt:formatDate value="${OrderViewVO.indate}"/></td> 
        
          	<td style=text-align:center;>
-                        <c:choose>
-                              <c:when test='${OrderViewVO.result==0}'>
-   								 <input type="button" value="주문확인중">
-                              </c:when>
-                              <c:when test='${OrderViewVO.result==1}'>           
-	                              <input type="button" value="배달중">
-	                   		  </c:when>
-	                   		   <c:when test='${OrderViewVO.result==2}'>          
-	                              <input type="button" value="배달완료">  
-	                   		  </c:when>
-                              <c:otherwise><input type="button" value="리뷰작성"></td></c:otherwise>
-                        </c:choose>   
+         	<c:choose>
+     			<c:when test='${OrderViewVO.result=="0"}'>
+					<input disabled type="button" value="&lt;" onclick="go_left('${RestaurantVO.rseq}');">
+					주문확인중
+					<input type="button" value="&gt;" onclick="go_left('${RestaurantVO.rseq}');"> 
+                </c:when>
+                <c:when test='${OrderViewVO.result=="1"}'>
+						<input type="button" value="&lt;">
+					배달중
+					<input type="button" value="&gt;"> 
+                </c:when>
+                <c:when test='${OrderViewVO.result=="2"}'>
+					<input type="button" value="&lt;">
+					배달완료
+					<input type="button" value="&gt;"> 
+                </c:when>
+                <c:otherwise>
+					<input  type="button" value="&lt;">
+					리뷰작성완료
+					<input disabled type="button" value="&gt;"> 
+                </c:otherwise>
+            </c:choose>
+ 
              </td> 
 			     </tr>
          </c:forEach>                    

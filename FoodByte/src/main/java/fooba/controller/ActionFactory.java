@@ -8,6 +8,8 @@ import fooba.action.admin.admin_loginFormAction;
 import fooba.action.admin.admin_logoutAction;
 import fooba.action.admin.admin_memberKickAction;
 import fooba.action.admin.admin_orderListAction;
+import fooba.action.admin.admin_orderList_lbAction;
+import fooba.action.admin.admin_orderList_rbAction;
 import fooba.action.admin.admin_qnaDeleteAction;
 import fooba.action.admin.admin_qnaListAction;
 import fooba.action.admin.admin_qnaUpdateAction;
@@ -160,6 +162,8 @@ public class ActionFactory {
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
 		//else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
 		else if (command.equals("admin_orderList")) ac = new admin_orderListAction();
+		else if (command.equals("admin_orderList_lb")) ac = new admin_orderList_lbAction();
+		else if (command.equals("admin_orderList_rb")) ac = new admin_orderList_rbAction();
 		//else if (command.equals("admin_orderEdit")) ac = new admin_orderEditAction(); // 주문상태 변경
 		// qna 액션(고객센터 - 자주묻는 질문)
 		else if (command.equals("admin_qnaList")) ac = new admin_qnaListAction(); // qna 리스트  고객이 보는모습
