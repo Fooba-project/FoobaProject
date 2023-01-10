@@ -40,13 +40,15 @@ public class res_orderAction implements Action {
 					}else { 
 						session.removeAttribute("page");
 					}
-				 
+				
 				Paging paging = new Paging();
 				paging.setPage(page);
 				paging.setDisplayRow(10);
 				paging.setDisplayPage(10);
 				OrderDao odao = OrderDao.getInstance();
-				int count = odao.getOrderIngCountByRseq(rvo.getRseq());
+				System.out.println("rv.getid"+rvo.getRid());
+				System.out.println("rseq"+rvo.getRseq());
+				int count = odao.getOrderIngCountByRseq( rvo.getRseq());
 				paging.setTotalCount(count);
 				
 				ArrayList<OrderVO> finalList = new ArrayList<>();

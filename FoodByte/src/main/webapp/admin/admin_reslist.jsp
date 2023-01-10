@@ -28,8 +28,7 @@
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr>
-                <td style="font-size:17px; width:642;">가게명: <input class="keyy" type="text" name="key" value="${key}">
-                	<input class="admin_searchres_btn" type="button" name="btn_write" value="가게등록"  onClick="go_wrt();">      
+                <td style="font-size:17px; width:642;">가게명: <input class="keyy" type="text" name="key" value="${key}">     
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
@@ -49,11 +48,11 @@
                     <td style=text-align:center;>
                         <c:choose>
                               <c:when test='${RestaurantVO.ryn=="1"}'>운영중
-   								 <td style="text-align:center;"><input type="button" value="2 승인거부"></td>
+   								 <td style="text-align:center;"><input type="button" value="2 거부"></td>
                               </c:when>
-                              <c:when test='${RestaurantVO.ryn=="0"}'>미승인
-	                              <td style="text-align:center;"><input type="button" value="2 승인거부">
-	                              <input type="button" value="1 승인"></td>
+                              <c:when test='${RestaurantVO.ryn=="0"}'>미승인           
+	                              <td style="text-align:center;"><input type="button" value="1 승인">
+	                              <input type="button" value="2 거부"></td>
 	                   		  </c:when>
                               <c:otherwise><td style="text-align:center;">승인거부</td></c:otherwise>
                         </c:choose>   

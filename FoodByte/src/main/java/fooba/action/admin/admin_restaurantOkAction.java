@@ -52,7 +52,6 @@ public class admin_restaurantOkAction implements Action {
 			}
 						
 			
-			
 			Paging paging = new Paging();
 			paging.setPage(page);
 			paging.setDisplayRow(10);

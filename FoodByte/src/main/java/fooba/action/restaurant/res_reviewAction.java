@@ -20,8 +20,8 @@ public class res_reviewAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginUser");
-		String url="restaurant/res_reviewList.jsp";
+		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
+		String url="restaurant/res_reviewList.jsp";	//레스토랑 리뷰관리로 이동
 		
 		if(rvo==null) {
 			url="fooba.do?command=res_loginForm";

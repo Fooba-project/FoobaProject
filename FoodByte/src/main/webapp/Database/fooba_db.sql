@@ -235,6 +235,8 @@ ALTER TABLE restaurant MODIFY rname VARCHAR2(100);
 ALTER TABLE restaurant MODIFY raddress VARCHAR2(100);
 ALTER TABLE qna MODIFY subject VARCHAR2(200);
 ALTER TABLE qna MODIFY content VARCHAR2(2000);
+--추가
+ALTER TABLE review MODIFY nick VARCHAR2(100);
 
 
  create or replace view search

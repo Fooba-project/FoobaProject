@@ -42,8 +42,7 @@ function qnaCheck(){
                     <input type="button"  value="글쓰기" class="qna_button" onclick="qnaCheck()"> 
                     <input type="button"   value="취소"  class="qna_button" onclick="location.href='fooba.do?command=admin_qnaList'">   
                 </div>
-            </fieldset>
-      
+            </fieldset>     
         </form>
 </article>
 <br><br><br><br><br><br><br><br><br>

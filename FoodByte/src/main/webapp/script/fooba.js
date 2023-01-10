@@ -267,24 +267,7 @@ function go_search(hash){
     else return;
    }
    
-   function checkOnlyOne(element) {
-        const checkboxes 
-            = document.getElementsByName("rideryn");
-        checkboxes.forEach((cb) => {
-            cb.checked = false;
-        })
-        element.checked = true;
-    }
-
-    function checkOnlyOne2(element) {
-        const checkboxes 
-            = document.getElementsByName("payment");
-        checkboxes.forEach((cb) => {
-            cb.checked = false;
-        })
-        element.checked = true;
-    }
-    
+   
     
     var nummx=0;
      function jusomove(x){

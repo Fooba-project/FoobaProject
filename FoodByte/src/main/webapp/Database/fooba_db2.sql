@@ -129,3 +129,7 @@ CREATE TABLE review
 select * from ORDER_view;
 insert into review(review_seq,id,rseq,star,content,oseq,nick)
 values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');
+
+
+--추가
+ALTER TABLE review MODIFY nick VARCHAR2(100);

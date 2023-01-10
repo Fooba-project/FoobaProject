@@ -27,6 +27,7 @@ import fooba.action.main.logoutAction;
 import fooba.action.main.menupopupAction;
 import fooba.action.main.miniLoginAction;
 import fooba.action.main.miniLoginFormAction;
+import fooba.action.main.orderAction;
 import fooba.action.main.orderFormAction;
 import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
@@ -93,6 +94,7 @@ public class ActionFactory {
 		// 필요 없어서 삭제 else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		// 필요 없어서 삭제 else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
 		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
+		else if(command.equals("order"))ac=new orderAction();
 //		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 //		else if (command.equals("qnaList")) ac = new qnaListAction();
 //		else if (command.equals("qnaView")) ac = new qnaViewAction();
@@ -150,7 +152,7 @@ public class ActionFactory {
 		else if (command.equals("admin_logout")) ac = new admin_logoutAction();
 		else if (command.equals("admin_restaurantList")) ac = new admin_restaurantListAction(); // 가게관리 result 1 운영 가능 가게 
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
-		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
+		//else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
 		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
@@ -164,7 +166,7 @@ public class ActionFactory {
 		else if (command.equals("admin_qnaUpdateForm")) ac = new admin_qnaUpdateFormAction(); // 수정 폼
 		else if (command.equals("admin_qnaUpdate")) ac = new admin_qnaUpdateAction(); // 수정명령
 		else if (command.equals("admin_qnaDelete")) ac = new admin_qnaDeleteAction(); // 삭제
-		
+		 
 		
 		return ac;
 	}

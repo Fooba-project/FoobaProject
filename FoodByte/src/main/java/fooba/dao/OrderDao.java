@@ -249,9 +249,10 @@ public class OrderDao {
 	public int getOrderIngCountByRseq(int rseq) {
 		int cnt = 0;
 		con = Dbman.getConnection();
-		String sql = "select count(rownum) as cnt from orders where rseq=? and result in(0,1)";
+		String sql = "select count(distinct oseq) as cnt from order_view where rseq=? and result in(0,1)";
 		try {
 			pstmt = con.prepareStatement(sql);
+			System.out.println("rseq"+rseq);
 			pstmt.setInt(1, rseq);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -270,7 +271,7 @@ public class OrderDao {
 	public int getOrderAllCountByRseq(int rseq) {
 		int cnt = 0;
 		con = Dbman.getConnection();
-		String sql = "select count(rownum) as cnt from orders where rseq=?";
+		String sql = "select count(distinct oseq) as cnt from order_view where rseq=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, rseq);
@@ -289,17 +290,17 @@ public class OrderDao {
 	}
 
 
-	public ArrayList<OrderVO> selectOrdersIngByRseq(int rseq, Paging paging) {
+	public ArrayList<OrderVO> selectOrdersIngByRseq(int oseq, Paging paging) {
 		ArrayList<OrderVO> list=new ArrayList<>();
 		con=Dbman.getConnection();
 		String sql = "select * from ("
 				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from orders where rseq=? and result in(0,1) order by oseq desc) b)"
+				+ "select rownum as rn, b.* from ((select * from orders where oseq=? and result in(0,1) order by oseq desc) b)"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
 			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, rseq);
+			pstmt.setInt(1, oseq);
 			pstmt.setInt(2, paging.getStartNum());
 			pstmt.setInt(3, paging.getEndNum());
 			rs=pstmt.executeQuery();

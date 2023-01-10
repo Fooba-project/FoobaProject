@@ -88,7 +88,7 @@ public class memberOrderAllAction implements Action {
 	        	 finalList.add(ovo);
 	         }
 	         request.setAttribute("memberOrderList", finalList);
-	         request.setAttribute("memberOrderListT", "진행중인");
+	         request.setAttribute("memberOrderListT", "전체");
 	         request.setAttribute("paging", paging);	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
