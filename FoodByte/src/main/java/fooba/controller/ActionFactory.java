@@ -160,7 +160,7 @@ public class ActionFactory {
 		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
-		//else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
+		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
 		else if (command.equals("admin_orderList")) ac = new admin_orderListAction();
 		else if (command.equals("admin_orderList_lb")) ac = new admin_orderList_lbAction();
 		else if (command.equals("admin_orderList_rb")) ac = new admin_orderList_rbAction();
