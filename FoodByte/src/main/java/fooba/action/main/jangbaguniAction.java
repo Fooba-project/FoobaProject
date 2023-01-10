@@ -36,7 +36,7 @@ public class jangbaguniAction implements Action {
 		cvo.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 		cvo.setCfname(request.getParameter("fname"));
 		cvo.setRseq(Integer.parseInt(request.getParameter("rseq")));
-		System.out.println(request.getParameter("fsideprice1")+" a "+request.getParameter("fsideprice2")+" b " +request.getParameter("fsideprice3"));
+		
 		
 		CartDao cdao=CartDao.getInstance();
 		

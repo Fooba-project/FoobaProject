@@ -26,7 +26,7 @@ public class deleteCartmenuAction implements Action {
 		
 		CartDao cdao=CartDao.getInstance();
 		int rseq=cdao.deletecart(cseq);
-		System.out.println(rseq);
+		rseq=Integer.parseInt(request.getParameter("rseq"));
 		url="fooba.do?command=restaurantDetail&rseq="+rseq;
 		}
 		request.getRequestDispatcher(url).forward(request, response);

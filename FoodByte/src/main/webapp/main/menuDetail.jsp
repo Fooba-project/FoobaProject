@@ -94,7 +94,7 @@
             <a class="jbitemname">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq});">
+                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq},${RestaurantVO.rseq });">
             </div>
         </div>
         </c:forEach>

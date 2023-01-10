@@ -261,9 +261,9 @@ function go_search(hash){
      window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no, top=100 , left="+ popupX);
  } 
   
-  function deleteejb(cseq){
+  function deleteejb(cseq,rseq){
 	var ok=confirm("장바구니에서 삭제하시겠습니까?");
-	if(ok) location.href="fooba.do?command=deleteCartmenu&cseq="+cseq;
+	if(ok) location.href="fooba.do?command=deleteCartmenu&cseq="+cseq+"&rseq="+rseq;
     else return;
    }
    
@@ -317,5 +317,25 @@ function baedal(a){
         document.getElementById("jbtotalprice").value=parseInt(a)+parseInt(document.getElementById("jbtotalprice").value);
         kk=0;
     }
+}
+
+function jusochoice(){
+	if(document.getElementById("bdjs").value==1){
+		if(document.member_join_send_form.useraddress1.value.length==0){
+			alert("주소를 입력하세요.");
+			post_zip();
+			return false;
+		}else if(document.member_join_send_form.useraddress2.value.length==0){
+			alert("상세 주소를 입력하세요.");
+			document.member_join_send_form.useraddress2.focus();
+			return false;			
+		}else if(document.member_join_send_form.phone.value.length==0){
+			alert("전화번호를 입력하세요.");
+			document.member_join_send_form.phone.focus();
+			return false;
+		} 
+	}
+	var ok=confirm("결제하시겠습니까?");
+	return ok;
 }
  

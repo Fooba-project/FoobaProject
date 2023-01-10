@@ -43,7 +43,6 @@ public class restaurantDetailAction implements Action {
 		}else {
 			carttotalprice=carttotalprice+rvo.getRtip();
 		}
-		System.out.println(carttotalprice);
 		request.setAttribute("carttotalprice", carttotalprice);
 		request.setAttribute("RestaurantVO", rvo);
 		request.setAttribute("FoodmenuList", foodmenuList);
