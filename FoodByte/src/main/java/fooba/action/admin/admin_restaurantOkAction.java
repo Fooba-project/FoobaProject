@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fooba.action.Action;
-import fooba.dao.OrderDao;
-import fooba.dao.ResDao;
+import fooba.dao.AdminDao;
 
 public class admin_restaurantOkAction implements Action {
 
@@ -25,8 +24,8 @@ public class admin_restaurantOkAction implements Action {
 		if(adminId==null) {
 			url="fooba.do?command=admin_loginForm";
 		}else {
-			ResDao rdao=ResDao.getInstance();
-			rdao.acceptRes(rseq);
+			AdminDao adao=AdminDao.getInstance();
+			adao.acceptRes(rseq);
 			
 		}
 		request.getRequestDispatcher(url).forward(request, response);

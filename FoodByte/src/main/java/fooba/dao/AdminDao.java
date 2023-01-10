@@ -269,5 +269,18 @@ public class AdminDao {
 		
 		return list;
 	}
+
+
+	public void acceptRes(int rseq) {
+		String sql="update restaurant set ryn=ryn+1 where rseq=?";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,rseq);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		} finally {Dbman.close(con, pstmt, rs);}
+		
+	}
 	
 }
