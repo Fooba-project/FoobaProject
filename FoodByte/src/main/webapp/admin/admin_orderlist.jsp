@@ -32,7 +32,7 @@
    								 <input type="button" value="주문확인중">
                               </c:when>
                               <c:when test='${OrderViewVO.result==1}'>           
-	                              <input type="button" value="배달중">  
+	                              <input type="button" value="배달중">
 	                   		  </c:when>
 	                   		   <c:when test='${OrderViewVO.result==2}'>          
 	                              <input type="button" value="배달완료">  
