@@ -2,10 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 
+<form name="member_join_send_form" id="member_join_send_form" method="post" >
+<input type="hidden" value="" name="command">
 <div id="realjenche2">
         <div id="jenche2">
             <div id="gumae">구매하기</div>
-            
             <div id="juso">
                 <div class="juso" id="jusotabb" onclick="jusomove(-1);">주소</div>
                 <div class="newjuso" id="newjusotabb" onclick="jusomove(1);">배송지 변경</div>
@@ -25,7 +26,7 @@
                 </div>
                 <div id="juso2">
                     <input type="text" class="gumaeinput_text" style="width: 490px;" name="userzip_num" placeholder="우편번호" readonly/>
-                    <input type="button" id="id_btn" value="우편번호 검색" onclick="post_zip()"> 
+                    <input type="button" id="oopyon" value="우편번호 검색" onclick="post_zip()"> 
                     <input type="text" class="gumaeinput_text" name="useraddress1" placeholder="주소" readonly/>
                     <input type="text" class="gumaeinput_text" name="useraddress2" placeholder="상세 주소"/>
                     <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호"/>
@@ -37,41 +38,29 @@
         
         <div id="xxxx">
         	<div class="toggle1">
-				배달/포장 
+				&nbsp;배달/포장 &nbsp;
 				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked>
-				<label for="toggle1-1">배달</label>
+				<label for="toggle1-1">배달</label>&nbsp;&nbsp;
 				<input type="radio" id="toggle1-2" name="rideryn" value="1">
 				<label for="toggle1-2">포장</label>
 			</div>
 		
 			<div class="toggle2">
-				일회용품
-				<input type="radio" id="toggle2-1" name="plasticyn" value="0" checked>
-				<label for="toggle2-1">미사용</label>
-				<input type="radio" id="toggle2-2" name="plasticyn" value="1">
-				<label for="toggle2-2">사용</label>
+				&nbsp;일회용품 &nbsp;&nbsp;
+				<input type="radio" id="toggle2-1" name="plasticyn" value="1" checked>
+				<label for="toggle2-1">사용</label>&nbsp;&nbsp;
+				<input type="radio" id="toggle2-2" name="plasticyn" value="0">
+				<label for="toggle2-2">미사용</label>
 			</div>  
 		
 			<div class="toggle3">
-				카드/현금
+				&nbsp;카드/현금 &nbsp;
 				<input type="radio" id="toggle3-1" name="payment" value="0" checked>
-				<label for="toggle3-1">카드</label>
+				<label for="toggle3-1">카드</label>&nbsp;&nbsp;
 				<input type="radio" id="toggle3-2" name="payment" value="1">
 				<label for="toggle3-2">현금</label>
 			</div>
 	
-            <a class="grayy2">&nbsp;&nbsp;배달/포장</a>
-            <input type="radio" value="0" name="rideryn" >배달
-            <input type="radio" value="1"name="rideryn" >포장
-
-            <br>
-            <a class="grayy2">&nbsp;&nbsp;일회용품 사용</a>
-            <input type="checkbox" value="1" name="plasticyn">
-            
-            <br>
-            <a class="grayy2">&nbsp;&nbsp;결제 방법</a>
-            <input type="checkbox" value="0" name="payment" checked onclick='checkOnlyOne2(this)'>카드
-            <input type="checkbox" value="1"name="payment" onclick='checkOnlyOne2(this)'>현금
         </div>
 
         <div id="jangbagunitul2">
@@ -87,10 +76,10 @@
             
             <div class="baedaltip">배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;</div>
             <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
-            <input type="button" value="결제" class="jbwanryo2">
-
+            <input type="submit" value="결제" class="jbwanryo2">
+			
         </div>
     </div>
-
+</form>
 
 <%@ include file="../footer.jsp"%>

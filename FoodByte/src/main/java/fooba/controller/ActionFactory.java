@@ -27,6 +27,7 @@ import fooba.action.main.logoutAction;
 import fooba.action.main.menupopupAction;
 import fooba.action.main.miniLoginAction;
 import fooba.action.main.miniLoginFormAction;
+import fooba.action.main.orderAction;
 import fooba.action.main.orderFormAction;
 import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
@@ -93,6 +94,7 @@ public class ActionFactory {
 		// 필요 없어서 삭제 else if (command.equals("cartInsert")) ac = new cartInsertAction();// 카트에 담기
 		// 필요 없어서 삭제 else if (command.equals("cartDelete")) ac = new cartDeleteAction();// 카트에서 삭제
 		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
+		else if(command.equals("order"))ac=new orderAction();
 //		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 //		else if (command.equals("qnaList")) ac = new qnaListAction();
 //		else if (command.equals("qnaView")) ac = new qnaViewAction();
