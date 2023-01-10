@@ -18,8 +18,6 @@ import fooba.action.admin.admin_restaurantDetailAction;
 import fooba.action.admin.admin_restaurantKickAction;
 import fooba.action.admin.admin_restaurantListAction;
 import fooba.action.admin.admin_restaurantOkAction;
-import fooba.action.main.cartDeleteAction;
-import fooba.action.main.cartInsertAction;
 import fooba.action.main.categoryAction;
 import fooba.action.main.deleteCartmenuAction;
 import fooba.action.main.jangbaguniAction;
@@ -61,7 +59,6 @@ import fooba.action.restaurant.res_loginFormAction;
 import fooba.action.restaurant.res_logoutAction;
 import fooba.action.restaurant.res_orderAction;
 import fooba.action.restaurant.res_orderCompleteAction;
-import fooba.action.restaurant.res_orderDetailAction;
 import fooba.action.restaurant.res_reviewAction;
 import fooba.action.restaurant.res_reviewReplyWriteAction;
 import fooba.action.restaurant.res_showAction;
@@ -136,7 +133,6 @@ public class ActionFactory {
 		else if (command.equals("res_reviewReplyWrite")) ac = new res_reviewReplyWriteAction();// 답글 달기
 		// 주문관리
 		else if (command.equals("res_order")) ac = new res_orderAction();// 주문 관리 탭, 주문리스트 표시
-		else if (command.equals("res_orderDetail")) ac = new res_orderDetailAction(); // 주문 상세보기
 		else if (command.equals("res_orderComplete")) ac = new res_orderCompleteAction();// 배달완료 처리
 		// 메뉴
 		else if (command.equals("res_foodmenu")) ac = new res_foodmenuAction();// 메뉴 리스트
