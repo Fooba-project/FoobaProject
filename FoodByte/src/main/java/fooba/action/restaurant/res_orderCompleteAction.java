@@ -17,7 +17,6 @@ public class res_orderCompleteAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		System.out.println("oseq : "+ request.getParameter("oseq"));
 		int oseq=Integer.parseInt(request.getParameter("oseq"));
 		
 		HttpSession session = request.getSession();

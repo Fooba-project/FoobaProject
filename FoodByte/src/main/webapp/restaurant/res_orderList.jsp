@@ -16,8 +16,8 @@
         
         <br>
         <div id="res_tab">
-            <div class="res_infotab" style="color:white;" >진행중인 주문 현황</div>      
-            <div class="res_infotab" style="color:white;" >총 주문현황</div>
+            <div class="res_infotab"  >진행중인 주문 현황</div>      
+            <div class="res_infotab"  >총 주문현황</div>
         </div>
         
         <form id="res_menuall_a" name="rfm" method="post" >
