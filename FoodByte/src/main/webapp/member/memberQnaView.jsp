@@ -8,14 +8,14 @@
     <div style="border-top: 2px solid rgb(23,55,94); margin-top:15px;"></div>
         <table class="member_join_table"><br>
             <div class="qna_subject">
-                제목 : ${qnaVO.subject}           
+                제목 : ${QnaVO.subject}           
             </div> 
             <div class="qna_content">
-                내용 : ${qnaVO.content} 
+                내용 : ${QnaVO.content} 
             </div>
 
         </table>
-         	<input type="hidden" value="${qnaVO.qseq }" name="qseq">
+         	<input type="hidden" value="${QnaVO.qseq }" name="qseq">
             <div id="join_btn" style="margin: auto; width: 470px;">
             	<input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="수정" onclick="location.href='fooba.do?command=memberQnaUpdateForm&qseq=${qnaVO.qseq}'">
                 <input style="margin:auto; background-color:rgb(23,55,94)" class="join_btn1" type="button" value="목록" onclick="location.href='fooba.do?command=memberQnalist'">
