@@ -115,8 +115,7 @@ float: left;}
 #cleanreview{font-weight: bold; }
 .smmenu{height: 120px;width: 120px; position: absolute; right: 10px;top: 10px;}
 #menujengbo{height: 50px;  }
-.menujengbotab{ color: white;
-height:50px; width:348px ;position: relative;float:left ;line-height: 50px;text-align: center; font-weight: bold;font-size: 110%;}
+.menujengbotab{ color: white; height:50px; width:348px ;position: relative;float:left ;line-height: 50px;text-align: center; font-weight: bold;font-size: 110%;}
 
         
 #menudel{ width: 700px;}
@@ -148,7 +147,8 @@ height:50px; width:348px ;position: relative;float:left ;line-height: 50px;text-
 .jbtotal{height: 48px;border: 1px solid #fd9c8b;background-color:#fd9c8b;
 color: white;font-size: 115%; text-align: right;line-height: 52px;font-weight: bold;}
 .jbwanryo{height: 55px; border: 1px solid #fa6146;color: white;width: 352px;background: #fa6146; font-size: 130%;font-weight: bold;}
-#jbtotalprice{border: 0;background: #fd9c8b; color: white; font-size: 120%;font-weight: bold; width: 85px; text-align: right;}
+#jbtotalprice{border: 0;background: #fd9c8b; color: white; font-size: 120%;font-weight: bold; width: 85px; text-align: right; outline:none;}
+
 
 
 
@@ -234,7 +234,7 @@ table#memberOrderList td {text-align: center; font-family: Verdana; border-top:2
 #oopyon {  position: absolute;  width: 180px;  height: 45px;  top: 0px; right: 0;  border: 0; border-radius: 3px;}
 #oopyon:hover { outline: 0px solid #9191dfab; background-color: rgb(125, 114, 245);}
 
-#badal{border: 0; font-size: 100%; text-align: right;}
+#badal{border: 0; font-size: 100%; text-align: right; outline:none;}
 .toggle1 input[type=radio]{display: none;}
 .toggle1 input[type=radio] + label {color: #e0e0e0;font-size: 100%;}
 .toggle1 input[type=radio]:checked + label {color: white; background-color:#fa6146; }

@@ -99,7 +99,7 @@
         </div>
         </c:forEach>
         <div class="baedaltip">배달요금 : ${RestaurantVO.rtip}원 별도&nbsp;&nbsp;&nbsp;</div>
-        <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
+        <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice" readonly>원&nbsp;&nbsp;</div>
         <form method="post" name="frm" action="fooba.do">
         <input type="hidden" value="orderForm" name="command">
         	<input type="hidden" value="${RestaurantVO.rtip }" name="rtip">
