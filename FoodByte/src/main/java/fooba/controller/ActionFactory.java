@@ -8,6 +8,8 @@ import fooba.action.admin.admin_loginFormAction;
 import fooba.action.admin.admin_logoutAction;
 import fooba.action.admin.admin_memberKickAction;
 import fooba.action.admin.admin_orderListAction;
+import fooba.action.admin.admin_orderList_lbAction;
+import fooba.action.admin.admin_orderList_rbAction;
 import fooba.action.admin.admin_qnaDeleteAction;
 import fooba.action.admin.admin_qnaListAction;
 import fooba.action.admin.admin_qnaUpdateAction;
@@ -21,6 +23,8 @@ import fooba.action.admin.admin_restaurantListAction;
 import fooba.action.admin.admin_restaurantOkAction;
 import fooba.action.main.categoryAction;
 import fooba.action.main.deleteCartmenuAction;
+import fooba.action.main.fooba_privacyAction;
+import fooba.action.main.fooba_tosAction;
 import fooba.action.main.jangbaguniAction;
 import fooba.action.main.loginAction;
 import fooba.action.main.loginFormAction;
@@ -98,7 +102,8 @@ public class ActionFactory {
 //		else if (command.equals("orderInsert")) ac = new orderInsertAction();// 주문하기 보류
 //		else if (command.equals("qnaList")) ac = new qnaListAction();
 //		else if (command.equals("qnaView")) ac = new qnaViewAction();
-		
+		else if(command.equals("fooba_tos"))ac=new fooba_tosAction();
+		else if(command.equals("fooba_privacy"))ac=new fooba_privacyAction();
 		
 		
 		// member 멤버
@@ -152,11 +157,13 @@ public class ActionFactory {
 		else if (command.equals("admin_logout")) ac = new admin_logoutAction();
 		else if (command.equals("admin_restaurantList")) ac = new admin_restaurantListAction(); // 가게관리 result 1 운영 가능 가게 
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
-		//else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
+		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
 		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
-		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
+		//else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
 		else if (command.equals("admin_orderList")) ac = new admin_orderListAction();
+		else if (command.equals("admin_orderList_lb")) ac = new admin_orderList_lbAction();
+		else if (command.equals("admin_orderList_rb")) ac = new admin_orderList_rbAction();
 		//else if (command.equals("admin_orderEdit")) ac = new admin_orderEditAction(); // 주문상태 변경
 		// qna 액션(고객센터 - 자주묻는 질문)
 		else if (command.equals("admin_qnaList")) ac = new admin_qnaListAction(); // qna 리스트  고객이 보는모습

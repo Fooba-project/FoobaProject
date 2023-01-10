@@ -94,18 +94,18 @@
             <a class="jbitemname">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq});">
+                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq},${RestaurantVO.rseq });">
             </div>
         </div>
         </c:forEach>
         <div class="baedaltip">배달요금 : ${RestaurantVO.rtip}원 별도&nbsp;&nbsp;&nbsp;</div>
-        <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
+        <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice" readonly>원&nbsp;&nbsp;</div>
         <form method="post" name="frm" action="fooba.do">
         <input type="hidden" value="orderForm" name="command">
         	<input type="hidden" value="${RestaurantVO.rtip }" name="rtip">
 	        <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
 	        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
-	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay()"> 
+	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay('${RestaurantVO.rtip }','${carttotalprice }')"> 
 		</form>
     </div>
   </div>  

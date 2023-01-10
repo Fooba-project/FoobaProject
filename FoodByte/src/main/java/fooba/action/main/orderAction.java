@@ -47,19 +47,17 @@ public class orderAction implements Action {
 				ovo.setPhone(request.getParameter("phone"));
 			}
 			ovo.setTotalprice(totalprice);
+			//System.out.println(ovo.getId()+"/"+ovo.getRideryn()+"/"+ovo.getPlasticyn()+"/"+ovo.getPayment()+"/");
+			//System.out.println(ovo.getAddress1()+"/"+ ovo.getAddress2()+"/"+ovo.getPhone()+"/"+ovo.getTotalprice());
 			OrderDao odao=OrderDao.getInstance();
-			odao.insertOders(ovo);
-			//order detail을 채우고
 			CartDao cdao=CartDao.getInstance();
 			ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
-			
-			//cart를 지운다.
-			
-			
-			
+			if(clist.size()!=0) {
+				odao.insertOrders(ovo);
+				odao.insertOrder(clist,mvo.getId());
+			}
 		}
-		RequestDispatcher dp=request.getRequestDispatcher(url);
-		dp.forward(request, response);
+		response.sendRedirect(url);
 	}
 
 }

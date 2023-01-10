@@ -77,8 +77,8 @@
             </c:forEach>
             <input type="hidden" value="0" id="bdjs" name="bdjs">
             <div class="baedaltip"><input type="text" value="배달요금 : 1000원 별도&nbsp;&nbsp;&nbsp;" id="badal" readonly></div>
-            <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice">원&nbsp;&nbsp;</div>
-            <input type="submit" value="결제" class="jbwanryo2">
+            <div class="jbtotal">합계 : <input type="text" value="${carttotalprice }" id="jbtotalprice" name="totalprice" readonly>원&nbsp;&nbsp;</div>
+            <input type="submit" value="결제" class="jbwanryo2" onclick="return jusochoice();">
 			
         </div>
     </div>

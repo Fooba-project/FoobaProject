@@ -2,22 +2,19 @@
 <%@ include file="../header.jsp"%>
 
 <style type="text/css">
-
 .member_list{text-align: center; margin-top:30px;}
 #member_list_table{margin: auto; width:810px;}
-#member_list_table th{background-color:#fa6146; font-size: 17px; color: white;}
-#qna_image{width: 35px; width: 20px;}
-.qna_title{ padding-left: 10px; height: 30px; margin-top: 13px;}
-.qna_box{border: 1px solid black;}
-.qna_content{padding-left:30px;}
-qna_content:hover{height:120px;}
+.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color: #ffd1d1; font-weight: bold;  border-radius: 10px;}
+.qna_box{width:700px; margin:0 auto;}
+.qna_content{padding-left:30px; height: 30px; overflow: hidden;  line-height: 30px;}
+.qna_content:hover{height:auto;}
 </style>
 
 <article>
         <h2 class="member_list">자주 묻는 질문</h2>   
         <br> 
         <form name="frm" method="post">
-            <table id="member_list_table">
+            <div id="member_list_table">
                 
                 <c:forEach items="${qnaList}" var="QnaVO">        
                 <tr> 
@@ -34,8 +31,9 @@ qna_content:hover{height:120px;}
                         </div>
                     </div>
                 </tr>
+                  <br>
                 </c:forEach>
-            </table>
+            </div>
         </form>
             <div class="clear"></div>
     </article> 

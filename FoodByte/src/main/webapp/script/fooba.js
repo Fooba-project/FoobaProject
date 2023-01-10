@@ -261,9 +261,9 @@ function go_search(hash){
      window.open("fooba.do?command=menupopup&fseq="+fseq,"메뉴 상세","width=462, height=786, menubar=no, status=no, toolbar=no, top=100 , left="+ popupX);
  } 
   
-  function deleteejb(cseq){
+  function deleteejb(cseq,rseq){
 	var ok=confirm("장바구니에서 삭제하시겠습니까?");
-	if(ok) location.href="fooba.do?command=deleteCartmenu&cseq="+cseq;
+	if(ok) location.href="fooba.do?command=deleteCartmenu&cseq="+cseq+"&rseq="+rseq;
     else return;
    }
    
@@ -288,13 +288,15 @@ function go_search(hash){
             document.getElementById("newjusotabb").style.background='#fa6146';
             document.getElementById("newjusotabb").style.border='1px solid #fa6146';
             document.getElementById("bdjs").value=1;
+            
         }
         var dist=nummx*600*-1;
         document.getElementById("tul2").style.left=dist+'px';
     }
     
- function goPay(){
-	if (document.getElementById("jbtotalprice").value==document.getElementById("rtip").value){
+ function goPay(a,b){
+ 	
+	if (a==b){
  	alert('음식을 주문표에 담으세요.');
  	return false;
  	}
@@ -315,5 +317,25 @@ function baedal(a){
         document.getElementById("jbtotalprice").value=parseInt(a)+parseInt(document.getElementById("jbtotalprice").value);
         kk=0;
     }
+}
+
+function jusochoice(){
+	if(document.getElementById("bdjs").value==1){
+		if(document.member_join_send_form.useraddress1.value.length==0){
+			alert("주소를 입력하세요.");
+			post_zip();
+			return false;
+		}else if(document.member_join_send_form.useraddress2.value.length==0){
+			alert("상세 주소를 입력하세요.");
+			document.member_join_send_form.useraddress2.focus();
+			return false;			
+		}else if(document.member_join_send_form.phone.value.length==0){
+			alert("전화번호를 입력하세요.");
+			document.member_join_send_form.phone.focus();
+			return false;
+		} 
+	}
+	var ok=confirm("결제하시겠습니까?");
+	return ok;
 }
  
