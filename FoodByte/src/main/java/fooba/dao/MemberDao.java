@@ -147,12 +147,49 @@ public class MemberDao {
 	}
 
 	public int getAllCountForQna(String key) {
-		// TODO Auto-generated method stub
-		return 0;
+		int count=0;
+		
+		con=Dbman.getConnection();
+		String sql="select count(*) as cnt from qna where content like '%'||?||'%' or subject like '%'||?||'%'";
+	
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, key);
+			pstmt.setString(2, key);
+			rs=pstmt.executeQuery();
+			if(rs.next())count=rs.getInt("cnt");
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		
+		return count;
 	}
 
 	public ArrayList<QnaVO> selectQna(Paging paging, String key) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<QnaVO> list=new ArrayList<QnaVO>();
+		con=Dbman.getConnection();
+		String sql="select * from ("
+				+"select * from("
+				+ "select rownum as rn, b.* from((select * from qna where content like '%'||?||'%' or subject like '%'||?||'%' order by qseq desc) b )"
+				+ ") where rn>=?"
+				+ ") where rn<=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, key);
+			pstmt.setString(2, key);
+			pstmt.setInt(3,paging.getStartNum());
+			pstmt.setInt(4,paging.getEndNum());
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				QnaVO qvo = new QnaVO();
+				qvo.setQseq(rs.getInt("qseq"));
+				qvo.setSubject(rs.getString("subject"));
+				qvo.setContent(rs.getString("content"));
+				list.add(qvo);
+				}
+			} catch (SQLException e) {	e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
+		
+		
+		return list;
 	}
 }
