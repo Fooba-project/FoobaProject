@@ -181,7 +181,7 @@ background-image:url("images/mainlogo2.png"); background-position: center; backg
 #nick_sa{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
 background-image:url("images/mainlogo1.png"); background-position: center; background-size: cover; 
 background-color: black;}
-
+ 
 
 </style>
 </head>

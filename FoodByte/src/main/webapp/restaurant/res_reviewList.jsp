@@ -11,7 +11,7 @@
             <a class="basic">결제</a>&nbsp;&nbsp; 신용카드, 현금<br>            
             <a class="basic">해시태그</a>&nbsp;&nbsp; ${RestaurantVO.hash}<br>
             </div>
-        </div>
+        </div> 
         
         <br>
         <div id="res_tab">
