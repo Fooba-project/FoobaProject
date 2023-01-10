@@ -24,9 +24,17 @@
                     <c:forEach items="${ReviewList}" var="ReviewVO">
                         <table id="review_table">
                             <tr>
-                                <td><div id="nick_img"></div></td>&nbsp;
-                                <td><h3>닉네임</h3></td>&nbsp;
-                                <td><h4>★★★★ 4.0</h4></td>
+                                <td><div id="nick_img"></div></td> &nbsp;
+                                <td><h3>닉네임</h3></td> &nbsp;
+                                <td><h4>
+	                                <c:choose>
+				                    	<c:when test="${ReviewVO.star==1}">★ 1.0</c:when>
+				                    	<c:when test="${ReviewVO.star==2}">★★ 2.0</c:when>
+				                    	<c:when test="${ReviewVO.star==3}">★★★ 3.0</c:when>
+				                    	<c:when test="${ReviewVO.star==4}">★★★★ 4.0</c:when>
+				                    	<c:otherwise>★★★★★ 5.0</c:otherwise>
+				                    </c:choose>                                
+                                </h4></td>
                                 <td> <h5><fmt:formatDate value="${ReviewVO.indate}" type="date" pattern="MM-dd"/></h5></td>                                
                             </tr>
                             <tr>
@@ -39,7 +47,9 @@
                                     리뷰가 들어갈 것이다
                                 </td>
                             </tr>
-                            <!-- 여기는 if문 -->
+                            
+                            <!-- replyyn 값을 이용하여 사장님 댓글쓰기가 나올지 쓴 리뷰가 나올지  -->
+                            
                             <tr>
                             <c:if test="${ReviewVO.replyyn==0}">
                                 <textarea name="rev_res" rows="5" cols="50" style="border-radius:10px;"> </textarea>
