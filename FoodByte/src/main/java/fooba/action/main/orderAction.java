@@ -48,18 +48,13 @@ public class orderAction implements Action {
 			}
 			ovo.setTotalprice(totalprice);
 			OrderDao odao=OrderDao.getInstance();
-			odao.insertOders(ovo);
-			//order detail을 채우고
+			odao.insertOrders(ovo);
+			//order detail을 채우고 cart를 지운다
 			CartDao cdao=CartDao.getInstance();
 			ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);
-			
-			//cart를 지운다.
-			
-			
-			
+			odao.insertOrder(clist,mvo.getId());
 		}
-		RequestDispatcher dp=request.getRequestDispatcher(url);
-		dp.forward(request, response);
+		response.sendRedirect(url);
 	}
 
 }

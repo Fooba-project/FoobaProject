@@ -288,6 +288,7 @@ function go_search(hash){
             document.getElementById("newjusotabb").style.background='#fa6146';
             document.getElementById("newjusotabb").style.border='1px solid #fa6146';
             document.getElementById("bdjs").value=1;
+            abc
         }
         var dist=nummx*600*-1;
         document.getElementById("tul2").style.left=dist+'px';

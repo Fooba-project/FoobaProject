@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import fooba.VO.CartVO;
 import fooba.VO.OrderVO;
 import fooba.VO.OrderViewVO;
 import fooba.VO.ReviewVO;
@@ -401,6 +402,66 @@ public class OrderDao {
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
 		return rvo;
+	}
+
+
+	public void insertOrders(OrderVO ovo) {
+		con=Dbman.getConnection();
+		String sql="insert into orders(oseq,id,rideryn,plasticyn,payment,address1,address2,totalprice,phone)"
+				+ " value(orders_seq.nexeVal,?,?,?,?,?,?,?,?)";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,ovo.getId());
+			pstmt.setInt(2, ovo.getRideryn());
+			pstmt.setInt(3, ovo.getPlasticyn());
+			pstmt.setInt(4, ovo.getPayment());
+			pstmt.setString(5, ovo.getAddress1());
+			pstmt.setString(6, ovo.getAddress2());
+			pstmt.setInt(7,ovo.getTotalprice());
+			pstmt.setString(8, ovo.getPhone());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+	}
+
+
+	public void insertOrder(ArrayList<CartVO> clist, String id) {
+		int oseq=0;
+		
+		con=Dbman.getConnection();
+		
+		try {
+			String sql="select max(oseq) as max_oseq from orders where id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next())oseq=rs.getInt("max_oseq");
+			
+			sql="insert into order_detail(odseq,oseq,quantity,fseq,sideyn1,sideyn2,sideyn3)"
+					+ "values(order_detail_seq.nextVal,?,?,?,?,?,?)";
+			for(CartVO cvo : clist) {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,oseq);
+				pstmt.setInt(2,cvo.getQuantity());
+				pstmt.setInt(3,cvo.getFseq());
+				if(cvo.getSideyn1()==null) {
+					pstmt.setInt(4,0);
+				}else { pstmt.setInt(4,1);}
+				if(cvo.getSideyn2()==null) {
+					pstmt.setInt(5,0);
+				}else { pstmt.setInt(5,1);}
+				if(cvo.getSideyn3()==null) {
+					pstmt.setInt(6,0);
+				}else { pstmt.setInt(6,1);}
+				pstmt.executeUpdate();
+			}
+			
+			sql="delete from cart where id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,id);
+			pstmt.executeUpdate();
+		}catch (SQLException e) {e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
 	}
 
 
