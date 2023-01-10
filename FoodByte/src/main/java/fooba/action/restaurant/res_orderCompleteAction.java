@@ -16,17 +16,16 @@ public class res_orderCompleteAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(request.getParameter("oseq"));
 		
+		System.out.println("oseq : "+ request.getParameter("oseq"));
 		int oseq=Integer.parseInt(request.getParameter("oseq"));
 		
 		HttpSession session = request.getSession();
-		RestaurantVO loginUser = (RestaurantVO) session.getAttribute("loginUser");
+		RestaurantVO loginRes = (RestaurantVO) session.getAttribute("loginRes");
 		
-		System.out.println("oseq :"+oseq);
 		
-		String url="fooba.do?command=res_order&page=1&search=&key=";
-		if(loginUser==null) {
+		String url="fooba.do?command=res_order";
+		if(loginRes==null) {
 			url="fooba.do?command=res_loginForm";
 		}else {
 			OrderDao odao=OrderDao.getInstance();

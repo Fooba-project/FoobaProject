@@ -49,6 +49,11 @@ function menu_update(){
 	document.food_menu.submit();	
 }
 
+function go_order_save(oseq){
+	document.rfm.action = "fooba.do?command=res_orderComplete&oseq="+oseq;
+	document.rfm.submit();
+}
+<!-- location.href='fooba.do?command=res_orderComplete&oseq='+${ovo.oseq} -->
 </script>
 
 
