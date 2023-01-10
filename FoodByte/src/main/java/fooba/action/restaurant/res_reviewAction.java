@@ -41,9 +41,11 @@ public class res_reviewAction implements Action {
 			paging.setPage(page); 
 			int count = rdao.getAllCount(rvo.getRseq());
 			paging.setTotalCount(count); 
+						
+			ArrayList<ReviewVO>list=rdao.selectReview(rvo.getRseq(),paging); 
 			
-			ArrayList<ReviewVO> list=rdao.selectReview(rvo.getRseq(),paging); 
-			request.setAttribute("ReviewList", list);
+	  		request.setAttribute("RestaurantVO", rvo);
+			request.setAttribute("ReviewList",list);
 			request.setAttribute("paging", paging);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
