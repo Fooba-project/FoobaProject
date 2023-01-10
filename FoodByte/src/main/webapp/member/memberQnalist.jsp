@@ -4,7 +4,7 @@
 <style type="text/css">
 .member_list{text-align: center; margin-top:30px;}
 #member_list_table{margin: auto; width:810px;}
-.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color: #ffd2ca; font-weight: bold;  border-radius: 10px;}
+.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color: #ffd1d1; font-weight: bold;  border-radius: 10px;}
 .qna_box{width:700px; margin:0 auto;}
 .qna_content{padding-left:30px; height: 30px; overflow: hidden;  line-height: 30px;}
 .qna_content:hover{height:auto;}
