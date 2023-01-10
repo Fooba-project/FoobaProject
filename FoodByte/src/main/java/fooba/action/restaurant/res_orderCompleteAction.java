@@ -21,8 +21,7 @@ public class res_orderCompleteAction implements Action {
 		
 		HttpSession session = request.getSession();
 		RestaurantVO loginRes = (RestaurantVO) session.getAttribute("loginRes");
-		
-		
+				
 		String url="fooba.do?command=res_order";
 		if(loginRes==null) {
 			url="fooba.do?command=res_loginForm";

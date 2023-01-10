@@ -269,6 +269,5 @@ public class AdminDao {
 		
 		return list;
 	}
-
 	
 }
