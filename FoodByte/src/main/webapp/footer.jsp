@@ -3,7 +3,8 @@
 <footer>
 	<div class="footerbox">
 	    <div class="linemenubox">
-	       <span class="linetext">/자주 묻는 질문</span>
+	       <span class="linetext" 
+	       onclick="location.href='fooba.do?command=memberQnalist'">/자주 묻는 질문></span>
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext">/개인정보 처리방침</span>
