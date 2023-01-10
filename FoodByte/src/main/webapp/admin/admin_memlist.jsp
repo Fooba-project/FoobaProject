@@ -9,7 +9,6 @@
         <table id="admin_searchres">
             <tr>
                 <td style="font-size:17px; width:642;">회원 ID: <input class="keyy" type="text" name="key" value="${key}">
-                	<input class="admin_searchres_btn" type="button" name="btn_write" value="회원등록"  onClick="go_wrt();">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_restaurantList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 

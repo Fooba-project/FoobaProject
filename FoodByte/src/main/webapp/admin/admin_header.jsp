@@ -69,6 +69,11 @@ body {margin: 0; position:relative;}
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
 .input_text {outline: none;overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;font-size: 15px;color: #616161;font-weight: 900;border-radius: 3px; border: 1px solid white;}
 
+.input_text1 {outline: none;overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;font-size: 17px;color: black;font-weight: 900;border-radius: 3px; border: 1px solid white;}
+
+
+
+
 #join_btn {margin-left: 200px;}
 #join_btn .join_btn {width: 150px; height: 50px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #fa6146; line-height: 40px; color:#fff; border: 1px solid white; text-align: center;}
 #join_btn .join_btn:hover {background-color: white; color: #fa6146; cursor: pointer; border:2px solid #fa6146}

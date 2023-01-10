@@ -8,58 +8,58 @@
     <form name="res_join_send_form" id="res_join_send_form" method="post" action="fooba.do?command=res_join" enctype="multipart/form-data">
         <table class="member_join_table">
             <div class="join_list">
-                <input type="text" class="input_text" value=" 아이디 : ${restaurantVO.rid}" readonly/>            
+                <input type="text" class="input_text1" value="아이디 : ${restaurantVO.rid}" readonly/>            
             </div> 
             <div class="join_list">
-                <input type="text" class="input_text" value="사장님 이름 : ${restaurantVO.ownername}" readonly/> 
+                <input type="text" class="input_text1" value="사장님 이름 : ${restaurantVO.ownername}" readonly/> 
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="가게 번호 : ${restaurantVO.rphone}" readonly/> 
+                <input type="text" class="input_text1" value="가게 번호 : ${restaurantVO.rphone}" readonly/> 
             </div>
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" value="사업자 번호 : ${restaurantVO.rbiznum}" readonly/>
+                <input type="text" id="rbiznum" class="input_text1" value="사업자 번호 : ${restaurantVO.rbiznum}" readonly/>
             </div>			
 			<div class="join_list">
-                <input type="text" class="input_text" value="사업장 주소 : ${restaurantVO.raddress}" readonly/>
+                <input type="text" class="input_text1" value="사업장 주소 : ${restaurantVO.raddress}" readonly/>
             </div>
             <div class="join_list">
          
              <c:choose>
                        <c:when test='${restaurantVO.kind=="1"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 한식" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 한식" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="2"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 중식" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 중식" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="3"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 양식" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 양식" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="4"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 일식" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 일식" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="5"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 피자" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 피자" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="6"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 치킨" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 치킨" readonly/>	
                        </c:when>
                        <c:when test='${restaurantVO.kind=="7"}'>
-				<input type="text" class="input_text" value="사업장 업종 : 분식" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 분식" readonly/>	
                        </c:when>
                        <c:otherwise>
-				<input type="text" class="input_text" value="사업장 업종 : 디저트" readonly/>	
+				<input type="text" class="input_text1" value="사업장 업종 : 디저트" readonly/>	
                        </c:otherwise>
              </c:choose>
                                 
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="사업장 소개글 : ${restaurantVO.content}" readonly/>
+                <input type="text" class="input_text1" value="사업장 소개글 : ${restaurantVO.content}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="배달팁 : ${restaurantVO.rtip}" readonly/>
+                <input type="text" class="input_text1" value="배달팁 : ${restaurantVO.rtip}" readonly/>
             </div>
             <div class="join_list">
-                <input type="text" class="input_text" value="해시태그 : ${restaurantVO.hash}" readonly/>
+                <input type="text" class="input_text1" value="해시태그 : ${restaurantVO.hash}" readonly/>
             </div>      
 
         </table>
