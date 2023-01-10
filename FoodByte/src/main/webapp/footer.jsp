@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-
-<footer >
+<footer>
 	<div class="footerbox">
 	    <div class="linemenubox">
 	       <span class="linetext" 
@@ -16,8 +15,9 @@
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext"
-	         onclick="location.href='fooba.do?command=res_join'">/사장님 입점문의</span>
+	         onclick="location.href='fooba.do?command=res_joinForm'">/사장님 입점문의</span>
 	    </div>
+	    
 	    <img src="images/mainlogo2.png" id="logo">
 	    <div id="logotextbox">
 		    <span id="logotext">
@@ -33,7 +33,6 @@
 		</div>
 	</div>
 	
-
 </footer>
 
 </body>
