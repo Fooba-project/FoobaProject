@@ -53,9 +53,15 @@
                 </c:forEach>
             </table>
         </article>
-
+<c:if test="${orderList=='ing'}">
 <jsp:include page="paging/paging.jsp">
 	<jsp:param name="command" value="fooba.do?command=memberOrderList"/>
 </jsp:include>
+</c:if>
+<c:if test="${orderList=='all'}">
+<jsp:include page="paging/paging.jsp">
+	<jsp:param name="command" value="fooba.do?command=memberOrderAll"/>
+</jsp:include>
+</c:if>
 </div>
 <%@ include file="../footer.jsp"%>

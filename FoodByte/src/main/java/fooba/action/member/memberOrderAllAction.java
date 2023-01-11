@@ -89,7 +89,9 @@ public class memberOrderAllAction implements Action {
 	         }
 	         request.setAttribute("memberOrderList", finalList);
 	         request.setAttribute("memberOrderListT", "전체");
-	         request.setAttribute("paging", paging);	         
+	         request.setAttribute("paging", paging);
+	         request.setAttribute("orderList", "all");
+	         
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	}

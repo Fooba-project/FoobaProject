@@ -93,7 +93,8 @@ public class memberOrderListAction implements Action {
 	         }
 	         request.setAttribute("memberOrderList", finalList);
 	         request.setAttribute("memberOrderListT", "진행중인");
-	         request.setAttribute("paging", paging);	         
+	         request.setAttribute("paging", paging);	 
+	         request.setAttribute("orderList", "ing");
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
 	      
