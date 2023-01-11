@@ -114,15 +114,16 @@ public class AdminDao {
 		return list;
 	}
 
-	public int getMemberCount(String tableName, String fieldName, String key) {
+	public int getOrderCount(String tableName, String fieldName, String field2, String key) {
 		int count=0;
 		
 		con=Dbman.getConnection();
-		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' ";
-		//key 값만 따로 하는 이유는 null 이 들어갔을때 오류가 날 수있기때문
+		String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' or "+ field2 +" like '%'||?||'%'";
+
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
+			pstmt.setString(2, key);
 			rs=pstmt.executeQuery();
 			if(rs.next())count=rs.getInt("cnt");
 		} catch (SQLException e) {	e.printStackTrace();
@@ -130,6 +131,22 @@ public class AdminDao {
 		
 		return count;
 	}
+	
+	public int getMemberCount(String tableName, String fieldName, String key) {
+	      int count=0;
+	      
+	      con=Dbman.getConnection();
+	      String sql="select count(*) as cnt from "+tableName + " where "+fieldName +" like '%'||?||'%' ";
+	      try {
+	         pstmt=con.prepareStatement(sql);
+	         pstmt.setString(1, key);
+	         rs=pstmt.executeQuery();
+	         if(rs.next())count=rs.getInt("cnt");
+	      } catch (SQLException e) {   e.printStackTrace();
+	      }finally {Dbman.close(con, pstmt, rs);}
+	      
+	      return count;
+	   }
 
 	public ArrayList<MemberVO> selectMember(Paging paging, String key) {
 		ArrayList<MemberVO> list=new ArrayList<MemberVO>();
@@ -171,14 +188,15 @@ public class AdminDao {
 		con=Dbman.getConnection();
 		String sql="select * from ("
 				+"select * from("
-				+ "select rownum as rn, o.* from((select * from order_view where id like '%'||?||'%' order by odseq desc) o )"
+				+ "select rownum as rn, o.* from((select * from order_view where id like '%'||?||'%' or rname like '%'||?||'%' order by odseq desc) o )"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, key);
-			pstmt.setInt(2,paging.getStartNum());
-			pstmt.setInt(3,paging.getEndNum());
+			pstmt.setString(2, key);
+			pstmt.setInt(3,paging.getStartNum());
+			pstmt.setInt(4,paging.getEndNum());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				if (list.size()==0) {
@@ -257,7 +275,7 @@ public class AdminDao {
 	}
 	
 
-	public int getAllCountForQna(String key) {
+	public int getAllCountForQna(String key, String string, String key2) {
 		int count=0;
 		
 		con=Dbman.getConnection();

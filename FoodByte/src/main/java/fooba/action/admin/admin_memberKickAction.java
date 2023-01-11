@@ -50,9 +50,7 @@ public class admin_memberKickAction implements Action {
 			}else {
 				session.removeAttribute("key");
 			}
-						
-			
-			
+									
 			Paging paging = new Paging();
 			paging.setPage(page);
 			

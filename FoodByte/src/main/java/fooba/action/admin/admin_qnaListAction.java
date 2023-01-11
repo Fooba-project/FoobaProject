@@ -57,7 +57,7 @@ public class admin_qnaListAction implements Action {
 			paging.setDisplayRow(10);
 			paging.setDisplayPage(10);
 			
-			int count = adao.getAllCountForQna(key);
+			int count = adao.getAllCountForQna("qna","subject",key);
 			paging.setTotalCount(count);
 			
 			

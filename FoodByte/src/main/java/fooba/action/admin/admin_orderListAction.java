@@ -34,7 +34,7 @@ public class admin_orderListAction implements Action {
 			}
 			
 			int page=1;
-			if(request.getParameter("page")!=null) {  //������Ʈ�� �Ķ���ͷ� page�� ���޵ȴٸ� page�������� �� ������ ��ü
+			if(request.getParameter("page")!=null) { 
 				page=Integer.parseInt(request.getParameter("page"));
 				session.setAttribute("page", page);
 			}else if(session.getAttribute("page")!=null) { 
@@ -60,7 +60,7 @@ public class admin_orderListAction implements Action {
 			paging.setDisplayRow(10);
 			paging.setDisplayPage(10);
 			
-			int count = adao.getMemberCount("order_view","id",key); // order count�� ���� �˻�
+			int count = adao.getOrderCount("order_view","id","rname",key); 
 			paging.setTotalCount(count);
 			
 			

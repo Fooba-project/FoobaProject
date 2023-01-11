@@ -10,6 +10,18 @@
 		document.frm.action = "fooba.do?command=admin_orderList_rb&oseq="+oseq;
 		document.frm.submit();
 	}
+  function go_search( comm ){
+		var url = "fooba.do?command=" + comm + "&page=1";
+		document.frm.action = url;
+		document.frm.submit();
+}
+
+	function go_total( comm ){
+		document.frm.key.value="";
+		document.frm.action = "fooba.do?command=" + comm + "&page=1";
+		document.frm.submit();
+} 
+  
   </script>
 <article>
     <h2 class="admin_list">주문 리스트</h2>   
@@ -17,11 +29,11 @@
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr>
-                <td style="font-size:17px; width:642;">주문 번호: <input class="keyy" type="text" name="key" value="${key}">
+                <td style="font-size:17px; width:642;">주문자 ID: <input class="keyy" type="text" name="key" value="${key}">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
-                        onClick="go_total( 'admin_restaurantList' );">
+                        onClick="go_total( 'admin_orderList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
-                        onClick="go_search( 'admin_restaurantList' );">
+                        onClick="go_search( 'admin_orderList' );">
                     
                 </td>
             </tr>
