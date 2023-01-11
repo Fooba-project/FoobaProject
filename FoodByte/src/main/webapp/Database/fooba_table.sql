@@ -25,6 +25,8 @@ DROP TABLE cart CASCADE CONSTRAINTS;
 	PRIMARY KEY (cseq)
 );
 
+
+
 CREATE TABLE admin
 (
 	id varchar2(20) NOT NULL,
@@ -39,18 +41,19 @@ CREATE TABLE foodmenu
 (
 	rseq number(5) NOT NULL,
 	fseq number(5) NOT NULL,
-	fname varchar2(20) NOT NULL,
+	fname varchar2(100) NOT NULL,
 	fprice number(10) DEFAULT 0 NOT NULL,
-	fimage varchar2(20),
-	fcontent varchar2(150) NOT NULL,
-	fside1 varchar2(20),
+	fimage varchar2(200),
+	fcontent varchar2(500) NOT NULL,
+	fside1 varchar2(100),
 	fsideprice1 number(10) DEFAULT 0,
-	fside2 varchar2(20),
+	fside2 varchar2(100),
 	fsideprice2 number(10) DEFAULT 0,
-	fside3 varchar2(20),
+	fside3 varchar2(100),
 	fsideprice3 number(10) DEFAULT 0,
 	PRIMARY KEY (fseq)
 );
+
 
 
 CREATE TABLE member
@@ -64,7 +67,7 @@ CREATE TABLE member
 	address1 varchar2(100) NOT NULL,
 	address2 varchar2(100) NOT NULL,
 	indate date DEFAULT sysdate,
-	nick varchar2(20) NOT NULL,
+	nick varchar2(100) NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -86,6 +89,7 @@ CREATE TABLE orders
 );
 
 
+
 CREATE TABLE order_detail
 (
 	odseq number(7) NOT NULL,
@@ -99,11 +103,12 @@ CREATE TABLE order_detail
 );
 
 
+
 CREATE TABLE qna
 (
 	qseq number(5) NOT NULL,
-	subject varchar2(100) NOT NULL,
-	content varchar2(1000) NOT NULL,
+	subject varchar2(200) NOT NULL,
+	content varchar2(2000) NOT NULL,
 	PRIMARY KEY (qseq)
 );
 
@@ -113,11 +118,11 @@ CREATE TABLE restaurant
 	rseq number(5) NOT NULL,
 	rid varchar2(20) NOT NULL UNIQUE,
 	rpwd varchar2(20) NOT NULL,
-	rname varchar2(20) NOT NULL,
+	rname varchar2(100) NOT NULL,
 	rbiznum varchar2(20) NOT NULL,
 	ownername varchar2(20) NOT NULL,
 	rphone varchar2(20) NOT NULL,
-	raddress varchar2(50) NOT NULL,
+	raddress varchar2(100) NOT NULL,
 	kind varchar2(5) NOT NULL,
 	rimage varchar2(50) NOT NULL,
 	content varchar2(500) NOT NULL,
@@ -126,6 +131,8 @@ CREATE TABLE restaurant
 	ryn number(2) default 0,
 	PRIMARY KEY (rseq)
 );
+
+
 
 SELECT*FROM REVIEW
 update reivew set reply=?,replyyn='1' where review_seq=?
@@ -141,17 +148,14 @@ CREATE TABLE review
 	oseq number(5) NOT NULL,
 	reply varchar2(1000),
 	replyyn number(2) DEFAULT 0 NOT NULL,
-	nick varchar2(30) not null,
+	nick varchar2(100) not null,
+	reviewyn number(2) not null,
 	PRIMARY KEY (review_seq)
 );
 
 
 
-
 /* Create Foreign Keys */
-
-
-
 
 ALTER TABLE order_detail
 	ADD FOREIGN KEY (fseq)
@@ -179,6 +183,8 @@ ALTER TABLE cart
 	ADD FOREIGN KEY (fseq)
 	REFERENCES foodmenu (fseq)
 ;
+
+
 
 
 ALTER TABLE cart
@@ -209,7 +215,7 @@ ALTER TABLE review
 	REFERENCES restaurant (rseq)
 ;
 
-alter table review add reviewyn number(2);
+
 
 create or replace view order_view
 as
@@ -222,23 +228,8 @@ from orders a, order_detail b, member c, foodmenu d, restaurant e
 where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
 
    ---------
-select * from qna;
- 
-ALTER TABLE member MODIFY nick VARCHAR2(100);
-ALTER TABLE foodmenu MODIFY fname VARCHAR2(100);
-ALTER TABLE foodmenu MODIFY fimage VARCHAR2(200);
-ALTER TABLE foodmenu MODIFY fcontent VARCHAR2(500);
-ALTER TABLE foodmenu MODIFY fcontent VARCHAR2(500);
-ALTER TABLE foodmenu MODIFY fside1 VARCHAR2(100);
-ALTER TABLE foodmenu MODIFY fside2 VARCHAR2(100);
-ALTER TABLE foodmenu MODIFY fside3 VARCHAR2(100);
-ALTER TABLE restaurant MODIFY rname VARCHAR2(100);
-ALTER TABLE restaurant MODIFY raddress VARCHAR2(100);
-ALTER TABLE qna MODIFY subject VARCHAR2(200);
-ALTER TABLE qna MODIFY content VARCHAR2(2000);
---추가
-ALTER TABLE review MODIFY nick VARCHAR2(100);
 
+--추가
 
  create or replace view search
    as

@@ -29,8 +29,6 @@ insert into admin values('scott', 'tiger', '관리자2', '010-6511-8521');
 
 -- 회원입력(5명)
 
-
-
 insert into member(id, pwd, name, phone, email, zip_num, address1,address2,nick)
 values('bsc1234','1234','김원일','010-1234-2345','bsc1234@naver.com', '133-110', '서울시 성동구 성수동1가', '1번지21호','중식러버');
 
@@ -45,18 +43,6 @@ values('bbb2222','1234','최순경','010-7539-8645','bbb2222@naver.com', '130-12
 
 insert into member(id, pwd, name, phone, email, zip_num, address1,address2,nick)
 values('ccc2222','1234','한시바','010-1234-2345','ccc222@naver.com', '135-512', '서울시 강남구 역삼2동', '진달래아파트15동 905호','시바견주인');
-
-select*from member;
-
-
--- 레스토랑 (kind 당 6개)
-select*from restaurant;
-select*from foodmenu;
--- 한식(1) -- 비빔밥
-
---ryn = 0 으로 샘플데이터 하나 변경
-update orders set result=1 where oseq=1;
- 
 
 
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
@@ -238,8 +224,6 @@ insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsidep
 values(foodmenu_seq.nextVal, 6, '쟁반국수',13000,'1_909d78c0cc81f5e54b04b935bb53832f1561687887.jpg',
 '견과류와 특제소스로 새콤달콤 쟁반국수','사이즈 업',2500,'소스추가',500,'콜라 추가(500ml)',1500);
 
-select*from RESTAURANT;
-select*from FOODMENU;
 
 -- 중식(2) -- 마라
 
@@ -294,8 +278,6 @@ values(foodmenu_seq.nextVal, 8, '탕수육',24000,'tangsuyuk_b8b095d2facadbf9435
 insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsideprice1, fside2, fsideprice2, fside3, fsideprice3)
 values(foodmenu_seq.nextVal, 8, '군만두',7000,'mandu_2663345214883183e45230395839d03d1649305309.jpg',
 '매장에서 직접 빚은 군만두','비법소스',1000,'미니 탕수육',10000,'군만두 추가(2p)',3500);
-
-
 
 -- 중식(2) -- 삼부자 교동짬뽕
 
@@ -352,9 +334,7 @@ insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsidep
 values(foodmenu_seq.nextVal, 10, '차오미엔',11000,'i320i_e8a31879e479bfb4839fd6fa0613027d1625456284.jpg',
 '웍셔너리의 대표메뉴 중국식 볶음면','공기밥',1000,'미니 오렌지치킨',8000,'곱빼기',1000);
 
-
 -- 중식(2) -- 유박사 차이나
-
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
 values(restaurant_seq.nextVal, 2, 'ubaksa', 'ubaksa', '유박사 차이나',  '115-17-12845',
 '박박사' ,'070-5689-9154', '서울특별시 강남구 도산대로52길 10', '11.jpg', 
@@ -408,8 +388,6 @@ insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsidep
 values(foodmenu_seq.nextVal, 12, '크림새우',4500,'fried-shrimp_d27a46e8ab695a60a9b780c071d9e4a71629262599.jpg',
 '레몬소스에 찍어먹는 크림새우','사이즈업',6000,'미니 탕수육',6000,'짬뽕국물',2000);
 
-select*from RESTAURANT;
-select*from FOODMENU;
 
 -- 양식(3) -- 5일장 햄버거
 
@@ -464,7 +442,6 @@ values(foodmenu_seq.nextVal, 14, '대하 해산물 토마토 파스타',16500,'_
 insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsideprice1, fside2, fsideprice2, fside3, fsideprice3)
 values(foodmenu_seq.nextVal, 14, '매콤 아라비아따 파스타',14500,'--_df3f549f6d096f9b2f0c8d0ae86d3aa81671363923.jpg',
 '수제 베이컨, 지중해 야채(가지, 호박, 피망), 올리브','곱빼기',2000,'감자튀김',2000,'펩시(500ml)',2000);
-
 
 -- 양식(3) -- 버거인뉴욕
 
@@ -598,7 +575,6 @@ values(foodmenu_seq.nextVal, 19, '새우장과 갓 지은 밥',13000,'_20221202_
 insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsideprice1, fside2, fsideprice2, fside3, fsideprice3)
 values(foodmenu_seq.nextVal, 19, '새우장과 갓 지은 밥 곱빼기',16000,'_20221202_145521708_cd212ad5c7855410d292be8b777722271669974398.jpg',
 '새우장, 양파', '새우장(2p)',3000,'밥 추가',1500,'날치알 추가',1000);
-
 
 -- 일식(4) -- 스시랑 회랑
 
@@ -736,9 +712,6 @@ values(foodmenu_seq.nextVal, 24, '쫄면',6500,'spicy-noodles_531b2477fe2718f68e
 insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsideprice1, fside2, fsideprice2, fside3, fsideprice3)
 values(foodmenu_seq.nextVal, 24, '수제통치즈돈까스',11000,'20200122_151405_919c21e045587e4c262484c5759f8c361580114913.jpg',
 '치즈가 한가득! 맛있는 치즈 돈까스','미니우동',4000,'새우튀김 추가',9000,'게살튀김',9000);
-
-select*from RESTAURANT;
-select*from FOODMENU;
 
 --피자(5) 로쏘 1924
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
@@ -1338,7 +1311,6 @@ insert into foodmenu(fseq, rseq, fname, fprice, fimage, fcontent, fside1, fsidep
 values(foodmenu_seq.nextVal, 46, '요거트 플래치노',7000,'_91caedb1366fae10453d31f63c7df1b01611484196_e8e528f836ee0a656422d92e06e8721e1642471253.jpg',
 '*아이스만 가능', '샷 추가',500,'각설탕 추가',500,'파우더추가',500);
 
-
 -- 디저트(8)	-- 크로앙쥬
 
 insert into restaurant(rseq, kind, rid, rpwd, rname, rbiznum, ownername,rphone, raddress, rimage, content, hash, rtip, ryn)
@@ -1404,7 +1376,7 @@ values(qna_seq.nextVal,'푸바는 어떤 서비스인가요?','저희 회사는 
 
 insert into qna(qseq,subject,content)
 values(qna_seq.nextVal,'푸바의 운영 시간은 어떻게 되나요?',
-'저희 부바는 월요일 - 일요일 12 AM - 24 PM 24시간 운영하며. 휴일에도 영업 합니다. (연중무휴)');
+'저희 푸바는 월요일 - 일요일 12 AM - 24 PM 24시간 운영하며. 휴일에도 영업 합니다. (연중무휴)');
 
 insert into qna(qseq,subject,content)
 values(qna_seq.nextVal,'푸바 딜리버리 앱이 있나요?',
@@ -1455,8 +1427,6 @@ values(qna_seq.nextVal,'가게와 갈등이 있었어요',
 '위협적인 가게의 태도에 공포심을 느꼈거나 배달 과정 중 불미스러운 일이 발생했다면 주저하지 말고 고객센터로 신고해주세요');
 
 
-insert into review(review_seq,id,rseq,star,content,oseq,nick)
-values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');
 
 
 -- 오더스1 rideyn 0 배달 1 포장 , plasticyn 0 필요 없어요 1 주세요 payment 0 카드 1 현금 result 0 배달중, 1 배달완료	 (기본값0)
@@ -1472,3 +1442,7 @@ insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,118,1,1,1,0);
 insert into order_detail(odseq,oseq,fseq,quantity,sideyn1,sideyn2,sideyn3)
 values(order_detail_seq.nextVal,2,119,2,1,0,1);
+
+
+insert into review(review_seq,id,rseq,star,content,oseq,nick)
+values(review_seq_seq.nextVal,'abc1234',48,5,'왈왈왈왈!!',1,'맛있으면 짖는 개');
