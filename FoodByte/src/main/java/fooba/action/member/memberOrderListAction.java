@@ -45,17 +45,18 @@ public class memberOrderListAction implements Action {
 			 
 			Paging paging = new Paging();
 			paging.setPage(page);
-			paging.setDisplayRow(10);
-			paging.setDisplayPage(10);
+			paging.setDisplayRow(5);
+			paging.setDisplayPage(5);
 			
 			int count = odao.getOrderIngCount(mvo.getId());
 			paging.setTotalCount(count);
 			
 	         ArrayList<OrderVO> list = odao.selectOrdersIngById(mvo.getId(), paging);
 	         
-	         String oname = ""; // 주문메뉴(서브메뉴)
+	          // 주문메뉴(서브메뉴)
 
 	         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
+	        	 String oname = "";
 	        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
 	        	 int i = 0;
 	        	 int size = ovList.size();
