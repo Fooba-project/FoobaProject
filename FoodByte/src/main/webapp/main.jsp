@@ -1,6 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
-
+<script type="text/javascript">
+$(function() {
+	$("#searchtext").keypress(function(e){
+		//검색어 입력 후 엔터키 입력하면 조회버튼 클릭
+		if(e.keyCode && e.keyCode == 13){
+			$("#btn").trigger("click");
+			return false;
+		}
+		//엔터키 막기
+		if(e.keyCode && e.keyCode == 13){
+			  e.preventDefault();	
+		}
+	});
+	$("#btn").click(function(){
+		
+	});
+});
+</script>	
 <div id="maintextbox">
 	<img src="images/background1.jpg">
     <span id="maintext">음식은 푸바, 
@@ -52,9 +69,9 @@
 <div id="main">
 
     <form id="search" name="search" method="post">
-        <input type="text" name="searchtext" id="searchtext" placeholder="검색어를 입력하세요"  size="30px" value="${search }"/>
+        <input type="text" name="searchtext" id="searchtext"  placeholder="검색어를 입력하세요"  size="30px" value="${search}"/>
         <div id="searchicon">
-            <img src="images/search.png" onClick="go_search2()">
+            <button type="button" title="search" id="btn" name="btn" onClick="go_search2()"><img src="images/search.png"></button>
         </div>
     </form>
 
