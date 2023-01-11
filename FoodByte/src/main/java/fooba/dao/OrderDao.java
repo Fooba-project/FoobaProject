@@ -140,7 +140,7 @@ public class OrderDao {
 		con=Dbman.getConnection();
 		String sql = "select * from ("
 				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from orders where id=? and result in(0,1,2) order by oseq desc) b)"
+				+ "select rownum as rn, b.* from ((select * from orders where id=? and result in(0,1) order by oseq desc) b)"
 				+ ") where rn>=?"
 				+ ") where rn<=?";
 		try {
@@ -204,7 +204,7 @@ public class OrderDao {
 	public int getOrderIngCount(String id) {
 			int cnt = 0;
 			con = Dbman.getConnection();
-			String sql = "select count(rownum) as cnt from orders where id=? and result in(0,1,2)";
+			String sql = "select count(rownum) as cnt from orders where id=? and result in(0,1)";
 			try {
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, id);
@@ -289,19 +289,13 @@ public class OrderDao {
 
 	
 
-	public ArrayList<OrderVO> selectOrdersIngByRseq(int rseq, Paging paging) {
+	public ArrayList<OrderVO> selectOrdersIngByRseq(int rseq) {
 		ArrayList<OrderVO> list=new ArrayList<>();
 		con=Dbman.getConnection();
-		String sql = "select * from ("
-				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from order_view where rseq=? and result in (0,1) order by oseq desc) b)"
-				+ ") where rn>=?"
-				+ ") where rn<=?";
+		String sql = "select * from order_view where rseq=? and result in (0,1) order by oseq desc";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, rseq);
-			pstmt.setInt(2, paging.getStartNum());
-			pstmt.setInt(3, paging.getEndNum());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				if (list.size()==0) {
@@ -371,8 +365,7 @@ public class OrderDao {
 
 	public void insertOrders(OrderVO ovo) {
 		con=Dbman.getConnection();
-		String sql="insert into orders(oseq,id,rideryn,plasticyn,payment,address1,address2,totalprice,phone) "
-				+ " values(orders_seq.nextVal,?,?,?,?,?,?,?,?)";
+		String sql="insert into orders(oseq,id,rideryn,plasticyn,payment,address1,address2,totalprice,phone) values(orders_seq.nextVal,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,ovo.getId());

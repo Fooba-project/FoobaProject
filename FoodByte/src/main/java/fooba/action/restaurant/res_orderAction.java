@@ -26,26 +26,12 @@ public class res_orderAction implements Action {
 	      if(rvo == null) {
 	         url = "fooba.do?command=res_loginForm";
 	      }else {
-		         int page=1;
-					if(request.getParameter("page")!=null) { 
-						page=Integer.parseInt(request.getParameter("page"));
-						session.setAttribute("page", page);
-					}else if(session.getAttribute("page")!=null) { 
-						page=(Integer)session.getAttribute("page");
-					}else { 
-						session.removeAttribute("page");
-					}
-				
-				Paging paging = new Paging();
-				paging.setPage(page);
-				paging.setDisplayRow(10);
-				paging.setDisplayPage(10);
+		         
 				OrderDao odao = OrderDao.getInstance();
 				ArrayList<Integer> count = odao.getOrderIngCountByRseq( rvo.getRseq());
-				paging.setTotalCount(count.size());
 				
 				ArrayList<OrderVO> finalList = new ArrayList<>();
-		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
+		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq());
 
 		         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
 		        	 String oname = "";
@@ -84,7 +70,6 @@ public class res_orderAction implements Action {
 		        	 System.out.println("result : " + ovo.getResult());
 		         }
 		        request.setAttribute("res_OrderList", finalList);
-		        request.setAttribute("paging", paging);	       
 		        request.setAttribute("RestaurantVO", rvo);
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
