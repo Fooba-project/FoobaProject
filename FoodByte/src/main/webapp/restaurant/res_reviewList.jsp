@@ -34,10 +34,11 @@
                                 </div>
                             </div>
                             <div id="mrev_conbox" >
-                            		
-                                <div id="mrev_img" style="border-radius: 20px;">
-                                	<img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                               
-                                </div>    
+                            	<c:if test='${ReviewVO.image!=null}'>	
+	                                <div id="mrev_img" style="border-radius: 20px;">
+	                                	 <img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                          
+	                                </div>       
+                                </c:if>
                                 <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
                             <!-- if문을 이용한 사장님 답글 -->
