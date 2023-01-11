@@ -9,7 +9,7 @@
 	<div class="login_form">
 			<div id="logspace"><br>restaurant login</div>
 	        <div id="loginmain_logo">
-	            <img src="images/mainlogo1.png">
+	            <img src="images/res_logo.png">
 	        </div>
 	    
 	        <div id="login_box">

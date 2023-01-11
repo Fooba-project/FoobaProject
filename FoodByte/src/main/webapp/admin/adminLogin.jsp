@@ -6,7 +6,7 @@
 	<div class="login_form">
 		<div id="logspace"><br>admin login</div>
 	    <div id="loginmain_logo">
-	       <img src="images/mainlogo1.png">
+	       <img src="images/admin_logo.png">
 	    </div>
 	    
 	    <div id="login_box">
