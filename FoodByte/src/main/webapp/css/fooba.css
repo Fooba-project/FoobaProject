@@ -126,23 +126,23 @@ float: left;}
 .menujengbotab{ color: white; height:50px; width:348px ;position: relative;float:left ;line-height: 50px;text-align: center; font-weight: bold;font-size: 110%;cursor:pointer;}
 
         
-#menudel{ width: 700px;}
+#menudel{ width: 690px;}
 #gagejengbo{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid #fa6146;}
 #reviewbogi{text-align: center;}
 #bigstarr{color: orange;}
 /* 리뷰 관련 은지 수정 */
 
 .m_nick{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
-background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover; 
-background-color: black; margin-top: 10px; float: right; margin-right:10px; float:left}
+background-image:url("../images/mainlogo2.png"); background-position: center; background-size: cover; 
+ margin-top: 10px; float: right; margin-right:10px; float:left}
 .reviewimage{ height: 200px;  }
 .reviewdel{position: relative;border-bottom: 1px solid rgb(231, 231, 231); height: 210px;}
 .rvsajin{margin: 0 auto; position: absolute;right: 5px; top: 5px;}
 .rvnaeyong{margin: 0 auto; position: absolute;left: 5px; top: 5px; text-align: left;}
 .rvnick{font-size: 150%; margin-left:5px ; margin-right: 8px; font-weight: bold;}
 .starr{color: orange; margin-left: 7px; }
-#tul{ width: 1400px; float: left; position: relative;}
-#jengboreview{width:700px; position:absolute; top:0px; right: 0px;}
+#tul{ width: 1400px; float: left; position: relative; overflow-y: scroll;}
+#jengboreview{width:680px; position:absolute; top:0px; right: 0px;}
 #reviewww{border-bottom: 1px solid #fa6146;}
 
 #menutabb{background-color: #fa6146;border :1px solid #fa6146;}

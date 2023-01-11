@@ -222,13 +222,16 @@ function menumove(x){
                 document.getElementById("menutabb").style.border='1px solid #fa6146';
                 document.getElementById("jengbotabb").style.background='#ffb6a9';
                 document.getElementById("jengbotabb").style.border='1px solid #ffb6a9';
-
+				document.getElementById('menujengbo').scrollTop = 0;
+				document.getElementById('tul').scrollTop = 0;
             }
             if(x==1){menunumm++;
                 document.getElementById("menutabb").style.background='#ffb6a9';
                 document.getElementById("menutabb").style.border='1px solid #ffb6a9';
                 document.getElementById("jengbotabb").style.background='#fa6146';
                 document.getElementById("jengbotabb").style.border='1px solid #fa6146';
+                document.getElementById('menujengbo').scrollTop = 0;
+				document.getElementById('tul').scrollTop = 0;
             }
     var dist=menunumm*700*-1;
     document.getElementById("tul").style.left=dist+'px';

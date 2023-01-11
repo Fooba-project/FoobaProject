@@ -23,7 +23,7 @@
             <div class="menujengbotab" onclick="menumove(1);" id="jengbotabb">가게 정보/리뷰</div>
         </div>
         
-        <div id="tul">
+        <div id="tul" style="overflow-y: scroll;">
             <div id="menudel">
             	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
 	                <div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
@@ -35,7 +35,7 @@
                 </c:forEach>
             </div>
 
-            <div id="jengboreview" style="overflow-y: scroll;" >
+            <div id="jengboreview"  >
                 <div id="gagejengbo">
                     <div id="gagesoge">
                         <h3>사장님 알림</h3><hr>
@@ -59,7 +59,7 @@
 	                        <div class="rvnaeyong">
 	                        <div class="m_nick" ></div>
 	                        <a class="rvnick">${ReviewVO.id }</a>님 &nbsp; 
-	                        <a class="grayy"><fmt:formatDate value="${orderVO.indate }" type="date"/></a><br>
+	                        <a class="grayy"><fmt:formatDate value="${ReviewVO.indate }" type="date"/></a><br>
 	                        <a class="starr">
 								<c:choose>
 			                    	<c:when test="${ReviewVO.star==1}">★ 1.0</c:when>
