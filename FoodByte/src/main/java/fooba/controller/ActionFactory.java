@@ -50,6 +50,8 @@ import fooba.action.member.memberUpdateFormAction;
 import fooba.action.member.memberWithdrawalAction;
 import fooba.action.restaurant.res_editFormAction;
 import fooba.action.restaurant.res_findZipNumAction;
+import fooba.action.restaurant.res_fooba_privacyAction;
+import fooba.action.restaurant.res_fooba_tosAction;
 import fooba.action.restaurant.res_foodmenuAction;
 import fooba.action.restaurant.res_foodmenuAddAction;
 import fooba.action.restaurant.res_foodmenuAddFormAction;
@@ -148,7 +150,8 @@ public class ActionFactory {
 		else if (command.equals("res_foodmenuAddForm")) ac = new res_foodmenuAddFormAction();
 		else if (command.equals("res_foodmenuAdd")) ac = new res_foodmenuAddAction();// 메뉴 추가
 		else if (command.equals("res_foodmenuDelete")) ac = new res_foodmenuDeleteAction();// 메뉴 삭제
-				
+		else if(command.equals("res_fooba_tos"))ac=new res_fooba_tosAction();
+		else if(command.equals("res_fooba_privacy"))ac=new res_fooba_privacyAction();		
 		
 		
 		// admin 액션
