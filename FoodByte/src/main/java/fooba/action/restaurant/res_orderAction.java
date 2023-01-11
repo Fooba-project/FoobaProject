@@ -47,8 +47,9 @@ public class res_orderAction implements Action {
 				
 				ArrayList<OrderVO> finalList = new ArrayList<>();
 		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
-		         String oname = ""; // 주문메뉴(서브메뉴)
+
 		         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
+		        	 String oname = "";
 		        	 ArrayList<OrderViewVO> ovList = odao.selectOrderViewByOseq(ovo.getOseq());
 		        	 int i = 0;
 		        	 int size = ovList.size();
