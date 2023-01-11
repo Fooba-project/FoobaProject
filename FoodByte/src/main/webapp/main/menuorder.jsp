@@ -31,7 +31,7 @@
                     <input type="button" id="oopyon" value="우편번호 검색" onclick="post_zip()"> 
                     <input type="text" class="gumaeinput_text" name="useraddress1" placeholder="주소" readonly/>
                     <input type="text" class="gumaeinput_text" name="useraddress2" placeholder="상세 주소"/>
-                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호"/>
+                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호" onkeyup="chkPhoneCode(event)"/>
 
                 </div>    
             </div>
