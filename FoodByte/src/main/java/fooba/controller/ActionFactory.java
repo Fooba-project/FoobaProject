@@ -94,21 +94,24 @@ public class ActionFactory {
 		else if (command.equals("logout")) ac = new logoutAction();
 		else if (command.equals("miniLoginForm")) ac = new miniLoginFormAction(); //팝업
 		else if (command.equals("miniLogin")) ac = new miniLoginAction();
-
-		// restaurant-foodmenu-cart-order
-		// 장바구니넣기, 수정, 삭제, 주문하기,
 		else if (command.equals("search")) ac = new searchAction();// 검색 후 가게 리스팅
 		else if (command.equals("category")) ac = new categoryAction();// 카테고리별 가게 리스팅
 		else if (command.equals("restaurantDetail")) ac = new restaurantDetailAction();// 가게 클릭시 가게 소개 및 메뉴 리스팅
-		else if(command.equals("fooba_tos")) ac = new fooba_tosAction();
-		else if(command.equals("fooba_privacy")) ac = new fooba_privacyAction();
-		
+		else if (command.equals("fooba_tos")) ac = new fooba_tosAction();
+		else if (command.equals("fooba_privacy")) ac = new fooba_privacyAction();
+		else if (command.equals("memberQnalist")) ac = new memberQnalistAction();
 		
 		// member 멤버
 		else if (command.equals("memberJoinForm")) ac = new memberJoinFormAction();
 		else if (command.equals("idCheckForm")) ac = new idCheckFormAction();
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
 		else if (command.equals("memberJoin")) ac = new memberJoinAction();
+		//카트담기 및 메뉴주문
+		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
+		else if (command.equals("jangbaguni")) ac= new jangbaguniAction(); //메뉴 팝업창
+		else if (command.equals("deleteCartmenu"))ac=new deleteCartmenuAction();
+		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
+		else if(command.equals("order")) ac = new orderAction();
 		// 마이페이지 (회원정보, 주문내역확인, 리뷰작성)
 		else if (command.equals("memberUpdateForm")) ac = new memberUpdateFormAction();
 		else if (command.equals("memberUpdate")) ac = new memberUpdateAction();
@@ -117,19 +120,14 @@ public class ActionFactory {
 		else if (command.equals("memberOrderAll")) ac = new memberOrderAllAction();// 전체 주문 내역
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
 		else if (command.equals("memberReviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
-		else if (command.equals("memberQnalist")) ac = new memberQnalistAction();
-		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
-		else if (command.equals("jangbaguni")) ac= new jangbaguniAction(); //메뉴 팝업창
-		else if (command.equals("deleteCartmenu"))ac=new deleteCartmenuAction();
-		else if (command.equals("orderForm")) ac = new orderFormAction();// 주문하기 폼
-		else if(command.equals("order"))ac=new orderAction();
+
 	
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
 		else if (command.equals("res_login")) ac = new res_loginAction();
-		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
 		else if (command.equals("res_logout")) ac = new res_logoutAction();
+		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
 		else if (command.equals("res_joinForm")) ac = new res_joinFormAction();
 		else if (command.equals("res_idCheckForm")) ac = new res_idCheckFormAction();
 		else if (command.equals("res_findZipNum")) ac = new res_findZipNumAction();
