@@ -93,7 +93,7 @@ float: left;}
 #loginform_linetextbox{height:25px; width:450px; margin:0 auto;}
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 
-#idcheck_box{width: 100%; background-color:#f7c5bc; color: rgb(0, 0, 0); height:300px; padding:1px;}
+#idcheck_box{width: 100%; color: rgb(0, 0, 0); height:300px; padding:1px;}
 #idcheck_text{padding-left: 30px; }
 
 #popup{color: rgb(0, 0, 0); height:100%; padding:1px;}
@@ -160,7 +160,7 @@ color: white;font-size: 115%; text-align: right;line-height: 52px;font-weight: b
 
 
 #idcheckbutton1 {display: none;}
-#idcheckline {border-bottom: #d53651 2px solid; width: 300px; padding-bottom: 20px; margin-bottom: 20px;}
+#idcheckline {border-bottom: #d53651 2px solid; width: 400px; padding-bottom: 20px; margin-bottom: 20px;}
 #idcheckbutton1_1 {cursor: pointer;}
 #idcheckbutton2 {border: 0; width: 60px; height: 25px; background-color: #fa6146;}
 
