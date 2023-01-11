@@ -35,7 +35,7 @@
                 </c:forEach>
             </div>
 
-            <div id="jengboreview">
+            <div id="jengboreview"  style="overflow-y: scroll;">
                 <div id="gagejengbo">
                     <div id="gagesoge">
                         <h3>사장님 알림</h3><hr>
@@ -57,6 +57,7 @@
                     <c:forEach items="${ReviewList}" var="ReviewVO">
 	                    <div class="reviewdel">
 	                        <div class="rvnaeyong">
+	                        <a class="m_nick_sa" ></a>
 	                        <a class="rvnick">${ReviewVO.id }</a>님 &nbsp; 
 	                        <a class="grayy"><fmt:formatDate value="${orderVO.indate }" type="date"/></a><br>
 	                        <a class="starr">
@@ -75,7 +76,8 @@
 		                        <c:when test="${ReviewVO.image==null}"></c:when>
 		                        <c:otherwise>
 			                        <div class="rvsajin">
-			                            <img class="reviewimage" src="/images/${ReviewVO.image}">
+			                            <img class="reviewimage" src="images/review/${ReviewVO.image }" 
+			                            style="width:150px; height:100px;">
 			                        </div>
 		                        </c:otherwise>
 	                        </c:choose>
