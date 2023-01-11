@@ -102,7 +102,7 @@ body {margin:0}
 
 /* #dummy{height:745px; width:100%;  } */
 
-#res_main{position: relative; width:700px; height: 100%; border: 1px solid black; margin:0 auto;
+#res_main{position: relative; width:700px; height: 100%;  margin:0 auto;
  overflow: hidden;}
 #res_name{ height:50px ; font: gray; border-bottom: 1px solid black;font-size: 120%; font-weight: bold;
 text-align: center;line-height: 50px;}
