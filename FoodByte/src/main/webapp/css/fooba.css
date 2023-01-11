@@ -95,9 +95,16 @@ float: left;}
 #idcheck_box{width: 100%; background-color:#f7c5bc; color: rgb(0, 0, 0); height:300px; padding:1px;}
 #idcheck_text{padding-left: 30px; }
 
-#popup{background-color:#f7c5bc; color: rgb(0, 0, 0); height:500px; padding:1px;}
-#popup_text{padding-left: 30px;}
-#zipcode{margin-top: 20px;}
+#popup{color: rgb(0, 0, 0); height:100%; padding:1px;}
+#popup_text{text-align: center; font-size: 110%;}
+#zipcodee{margin: 0 auto;   width: 500px;}
+#zipcodee th{ border: 3px solid #fa6146;border-radius: 5px; color: black; height: 30px;}
+#zipcodee td{ border-bottom:1px solid rgb(201, 199, 199) ; border-right: 1px solid rgb(201, 199, 199); height: 30px;}
+.zipa{color: black; text-decoration: none;}
+#zipcodee td:hover{background-color: rgb(248, 225, 225); }
+#dongtext{border:0 ; border-bottom:1px solid rgb(201, 199, 199) ; height: 30px;width: 400px; outline: none; font-size: 100%; padding: 5px; line-height: 30px; padding-left:20px;}
+#eheqhrl{background-image:url("../images/eheqhrl.png");width: 40px;height: 40px; cursor: pointer; border: 0;}
+
 
 #realjenche{position: relative;width: 1056px; margin: 0 auto;}
 #jenche{position: relative; width:700px; height: 100%; border: 1px solid #fa6146; overflow: hidden;}

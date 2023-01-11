@@ -17,19 +17,21 @@
 		<h1>우편번호 검색</h1>
 		<form method="post" name="formm" action="fooba.do">
 			<input type="hidden" name="command" value="findZipNum">
-			동 이름 : <input name="dong" type="text"><input type="submit" value="찾기" class="submit">
+                 <input name="dong" id="dongtext" type="text" placeholder="주소를 입력하세요.">
+                 <input type="submit" value=" " class="submit" id="eheqhrl">
 		</form> 
-		<table id="zipcode">
+		<br>
+		<table id="zipcodee">
 			<tr><th width="100">우편번호</th><th>주소</th></tr>
 			<c:forEach items="${addressList }" var="add">
 				<tr>
 					<td>
-						<a href="#" onClick="result('${add.zip_num}','${add.sido }','${add.gugun }','${add.dong }');">
+						<a class="zipa" href="#" onClick="result('${add.zip_num}','${add.sido }','${add.gugun }','${add.dong }');">
 							${add.zip_num }
 						</a>
 					</td>
 					<td>
-						<a href="#" onClick="result('${add.zip_num}','${add.sido }','${add.gugun }','${add.dong }');">
+						<a class="zipa" href="#" onClick="result('${add.zip_num}','${add.sido }','${add.gugun }','${add.dong }');">
 							${add.sido } ${add.gugun } ${add.dong }
 						 </a>
 					</td>
