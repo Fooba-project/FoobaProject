@@ -199,19 +199,14 @@ public class ResDao {
 
 
 	
-		public ArrayList<ReviewVO> selectReview(int rseq ,Paging paging) {
+		public ArrayList<ReviewVO> selectReview(int rseq ,int a) {
 			ArrayList<ReviewVO> list=new ArrayList<>();
-			String sql="select*from("
-					+ "select *from("
-					+ "select rownum as rn, r.*from((select*from review where rseq=? order by review_seq desc) r )"
-					+ ")where rn>=?"
-					+ ")where rn<=?";
+			String sql="select*from review where rseq=? and replyyn<? order by review_seq desc";
 			con=Dbman.getConnection();
 			try {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setInt(1, rseq);
-				pstmt.setInt(2,paging.getStartNum());
-				pstmt.setInt(3,paging.getEndNum());
+				pstmt.setInt(2,a);
 				rs=pstmt.executeQuery();
 				while(rs.next()) {
 					ReviewVO rvo=new ReviewVO();

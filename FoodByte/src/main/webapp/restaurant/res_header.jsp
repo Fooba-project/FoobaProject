@@ -198,7 +198,7 @@ background-image:url("images/mainlogo1.png"); background-position: center; backg
 background-color: black; margin-top: 10px; float: right; margin-right:10px; }
 #sanick{ font-size: 110%; font-weight: bold; line-height: 50px; float: right; margin-right:10px;}
 #sa_thank{width:100%; height:150px; }
-#sa_thank_text{width:50%; height:100px; margin-left:300px; }
+.sa_thank_text{width:50%; height:100px; margin-left:300px; }
 #rev_buttonbox{ width:100%; height:40px;}
 #rev_button{ width:100px; height:35px; background-color: rgb(255, 255, 147);
  text-align: center; line-height: 35px; border-radius:5px; margin-right:40px; float: right; 
@@ -236,7 +236,7 @@ background-color: black; margin-top: 10px; float: right; margin-right:10px; }
     		<c:otherwise>
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout&page=1&search=&key='">
 	    		<input type="button" value="주문관리" class="headbutton" onclick="location.href='fooba.do?command=res_order&page=1&search=&key='">
-	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review&page=1&search=&key='">
+	    		<input type="button" value="리뷰관리" class="headbutton" onclick="location.href='fooba.do?command=res_review&key=2'">
 	    		<input type="button" value="메뉴관리" class="headbutton" onclick="location.href='fooba.do?command=res_foodmenu&page=1&search=&key='">
 	    		 <input type="button" value="정보관리" class="headbutton" onclick="location.href='fooba.do?command=res_show&page=1&search=&key='">   		
 	    	</c:otherwise>

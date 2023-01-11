@@ -4,18 +4,20 @@
 
             <div id="res_tab">
                 <div class="res_infotab" 
-                onclick="location.href='fooba.do?command=res_review&page=1&search=&key='">
+                onclick="location.href='fooba.do?command=res_review&key=2'">
                 전체답변</div>      
                 <div class="res_infotab" 
-                onclick="location.href='fooba.do?command=res_review&page=1&search=&key=&replyyn='+0">
+                onclick="location.href='fooba.do?command=res_review&key=1'">
                 미답변</div>
             </div>
-		<form action="fooba.do" method="post" name="frm">
-			<input type="hidden" name="command" value="res_reviewReplyWrite"/>
-	 		<input type="hidden" name="review_seq" value="${param.review_seq}"/>
+		
             <div id="res_menuall_a" style="background-color: rgb(250, 248, 215);">
                 <div id="res_menuinfo" >
+                
                     <c:forEach items="${ReviewList}" var="ReviewVO">
+                    <form action="fooba.do" method="post" name="frm">
+					<input type="hidden" name="command" value="res_reviewReplyWrite"/>
+			 		<input type="hidden" name="review_seq" value="${param.review_seq}"/>
                         <div id="res_review" >
                             <div id="res_rev_info" >
                                 <div id="nick_img" > </div>
@@ -34,14 +36,14 @@
                                 </div>
                             </div>
                             <div id="mrev_conbox" >
-                            	<c:if test='${ReviewVO.image!=null}'>	
+                            	<c:if test="${ReviewVO.image!=null }">	
 	                                <div id="mrev_img" style="border-radius: 20px;">
-	                                	 <img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                          
-	                                </div>       
+	                                	<img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                               
+	                                </div>    
                                 </c:if>
                                 <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
-                            <!-- if문을 이용한 사장님 답글 --> 
+                            <!-- if문을 이용한 사장님 답글 -->
                             
                             <div id="sa_reviewbox" >
                                 <div id="sarev_info" >
@@ -51,23 +53,22 @@
                                 <c:if test="${ReviewVO.replyyn==0}">
                                  <div id="sa_thank">  
                                  <script type="text/javascript">
-                                        function addReply(review_seq){
-                                        	if( document.frm.reply.value=="" ){
+                                        function addReply(ab){
+                                        	if( document.getElementById(ab).value=="" ){
                                         		alert("답글을 적어주세요");
-                                        		document.frm.reply.focus();
+                                        		document.getElementById(ab).focus();
                                         		return false;
                                         	}     
+                                        	return true;
                                         	
-                                        	document.frm.action = "fooba.do?command=res_reviewReplyWrite&review_seq="+review_seq;
-                                        	document.frm.submit();
                                         	                                        
                                         }
                                         </script>                            
-                                    <textarea id="sa_thank_text" name="reply" rows="5" cols="50" ></textarea><br>
+                                    <textarea class="sa_thank_text" name="reply" rows="5" cols="50" id="${ReviewVO.review_seq }"></textarea><br>
                                     <input type="hidden" value="${ReviewVO.review_seq }" name="rv">
                                     <div id="rev_buttonbox" >
-                                        <input type="button" value="답글 달기" id="rev_button" style="box-shadow: 2px 1px rgb(231, 231, 151);"  
-                                        onclick="addReply(${param.review_seq})">   
+                                        <input type="submit" value="답글 달기" id="rev_button" style="box-shadow: 2px 1px rgb(231, 231, 151);"  
+                                        onclick="return addReply('${ReviewVO.review_seq }')">   
                                         
                                     </div>
                                 </div>
@@ -79,9 +80,11 @@
                                 </c:if>                                            
                             </div>  
                         </div><br><hr>
-                    </c:forEach>                   
+                        </form>
+                    </c:forEach>
+                                       
             	</div>
         	</div>
-        </form>
+        
 </div>
 <%@ include file="/restaurant/res_footer.jsp"%>
