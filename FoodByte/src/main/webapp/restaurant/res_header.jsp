@@ -198,7 +198,7 @@ background-image:url("images/mainlogo1.png"); background-position: center; backg
 background-color: black; margin-top: 10px; float: right; margin-right:10px; }
 #sanick{ font-size: 110%; font-weight: bold; line-height: 50px; float: right; margin-right:10px;}
 #sa_thank{width:100%; height:150px; }
-.sa_thank_text{width:50%; height:100px; margin-left:300px; }
+.sa_thank_text{width:50%; height:100px; margin-left:300px; resize:none; }
 #rev_buttonbox{ width:100%; height:40px;}
 #rev_button{ width:100px; height:35px; background-color: rgb(255, 255, 147);
  text-align: center; line-height: 35px; border-radius:5px; margin-right:40px; float: right; 
