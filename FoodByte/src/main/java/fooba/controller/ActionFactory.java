@@ -84,7 +84,6 @@ public class ActionFactory {
 	public Action getAction(String command) {
 		Action ac=null;
 		
-		
 		// main 로그인, 로그아웃
 		if(command.equals("index")) ac=new indexAction(); // 메인화면 표시
 		else if(command.equals("loginForm"))ac=new loginFormAction();
