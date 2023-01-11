@@ -4,7 +4,7 @@
 <style type="text/css">
 .res_qnalist{text-align: center; margin-top:30px;}
 #res_qnalist_table{margin: auto; width:810px;}
-.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color: #ffd1d1; font-weight: bold;  border-radius: 10px;}
+.qna_title{ padding-left: 10px; height:30px;padding-top: 10px; background-color:rgb(250, 236, 178);font-weight: bold;  border-radius: 10px;}
 .qna_box{width:700px; margin:0 auto;}
 .qna_content{padding-left:30px; height: 30px; overflow: hidden;  line-height: 30px;}
 .qna_content:hover{height:auto;}
@@ -39,7 +39,7 @@
     </article> 
 <br>
 <jsp:include page="/member/paging/paging.jsp">
-<jsp:param name="command" value="fooba.do?command=memberQnalist"/>
+<jsp:param name="command" value="fooba.do?command=res_qnalist_footer"/>
 </jsp:include>	
 <br><br><br><br><br><br><br><br><br><br><br><br>
 <%@ include file="res_footer.jsp"%>

@@ -4,7 +4,7 @@
 	<div class="footerbox" id="resfooterbox">
 	    <div class="linemenubox">
 	       <span class="linetext"
-	       onclick="location.href='fooba.do?command=memberQnalist'">/자주 묻는 질문</span>
+	       onclick="location.href='fooba.do?command=res_qnalist_footer'">/자주 묻는 질문</span>
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext"
