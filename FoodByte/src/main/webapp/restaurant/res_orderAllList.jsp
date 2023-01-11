@@ -13,17 +13,9 @@
                         <div class="res_order_list">
 			                <div>
 			                    주문번호 : ${ovo.oseq}
-			                </div>
-			                <div>
+			                    &nbsp;&nbsp;&nbsp;&nbsp;
 			                    주문일시 : <fmt:formatDate value="${ovo.indate}" type="date" pattern="yyyy-MM-dd (a)hh:mm:ss" />
-			                </div>
-			                <div id="wnanssodur">
-			                    <div id="wnanssodurwpahr">주문내역 : </div><div id="wnanssodursodyd">${ovo.oname}</div> 
-			                </div>
-			                <div>
-			                    주문금액 : <fmt:formatNumber value="${ovo.totalprice }" pattern="#,###원"/>
-			                </div>
-			                <div>
+			                    &nbsp;&nbsp;&nbsp;&nbsp;
 			                    주문상태 : 
 			                    <c:if test="${ovo.result==0 }">
 			                    주문확인중 <input id="res_OrderResultButton" type="button" value="다음으로" 
@@ -39,6 +31,18 @@
 			                    <c:if test="${ovo.result==3 }">
 			                    리뷰완료
 			                    </c:if>
+			                </div>
+			                <div>
+			                    
+			                </div>
+			                <div id="wnanssodur">
+			                    <div id="wnanssodurwpahr">주문내역 : </div><div id="wnanssodursodyd">${ovo.oname}</div> 
+			                </div>
+			                <div>
+			                    주문금액 : <fmt:formatNumber value="${ovo.totalprice }" pattern="#,###원"/>
+			                </div>
+			                <div>
+			                    
 			                </div>
 			            </div>
                         

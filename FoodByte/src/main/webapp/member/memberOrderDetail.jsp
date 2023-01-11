@@ -86,26 +86,26 @@ function review_write() {
         <div id="menuorderdetaildiv3">전화번호 : ${ovo.phone}</div>
         <div id="menuorderdetaildiv3">배달/포장여부 : 
             <c:if test="${ovo.rideryn==0}">
-                포장
+                배달 (배달료 : + ${ovList[0].rtip }원)
             </c:if>
             <c:if test="${ovo.rideryn==1}">
-                배달 (배달료 : + ${ovList[0].rtip }원)
+                포장
             </c:if>
         </div>
         <div id="menuorderdetaildiv3">일회용품 여부 : 
-            <c:if test="${ovo.rideryn==0}">
-                포함
-            </c:if>
-            <c:if test="${ovo.rideryn==1}">
+            <c:if test="${ovo.plasticyn==0}">
                 미포함
+            </c:if>
+            <c:if test="${ovo.plasticyn==1}">
+                포함
             </c:if>
         </div>
         <div id="menuorderdetaildiv3">결제방법 : 
-            <c:if test="${ovo.rideryn==0}">
-                현금결제
-            </c:if>
-            <c:if test="${ovo.rideryn==1}">
+            <c:if test="${ovo.payment==0}">
                 카드결제
+            </c:if>
+            <c:if test="${ovo.payment==1}">
+                현금결제
             </c:if>
         </div>
     </div>
