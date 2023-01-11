@@ -32,7 +32,7 @@ function go_save(){
                    
              <div class="qna_content">
                 A : 
-                <textarea style="height:150px; width:620px; line-height:24px;" name="content">${qnaVO.content}</textarea>
+                <textarea style="height:150px; width:620px; line-height:24px; resize:none;" name="content">${qnaVO.content}</textarea>
              </div>
         </table>
          	

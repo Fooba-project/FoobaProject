@@ -33,7 +33,7 @@ function qnaCheck(){
                         </table>
                         <table>
                             <th style="font-weight: 700;">A:&nbsp;&nbsp; </th>
-                            <th><textarea style="height:160px; width: 600px;"  name="content"></textarea></th>
+                            <th><textarea style="height:160px; width: 600px; resize:none;"  name="content" ></textarea></th>
                         </table> 
                     </fieldset>     
                 
