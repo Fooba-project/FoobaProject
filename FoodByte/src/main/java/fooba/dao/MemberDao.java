@@ -192,4 +192,20 @@ public class MemberDao {
 		
 		return list;
 	}
+
+	public ArrayList<String> getMemberId() {
+		ArrayList<String> list=new ArrayList<>();
+		con=Dbman.getConnection();
+		String sql="select id from member";
+		
+		try {
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(rs.getString("id"));
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return list;
+	}
 }
