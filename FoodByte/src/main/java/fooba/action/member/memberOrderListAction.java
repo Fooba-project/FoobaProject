@@ -46,7 +46,7 @@ public class memberOrderListAction implements Action {
 			Paging paging = new Paging();
 			paging.setPage(page);
 			paging.setDisplayRow(5);
-			paging.setDisplayPage(5);
+			paging.setDisplayPage(10);
 			
 			int count = odao.getOrderIngCount(mvo.getId());
 			paging.setTotalCount(count);

@@ -339,42 +339,6 @@ public class OrderDao {
 		return list;
 	}
 	
-	
-	public ArrayList<OrderVO> selectOrdersAllByRseq(int rseq, Paging paging) {
-		ArrayList<OrderVO> list=new ArrayList<>();
-		con=Dbman.getConnection();
-		String sql = "select * from ("
-				+ "select * from ("
-				+ "select rownum as rn, b.* from ((select * from order_view where rseq=? order by oseq desc) b)"
-				+ ") where rn>=?"
-				+ ") where rn<=?";
-		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, rseq);
-			pstmt.setInt(2, paging.getStartNum());
-			pstmt.setInt(3, paging.getEndNum());
-			rs=pstmt.executeQuery();
-			while(rs.next()) {
-				if (list.get(list.size()-1).getOseq()!=rs.getInt("oseq")) {
-					OrderVO ovo=new OrderVO();
-					ovo.setOseq(rs.getInt("oseq"));
-					ovo.setAddress1(rs.getString("address1"));
-					ovo.setAddress2(rs.getString("address2"));
-					ovo.setPhone(rs.getString("phone"));
-					ovo.setResult(rs.getInt("result"));
-					ovo.setIndate(rs.getTimestamp("indate"));
-					ovo.setId(rs.getString("id"));
-					ovo.setRideryn(rs.getInt("rideryn"));
-					ovo.setPlasticyn(rs.getInt("plasticyn"));
-					ovo.setPayment(rs.getInt("payment"));
-					ovo.setTotalprice(rs.getInt("totalprice"));
-					list.add(ovo);
-				}
-			}
-		} catch (SQLException e) {	e.printStackTrace();
-		}finally {Dbman.close(con, pstmt, rs);}
-		return list;
-	}
 
 
 	public ReviewVO getOrderReviewByOseq(int oseq) {
@@ -465,8 +429,49 @@ public class OrderDao {
 	}
 
 
-	
-
+	public ArrayList<OrderVO> selectOrdersAllByRseq(int rseq) {
+		ArrayList<OrderVO> list=new ArrayList<>();
+		con=Dbman.getConnection();
+		String sql = "select * from order_view where rseq=? order by oseq desc";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, rseq);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				if (list.size()==0) {
+					OrderVO ovo=new OrderVO();
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setAddress1(rs.getString("oadd1"));
+					ovo.setAddress2(rs.getString("oadd2"));
+					ovo.setPhone(rs.getString("ophone"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);
+				} else if ( list.get(list.size()-1).getOseq()!=rs.getInt("oseq") ) {
+					OrderVO ovo=new OrderVO();
+					ovo.setOseq(rs.getInt("oseq"));
+					ovo.setAddress1(rs.getString("oadd1"));
+					ovo.setAddress2(rs.getString("oadd2"));
+					ovo.setPhone(rs.getString("ophone"));
+					ovo.setResult(rs.getInt("result"));
+					ovo.setIndate(rs.getTimestamp("indate"));
+					ovo.setId(rs.getString("id"));
+					ovo.setRideryn(rs.getInt("rideryn"));
+					ovo.setPlasticyn(rs.getInt("plasticyn"));
+					ovo.setPayment(rs.getInt("payment"));
+					ovo.setTotalprice(rs.getInt("totalprice"));
+					list.add(ovo);
+				}
+			}
+		} catch (SQLException e) {	e.printStackTrace();
+		}finally {Dbman.close(con, pstmt, rs);}
+		return list;
+	}
 
 
 	

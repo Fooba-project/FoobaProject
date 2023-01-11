@@ -15,37 +15,21 @@ import fooba.action.Action;
 import fooba.dao.OrderDao;
 import fooba.util.Paging;
 
-public class res_orderAction implements Action {
+public class res_orderAllAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  
-		  String url = "restaurant/res_orderList.jsp";		// 레스토랑 주문현황으로 이동
+		 String url = "restaurant/res_orderAllList.jsp";		// 레스토랑 주문현황으로 이동
 	      HttpSession session = request.getSession();
 	      RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
 	      if(rvo == null) {
 	         url = "fooba.do?command=res_loginForm";
 	      }else {
-		         int page=1;
-					if(request.getParameter("page")!=null) { 
-						page=Integer.parseInt(request.getParameter("page"));
-						session.setAttribute("page", page);
-					}else if(session.getAttribute("page")!=null) { 
-						page=(Integer)session.getAttribute("page");
-					}else { 
-						session.removeAttribute("page");
-					}
-				
-				Paging paging = new Paging();
-				paging.setPage(page);
-				paging.setDisplayRow(10);
-				paging.setDisplayPage(10);
+		         
 				OrderDao odao = OrderDao.getInstance();
-				ArrayList<Integer> count = odao.getOrderIngCountByRseq( rvo.getRseq());
-				paging.setTotalCount(count.size());
-				
+
 				ArrayList<OrderVO> finalList = new ArrayList<>();
-		        ArrayList<OrderVO> list = odao.selectOrdersIngByRseq(rvo.getRseq(), paging);
+		        ArrayList<OrderVO> list = odao.selectOrdersAllByRseq(rvo.getRseq());
 
 		         for (OrderVO ovo : list) { // 현재 주문배송중인 레스토랑수만큼 반복
 		        	 String oname = "";
@@ -83,12 +67,11 @@ public class res_orderAction implements Action {
 		        	 finalList.add(ovo);
 		        	 System.out.println("result : " + ovo.getResult());
 		         }
-		        request.setAttribute("res_OrderList", finalList);
-		        request.setAttribute("paging", paging);	       
+		        request.setAttribute("res_OrderList", finalList);       
 		        request.setAttribute("RestaurantVO", rvo);
 	      }
 	      request.getRequestDispatcher(url).forward(request, response);
-	     
+
 	}
 
 }
