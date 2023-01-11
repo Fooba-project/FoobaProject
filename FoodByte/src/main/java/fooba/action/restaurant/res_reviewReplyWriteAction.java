@@ -34,8 +34,10 @@ public class res_reviewReplyWriteAction implements Action {
 			rvvo.setReply(request.getParameter("reply"));
 			
 			rdao.updateReply(rvvo);
-			
+
+			System.out.print(request.getParameter("key"));
 			//url=url +"&rseq="+rvvo.getRseq();
+			url=url+"&key=2";
 		}
 		response.sendRedirect(url);
 

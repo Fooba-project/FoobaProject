@@ -66,6 +66,7 @@
                                         </script>                            
                                     <textarea class="sa_thank_text" name="reply" rows="5" cols="50" id="${ReviewVO.review_seq }"></textarea><br>
                                     <input type="hidden" value="${ReviewVO.review_seq }" name="rv">
+                                    <input type="hidden" value="${key }" name="key">
                                     <div id="rev_buttonbox" >
                                         <input type="submit" value="답글 달기" id="rev_button" style="box-shadow: 2px 1px rgb(231, 231, 151);"  
                                         onclick="return addReply('${ReviewVO.review_seq }')">   
