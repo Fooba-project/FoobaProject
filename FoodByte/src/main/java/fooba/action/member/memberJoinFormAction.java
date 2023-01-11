@@ -19,7 +19,7 @@ public class memberJoinFormAction implements Action {
 		
 		MemberDao mdao=MemberDao.getInstance();
 		
-		ArrayList<String> idList=mdao.getMemberId();
+		String idList=mdao.getMemberIds();
 		
 		request.setAttribute("idList", idList);
 		
