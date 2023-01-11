@@ -8,11 +8,11 @@
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext"
-	        onclick="location.href='fooba.do?command=fooba_privacy'">/개인정보 처리방침</span>
+	        onclick="location.href='fooba.do?command=res_fooba_privacy'">/개인정보 처리방침</span>
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext"
-	        onclick="location.href='fooba.do?command=fooba_tos'">/이용약관</span>
+	        onclick="location.href='fooba.do?command=res_fooba_tos'">/이용약관</span>
 	    </div>
 	    <div class="linemenubox">
 	        <span class="linetext"
