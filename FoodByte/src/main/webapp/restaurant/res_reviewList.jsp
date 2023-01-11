@@ -41,7 +41,7 @@
                                 </c:if>
                                 <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
-                            <!-- if문을 이용한 사장님 답글 -->
+                            <!-- if문을 이용한 사장님 답글 --> 
                             
                             <div id="sa_reviewbox" >
                                 <div id="sarev_info" >
