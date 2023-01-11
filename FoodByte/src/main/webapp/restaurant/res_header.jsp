@@ -108,10 +108,10 @@ body {margin:0}
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
 .res_logo{height: 120px; width: 120px; position: relative; float: left;margin: 10px;}
-#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 33px;}
+#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 44px;}
 .basic{color: gray; font-weight: normal; font-size: 100%; }
 #res_tab{height: 50px; }
-.res_infotab{background-color: rgb(255,204,0); height:50px; width:348px ;position: relative; float:left ;
+.res_infotab{background-color: rgb(255,204,0); height:50px; width:347px ;position: relative; float:left ;
 border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
 .res_infotab:hover{cursor: pointer;}
 #res_menuall{ width: 700px; float: left; position: relative; }
@@ -203,10 +203,10 @@ background-color: black; margin-top: 10px; float: right; margin-right:10px; }
  cursor: pointer;}
 
 #res_orderlistitems { padding-bottom: 20px;}
-#res_menuall {width: 100%; height:400px; overflow-y:scroll;}
+#res_menuall {width: 100%; height:500px; overflow-y:scroll;}
 .res_order_list { width:100%; position: relative; font-size: 18px; font-weight: bold; line-height: 30px; margin:20px; width: 600px;}
-#res_OrderResultButton{position:absolute; right: 10px; width:100px; height:30px; background:#d0d0d0; top:130px; cursor: pointer; font-size: 16px; border:0; border-radius:5px; text-align:center;}
-#res_OrderListStatement{position:absolute; right: 10px; width:100px; height:100px; border:0; text-align:center; line-height:100px; background:rgb(245, 236, 114); border-radius:50%; text-align: center; top:20px;  text-indent: 0px;}
+#res_OrderResultButton{position:absolute; right: 10px; width:100px; height:30px; background:#d0d0d0; top:110px; cursor: pointer; font-size: 16px; border:0; border-radius:5px; text-align:center;}
+#res_OrderListStatement{position:absolute; right: 10px; width:100px; height:80px; border:0; text-align:center; line-height:80px; background:rgb(245, 236, 114); border-radius:20%; text-align: center; top:20px;  text-indent: 0px;}
 .menuorderdetaildiv {width: 80%; background-color: #bbbbbb;border-radius: 20px; padding: 20px; overflow: hidden; margin-left: 40px; line-height: 28px;}
 #wnanssodur {position: relative;}
 #wnanssodurwpahr {width: 86px; float: left;}

@@ -12,7 +12,6 @@
            		<img class="res_logo"src="images/title/${RestaurantVO.rimage}" ></img>
          
             <div id="res_basic">
-            <a class="res_total">★★★★☆</a> 4.4<br>
             <a class="basic">배달팁</a>&nbsp;&nbsp;  ${RestaurantVO.rtip}<br>
             <a class="basic">결제</a>&nbsp;&nbsp; 신용카드, 현금<br>            
             <a class="basic">해시태그</a>&nbsp;&nbsp; #${RestaurantVO.hash}<br>
