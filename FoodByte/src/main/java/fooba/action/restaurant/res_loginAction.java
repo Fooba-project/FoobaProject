@@ -34,6 +34,14 @@ public class res_loginAction implements Action {
 			HttpSession session=request.getSession();
 			session.setAttribute("loginRes", rvo );
 			System.out.println("로그인 성공");
+			/*가게 별점*/
+			double star=0;
+			star=rdao.starAvg(rvo.getRseq());
+			int intstar=(int)star;
+			double doublestar=(int)(star*10)/(double)10;
+			session.setAttribute("intstar",intstar); //별 개수
+			session.setAttribute("doublestar",doublestar); //별점(소수점까지)
+			/**/
 			}
 		
 		

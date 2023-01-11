@@ -17,6 +17,8 @@ public class res_logoutAction implements Action {
 		
 		HttpSession session=request.getSession();
 		session.removeAttribute("loginRes");
+		session.removeAttribute("intstar");
+		session.removeAttribute("doublestar");
 		RequestDispatcher dp=request.getRequestDispatcher("fooba.do?command=res_loginForm");
 		dp.forward(request, response);
 

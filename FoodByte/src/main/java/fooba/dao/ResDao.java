@@ -532,6 +532,25 @@ public class ResDao {
 			
 			return list;
 		}
-
+		
+		public double starAvg(int rseq) {
+			double star=0;
+			int starr=0;
+			int num=0;
+			con=Dbman.getConnection();
+			String sql="select*from review where rseq=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,rseq);
+				rs=pstmt.executeQuery();
+				while(rs.next()) {	
+					starr=starr+rs.getInt("star");
+					num=num+1;
+				}
+			} catch (SQLException e) {e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
+			if(num!=0)star=(double)starr/num;
+			return star;
+		}
 }
  

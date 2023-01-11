@@ -43,6 +43,14 @@ public class restaurantDetailAction implements Action {
 		}else {
 			carttotalprice=carttotalprice+rvo.getRtip();
 		}
+		/*가게 별점*/
+		double star=0;
+		star=rdao.starAvg(rseq);
+		int intstar=(int)star;
+		double doublestar=(int)(star*10)/(double)10;
+		request.setAttribute("intstar",intstar); //별 개수
+		request.setAttribute("doublestar",doublestar); //별점(소수점까지)
+		/**/
 		request.setAttribute("carttotalprice", carttotalprice);
 		request.setAttribute("RestaurantVO", rvo);
 		request.setAttribute("FoodmenuList", foodmenuList);
