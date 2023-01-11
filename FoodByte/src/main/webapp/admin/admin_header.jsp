@@ -14,6 +14,7 @@
 <script src="../script/fooba.js"></script>
 </head>
 <style type="text/css">
+#admin_space{width:100%; height:730px;}
 body {margin: 0; position:relative;}
 .headback {width: 100%; height: 100px; background-color: rgb(23,55,94); margin: 0;}
 #mainlogo {position: relative; text-align: center; width: 150px; height: 100px; margin: auto auto;}
@@ -123,3 +124,4 @@ body {margin: 0; position:relative;}
     		</c:otherwise>
     	</c:choose>
     </div>
+    <div id="admin_space">
