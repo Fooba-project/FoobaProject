@@ -2,10 +2,7 @@
 
 <footer>
 	<div class="footerbox" id="adminfooterbox">
-	    <div class="linemenubox">
-	       <span class="linetext"
-	       onclick="location.href='fooba.do?command=admin_qnalist_footer'">/자주 묻는 질문</span>
-	    </div>
+	    
 	    <div class="linemenubox">
 	        <span class="linetext"
 	         onclick="location.href='fooba.do?command=admin_fooba_privacy'">/개인정보 처리방침</span>

@@ -2,6 +2,7 @@ package fooba.controller;
 
 import fooba.action.Action;
 
+
 import fooba.action.indexAction;
 import fooba.action.admin.admin_fooba_privacyAction;
 import fooba.action.admin.admin_fooba_tosAction;
@@ -19,7 +20,6 @@ import fooba.action.admin.admin_qnaUpdateFormAction;
 import fooba.action.admin.admin_qnaViewAction;
 import fooba.action.admin.admin_qnaWriteAction;
 import fooba.action.admin.admin_qnaWriteFormAction;
-import fooba.action.admin.admin_qnalist_footerAction;
 import fooba.action.admin.admin_restaurantDetailAction;
 import fooba.action.admin.admin_restaurantKickAction;
 import fooba.action.admin.admin_restaurantListAction;
@@ -174,7 +174,6 @@ public class ActionFactory {
 		//else if (command.equals("admin_orderEdit")) ac = new admin_orderEditAction(); // 주문상태 변경
 		else if(command.equals("admin_fooba_tos"))ac=new admin_fooba_tosAction();
 		else if(command.equals("admin_fooba_privacy"))ac=new admin_fooba_privacyAction();
-		else if (command.equals("admin_qnalist_footer")) ac = new admin_qnalist_footerAction();
 		// qna 액션(고객센터 - 자주묻는 질문)
 		else if (command.equals("admin_qnaList")) ac = new admin_qnaListAction(); // qna 리스트  고객이 보는모습
 		else if (command.equals("admin_qnaView")) ac = new admin_qnaViewAction(); // qna 상세 보기  고객이 보는모습
