@@ -11,7 +11,7 @@ body {margin: 0; position:relative;}
 
 #maintextbox {position: relative; width:100%; height:375px; overflow:hidden;}
 #maintextbox img {width:100%;}
-#maintextbox #maintext {font-size:200%; font-weight: bold; color: #fa6146; white-space:pre; position: absolute; right: 20%; top: 30%;} 
+#maintextbox #maintext {font-size:200%; font-weight: bold; color: #fa6146; white-space:pre; position: absolute; right: 15%; top: 30%;} 
 
 #main {position: relative; margin:0; width:100%; height:300px; background-color: #fa6146;}
 
