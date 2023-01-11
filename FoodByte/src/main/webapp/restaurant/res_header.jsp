@@ -181,7 +181,9 @@ cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 overflow:hidden; overflow-y: scroll; background-color: rgb(250, 248, 215);}
 #res_review{ width:100%; height:560px;}
 #res_rev_info{ width:100%; height: 50px; }
-#nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover; margin-top: 10px; margin-left:10px; float: left; }
+#nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
+background-image:url("images/mainlogo2.png"); background-position: center; 
+background-size: cover; margin-top: 10px; margin-left:10px; float: left; }
 #m_nick{ font-size: 110%; font-weight: bold; line-height: 50px; float: left; }
 #mrev_star{position:relative; line-height: 50px; color: orange; float: left; }
 .rev_indate{ line-height: 50px; color:#BCBCBC; font-size: 80%;}

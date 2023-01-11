@@ -130,6 +130,11 @@ float: left;}
 #gagejengbo{padding-left: 15px; padding-right: 15px; line-height: 25px;border-bottom: 1px solid #fa6146;}
 #reviewbogi{text-align: center;}
 #bigstarr{color: orange;}
+/* 리뷰 관련 은지 수정 */
+
+.m_nick{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
+background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover; 
+background-color: black; margin-top: 10px; float: right; margin-right:10px; float:left}
 .reviewimage{ height: 200px;  }
 .reviewdel{position: relative;border-bottom: 1px solid rgb(231, 231, 231); height: 210px;}
 .rvsajin{margin: 0 auto; position: absolute;right: 5px; top: 5px;}

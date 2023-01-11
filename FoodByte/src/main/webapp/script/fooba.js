@@ -230,7 +230,7 @@ function menumove(x){
                 document.getElementById("jengbotabb").style.background='#fa6146';
                 document.getElementById("jengbotabb").style.border='1px solid #fa6146';
             }
-    var dist=menunumm*700*-1;
+    var dist=menunumm*710*-1;
     document.getElementById("tul").style.left=dist+'px';
 }
 
