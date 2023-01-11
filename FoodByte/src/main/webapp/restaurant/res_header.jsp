@@ -214,6 +214,7 @@ background-color: black; margin-top: 10px; float: right; margin-right:10px; }
 #wnanssodursodyd {width: 440px;margin-left: 86px;}
 #res_orderlistitemsall {height:55px; overflow:hidden; border-bottom:1px solid grey; cursor:pointer; padding-bottom: 20px; }
 #res_orderlistitemsall:hover {height:auto;}
+.starr{color:orange;}
 </style>
 </head>
 
