@@ -1,15 +1,13 @@
 package fooba.controller;
 
 import fooba.action.Action;
-
-
 import fooba.action.indexAction;
 import fooba.action.admin.admin_fooba_privacyAction;
 import fooba.action.admin.admin_fooba_tosAction;
 import fooba.action.admin.admin_loginAction;
 import fooba.action.admin.admin_loginFormAction;
 import fooba.action.admin.admin_logoutAction;
-import fooba.action.admin.admin_memberKickAction;
+import fooba.action.admin.admin_memberListAction;
 import fooba.action.admin.admin_orderListAction;
 import fooba.action.admin.admin_orderList_lbAction;
 import fooba.action.admin.admin_orderList_rbAction;
@@ -161,15 +159,10 @@ public class ActionFactory {
 		else if (command.equals("admin_restaurantOk")) ac = new admin_restaurantOkAction(); // 가게관리 result 0 가입신청한 가게
 		else if (command.equals("admin_restaurantKick")) ac = new admin_restaurantKickAction(); // 가게관리 result 2 퇴출된 가게
 		else if (command.equals("admin_restaurantDetail")) ac = new admin_restaurantDetailAction(); // 상세페이지 -채이진
-		//else if (command.equals("admin_memberList")) ac = new admin_memberListAction();   //KickAction으로
-		else if (command.equals("admin_memberKick")) ac = new admin_memberKickAction(); // 회원관리 - 리스트옆에 방출버튼
+		else if (command.equals("admin_memberList")) ac = new admin_memberListAction(); // 회원관리 - 리스트옆에 방출버튼
 		else if (command.equals("admin_orderList")) ac = new admin_orderListAction();
 		else if (command.equals("admin_orderList_lb")) ac = new admin_orderList_lbAction();
 		else if (command.equals("admin_orderList_rb")) ac = new admin_orderList_rbAction();
-		//else if (command.equals("admin_orderEdit")) ac = new admin_orderEditAction(); // 주문상태 변경
-		else if(command.equals("admin_fooba_tos"))ac=new admin_fooba_tosAction();
-		else if(command.equals("admin_fooba_privacy"))ac=new admin_fooba_privacyAction();
-		// qna 액션(고객센터 - 자주묻는 질문)
 		else if (command.equals("admin_qnaList")) ac = new admin_qnaListAction(); // qna 리스트  고객이 보는모습
 		else if (command.equals("admin_qnaView")) ac = new admin_qnaViewAction(); // qna 상세 보기  고객이 보는모습
 		else if (command.equals("admin_qnaWriteForm")) ac = new admin_qnaWriteFormAction(); // 작성 폼  밑으로 admin
@@ -177,6 +170,8 @@ public class ActionFactory {
 		else if (command.equals("admin_qnaUpdateForm")) ac = new admin_qnaUpdateFormAction(); // 수정 폼
 		else if (command.equals("admin_qnaUpdate")) ac = new admin_qnaUpdateAction(); // 수정명령
 		else if (command.equals("admin_qnaDelete")) ac = new admin_qnaDeleteAction(); // 삭제
+		else if(command.equals("admin_fooba_tos"))ac=new admin_fooba_tosAction();
+		else if(command.equals("admin_fooba_privacy"))ac=new admin_fooba_privacyAction();
 		 
 		
 		return ac;

@@ -13,7 +13,7 @@ import fooba.action.Action;
 import fooba.dao.AdminDao;
 import fooba.util.Paging;
 
-public class admin_memberKickAction implements Action {
+public class admin_memberListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
