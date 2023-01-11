@@ -108,7 +108,7 @@ body {margin:0}
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
 .res_logo{height: 120px; width: 120px; position: relative; float: left;margin: 10px;}
-#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 44px;}
+#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 33px;}
 .basic{color: gray; font-weight: normal; font-size: 100%; }
 #res_tab{height: 50px; }
 .res_infotab{background-color: rgb(255,204,0); height:50px; width:347px ;position: relative; float:left ;
