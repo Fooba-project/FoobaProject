@@ -202,15 +202,16 @@ background-color: black; margin-top: 10px; float: right; margin-right:10px; }
  text-align: center; line-height: 35px; border-radius:5px; margin-right:40px; float: right; 
  cursor: pointer;}
 
-#res_orderlistitems { padding-bottom: 20px;}
+#res_orderlistitems {padding-bottom: 20px;}
 #res_menuall {width: 100%; height:500px; overflow-y:scroll;}
-.res_order_list { width:100%; position: relative; font-size: 18px; font-weight: bold; line-height: 30px; margin:20px; width: 600px;}
-#res_OrderResultButton{position:absolute; right: 10px; width:100px; height:30px; background:#d0d0d0; top:110px; cursor: pointer; font-size: 16px; border:0; border-radius:5px; text-align:center;}
-#res_OrderListStatement{position:absolute; right: 10px; width:100px; height:80px; border:0; text-align:center; line-height:80px; background:rgb(245, 236, 114); border-radius:20%; text-align: center; top:20px;  text-indent: 0px;}
+.res_order_list { width:100%; position: relative; font-size: 16px; font-weight: bold; line-height: 30px; margin:20px;  margin-top: 10px; width: 600px;}
+#res_OrderResultButton{width:100px; height:30px; background:#ff6f21; cursor: pointer; font-size: 16px; border:0; border-radius:5px; text-align:center;}
 .menuorderdetaildiv {width: 80%; background-color: #bbbbbb;border-radius: 20px; padding: 20px; overflow: hidden; margin-left: 40px; line-height: 28px;}
 #wnanssodur {position: relative;}
 #wnanssodurwpahr {width: 86px; float: left;}
 #wnanssodursodyd {width: 440px;margin-left: 86px;}
+#res_orderlistitemsall {height:55px; overflow:hidden; border-bottom:1px solid grey; cursor:pointer; padding-bottom: 20px; }
+#res_orderlistitemsall:hover {height:auto;}
 </style>
 </head>
 
