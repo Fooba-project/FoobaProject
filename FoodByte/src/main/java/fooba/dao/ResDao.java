@@ -234,11 +234,11 @@ public class ResDao {
 
 		public void updateReply(ReviewVO rvvo) {
 			con=Dbman.getConnection();
-			String sql="update reivew set reply=?,replyyn='1' where rseq=?";
+			String sql="update review set reply=?,replyyn='1' where review_seq=?";
 			try {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setString(1, rvvo.getReply());
-				pstmt.setInt(2, rvvo.getRseq());
+				pstmt.setInt(2, rvvo.getReview_seq());
 				pstmt.executeUpdate();
 			} catch (SQLException e) {	e.printStackTrace();
 			}finally {Dbman.close(con, pstmt, rs);}

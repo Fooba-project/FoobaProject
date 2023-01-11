@@ -32,9 +32,6 @@ alter table cart
 ;
 
 -- cart 변경 
-select*from cart;
-
-
 
 
 

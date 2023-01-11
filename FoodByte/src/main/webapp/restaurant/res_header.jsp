@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-
+ 
 <fmt:setLocale value="ko_KR"/>
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,8 @@ function go_order_save(oseq){
 	document.rfm.action = "fooba.do?command=res_orderComplete&oseq="+oseq;
 	document.rfm.submit();
 }
-<!-- location.href='fooba.do?command=res_orderComplete&oseq='+${ovo.oseq} -->
+
+
 </script>
 
 
@@ -174,14 +175,32 @@ text-align:center; line-height:70px; background:rgb(245, 236, 114); border-radiu
 #res_OrderResultButton{width:100px; height:30px; background:#d0d0d0; 
 cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 
-#review_table{margin-top:0;}
+/*레스토랑 리뷰확인 css*/
 
-#nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
-background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover;}
+#res_menuall_b{width: 100%; float: left; position: relative; height:700px; 
+overflow:hidden; overflow-y: scroll; background-color: rgb(250, 248, 215);}
+#res_review{ width:100%; height:560px;}
+#res_rev_info{ width:100%; height: 50px; }
+#nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; background-image:url("images/mainlogo2.png"); background-position: center; background-size: cover; margin-top: 10px; margin-left:10px; float: left; }
+#m_nick{ font-size: 110%; font-weight: bold; line-height: 50px; float: left; }
+#mrev_star{position:relative; line-height: 50px; color: orange; float: left; }
+.rev_indate{ line-height: 50px; color:#BCBCBC; font-size: 80%;}
+#mrev_conbox{width:100%; height:330px;}
+#mrev_img{ width:350px; height:200px; border-radius: 20px; }
+#mrev_con{ width:50%; height:100px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; }
+
+#sa_reviewbox{width:100%; height:160px;}
+#sarev_info{width:100%; height: 50px; }
 #nick_sa{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
 background-image:url("images/mainlogo1.png"); background-position: center; background-size: cover; 
-background-color: black;}
- 
+background-color: black; margin-top: 10px; float: right; margin-right:10px; }
+#sanick{ font-size: 110%; font-weight: bold; line-height: 50px; float: right; margin-right:10px;}
+#sa_thank{width:100%; height:150px; }
+#sa_thank_text{width:50%; height:100px; margin-left:300px; }
+#rev_buttonbox{ width:100%; height:40px;}
+#rev_button{ width:100px; height:35px; background-color: rgb(255, 255, 147);
+ text-align: center; line-height: 35px; border-radius:5px; margin-right:40px; float: right; 
+ cursor: pointer;}
 
 </style>
 </head>

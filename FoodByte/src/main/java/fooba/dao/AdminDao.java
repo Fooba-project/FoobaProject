@@ -329,6 +329,31 @@ public class AdminDao {
 		} finally {Dbman.close(con, pstmt, rs);}
 		
 	}
+
+
+	public void orderLb(int oseq) {
+		String sql="update orders set result=result-1 where oseq=?";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,oseq);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		} finally {Dbman.close(con, pstmt, rs);}
 		
 	}
-	
+
+
+	public void orderRb(int oseq) {
+		String sql="update orders set result=result+1 where oseq=?";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,oseq);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		} finally {Dbman.close(con, pstmt, rs);}
+		
+	}
+
+}	

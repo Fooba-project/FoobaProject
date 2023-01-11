@@ -20,7 +20,7 @@ public class res_reviewReplyWriteAction implements Action {
 		String url="fooba.do?command=res_review";
 		
 		HttpSession session=request.getSession();
-		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginUser");
+		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
 		
 		if(rvo==null) {
 			url="fooba.do?command=res_loginForm";
@@ -28,7 +28,9 @@ public class res_reviewReplyWriteAction implements Action {
 			ResDao rdao=ResDao.getInstance();
 			ReviewVO rvvo=new ReviewVO();
 			
-			rvvo.setRseq(Integer.parseInt(request.getParameter("rseq")));
+			System.out.println(request.getParameter("rv"));
+			
+			rvvo.setReview_seq(Integer.parseInt(request.getParameter("rv")));
 			rvvo.setReply(request.getParameter("reply"));
 			
 			rdao.updateReply(rvvo);
