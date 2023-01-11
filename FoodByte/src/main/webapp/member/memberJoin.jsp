@@ -6,29 +6,12 @@
         <div style="border-top: 2px solid #fa6146; margin-top:15px;"></div>
         <form name="member_join_send_form" id="member_join_send_form" method="post" action="fooba.do?command=memberJoin">
             <table class="member_join_table">
-            
-                <!-- <div class="join_list">
+                <div class="join_list">
                     <input type="text" class="input_text" style="width: 490px;" name="userid" placeholder="아이디" onkeyup="chkIdCode(event)"/>
                     <input type="hidden" name="userreid" value=""/>
                     <input type="button" id="id_btn" value="중복 확인" onclick="idcheck()">
-                </div> -->
-                
-                <div class="join_list">
-                    <input type="text" class="input_text" name="userid"  id="userid" placeholder="아이디(최소4글자 이상)" onkeyup="chkIdCode(event)"/>
-                    <input type="hidden" name="userreid"  value=""/>      
                 </div>
-                <p class="error_text" id="error3">
 
-                <script type="text/javascript">      
-	                <c:forEach items="${idList}" var="idList">
-	                alert(${idList});
-	                </c:forEach>
-                </script>
-                <c:if test="${idList==userid}" >
-                
-                </c:if>
-				</p>
-				
                 <div class="join_list">
                     <input type="password" class="input_text" name="userpwd" 
                     id="userpwd"
