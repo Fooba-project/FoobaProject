@@ -2,8 +2,8 @@
 <%@ include file="admin_header.jsp"%>
  
   <script type="text/javascript">
-  function go_left( oseq ){
-		document.frm.action = "fooba.do?command=admin_orderList_lb&oseq="+oseq;
+  function go_left( oseq, result ){
+		document.frm.action = "fooba.do?command=admin_orderList_lb&oseq="+oseq+"&result="+result;
 		document.frm.submit();
 	} 
   function go_right( oseq ){
@@ -51,22 +51,22 @@
          	<td style=text-align:center;>
          	<c:choose>
      			<c:when test='${OrderViewVO.result=="0"}'>
-					<input disabled type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}');">
+					<input disabled type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}', '${OrderViewVO.result }');">
 					주문확인중
 					<input type="button" value="&gt;" onclick="go_right('${OrderViewVO.oseq}');"> 
                 </c:when>
                 <c:when test='${OrderViewVO.result=="1"}'>
-						<input type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}');">
+						<input type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}', '${OrderViewVO.result }');">
 					배달중
 					<input type="button" value="&gt;" onclick="go_right('${OrderViewVO.oseq}');"> 
                 </c:when>
                 <c:when test='${OrderViewVO.result=="2"}'>
-					<input type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}');">
+					<input type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}', '${OrderViewVO.result }');">
 					배달완료
 					<input type="button" value="&gt;" onclick="go_right('${OrderViewVO.oseq}');"> 
                 </c:when>
                 <c:otherwise>
-					<input  type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}');">
+					<input  type="button" value="&lt;" onclick="go_left('${OrderViewVO.oseq}', '${OrderViewVO.result }');">
 					리뷰작성완료
 					<input disabled type="button" value="&gt;" onclick="go_right('${OrderViewVO.oseq}');"> 
                 </c:otherwise>

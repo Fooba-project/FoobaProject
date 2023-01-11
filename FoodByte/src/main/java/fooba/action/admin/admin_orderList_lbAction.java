@@ -16,7 +16,7 @@ public class admin_orderList_lbAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int oseq=Integer.parseInt(request.getParameter("oseq"));
-		
+		int result =Integer.parseInt(request.getParameter("result"));
 		HttpSession session = request.getSession();
 		String adminId=(String) session.getAttribute("loginAdmin");
 				
@@ -26,7 +26,9 @@ public class admin_orderList_lbAction implements Action {
 		}else {
 			AdminDao adao=AdminDao.getInstance();
 			adao.orderLb(oseq);
-			
+			if(result==3) {
+				adao.removeReview(oseq);
+			}
 		}
 		response.sendRedirect(url);
 	

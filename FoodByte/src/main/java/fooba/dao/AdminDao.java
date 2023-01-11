@@ -374,4 +374,18 @@ public class AdminDao {
 		
 	}
 
+
+	public int removeReview(int oseq) {
+		int re=0;
+		String sql="delete from review where oseq=?";
+		con=Dbman.getConnection();
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1,oseq);
+			re = pstmt.executeUpdate();
+		} catch (SQLException e) {e.printStackTrace();
+		} finally {Dbman.close(con, pstmt, rs);}
+		return re;
+	}
+
 }	
