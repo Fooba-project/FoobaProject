@@ -75,8 +75,11 @@
                                 </div>
                                 </c:if>    
                                 <c:if test="${ReviewVO.replyyn==1}">
-                                <div id="sa_thank" style=" margin-left:600px;">
-                                	${ReviewVO.reply}
+                                <div id="sa_thank" >
+                                	<div id="sa_thank2">
+                                		${ReviewVO.reply}
+                                	</div>
+                                	
                                 </div>
                                 </c:if>                                            
                             </div>  
