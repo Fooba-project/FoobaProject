@@ -41,25 +41,25 @@
         <div id="xxxx">
         	<div class="toggle1">
 				&nbsp;배달/포장 &nbsp;
-				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked onclick="baedal('${rtip}')">
+				<input type="radio" id="toggle1-1" name="rideryn" value="0" checked onclick="baedal('${rtip}')" class="pointer">
 				<label for="toggle1-1">배달</label>&nbsp;&nbsp;
-				<input type="radio" id="toggle1-2" name="rideryn" value="1" onclick="pojang('${rtip}');">
+				<input type="radio" id="toggle1-2" name="rideryn" value="1" onclick="pojang('${rtip}');" class="pointer">
 				<label for="toggle1-2">포장</label>
 			</div>
 		
 			<div class="toggle2">
 				&nbsp;일회용품 &nbsp;&nbsp;
-				<input type="radio" id="toggle2-1" name="plasticyn" value="1" checked>
+				<input type="radio" id="toggle2-1" name="plasticyn" value="1" checked class="pointer">
 				<label for="toggle2-1">사용</label>&nbsp;&nbsp;
-				<input type="radio" id="toggle2-2" name="plasticyn" value="0">
+				<input type="radio" id="toggle2-2" name="plasticyn" value="0" class="pointer">
 				<label for="toggle2-2">미사용</label>
 			</div>  
 		
 			<div class="toggle3">
 				&nbsp;카드/현금 &nbsp;
-				<input type="radio" id="toggle3-1" name="payment" value="0" checked>
+				<input type="radio" id="toggle3-1" name="payment" value="0" checked class="pointer">
 				<label for="toggle3-1">카드</label>&nbsp;&nbsp;
-				<input type="radio" id="toggle3-2" name="payment" value="1">
+				<input type="radio" id="toggle3-2" name="payment" value="1" class="pointer">
 				<label for="toggle3-2">현금</label>
 			</div>
 	

@@ -117,6 +117,7 @@
         border-radius: 3px;
         border: none;
         background: #f2f0f1;
+        cursor:pointer;
       }
 
       .pcount {
