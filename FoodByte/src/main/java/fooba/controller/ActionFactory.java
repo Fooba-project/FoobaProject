@@ -66,6 +66,7 @@ import fooba.action.restaurant.res_loginFormAction;
 import fooba.action.restaurant.res_logoutAction;
 import fooba.action.restaurant.res_orderAction;
 import fooba.action.restaurant.res_orderCompleteAction;
+import fooba.action.restaurant.res_qnalist_footerAction;
 import fooba.action.restaurant.res_reviewAction;
 import fooba.action.restaurant.res_reviewReplyWriteAction;
 import fooba.action.restaurant.res_showAction;
@@ -152,7 +153,7 @@ public class ActionFactory {
 		else if (command.equals("res_foodmenuDelete")) ac = new res_foodmenuDeleteAction();// 메뉴 삭제
 		else if(command.equals("res_fooba_tos"))ac=new res_fooba_tosAction();
 		else if(command.equals("res_fooba_privacy"))ac=new res_fooba_privacyAction();		
-		
+		else if (command.equals("res_qnalist_footer")) ac = new res_qnalist_footerAction();
 		
 		// admin 액션
 		else if (command.equals("admin_loginForm")) ac = new admin_loginFormAction(); // admin 로그인창 
