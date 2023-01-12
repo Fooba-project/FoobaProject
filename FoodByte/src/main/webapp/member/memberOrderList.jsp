@@ -35,10 +35,10 @@
 			                    		주문확인중
 			                    	</c:when>
 			                    	<c:when test="${ovo.result==1}">
-			                    		배송중
+			                    		배달중
 			                    	</c:when>
 			                    	<c:when test="${ovo.result==2}">
-			                    		배송완료
+			                    		배달완료
 			                    	</c:when>
 			                    	<c:when test="${ovo.result==3}">
 			                    		후기작성완료
