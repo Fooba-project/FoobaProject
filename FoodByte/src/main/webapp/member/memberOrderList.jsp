@@ -17,7 +17,7 @@
                             </div>
                             <div>${ovo.rname }</div>
                         </td>
-                        <td width="300">
+                        <td width="200">
                             <div id="memberOrderListIntime" style="text-align: left; font-size: 70%; margin: 10px;">
                                 <fmt:formatDate value="${ovo.indate }" type="date"/>
                             </div>
@@ -51,17 +51,19 @@
                         </td>
                     </tr>
                 </c:forEach>
+                
             </table>
+            <c:if test="${orderList=='ing'}">
+				<jsp:include page="paging/paging.jsp">
+					<jsp:param name="command" value="fooba.do?command=memberOrderList"/>
+				</jsp:include>
+				</c:if>
+				<c:if test="${orderList=='all'}">
+				<jsp:include page="paging/paging.jsp">
+					<jsp:param name="command" value="fooba.do?command=memberOrderAll"/>
+				</jsp:include>
+			</c:if>
         </article>
-<c:if test="${orderList=='ing'}">
-<jsp:include page="paging/paging.jsp">
-	<jsp:param name="command" value="fooba.do?command=memberOrderList"/>
-</jsp:include>
-</c:if>
-<c:if test="${orderList=='all'}">
-<jsp:include page="paging/paging.jsp">
-	<jsp:param name="command" value="fooba.do?command=memberOrderAll"/>
-</jsp:include>
-</c:if>
+
 </div>
 <%@ include file="../footer.jsp"%>
