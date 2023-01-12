@@ -36,7 +36,7 @@ function res_idcheck(){
 
 function res_post_zip(){
 	var url = "fooba.do?command=res_findZipNum";
-	var opt = "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=550, height=300, top=300, left=300";
+	var opt = "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500, top=100, left=700";
 	window.open( url, "우편번호 찾기", opt);
 }
 
@@ -154,7 +154,7 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 .error_text { font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; margin-left: 20px; font-size: 60%; padding: 0;}
 .input_text {overflow: hidden;position: relative;display: block; width: 100%;padding: 10px 13px; background: #ffffff;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;font-size: 15px;color: #616161;font-weight: 900;-webkit-transition: all .3s;transition: all .3s;border-radius: 3px;-webkit-border-radius: 3px; border: 1px solid #BCBCBC;}
 .join_list #id_btn {  position: absolute;  width: 180px;  height: 45px;  top: 0px; right: 0;  border: 0; border-radius: 3px;}
-.join_list #id_btn:hover { outline: 0px solid #9191dfab; background-color: rgb(125, 114, 245);}
+.join_list #id_btn:hover { outline: 0px solid #9191dfab; background-color:rgb(248, 225, 225);}
 #join_btn {margin-left: 200px;}
 #join_btn .join_btn {width: 150px; height: 50px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color:  rgb(255,204,0); line-height: 40px; color:#fff; border: 1px solid white; text-align: center;}
 #join_btn .join_btn:hover {background-color: white; color:  rgb(255,204,0); cursor: pointer; border:2px solid  rgb(255,204,0)}
@@ -164,7 +164,13 @@ line-height: 60px; margin:0 auto; font-family: Verdana; border: 1; border-radius
 #textarea_box{margin-left: 10px; margin-top: 10px; height: 100px; width: 100%;}
 #textarea_box textarea{height: 90px; width: 675px; opacity: 70%;}
 .res_text_boxs{margin-top: 10px;  padding-left: 10px;}
-
+#dongtext{border:0 ; border-bottom:1px solid rgb(201, 199, 199) ; height: 30px;width: 400px; outline: none; font-size: 100%; padding: 5px; line-height: 30px; padding-left:20px;}
+#eheqhrl{background-image:url("../images/eheqhrl.png");width: 40px;height: 40px; cursor: pointer; border: 0;}
+#zipcodee{margin: 0 auto;   width: 500px;}
+#zipcodee th{ border: 3px solid #fa6146;border-radius: 5px; color: black; height: 30px;}
+#zipcodee td{ border-bottom:1px solid rgb(201, 199, 199) ; border-right: 1px solid rgb(201, 199, 199); height: 30px;}
+.zipa{color: black; text-decoration: none;}
+#zipcodee td:hover{background-color: rgb(248, 225, 225); }
 /* 레스토랑 주문확인 css */
 
 #res_OrderListimg img{cursor: pointer;}
