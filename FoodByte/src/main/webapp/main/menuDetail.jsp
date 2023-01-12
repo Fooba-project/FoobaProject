@@ -24,16 +24,33 @@
         </div>
         
         <div id="tul" style="overflow-y: scroll;">
-            <div id="menudel">
-            	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
-	                <div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
-	                    <h3>${FoodmenuVO.fname }</h3>
-	                    <div class="grayyy">${FoodmenuVO.fcontent }</div><br>
-	                    <div class="menugaguk">${FoodmenuVO.fprice}원</div>
-	                    <img class="smmenu" src="images/foodmenu/${FoodmenuVO.fimage}">
-	                </div>
-                </c:forEach>
-            </div>
+        	<c:choose>
+        		<c:when test="${RestaurantVO.ryn==1}">
+        			<div id="menudel">
+            			<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
+	                		<div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
+	                    	<h3>${FoodmenuVO.fname }</h3>
+	                    	<div class="grayyy">${FoodmenuVO.fcontent }</div><br>
+	                    	<div class="menugaguk">${FoodmenuVO.fprice}원</div>
+	                    	<img class="smmenu" src="images/foodmenu/${FoodmenuVO.fimage}">
+	                		</div>
+                		</c:forEach>
+            		</div>
+        		</c:when>
+        		<c:otherwise>
+	        		<div id="menudel" disabled>
+	            	<c:forEach items="${FoodmenuList}" var="FoodmenuVO">
+		                <div id="gagemenu" onclick="menupopup(${FoodmenuVO.fseq});">
+		                    <h3>${FoodmenuVO.fname }</h3>
+		                    <div class="grayyy">${FoodmenuVO.fcontent }</div><br>
+		                    <div class="menugaguk">${FoodmenuVO.fprice}원</div>
+		                    <img class="smmenu" src="images/foodmenu/${FoodmenuVO.fimage}">
+		                </div>
+	                </c:forEach>
+	           		</div>
+        		</c:otherwise>
+        	</c:choose>
+        
 
             <div id="jengboreview"  >
                 <div id="gagejengbo">
@@ -45,6 +62,11 @@
                     <div id="gagebunho">
                         <h3>업체 정보</h3><hr>
                         <a class="grayy">사업자 번호</a>&nbsp; ${RestaurantVO.rbiznum}<br>
+                        <a class="grayy">운영 정보</a>&nbsp;
+                        	<c:if test="${RestaurantVO.ryn==0}"> 운영 준비중입니다</c:if>
+                        	<c:if test="${RestaurantVO.ryn==1}"> 운영 중입니다</c:if>
+                        	<c:if test="${RestaurantVO.ryn==2}"> 당분간 영업을 중지 합니다.</c:if>
+                        	<c:if test="${RestaurantVO.ryn==3}"> 휴업 중입니다.</c:if><br>
                         <a class="grayy">전화 번호</a>&nbsp; ${RestaurantVO.rphone}<br>
                         <a class="grayy">가게 주소</a>&nbsp; ${RestaurantVO.raddress}<br><br>
                     </div>
@@ -107,7 +129,17 @@
         	<input type="hidden" value="${RestaurantVO.rtip }" name="rtip">
 	        <input type="hidden" value="${RestaurantVO.rseq }" name="rseq"> 
 	        <input type="hidden" value="${carttotalprice }" name="carttotalprice">
-	        <input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay('${RestaurantVO.rtip }','${carttotalprice }')"> 
+	   		
+	   		<c:choose>
+	   			<c:when test="${RestaurantVO.ryn==1}">
+	   				<input type="submit" value="주문하기" class="jbwanryo" onclick="return goPay('${RestaurantVO.rtip }','${carttotalprice }')"> 	
+	   			</c:when>
+	   			<c:otherwise>
+	   				<input type="submit" value="지금은 영업중이 아닙니다" class="jbwanryo" style="background: #BCBCBC;" 
+	   				disabled="disabled;" > 		   				
+	   			</c:otherwise>
+	   		</c:choose>
+	   		
 		</form>
     </div>
   </div>  
