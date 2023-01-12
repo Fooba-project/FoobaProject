@@ -19,7 +19,7 @@
     <br> 
     <form name="frm" method="post">
         <table id="admin_searchres">
-            <tr>
+            <tr> 
                 <td style="font-size:17px; width:642;">회원 ID: <input class="keyy" type="text" name="key" value="${key}">
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_memberList' );">
