@@ -386,7 +386,7 @@ public class ResDao {
 		public ArrayList<RestaurantVO> searchKind(String kind) {
 			ArrayList<RestaurantVO>list=new ArrayList<RestaurantVO>();
 			con=Dbman.getConnection();
-			String sql="select*from restaurant where kind=?";
+			String sql="select*from restaurant where kind=? and ryn=1";
 			try {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setString(1,kind);
@@ -438,14 +438,13 @@ public class ResDao {
 			ArrayList<RestaurantVO>list=new ArrayList<>();
 		      con=Dbman.getConnection();
 		      String sql = "select rname, rseq, rimage, kind, hash from search  "
-		      		+ " where fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%'  "
+		      		+ " where ryn=1 and (fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%') "
 		      		+ "group by rname,rseq,rimage,kind,hash";
 		      try {
 		         pstmt=con.prepareStatement(sql);
-		         System.out.println(key);
 		         pstmt.setString(1, key);
 		         pstmt.setString(2, key);
-		         pstmt.setString(3, key);		       
+		         pstmt.setString(3, key);
 		         rs=pstmt.executeQuery();
 		         while(rs.next()) {
 		            RestaurantVO rvo=new RestaurantVO();		      

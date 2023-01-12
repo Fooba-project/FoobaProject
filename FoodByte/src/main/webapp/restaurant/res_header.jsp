@@ -91,13 +91,13 @@ function deletefm(fseq){
 }
 
 function update_ryn( rseq ){
-	document.frm.action = "fooba.do?command=res_restaurantOk&rseq="+rseq;
-	document.frm.submit();
+	document.frmm.action = "fooba.do?command=res_restaurantRest&rseq="+rseq;
+	document.frmm.submit();
 } 
 
 function return_ryn( rseq ){
-	document.frm.action = "fooba.do?command=res_restaurantReturn&rseq="+rseq;
-	document.frm.submit();
+	document.frmm.action = "fooba.do?command=res_restaurantReturn&rseq="+rseq;
+	document.frmm.submit();
 } 
 </script>
 

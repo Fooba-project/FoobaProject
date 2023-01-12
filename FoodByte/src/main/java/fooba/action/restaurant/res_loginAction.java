@@ -33,7 +33,6 @@ public class res_loginAction implements Action {
 			url="fooba.do?command=res_foodmenu";
 			HttpSession session=request.getSession();
 			session.setAttribute("loginRes", rvo );
-			System.out.println("로그인 성공");
 			/*가게 별점*/
 			double star=0;
 			star=rdao.starAvg(rvo.getRseq());

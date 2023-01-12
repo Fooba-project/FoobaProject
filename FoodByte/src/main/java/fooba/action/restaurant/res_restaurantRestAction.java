@@ -11,14 +11,14 @@ import fooba.VO.RestaurantVO;
 import fooba.action.Action;
 import fooba.dao.ResDao;
 
-public class res_restaurantOkAction implements Action {
+public class res_restaurantRestAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int rseq=Integer.parseInt(request.getParameter("rseq"));
 		
-		String url = "fooba.do?command=res_show";
+		String url = "fooba.do?command=res_foodmenu";
 		
 		HttpSession session = request.getSession();
 		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
@@ -27,6 +27,8 @@ public class res_restaurantOkAction implements Action {
 	      }else {
 			ResDao rdao=ResDao.getInstance();
 			rdao.restRes(rseq);
+			rvo.setRyn(3);
+			session.setAttribute("loginRes", rvo);
 			
 		}
 		request.getRequestDispatcher(url).forward(request, response);

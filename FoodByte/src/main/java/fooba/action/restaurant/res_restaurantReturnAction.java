@@ -17,7 +17,7 @@ public class res_restaurantReturnAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int rseq=Integer.parseInt(request.getParameter("rseq"));
 		
-		String url = "fooba.do?command=res_show";
+		String url = "fooba.do?command=res_foodmenu";
 		
 		HttpSession session = request.getSession();
 		RestaurantVO rvo = (RestaurantVO) session.getAttribute("loginRes");
@@ -26,6 +26,8 @@ public class res_restaurantReturnAction implements Action {
 	      }else {
 			ResDao rdao=ResDao.getInstance();
 			rdao.returnRes(rseq);
+			rvo.setRyn(1);
+			session.setAttribute("loginRes", rvo);
 			
 		}
 		request.getRequestDispatcher(url).forward(request, response);

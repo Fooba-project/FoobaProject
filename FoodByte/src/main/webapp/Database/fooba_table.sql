@@ -132,7 +132,7 @@ CREATE TABLE restaurant
 	PRIMARY KEY (rseq)
 );
 
-update reivew set reply=?,replyyn='1' where review_seq=?
+
 CREATE TABLE review
 (
 	review_seq number(5) NOT NULL,
@@ -227,10 +227,10 @@ where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
    ---------
 
 --추가
-
+select * from search
  create or replace view search
    as
-   select a.rseq, a.rname, a.hash, a.rimage, a.kind,
+   select a.rseq, a.rname, a.hash, a.rimage, a.kind, a.ryn,
       b.fname, b.fimage
    from restaurant a, foodmenu b
    where a.rseq=b.rseq;

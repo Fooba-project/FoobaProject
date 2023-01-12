@@ -69,7 +69,7 @@ import fooba.action.restaurant.res_orderAction;
 import fooba.action.restaurant.res_orderAllAction;
 import fooba.action.restaurant.res_orderCompleteAction;
 import fooba.action.restaurant.res_qnalist_footerAction;
-import fooba.action.restaurant.res_restaurantOkAction;
+import fooba.action.restaurant.res_restaurantRestAction;
 import fooba.action.restaurant.res_restaurantReturnAction;
 import fooba.action.restaurant.res_reviewAction;
 import fooba.action.restaurant.res_reviewReplyWriteAction;
@@ -151,7 +151,7 @@ public class ActionFactory {
 		else if(command.equals("res_fooba_tos"))ac=new res_fooba_tosAction();
 		else if(command.equals("res_fooba_privacy"))ac=new res_fooba_privacyAction();		
 		else if (command.equals("res_qnalist_footer")) ac = new res_qnalist_footerAction();
-		else if(command.equals("res_restaurantOk"))ac = new res_restaurantOkAction();	//휴업으로 변경
+		else if(command.equals("res_restaurantRest"))ac = new res_restaurantRestAction();	//휴업으로 변경
 		else if(command.equals("res_restaurantReturn"))ac=new res_restaurantReturnAction();//영업으로 변경
 		// admin 액션
 		else if (command.equals("admin_loginForm")) ac = new admin_loginFormAction(); // admin 로그인창 
