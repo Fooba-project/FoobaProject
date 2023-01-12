@@ -27,20 +27,7 @@ public class res_reviewAction implements Action {
 			url="fooba.do?command=res_loginForm";
 		}else {
 			ResDao rdao=ResDao.getInstance();
-			int page=1;			
-			if(request.getParameter("page")!=null) { 
-				page=Integer.parseInt(request.getParameter("page"));
-				session.setAttribute("page", page);
-			}else if(session.getAttribute("page")!=null) { 
-				page=(Integer)session.getAttribute("page");
-			}else { 
-				session.removeAttribute("page");
-			}
 			
-			Paging paging = new Paging();
-			paging.setPage(page); 
-			int count = rdao.getAllCount(rvo.getRseq());
-			paging.setTotalCount(count); 
 				
 			
 			int key=Integer.parseInt(request.getParameter("key"));
@@ -48,7 +35,6 @@ public class res_reviewAction implements Action {
 			
 	  		request.setAttribute("RestaurantVO", rvo);
 			request.setAttribute("ReviewList",list);
-			request.setAttribute("paging", paging);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 		

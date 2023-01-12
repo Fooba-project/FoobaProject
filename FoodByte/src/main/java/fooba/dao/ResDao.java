@@ -223,6 +223,10 @@ public class ResDao {
 					rvo.setReplyyn(rs.getInt("replyyn"));
 					list.add(rvo);
 				}
+				
+				sql="select * from "
+				
+				
 			} catch (SQLException e) {	e.printStackTrace();
 			}finally {Dbman.close(con, pstmt, rs);}
 			return list;

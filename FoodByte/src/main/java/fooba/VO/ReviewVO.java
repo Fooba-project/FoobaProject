@@ -15,6 +15,7 @@ public class ReviewVO {
    private String reply;
    private int replyyn;
    private String nick;
+   private String fname;
    
    
    public String getNick() {
@@ -83,6 +84,12 @@ public String getImage() {
 }
 public void setImage(String image) {
 	this.image = image;
+}
+public String getFname() {
+	return fname;
+}
+public void setFname(String fname) {
+	this.fname = fname;
 }
    
    
