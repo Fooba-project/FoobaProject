@@ -143,13 +143,16 @@
       }
       #sumprice{
         line-height: 50px;
+        border:none;
+        outline:none;
       }
       #sumwon{
         line-height: 55px;
+        border:none;
       }
 
       .pwon {
-        border: 1px solid white;
+        border:none;
         font-weight: bold;
         position: absolute;
         right: 0px;
