@@ -55,7 +55,11 @@ function go_order_save(oseq){
 	document.rfm.submit();
 }
 
-
+function deletefm(fseq){
+	var ok=confirm("메뉴를 삭제하시겠습니까?");
+	if(ok)location.href="fooba.do?command=res_foodmenuDelete&fseq="+fseq;
+	else return;
+}
 </script>
 
 

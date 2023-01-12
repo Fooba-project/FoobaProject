@@ -341,11 +341,11 @@ public class ResDao {
 
 		public void deleteFoodMenu(int fseq) {
 		         con=Dbman.getConnection();
-		         String sql="delete from foodmenu fseq=?";
+		         String sql="delete from foodmenu where fseq=?";
 		         try {
 		            pstmt=con.prepareStatement(sql);
 		            pstmt.setInt(1, fseq);
-		            pstmt.executeUpdate();
+					pstmt.executeUpdate();
 		         } catch (SQLException e) {   e.printStackTrace();
 		         }finally {Dbman.close(con, pstmt, rs);}
 			

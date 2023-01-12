@@ -22,7 +22,8 @@ public class res_foodmenuDeleteAction implements Action {
 	      if(rvo==null) {
 	         url="fooba.do?command=res_loginForm";
 	      }else {
-	         int fseq=(Integer.parseInt(request.getParameter("fseq")));	         
+	         int fseq=(Integer.parseInt(request.getParameter("fseq")));	  
+	         System.out.println(request.getParameter("fseq"));
 	         ResDao rdao=ResDao.getInstance();
 	         rdao.deleteFoodMenu(fseq);
 	      }
