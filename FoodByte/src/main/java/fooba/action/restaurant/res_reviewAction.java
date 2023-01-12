@@ -41,8 +41,7 @@ public class res_reviewAction implements Action {
 			paging.setPage(page); 
 			int count = rdao.getAllCount(rvo.getRseq());
 			paging.setTotalCount(count); 
-			
-	
+				
 			
 			int key=Integer.parseInt(request.getParameter("key"));
 			ArrayList<ReviewVO>list=rdao.selectReview(rvo.getRseq(),key); 
