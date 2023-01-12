@@ -33,10 +33,10 @@
 	                        	 value="${RestaurantVO.rphone}"/><br><hr>
 	                        <a class="basic">운영 정보</a>&nbsp;	                        	
 	                        		<c:if test="${RestaurantVO.ryn==1}">
-	                        			<input type="button" value="휴업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');">
+	                        			<input type="button" value="휴업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');" style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181);">
 	                        		</c:if>
 	                        		<c:if test="${RestaurantVO.ryn==3}">
-	                        			<input type="button" value="영업" name="ryn" onClick="return_ryn('${RestaurantVO.rseq}');">
+	                        			<input type="button" value="영업" name="ryn" onClick="return_ryn('${RestaurantVO.rseq}');"  style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181);">
 	                        		</c:if><br><hr>
 	                        <a class="basic">가게 주소</a>&nbsp; 
 	                        	<input type="text" name="raddress" style="border-radius:5px; width:310px; height:20px;"
@@ -55,7 +55,7 @@
 	                        	value="${RestaurantVO.hash}"/><br><hr>
 	                        <a class="basic">가게로고</a>&nbsp; 
 	                        		<img src="images/title/${RestaurantVO.rimage}" width="100px"><br>            
-                                <input type="file" name="fimage" /><br><hr>
+                                <input type="file" name="fimage"/><br><hr>
 	                        	
 	                    </div><br>
 	                    <input type="submit" value="수정 완료" class="res_infotab"  style="width:700px;">

@@ -201,62 +201,62 @@ public class ResDao {
 
 
 	
-		public ArrayList<ReviewVO> selectReview(int rseq ,int a) {
-			ArrayList<ReviewVO> list=new ArrayList<>();
-			String sql="select*from review where rseq=? and replyyn<? order by review_seq desc";
-			con=Dbman.getConnection();
-			try {
-				pstmt=con.prepareStatement(sql);
-				pstmt.setInt(1, rseq);
-				pstmt.setInt(2,a);
-				rs=pstmt.executeQuery();
-				while(rs.next()) {
-					ReviewVO rvo=new ReviewVO();
-					rvo.setReview_seq(rs.getInt("review_seq"));
-					rvo.setId(rs.getString("id"));
-					rvo.setRseq(rs.getInt("rseq"));
-					rvo.setIndate(rs.getTimestamp("indate"));
-					rvo.setStar(rs.getInt("star"));
-					rvo.setImage(rs.getString("image"));
-					rvo.setContent(rs.getString("content"));
-					rvo.setOseq(rs.getInt("Oseq"));
-					rvo.setReply(rs.getString("reply"));
-					rvo.setReplyyn(rs.getInt("replyyn"));
-					list.add(rvo);
-				}
-				
-				sql="select * from order_detail where oseq=?";
-				for(ReviewVO rvo : list) {
-					pstmt=con.prepareStatement(sql);
-					pstmt.setInt(1, rvo.getOseq());
-					rs=pstmt.executeQuery();
-					String x="";
-					while(rs.next()) {
-						x=x+","+rs.getInt("fseq");
-					}
-					x=x.substring(1);
-					
-					String z="";
-					String[] array = x.split(",");
-					for(int i=0; i<array.length; i++) {
-						System.out.println(array[i]);
-						String sql2="select*from foodmenu where fseq=?";
-						pstmt=con.prepareStatement(sql2);
-						pstmt.setString(1,array[i]);
-						rs=pstmt.executeQuery();
-						if(rs.next()) z=z+", "+rs.getString("fname");
-					}
-					z=z.substring(2);
-					rvo.setFnames(z);
-					
-				}
-				
-				
-				
-			} catch (SQLException e) {	e.printStackTrace();
-			}finally {Dbman.close(con, pstmt, rs);}
-			return list;
-		}
+	   public ArrayList<ReviewVO> selectReview(int rseq ,int a) {
+	         ArrayList<ReviewVO> list=new ArrayList<>();
+	         String sql="select*from review where rseq=? and replyyn<? order by review_seq desc";
+	         con=Dbman.getConnection();
+	         try {
+	            pstmt=con.prepareStatement(sql);
+	            pstmt.setInt(1, rseq);
+	            pstmt.setInt(2,a);
+	            rs=pstmt.executeQuery();
+	            while(rs.next()) {
+	               ReviewVO rvo=new ReviewVO();
+	               rvo.setReview_seq(rs.getInt("review_seq"));
+	               rvo.setId(rs.getString("id"));
+	               rvo.setRseq(rs.getInt("rseq"));
+	               rvo.setIndate(rs.getTimestamp("indate"));
+	               rvo.setStar(rs.getInt("star"));
+	               rvo.setImage(rs.getString("image"));
+	               rvo.setContent(rs.getString("content"));
+	               rvo.setOseq(rs.getInt("Oseq"));
+	               rvo.setReply(rs.getString("reply"));
+	               rvo.setReplyyn(rs.getInt("replyyn"));
+	               list.add(rvo);
+	            }
+	            
+	            sql="select * from order_detail where oseq=?";
+	            for(ReviewVO rvo : list) {
+	               pstmt=con.prepareStatement(sql);
+	               pstmt.setInt(1, rvo.getOseq());
+	               rs=pstmt.executeQuery();
+	               String x="";
+	               while(rs.next()) {
+	                  x=x+","+rs.getInt("fseq");
+	               }
+	               x=x.substring(1);
+	               
+	               String z="";
+	               String[] array = x.split(",");
+	               for(int i=0; i<array.length; i++) {
+	                  System.out.println(array[i]);
+	                  String sql2="select*from foodmenu where fseq=?";
+	                  pstmt=con.prepareStatement(sql2);
+	                  pstmt.setString(1,array[i]);
+	                  rs=pstmt.executeQuery();
+	                  if(rs.next()) z=z+", "+rs.getString("fname");
+	               }
+	               z=z.substring(2);
+	               rvo.setFnames(z);
+	               
+	            }
+	            
+	            
+	            
+	         } catch (SQLException e) {   e.printStackTrace();
+	         }finally {Dbman.close(con, pstmt, rs);}
+	         return list;
+	      }
 
 
 		public void updateReply(ReviewVO rvvo) {
@@ -577,6 +577,32 @@ public class ResDao {
 			}finally {Dbman.close(con, pstmt, rs);}
 			if(num!=0)star=(double)starr/num;
 			return star;
+		}
+
+
+		public void restRes(int rseq) {
+			String sql="update restaurant set ryn=3 where rseq=?";
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,rseq);
+				pstmt.executeUpdate();
+			} catch (SQLException e) {e.printStackTrace();
+			} finally {Dbman.close(con, pstmt, rs);}
+			
+		}
+
+
+		public void returnRes(int rseq) {
+			String sql="update restaurant set ryn=1 where rseq=?";
+			con=Dbman.getConnection();
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,rseq);
+				pstmt.executeUpdate();
+			} catch (SQLException e) {e.printStackTrace();
+			} finally {Dbman.close(con, pstmt, rs);}
+			
 		}
 }
  

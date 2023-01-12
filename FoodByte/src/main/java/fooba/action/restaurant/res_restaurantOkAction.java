@@ -26,7 +26,7 @@ public class res_restaurantOkAction implements Action {
 	    	  url = "fooba.do?command=res_loginForm";
 	      }else {
 			ResDao rdao=ResDao.getInstance();
-			rdao.acceptRes(rseq);
+			rdao.restRes(rseq);
 			
 		}
 		request.getRequestDispatcher(url).forward(request, response);
