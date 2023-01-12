@@ -107,7 +107,8 @@ public class ResDao {
 				rvo.setRseq(rs.getInt("rseq"));
 				rvo.setRbiznum(rs.getString("rbiznum"));
 				rvo.setKind(rs.getInt("kind"));
-				rvo.setRtip(rs.getInt("rtip"));				
+				rvo.setRtip(rs.getInt("rtip"));	
+				rvo.setRyn(rs.getInt("ryn"));
 			}
 			
 		} catch (SQLException e) {e.printStackTrace();

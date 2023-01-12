@@ -33,6 +33,7 @@ public class res_showAction implements Action {
 	  		
 	  		request.setAttribute("RestaurantVO", rvo);
 	  		
+	  		
 	  		// request.setAttribute("ReviewList",reviewList);
     	  
 	      }
