@@ -15,7 +15,7 @@ public class ReviewVO {
    private String reply;
    private int replyyn;
    private String nick;
-   private String fname;
+   private String fnames;
    
    
    public String getNick() {
@@ -85,11 +85,11 @@ public String getImage() {
 public void setImage(String image) {
 	this.image = image;
 }
-public String getFname() {
-	return fname;
+public String getFnames() {
+	return fnames;
 }
-public void setFname(String fname) {
-	this.fname = fname;
+public void setFnames(String fnames) {
+	this.fnames = fnames;
 }
    
    

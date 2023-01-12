@@ -35,7 +35,7 @@
                                 	<fmt:formatDate value="${ReviewVO.indate}" type="date" pattern="MM-dd" />
                                 </div>
                             </div>
-                            감자튀김
+                            ${ReviewVO.fnames}
                             <div id="mrev_conbox" >
                             	<c:if test="${ReviewVO.image!=null }">	
 	                                	<img id="mrev_img" src="images/review/${ReviewVO.image}" >                               
