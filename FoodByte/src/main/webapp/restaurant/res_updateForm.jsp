@@ -59,5 +59,4 @@
             </div>            
         </div>
         
-
 <%@ include file="/restaurant/res_footer.jsp"%>

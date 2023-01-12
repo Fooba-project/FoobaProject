@@ -10,8 +10,7 @@
         </div>
 
 			<div id="res_menuall" style="overflow-x:hidden;">
-           		 <div id="info_rev">
-            	
+           		 <div id="info_rev">           	
 	       	    	<div id="rest_info">
                 
                     <div id="res_cont">
