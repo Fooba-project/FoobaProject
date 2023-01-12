@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-
+<style type=text/css>
+.gumaeinput_text{opacity:70%;}
+</style>
 <form name="member_join_send_form" id="member_join_send_form" method="post" >
 <input type="hidden" value="order" name="command">
 <input type="hidden" value="${rseq }" name="rseq">
@@ -27,11 +29,11 @@
     
                 </div>
                 <div id="juso2">
-                    <input type="text" class="gumaeinput_text" style="width: 490px;" name="userzip_num" placeholder="우편번호" readonly/>
+                    <input type="text" class="gumaeinput_text" style="width: 490px;" name="userzip_num" placeholder="우편번호 : ${mvo.zip_num}" readonly/>
                     <input type="button" id="oopyon" value="우편번호 검색" onclick="post_zip()"> 
-                    <input type="text" class="gumaeinput_text" name="useraddress1" placeholder="주소" readonly/>
-                    <input type="text" class="gumaeinput_text" name="useraddress2" placeholder="상세 주소"/>
-                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호" onkeyup="chkPhoneCode(event)"/>
+                    <input type="text" class="gumaeinput_text" name="useraddress1" placeholder="주소 : ${mvo.address1 }" readonly/>
+                    <input type="text" class="gumaeinput_text" name="useraddress2" placeholder="상세 주소 : ${mvo.address2 }"/>
+                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호 : ${mvo.phone }" onkeyup="chkPhoneCode(event)"/>
 
                 </div>    
             </div>
