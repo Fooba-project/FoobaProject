@@ -27,7 +27,7 @@
     		</c:when>
     		<c:otherwise>
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=logout'">
-	    		<input type="button" value="마이페이지" class="headbutton" onclick="location.href='fooba.do?command=memberOrderList'">
+	    		<input type="button" value="마이페이지" class="headbutton" onclick="location.href='fooba.do?command=memberOrderList&&page=1'">
     		</c:otherwise>
     	</c:choose>
     </div>
