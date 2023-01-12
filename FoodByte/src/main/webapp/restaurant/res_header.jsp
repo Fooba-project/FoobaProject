@@ -94,6 +94,11 @@ function update_ryn( rseq ){
 	document.frm.action = "fooba.do?command=res_restaurantOk&rseq="+rseq;
 	document.frm.submit();
 } 
+
+function return_ryn( rseq ){
+	document.frm.action = "fooba.do?command=res_restaurantReturn&rseq="+rseq;
+	document.frm.submit();
+} 
 </script>
 
 

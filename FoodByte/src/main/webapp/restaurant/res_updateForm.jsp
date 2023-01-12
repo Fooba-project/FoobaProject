@@ -36,7 +36,7 @@
 	                        			<input type="button" value="휴업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');">
 	                        		</c:if>
 	                        		<c:if test="${RestaurantVO.ryn==3}">
-	                        			<input type="button" value="영업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');">
+	                        			<input type="button" value="영업" name="ryn" onClick="return_ryn('${RestaurantVO.rseq}');">
 	                        		</c:if><br><hr>
 	                        <a class="basic">가게 주소</a>&nbsp; 
 	                        	<input type="text" name="raddress" style="border-radius:5px; width:310px; height:20px;"
