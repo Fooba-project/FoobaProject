@@ -35,13 +35,13 @@
                                 	<fmt:formatDate value="${ReviewVO.indate}" type="date" pattern="MM-dd" />
                                 </div>
                             </div>
-                            ${ReviewVO.fnames}
+                            <a style="color:gray; font-size:90%">&nbsp;&nbsp;&nbsp;&nbsp;${ReviewVO.fnames}</a>
                             <div id="mrev_conbox" >
                             	<c:if test="${ReviewVO.image!=null }">	
 	                                	<img id="mrev_img" src="images/review/${ReviewVO.image}" >                               
 	                                  
                                 </c:if>
-                                <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
+                                <div id="mrev_con" style="background:white;" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
                             <!-- if문을 이용한 사장님 답글 -->
                             
@@ -77,7 +77,7 @@
                                 </c:if>    
                                 <c:if test="${ReviewVO.replyyn==1}">
                                 <div id="sa_thank" >
-                                	<div id="sa_thank2">
+                                	<div id="sa_thank2"  style="background:white;">
                                 		${ReviewVO.reply}
                                 	</div>
                                 	

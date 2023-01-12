@@ -234,10 +234,8 @@ public class ResDao {
 					while(rs.next()) {
 						x=x+","+rs.getInt("fseq");
 					}
-					//System.out.println("x=="+x);
 					x=x.substring(1);
 					
-					System.out.println(x);
 					String z="";
 					String[] array = x.split(",");
 					for(int i=0; i<array.length; i++) {
@@ -246,24 +244,10 @@ public class ResDao {
 						pstmt=con.prepareStatement(sql2);
 						pstmt.setString(1,array[i]);
 						rs=pstmt.executeQuery();
-						if(rs.next()) z=z+","+rs.getString("fname");
+						if(rs.next()) z=z+", "+rs.getString("fname");
 					}
-					System.out.println(z);
-					/*
-					String z="";
-					sql="select*from foodmenu where fseq=?";
-					
-					for(int i=0; i<array.length; i++) {
-						pstmt=con.prepareStatement(sql);
-						System.out.println(" , array[i]"+array[i]);
-						pstmt.setInt(1,Integer.parseInt(array[i]));
-						rs=pstmt.executeQuery();
-						if(rs.next())  z=z+","+rs.getString("fname");
-						
-					}
-					
-					*/
-					rvo.setFnames(x);
+					z=z.substring(2);
+					rvo.setFnames(z);
 					
 				}
 				
