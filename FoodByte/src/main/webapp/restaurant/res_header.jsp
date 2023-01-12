@@ -41,8 +41,37 @@ function res_post_zip(){
 }
 
 function menu_insert(){	
+	if(document.food_menu.fname.value.length==0){
+		alert("메뉴 이름을 입력하세요");
+		document.food_menu.fname.focus();
+	}else if(document.food_menu.fprice.value.length==0){
+		alert("메뉴 가격을 입력하세요");
+		document.food_menu.fprice.focus();
+	}else if(document.food_menu.fimage.value.length==0){
+		alert("메뉴 사진을 넣어주세요");
+		document.food_menu.fimage.focus();
+	}else if(document.food_menu.fside1.value.length==0){
+		alert("사이드 메뉴 1을 입력하세요");
+		document.food_menu.fside1.focus();
+	}else if(document.food_menu.fsideprice1.value.length==0){
+		alert("사이드 메뉴 1의 가격을 입력하세요");
+		document.food_menu.fsideprice1.focus();
+	}else if(document.food_menu.fside2.value.length==0){
+		alert("사이드 메뉴 2를 입력하세요");
+		document.food_menu.fside2.focus();
+	}else if(document.food_menu.fsideprice2.value.length==0){
+		alert("사이드 메뉴 2의 가격을 입력하세요");
+		document.food_menu.fsideprice2.focus();
+	}else if(document.food_menu.fside3.value.length==0){
+		alert("사이드 메뉴 3을 입력하세요");
+		document.food_menu.fside3.focus();
+	}else if(document.food_menu.fsideprice3.value.length==0){
+		alert("사이드 메뉴 3의 가격을 입력하세요");
+		document.food_menu.fsideprice3.focus();
+	}else{
 	document.food_menu.action="fooba.do?command=res_foodmenuAdd";
-	document.food_menu.submit();	
+	document.food_menu.submit();
+	}
 }
 
 function menu_update(){
