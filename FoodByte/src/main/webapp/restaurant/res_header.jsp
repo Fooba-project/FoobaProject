@@ -232,7 +232,7 @@ background-color: black; margin-top: 10px; float: right; margin-right:10px; }
     	<c:choose>
     		<c:when test="${empty loginRes}">
 	    		<input type="button" value="가입신청" class="headbutton" name="userLogin" onclick="location.href='fooba.do?command=res_joinForm'">
-	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=index'">
+	    		<input type="button" value="Home" class="headbutton" name="userJoin" onclick="location.href='fooba.do?command=res_loginForm'">
     		</c:when>
     		<c:otherwise>
     			<input type="button" value="로그아웃" class="headbutton" onclick="location.href='fooba.do?command=res_logout&page=1&search=&key='">
