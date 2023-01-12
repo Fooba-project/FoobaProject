@@ -42,10 +42,10 @@ public class res_foodmenuAddAction implements Action {
            fvo.setFcontent(multi.getParameter("fcontent"));
            fvo.setFside1(multi.getParameter("fside1"));
            fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice1")));
-           fvo.setFside1(multi.getParameter("fside2"));
-           fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice2")));
-           fvo.setFside1(multi.getParameter("fside3"));
-           fvo.setFsideprice1(Integer.parseInt(multi.getParameter("fsideprice3")));
+           fvo.setFside2(multi.getParameter("fside2"));
+           fvo.setFsideprice2(Integer.parseInt(multi.getParameter("fsideprice2")));
+           fvo.setFside3(multi.getParameter("fside3"));
+           fvo.setFsideprice3(Integer.parseInt(multi.getParameter("fsideprice3")));
            fvo.setFimage(multi.getFilesystemName("fimage"));
            
            ResDao rdao=ResDao.getInstance();

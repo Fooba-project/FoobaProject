@@ -218,7 +218,7 @@ cursor: pointer; font-size: 16px; border:0; border-radius:5px; align:center;}
 
 #res_menuall_b{width: 100%; float: left; position: relative; height:700px; 
 overflow:hidden; overflow-y: scroll; background-color: rgb(250, 248, 215);}
-#res_review{ width:100%; height:560px;}
+#res_review{ width:100%; height:400px; position:relative;}
 #res_rev_info{ width:100%; height: 50px; }
 #nick_img{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
 background-image:url("images/mainlogo2.png"); background-position: center; 
@@ -226,19 +226,20 @@ background-size: cover; margin-top: 10px; margin-left:10px; float: left; }
 #m_nick{ font-size: 110%; font-weight: bold; line-height: 50px; float: left; }
 #mrev_star{position:relative; line-height: 50px; color: orange; float: left; }
 .rev_indate{ line-height: 50px; color:#BCBCBC; font-size: 80%;}
-#mrev_conbox{width:100%; height:330px;}
-#mrev_img{ width:350px; height:200px; border-radius: 20px; }
-#mrev_con{ width:50%; height:100px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; }
+#mrev_conbox{width:680px; height:330px;}
+#mrev_img{  height:200px; border-radius: 20px; position:absolute; top:10px; right:10px; }
+#mrev_con{ width:50%; height:150px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border:1px solid gray; word-break:break-all; margin-left:20px;}
 
-#sa_reviewbox{width:100%; height:160px;}
+#sa_reviewbox{width:680px; height:170px;  bottom: 0px;position: absolute;}
+
 #sarev_info{width:100%; height: 50px; }
 #nick_sa{ width:30px; height: 30px; border: 1px solid black; border-radius:50px ; 
 background-image:url("images/mainlogo1.png"); background-position: center; background-size: cover; 
 background-color: black; margin-top: 10px; float: right; margin-right:10px; }
 #sanick{ font-size: 110%; font-weight: bold; line-height: 50px; float: right; margin-right:10px;}
 #sa_thank{width:680px; height:150px;}
-#sa_thank2{width:300px; height:100px; border-radius:10px; text-align: center; line-height: 100px; float: right;}
-.sa_thank_text{width:50%; height:100px; margin-left:300px; resize:none; }
+#sa_thank2{width:300px; height:100px; border-radius:10px;  float: right; text-align:left; word-break:break-all; border:1px solid gray;margin-right:20px;}
+.sa_thank_text{width:50%; height:100px; margin-left:320px; resize:none; }
 #rev_buttonbox{ width:100%; height:40px;}
 #rev_button{ width:100px; height:35px; background-color: rgb(255, 255, 147);
  text-align: center; line-height: 35px; border-radius:5px; margin-right:40px; float: right; 

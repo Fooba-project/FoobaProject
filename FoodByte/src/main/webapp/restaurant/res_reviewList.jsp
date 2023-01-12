@@ -12,7 +12,7 @@
             </div>
 		
             <div id="res_menuall_a" style="background-color: rgb(250, 248, 215);">
-                <div id="res_menuinfo" >
+                
                 
                     <c:forEach items="${ReviewList}" var="ReviewVO">
                     <form action="fooba.do" method="post" name="frm">
@@ -35,11 +35,11 @@
                                 	<fmt:formatDate value="${ReviewVO.indate}" type="date" pattern="MM-dd" />
                                 </div>
                             </div>
+                            감자튀김
                             <div id="mrev_conbox" >
                             	<c:if test="${ReviewVO.image!=null }">	
-	                                <div id="mrev_img" style="border-radius: 20px;">
-	                                	<img src="images/review/${ReviewVO.image}" style="width:350px; height:200px;">                               
-	                                </div>    
+	                                	<img id="mrev_img" src="images/review/${ReviewVO.image}" >                               
+	                                  
                                 </c:if>
                                 <div id="mrev_con" >&nbsp;&nbsp;&nbsp; ${ReviewVO.content}</div>   
                             </div>
@@ -47,8 +47,9 @@
                             
                             <div id="sa_reviewbox" >
                                 <div id="sarev_info" >
-                                <div id="nick_sa" ></div>
-                                <div id="sanick" >&nbsp;&nbsp;사장님</div>                               
+                                	<div id="nick_sa" ></div>
+                                	<div id="sanick" >&nbsp;&nbsp;사장님</div>    
+                                	                  
                                 </div>
                                 <c:if test="${ReviewVO.replyyn==0}">
                                  <div id="sa_thank">  
@@ -64,7 +65,7 @@
                                         	                                        
                                         }
                                         </script>                            
-                                    <textarea class="sa_thank_text" name="reply" rows="5" cols="50" id="${ReviewVO.review_seq }"></textarea><br>
+                                    <textarea class="sa_thank_text" name="reply" rows="5" cols="50" id="${ReviewVO.review_seq }"  maxlength="100" ></textarea><br>
                                     <input type="hidden" value="${ReviewVO.review_seq }" name="rv">
                                     <input type="hidden" value="${key }" name="key">
                                     <div id="rev_buttonbox" >
@@ -87,7 +88,7 @@
                         </form>
                     </c:forEach>
                                        
-            	</div>
+            	
         	</div>
         
 </div>
