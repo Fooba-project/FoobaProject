@@ -16,7 +16,7 @@
 </script>
 <article>
     <h2 class="admin_list">회원 리스트</h2>   
-    <br> 
+    <br>  
     <form name="frm" method="post">
         <table id="admin_searchres">
             <tr> 
