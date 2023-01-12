@@ -227,7 +227,7 @@ where a.oseq=b.oseq and a.id = c.id and b.fseq=d.fseq and d.rseq=e.rseq;
    ---------
 
 --추가
-select * from search
+
  create or replace view search
    as
    select a.rseq, a.rname, a.hash, a.rimage, a.kind, a.ryn,
