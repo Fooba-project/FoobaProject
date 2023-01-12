@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fooba.VO.FoodmenuVO;
 import fooba.VO.RestaurantVO;
 import fooba.action.Action;
-import fooba.dao.FoodDao;
+import fooba.dao.MemberDao;
 import fooba.dao.ResDao;
 
 public class categoryAction implements Action {
@@ -22,14 +21,15 @@ public class categoryAction implements Action {
 		String url="main/resList.jsp";
 		HttpSession session=request.getSession();
 		String kind= request.getParameter("kind");
-		
+	
 		ResDao rdao=ResDao.getInstance();
-		ArrayList<RestaurantVO>kindList=rdao.searchKind(kind);
+		MemberDao mdao = MemberDao.getInstance();
+		ArrayList<RestaurantVO>kindList=mdao.searchKind(kind);
 		
 		for (RestaurantVO rvo : kindList) {
 			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );
 		}
-				
+		
 		request.setAttribute("RList", kindList);
 		request.getRequestDispatcher(url).forward(request, response);
 
