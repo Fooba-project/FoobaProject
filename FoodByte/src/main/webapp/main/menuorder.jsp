@@ -33,7 +33,7 @@
                     <input type="button" id="oopyon" value="우편번호 검색" onclick="post_zip()"> 
                     <input type="text" class="gumaeinput_text" name="useraddress1" placeholder="주소 : ${mvo.address1 }" readonly/>
                     <input type="text" class="gumaeinput_text" name="useraddress2" placeholder="상세 주소 : ${mvo.address2 }"/>
-                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호 : ${mvo.phone }" onkeyup="chkPhoneCode(event)"/>
+                    <input type="text" class="gumaeinput_text" name="phone" placeholder="전화번호 : ${mvo.phone }" onkeyup="chkPhoneCode(event)" maxlength="13" />
 
                 </div>    
             </div>
