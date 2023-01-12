@@ -212,7 +212,7 @@ public class MemberDao {
 	public ArrayList<RestaurantVO> searchKind(String kind) {
 		ArrayList<RestaurantVO>list=new ArrayList<RestaurantVO>();
 		con=Dbman.getConnection();
-		String sql="select*from restaurant where kind=? and ryn=1";
+		String sql="select*from restaurant where kind=? and ryn in(1,3)"; 
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,kind);
