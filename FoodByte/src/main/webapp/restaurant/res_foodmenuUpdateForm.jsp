@@ -30,8 +30,7 @@
                             
                             <h3>메뉴 소개</h3>
                             <div id="food_text">
-                            	<textarea name="fcontent" rows="5" cols="50" style="border-radius:10px;"
-                            	>${FoodmenuVO.fcontent}</textarea>
+                            	<textarea name="fcontent" rows="5" cols="50" style="border-radius:2px; resize:none" >${FoodmenuVO.fcontent}</textarea>
                                 
                             </div><hr>
 	                    			  
