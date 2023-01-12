@@ -13,17 +13,15 @@
                         <div class="res_order_list">
 			                <div>
 			                    주문번호 : ${ovo.oseq}
-			                    &nbsp;&nbsp;&nbsp;&nbsp;
+			                    &nbsp;&nbsp;
 			                    주문일시 : <fmt:formatDate value="${ovo.indate}" type="date" pattern="yyyy-MM-dd (a)hh:mm:ss" />
-			                    &nbsp;&nbsp;&nbsp;&nbsp;
+			                    &nbsp;&nbsp;
 			                    주문상태 : 
 			                    <c:if test="${ovo.result==0 }">
-			                    주문확인중 <input id="res_OrderResultButton" type="button" value="다음으로" 
-			                    onclick="go_order_save(${ovo.oseq})"/>
+			                    주문확인중 
 			                    </c:if>
 			                    <c:if test="${ovo.result==1 }">
-			                    배달중 <input id="res_OrderResultButton" type="button" value="다음으로" 
-			                    onclick="go_order_save(${ovo.oseq})"/>
+			                    배달중
 			                    </c:if>
 			                    <c:if test="${ovo.result==2 }">
 			                    배달완료
