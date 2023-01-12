@@ -5,7 +5,7 @@
 	
  	
 	<div id="realjenche">
-        <div id="jenche">
+        <div id="jenche"> 
         <div id="gageirm">${RestaurantVO.rname}</div>
         <div id="gagemain">
            		<img class="smlogo"src="images/title/${RestaurantVO.rimage}" ></img>
