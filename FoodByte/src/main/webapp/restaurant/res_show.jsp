@@ -9,7 +9,7 @@
             <div class="res_infotab" onclick="location.href='fooba.do?command=res_editForm'">정보수정</div>
         </div>
 
-			<div id="res_menuall">
+			<div id="res_menuall" style="overflow-x: hidden;">
            		 <div id="info_rev">
             	
 	       	    	<div id="rest_info">

@@ -9,7 +9,7 @@
             <div class="res_infotab" onclick="location.href='fooba.do?command=res_editForm'" style="color:white;">정보수정</div>
         </div>
 
-			<div id="res_menuall">
+			<div id="res_menuall" style="overflow-x: hidden;">
 			
 				<form id="res_menuall_a" name="food_menu" method="post" enctype="multipart/form-data" action="fooba.do?command=res_Update">
 					<input type="hidden" name="rseq" value="${RestaurantVO.rseq}">	
