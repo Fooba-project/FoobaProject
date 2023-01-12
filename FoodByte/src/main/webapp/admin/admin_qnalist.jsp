@@ -18,7 +18,7 @@
  function go_search( comm ){
 		var url = "fooba.do?command=" + comm + "&page=1";
 		document.frm.action = url;
-		document.frm.submit();
+		
 }
 
 	function go_total( comm ){
@@ -40,7 +40,7 @@
                 	<input class="admin_searchres_btn" type="button" name="btn_write" value="QnA등록"  onClick="go_wrt();">           
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기" 
                         onClick="go_total( 'admin_qnaList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
+                    <input class="admin_searchres_btn" type="submit" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_qnaList' );">
                 </td>
             </tr>

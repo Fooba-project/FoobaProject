@@ -11,7 +11,6 @@
  function go_search( comm ){
 		var url = "fooba.do?command=" + comm + "&page=1";
 		document.frm.action = url;
-		document.frm.submit();
 }
 
 	function go_total( comm ){
@@ -40,7 +39,7 @@
                 <td style="font-size:17px; width:642;">가게명: <input class="keyy" type="text" name="key" value="${key}">     
                     <input class="admin_searchres_btn" type="button" name="btn_total" value="전체보기 " 
                         onClick="go_total( 'admin_restaurantList' );">
-                    <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
+                    <input class="admin_searchres_btn" type="submit" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_restaurantList' );">   
                     
                 </td>
