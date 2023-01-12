@@ -101,15 +101,15 @@ public class MemberDao {
 		con=Dbman.getConnection();
 		String sql="update member set pwd=?, email=? , phone=?, zip_num=?,address1=?,address2=? ,nick=? where id = ? ";
 		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1,mvo.getPwd());
-			pstmt.setString(2,mvo.getEmail());
-			pstmt.setString(3,mvo.getPhone());
-			pstmt.setString(4,mvo.getZip_num());
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, mvo.getPwd());
+			pstmt.setString(2, mvo.getEmail());
+			pstmt.setString(3, mvo.getPhone());
+			pstmt.setString(4, mvo.getZip_num());
 			pstmt.setString(5, mvo.getAddress1());
 			pstmt.setString(6, mvo.getAddress2());
 			pstmt.setString(7, mvo.getNick());
-			pstmt.setString(8,mvo.getId());
+			pstmt.setString(8, mvo.getId());
 			result=pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

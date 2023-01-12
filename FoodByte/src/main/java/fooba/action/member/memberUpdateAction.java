@@ -19,14 +19,15 @@ public class memberUpdateAction implements Action {
 		
 			//전달된 파라미터들로 VO 객체를 채우고 updateMember 메서드로 회원정보를 수정한후 세션값을 수정
 			//최종 목적지는 main.jsp
-			MemberDao mdao=MemberDao.getInstance();
-			MemberVO mvo=new MemberVO();
 			
-			String id = request.getParameter("userid");
+			MemberDao mdao=MemberDao.getInstance();
+			MemberVO mvo = new MemberVO();
+			
+			String id = request.getParameter("userid").replace("id : ", "").replace(" (수정 불가)","");
 			mvo = mdao.getMember(id);
-				
+			
 			String pwd = request.getParameter("userpwd");
-			if (pwd==null || pwd=="") {
+			if (pwd == null || pwd=="") {
 			} else mvo.setPwd(pwd);
 			
 			String email = request.getParameter("useremail");
@@ -52,7 +53,8 @@ public class memberUpdateAction implements Action {
 			String nick = request.getParameter("usernick");
 			if(nick==null || nick=="") {
 			}else mvo.setNick(nick);
-				
+			
+			System.out.println("mvo " + mvo.getId() + mvo.getPwd() +  mvo.getEmail() );
 			int result=mdao.updateMember(mvo);
 			
 			if(result==1) {
@@ -61,6 +63,7 @@ public class memberUpdateAction implements Action {
 			}
 			
 			request.getRequestDispatcher("fooba.do?command=memberUpdateForm").forward(request, response);
+			
 
 	}
 
