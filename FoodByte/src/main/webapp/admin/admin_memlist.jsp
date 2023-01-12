@@ -25,7 +25,7 @@
                         onClick="go_total( 'admin_memberList' );">
                     <input class="admin_searchres_btn" type="button" name="btn_search" value="검색" 
                         onClick="go_search( 'admin_memberList' );">  
-                    
+                     
                 </td>
             </tr>
         </table><br>
