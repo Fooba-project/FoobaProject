@@ -89,6 +89,11 @@ function deletefm(fseq){
 	if(ok)location.href="fooba.do?command=res_foodmenuDelete&fseq="+fseq;
 	else return;
 }
+
+function update_ryn( rseq ){
+	document.frm.action = "fooba.do?command=res_restaurantOk&rseq="+rseq;
+	document.frm.submit();
+} 
 </script>
 
 

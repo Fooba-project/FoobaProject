@@ -31,6 +31,13 @@
 	                        <a class="basic">전화 번호</a>&nbsp;
 	                        	<input type="text" name="rphone" style="border-radius:5px; width:170px; height:20px;"
 	                        	 value="${RestaurantVO.rphone}"/><br><hr>
+	                        <a class="basic">운영 정보</a>&nbsp;	                        	
+	                        		<c:if test="${RestaurantVO.ryn==1}">
+	                        			<input type="button" value="휴업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');">
+	                        		</c:if>
+	                        		<c:if test="${RestaurantVO.ryn==3}">
+	                        			<input type="button" value="영업" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');">
+	                        		</c:if><br><hr>
 	                        <a class="basic">가게 주소</a>&nbsp; 
 	                        	<input type="text" name="raddress" style="border-radius:5px; width:310px; height:20px;"
 	                        	value="${RestaurantVO.raddress}"/><br><hr>
