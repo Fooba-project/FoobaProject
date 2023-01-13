@@ -11,7 +11,15 @@
            		<img class="smlogo"src="images/title/${RestaurantVO.rimage}" ></img>
          
             <div id="gibon">
-            <a class="redd">★★★★☆</a> 4.4<br>
+            <a class="basic">별점</a>&nbsp;&nbsp;<a class="starr">
+	    		<c:choose>
+            		<c:when test="${intstar==0}">없음</c:when>
+            		<c:when test="${intstar==1}">★☆☆☆☆</c:when>
+            		<c:when test="${intstar==2}">★★☆☆☆</c:when>
+            		<c:when test="${intstar==3}">★★★☆☆</c:when>
+            		<c:when test="${intstar==4}">★★★★☆</c:when>
+            		<c:otherwise>★★★★★</c:otherwise>
+            	</c:choose>${doublestar}</a><br>
             <a class="grayy">배달팁</a>&nbsp;&nbsp;  ${RestaurantVO.rtip} 원<br>
             <a class="grayy">결제</a>&nbsp;&nbsp; 신용카드, 현금<br>            
             <a class="grayy">해시태그</a>&nbsp;&nbsp; #${RestaurantVO.hash}<br>
@@ -74,7 +82,16 @@
                 <div id="reviewbogi">
                     <div id="reviewww">
                         <h2 id="cleanreview">클린리뷰</h2>
-                        <h1 id="bigstarr">★★★★☆ 4.4</h1>
+                        <h1 id="bigstarr"><a class="starr">
+					    		<c:choose>
+				            		<c:when test="${intstar==0}">없음</c:when>
+				            		<c:when test="${intstar==1}">★☆☆☆☆</c:when>
+				            		<c:when test="${intstar==2}">★★☆☆☆</c:when>
+				            		<c:when test="${intstar==3}">★★★☆☆</c:when>
+				            		<c:when test="${intstar==4}">★★★★☆</c:when>
+				            		<c:otherwise>★★★★★</c:otherwise>
+				            	</c:choose>${doublestar}</a>
+			            </h1>
                     </div>
                     <c:forEach items="${ReviewList}" var="ReviewVO">
 	                    <div class="reviewdel">
