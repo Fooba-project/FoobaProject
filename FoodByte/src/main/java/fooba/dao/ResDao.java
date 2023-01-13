@@ -602,5 +602,40 @@ public class ResDao {
 			} finally {Dbman.close(con, pstmt, rs);}
 			
 		}
+
+
+		public String memberFindId(String ownername, String rphone) {
+			String id = "";
+			con=Dbman.getConnection();
+			String sql="select rid from restaurant where ownername=? and rphone=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, ownername);
+				pstmt.setString(2, rphone);
+				rs=pstmt.executeQuery();
+				if (rs.next()) 
+					id = rs.getString("rid");
+			} catch (SQLException e) {	e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
+			return id;
+		}
+
+
+		public String memberFindPw(String ownername, String rphone, String rid) {
+			String raddress = "";
+			con=Dbman.getConnection();
+			String sql="select raddress from restaurant where ownername=? and rphone=? and rid=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, ownername);
+				pstmt.setString(2, rphone);
+				pstmt.setString(3, rid);
+				rs=pstmt.executeQuery();
+				if (rs.next()) 
+					raddress = rs.getString("raddress");
+			} catch (SQLException e) {	e.printStackTrace();
+			}finally {Dbman.close(con, pstmt, rs);}
+			return raddress;
+		}
 }
  

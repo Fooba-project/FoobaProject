@@ -53,6 +53,10 @@ import fooba.action.member.memberReviewWriteAction;
 import fooba.action.member.memberUpdateAction;
 import fooba.action.member.memberUpdateFormAction;
 import fooba.action.member.memberWithdrawalAction;
+import fooba.action.restaurant.res_FindIdAction;
+import fooba.action.restaurant.res_FindIdFormAction;
+import fooba.action.restaurant.res_FindPwAction;
+import fooba.action.restaurant.res_FindPwFormAction;
 import fooba.action.restaurant.res_editFormAction;
 import fooba.action.restaurant.res_findZipNumAction;
 import fooba.action.restaurant.res_fooba_privacyAction;
@@ -131,6 +135,10 @@ public class ActionFactory {
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
 		else if (command.equals("res_login")) ac = new res_loginAction();
 		else if (command.equals("res_logout")) ac = new res_logoutAction();
+		else if (command.equals("res_FindIdForm")) ac = new res_FindIdFormAction();
+		else if (command.equals("res_FindId")) ac = new res_FindIdAction();
+		else if (command.equals("res_FindPwForm")) ac = new res_FindPwFormAction();
+		else if (command.equals("res_FindPw")) ac = new res_FindPwAction();
 		else if (command.equals("res_show")) ac = new res_showAction();// 가게 미리보기
 		else if (command.equals("res_joinForm")) ac = new res_joinFormAction();
 		else if (command.equals("res_idCheckForm")) ac = new res_idCheckFormAction();
