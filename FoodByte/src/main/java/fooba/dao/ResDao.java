@@ -51,7 +51,7 @@ public class ResDao {
 		finally {Dbman.close(con, pstmt, rs);}
 		return rvo;
 	}
-
+ 
 
 	public ArrayList<FoodmenuVO> foodList(int rseq) {
 		ArrayList<FoodmenuVO> list= new ArrayList<>();
