@@ -160,14 +160,25 @@ function review_write() {
             </fieldset>
             <div id="previewDiv">
             	<c:if test="${not empty review.image }">
-            		<img src="images/review/${review.image }">
+            		<img style="width:250px; height:250px;" src="images/review/${review.image }">
             	</c:if>
             </div>
             <div>
-                <textarea class="review" type="text" id="reviewContent" readonly>${review.content }</textarea>
+                <textarea class="review" type="text" id="reviewContent" readonly style="height:100px;" >${review.content }</textarea><br><br>
+                
+                <c:if test="${review.replyyn==1}">
+                	<div id="res_dap">
+                		<div style="font-size:20px; font-weight:bold">사장님 답글</div><br>
+                		<textarea class="review" id="reviewContent"  readonly style="height:100px;">${review.reply }</textarea>
+                	</div>
+                </c:if>
+                
             </div>
         </form>
     </c:if>
+    
+    
+    
 </div>
 
 <%@ include file="../footer.jsp"%>
