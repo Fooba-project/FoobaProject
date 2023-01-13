@@ -32,7 +32,7 @@
 	                <span class="text2"  onclick="location.href='fooba.do?command=idfindForm'"> 아이디찾기 </span>
 	            </div>
 	            <div class="loginform_linetext">
-	                <span class="text3" onclick="location.href='fooba.do?command=memberJoinForm'"> 회원가입</span>
+	                <span class="text3" onclick="location.href='fooba.do?command=memberJoinForm'"> 회원 가입</span>
 	            </div>
 	        </div>
 	    </div>
