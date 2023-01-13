@@ -6,7 +6,7 @@
 <head>
 <script type="text/javascript" src="/code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="script/jquery-3.6.1.js"></script>
-<link href="css/fooba.css" rel="stylesheet"> 
+<script type="text/javascript" src="script/fooba.js"></script>
 <style type=text/css>
 .login_form {position: relative; width:100%; height:745px;}
 #logspace {width: 100%; height: 100px;}
