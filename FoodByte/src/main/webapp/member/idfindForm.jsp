@@ -32,7 +32,7 @@
 
 </head>
 <body>
-    <form method="post" action="fooba.do?command=login" name="findIdForm">
+    <form method="post" action="fooba.do?command=findIdForm" name="findIdForm">
         <div class="login_form">
                 <div id="logspace"></div>
                 <div id="loginmain_logo">
@@ -42,18 +42,11 @@
                 <div id="login_box">
                     <div id="text_button_box">
                         <div id="login_idpw_box">
-<input type="text" id="find_name" name="username" placeholder="이름" title="이름"
-                        maxlength="30" value="">
-            
-                            <input type="text" id="find_phone" name="userphone" placeholder="휴대폰번호를 입력하세요"
-                        maxlength="16" value="">
+							<input type="text" id="find_name" name="username" placeholder="이름" title="이름" maxlength="30" value="">
+                            <input type="text" id="find_phone" name="userphone" placeholder="휴대폰번호를 입력하세요" maxlength="16" value="">
                         </div>
             			<br>
-            			<div style="text-align:center; ">
-                            
-<p id="check" class="check" >${check}</p
-    
-    ></div>
+            			<div style="text-align:center; "><p id="check" class="check" >${check}</p></div>
                         
                             <!-- 스크립트 자리 -->
 <script type="text/javascript">
@@ -76,15 +69,15 @@
     });
 
     function find_id(){    	
-         if(document.findIdForm.username.value()==""){
+         if(document.findIdForm.username.value==0){
             alert('이름을 입력하세요');
             document.findIdForm.username.focus();
             return false;
-        } /*else if(ocument.findIdForm.userphone.value()=="") {
+        } else if(document.findIdForm.userphone.value==0) {
             alert('전화번호를 입력하세요');
             document.findIdForm.userphone.focus();
             return false;
-        } else {return true;} */
+        } else {return true;} 
     }			
 </script>
                         <div id="log_buttonbox">
