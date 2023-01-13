@@ -152,7 +152,7 @@ background-image:url("../images/mainlogo2.png"); background-position: center; ba
 #jangbagunitul{width: 352px;border: 1px solid #fa6146;position: absolute;top: 150px;right: 0;}
 #jbtitle{width: 350px;border: 1px solid #fa6146;height: 50px;text-align: center;line-height: 50px; font-size: 140%; font-weight: bold; color: white;background:#fa6146 ;}
 .jbitem{width: 340px;border: 1px solid rgb(241, 241, 241); height: 100px; position: relative;padding: 5px;}
-.jbitemname{font-size: 140%;}
+.jbitemname{font-size: 120%;}
 .jbitemsub{font-size: 110%; color: rgb(136, 136, 136);}
 .jbitemprice{position:absolute;bottom: 10px;right: 10px; font-weight: bold;font-size: 120%;color:#fa6146 ;}
 .jbcancel{cursor:pointer; background: white;border: 1px solid rgb(241, 241, 241); color: #fa6146;font-weight: bold;height: 20px;border-radius: 25%;width: 23px;}

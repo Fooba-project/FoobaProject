@@ -115,7 +115,8 @@
           
         <c:forEach items="${clist }" var="CartVO">
         	<div class="jbitem" id="jb${CartVO.cseq}">
-            <a class="jbitemname">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
+            <a class="jbitemname" style="font-size:140%; font-weight:bold">${CartVO.cfname} x ${CartVO.quantity }&nbsp;&nbsp;&nbsp;</a><br>
+            <a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
                 <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq},${RestaurantVO.rseq });">
