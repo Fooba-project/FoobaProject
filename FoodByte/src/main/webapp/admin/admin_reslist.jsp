@@ -22,7 +22,7 @@
 		document.frm.action = "fooba.do?command=admin_restaurantOk&rseq="+rseq;
 		document.frm.submit();
 } 
-	function ret_ryn( rseq ){
+	function reject_ryn( rseq ){
 		document.frm.action = "fooba.do?command=admin_restaurantKick&rseq="+rseq;
 		document.frm.submit();
 } 
@@ -55,15 +55,17 @@
                     </td>
                     <td style=text-align:center;>
                         <c:choose>
-                              <c:when test='${RestaurantVO.ryn=="1"}'>운영중
-   								 <td style="text-align:center;"><input type="button" value="거부" onClick="go_ryn('${RestaurantVO.rseq}');"></td>
+                              <c:when test='${RestaurantVO.ryn==1}'>운영중
+   								 <td style="text-align:center;"><input type="button" value="거부" onClick="reject_ryn('${RestaurantVO.rseq}');"></td>
                               </c:when>
-                              <c:when test='${RestaurantVO.ryn=="0"}'>미승인           
+                              <c:when test='${RestaurantVO.ryn==0}'>미승인           
 	                              <td style="text-align:center;"><input type="button" value="승인" onClick="go_ryn('${RestaurantVO.rseq}');">
-	                              <input type="button" value="거부" onClick="go_ryn('${RestaurantVO.rseq}');"></td>
+	                              <input type="button" value="거부" onClick="reject_ryn('${RestaurantVO.rseq}');"></td>
 	                   		  </c:when>
-                              <c:otherwise>승인거부<td style="text-align:center;"><input type="button" value="복구" onClick="ret_ryn('${RestaurantVO.rseq}');"></td></c:otherwise>
-                        </c:choose>   
+	                   		  <c:when test='${RestaurantVO.ryn==3}'>휴업중
+	                   		  </c:when>
+                              <c:otherwise>승인거부<td style="text-align:center;"><input type="button" value="복구" onClick="go_ryn('${RestaurantVO.rseq}');"></td></c:otherwise>
+                        </c:choose>
                     </td> 
                 </tr>
             </c:forEach>

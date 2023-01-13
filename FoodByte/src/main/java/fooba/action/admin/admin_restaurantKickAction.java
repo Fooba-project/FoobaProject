@@ -24,8 +24,7 @@ public class admin_restaurantKickAction implements Action {
 			url="fooba.do?command=admin_loginForm";
 		}else {
 			AdminDao adao=AdminDao.getInstance();
-			adao.returnRes(rseq);
-			
+			adao.rejectRes(rseq);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	
