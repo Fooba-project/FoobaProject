@@ -26,7 +26,7 @@
 	            </div>
 	        <div id="loginform_linetextbox">
 	            <div class="loginform_linetext">
-	                <span class="text1"> 비밀번호찾기</span>
+	                <span class="text1" onclick="location.href='fooba.do?command=pwfind'"> 비밀번호찾기</span>
 	            </div>
 	            <div class="loginform_linetext">            
 	                <span class="text2"  onclick="location.href='fooba.do?command=idfindForm'"> 아이디찾기 </span>
