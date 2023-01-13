@@ -194,19 +194,21 @@ public class MemberDao {
 		return list;
 	}
 
-	public String getMemberIds() {
-		String ids = "";
+
+	public String memberFindId(String name, String phone) {
+		String id = "";
 		con=Dbman.getConnection();
-		String sql="select id from member";
+		String sql="select id from member where name=? and phone=?";
 		try {
 			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, phone);
 			rs=pstmt.executeQuery();
-			while (rs.next()) {
-				ids = ids + rs.getString("id") + " ";
-			}
+			if (rs.next()) 
+				id = rs.getString("id");
 		} catch (SQLException e) {	e.printStackTrace();
 		}finally {Dbman.close(con, pstmt, rs);}
-		return ids;
+		return id;
 	}
 
 }

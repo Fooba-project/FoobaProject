@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-<%@ include file="mypage_sub.jsp"%>
+<%@ include file="memberMypageSub.jsp"%>
 <script type="text/javascript">
 
 function readURL(obj) {
