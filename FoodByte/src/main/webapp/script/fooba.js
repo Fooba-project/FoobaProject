@@ -239,7 +239,6 @@ function menumove(x){
 
         
 function go_search2(){
-	document.search.action = "fooba.do?command=search";
 	document.search.submit();
 }
 
