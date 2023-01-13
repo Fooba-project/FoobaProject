@@ -13,7 +13,7 @@ public class memberFindPwAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+ 
 		String name=request.getParameter("username");
 		String phone=request.getParameter("userphone");
 		String id =request.getParameter("id");

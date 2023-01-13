@@ -15,7 +15,7 @@ public class memberFindIdAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 
 		String name=request.getParameter("username");
 		String phone=request.getParameter("userphone");
 		MemberDao mdao=MemberDao.getInstance();
