@@ -51,10 +51,6 @@
                             </button>
                         </div>
                     </div>
-                    <div class ="id_find_btn">
-                        <input type="button" name="find" value="찾기" onclick="member_id_find">
-                        <input type="button" name="cancle" value="취소" onclick="history.back()">
-                    </div>
                       <div id="id_find_message">${message}</div>
                 </div>
             </div>
