@@ -19,8 +19,8 @@
         </div>
         <br>
         <div id="menujengbo">
-            <div class="menujengbotab" onclick="menumove(-1);" id="menutabb">메뉴</div>
-            <div class="menujengbotab" onclick="menumove(1);" id="jengbotabb">가게 정보/리뷰</div>
+            <div class="menujengbotab" onclick="menumove(-1);" id="menutabb" style="width:cals(50% - 1px)">메뉴</div>
+            <div class="menujengbotab" onclick="menumove(1);" id="jengbotabb" style="width:cals(50% - 1px)">가게 정보/리뷰</div>
         </div>
         
         <div id="tul" style="overflow-y: scroll;">
@@ -119,7 +119,7 @@
             <a class="jbitemsub">${CartVO.sideyn1}&nbsp;&nbsp; ${CartVO.sideyn2} &nbsp;&nbsp;${CartVO.sideyn3}</a><br>
             <div class="jbitemprice">
                 ${CartVO.cprice} 원&nbsp;
-                <input type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq},${RestaurantVO.rseq });">
+                <input  style="border: 1px solid #a0a0a0"type="button" class="jbcancel" value="X" onclick="deleteejb(${CartVO.cseq},${RestaurantVO.rseq });">
             </div>
         </div>
         </c:forEach>
