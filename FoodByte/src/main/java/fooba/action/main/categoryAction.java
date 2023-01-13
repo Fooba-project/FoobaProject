@@ -23,8 +23,7 @@ public class categoryAction implements Action {
 		String kind= request.getParameter("kind");
 	
 		ResDao rdao=ResDao.getInstance();
-		MemberDao mdao = MemberDao.getInstance();
-		ArrayList<RestaurantVO>kindList=mdao.searchKind(kind);
+		ArrayList<RestaurantVO>kindList=rdao.searchKind(kind);
 		
 		for (RestaurantVO rvo : kindList) {
 			rvo.setFimage( rdao.FimagebyRseq( rvo.getRseq() ) );

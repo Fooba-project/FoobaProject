@@ -383,26 +383,26 @@ public class ResDao {
 
 
 		public ArrayList<RestaurantVO> searchKind(String kind) {
-			ArrayList<RestaurantVO>list=new ArrayList<RestaurantVO>();
-			con=Dbman.getConnection();
-			String sql="select*from restaurant where kind=? and ryn=1";
-			try {
-				pstmt=con.prepareStatement(sql);
-				pstmt.setString(1,kind);
-				rs=pstmt.executeQuery();
-				while(rs.next()) {
-					RestaurantVO rvo = new RestaurantVO();
-					rvo.setRseq(rs.getInt("rseq"));
-					rvo.setRname(rs.getString("rname"));
-					rvo.setKind(rs.getInt("kind"));
-					rvo.setHash(rs.getString("hash")); 
-					rvo.setRimage(rs.getString("rimage"));
-					list.add(rvo);
-				}
-			} catch (SQLException e) {e.printStackTrace();
-			} finally { Dbman.close(con, pstmt, rs); }
-			return list;
-		}
+				ArrayList<RestaurantVO>list=new ArrayList<RestaurantVO>();
+				con=Dbman.getConnection();
+				String sql="select*from restaurant where kind=? and ryn in(1,3)"; 
+				try {
+					pstmt=con.prepareStatement(sql);
+					pstmt.setString(1,kind);
+					rs=pstmt.executeQuery();
+					while(rs.next()) {
+						RestaurantVO rvo = new RestaurantVO();
+						rvo.setRseq(rs.getInt("rseq"));
+						rvo.setRname(rs.getString("rname"));
+						rvo.setKind(rs.getInt("kind"));
+						rvo.setHash(rs.getString("hash")); 
+						rvo.setRimage(rs.getString("rimage"));
+						list.add(rvo);
+					}
+				} catch (SQLException e) {e.printStackTrace();
+				} finally { Dbman.close(con, pstmt, rs); }
+				return list;
+			}
 
 
 		public ArrayList<ReviewVO> reviewList(int rseq) {
@@ -437,7 +437,7 @@ public class ResDao {
 			ArrayList<RestaurantVO>list=new ArrayList<>();
 		      con=Dbman.getConnection();
 		      String sql = "select rname, rseq, rimage, kind, hash from search  "
-		      		+ " where ryn=1 and (fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%') "
+		      		+ " where ryn in(1,3) and (fname like '%'||?||'%' or hash like '%'||?||'%'  or  rname like '%'||?||'%') "
 		      		+ "group by rname,rseq,rimage,kind,hash";
 		      try {
 		         pstmt=con.prepareStatement(sql);

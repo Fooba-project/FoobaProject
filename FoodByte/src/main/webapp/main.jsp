@@ -72,7 +72,7 @@ $(function() {
         <input type="text" name="searchtext" id="searchtext"  placeholder="검색어를 입력하세요"  size="30px" value="${search}"/>
         <div id="searchicon"></div>
             <div id="searchicon1">
-            <button type="button" title="search" id="btn" name="btn" onClick="go_search2()"><img src="images/search.png"></button>
+            <button type="button" title="search" id="btn" name="btn" onClick="go_search2()" style="cursor:pointer"><img src="images/search.png"></button>
         </div>
     </form>
 

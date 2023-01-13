@@ -324,7 +324,7 @@ public class AdminDao {
 
 
 	public void acceptRes(int rseq) {
-		String sql="update restaurant set ryn=ryn+1 where rseq=?";
+		String sql="update restaurant set ryn=1 where rseq=?";
 		con=Dbman.getConnection();
 		try {
 			pstmt=con.prepareStatement(sql);
@@ -332,12 +332,11 @@ public class AdminDao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {e.printStackTrace();
 		} finally {Dbman.close(con, pstmt, rs);}
-		
 	}
-
-
-	public void returnRes(int rseq) {
-		String sql="update restaurant set ryn='1' where rseq=?";
+	
+	
+	public void rejectRes(int rseq) {
+		String sql="update restaurant set ryn=2 where rseq=?";
 		con=Dbman.getConnection();
 		try {
 			pstmt=con.prepareStatement(sql);
@@ -345,7 +344,6 @@ public class AdminDao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {e.printStackTrace();
 		} finally {Dbman.close(con, pstmt, rs);}
-		
 	}
 
 

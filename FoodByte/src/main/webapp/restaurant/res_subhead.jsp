@@ -2,11 +2,15 @@
 <div id="res_main">
 	<div id="res_name">
 		<form  method="post" name="frmm">
+			
       		<c:if test="${RestaurantVO.ryn==1}">
-      			${RestaurantVO.rname}&nbsp;&nbsp;<input type="button" value="휴업신청" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');" style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181); cursor:pointer;">
+      			${RestaurantVO.rname}${RestaurantVO.ryn}&nbsp;&nbsp;<input type="button" value="휴업신청" name="ryn" onClick="update_ryn('${RestaurantVO.rseq}');" style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181); cursor:pointer;">
       		</c:if>
       		<c:if test="${RestaurantVO.ryn==3}">
-      			${RestaurantVO.rname}&nbsp;&nbsp;<input type="button" value="영업개시" name="ryn" onClick="return_ryn('${RestaurantVO.rseq}');"  style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181); cursor:pointer;">
+      			${RestaurantVO.rname}${RestaurantVO.ryn}&nbsp;&nbsp;<input type="button" value="영업개시" name="ryn" onClick="return_ryn('${RestaurantVO.rseq}');"  style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181); cursor:pointer;">
+      		</c:if>
+      		<c:if test="${RestaurantVO.ryn==2}">
+      			${RestaurantVO.rname}${RestaurantVO.ryn}&nbsp;&nbsp;<input type="button" value="영업정지중" name="ryn" style="border:none; background-color:rgb(248, 246, 138); width:80px; height:30px; border-radius: 5px; box-shadow: 1px 1px rgb(185, 181, 181);">
       		</c:if>
       	</form>
 	</div>

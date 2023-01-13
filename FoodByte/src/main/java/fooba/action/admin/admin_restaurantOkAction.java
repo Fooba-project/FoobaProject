@@ -26,7 +26,6 @@ public class admin_restaurantOkAction implements Action {
 		}else {
 			AdminDao adao=AdminDao.getInstance();
 			adao.acceptRes(rseq);
-			
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	
