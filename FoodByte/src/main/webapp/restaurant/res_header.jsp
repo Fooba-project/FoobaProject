@@ -284,7 +284,7 @@ background-size: cover; margin-top: 10px; margin-left:10px; float: left; }
 #mrev_star{position:relative; line-height: 50px; color: orange; float: left; }
 .rev_indate{ line-height: 50px; color:#BCBCBC; font-size: 80%;}
 #mrev_conbox{width:680px; height:330px;}
-#mrev_img{  height:200px; border-radius: 20px; position:absolute; top:10px; right:10px; }
+#mrev_img{  height:170px; border-radius: 20px; position:absolute; top:50px; right:10px; }
 #mrev_con{ width:50%; height:150px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border:1px solid gray; word-break:break-all; margin-left:20px;}
 
 #sa_reviewbox{width:680px; height:170px;  bottom: 0px;position: absolute;}
