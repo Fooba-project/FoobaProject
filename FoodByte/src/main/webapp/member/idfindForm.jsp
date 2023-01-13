@@ -8,7 +8,7 @@
 <style type=text/css>
 .login_form {position: relative; width:100%; height:745px;}
 #logspace {width: 100%; height: 100px;}
-#id_find_message {width: 100%; height: 20px; margin-top:-120px;  color: red; text-align: center; }
+#loginmessage {width: 100%; height: 20px; margin-top: 30px; color: red; text-align: center; }
 #Login_form_space {width:100%; height:150px;}
 #loginmain_logo{position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto; border-radius:50%; width: calc(5.5em / 0.7); height: calc(5em / 0.7); background-color: #fa6146; opacity:90%;}
 #loginmain_logo img{width: 100px; height: 100px;}
@@ -26,6 +26,29 @@
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 .id_find_btn{text-align: center;}
 </style>
+<!-- 스크립트 자리 -->
+<script type="text/javascript">
+	$("#find_id").focusout(function(){
+			
+	    if($('#find_id').val() == ""){
+	  		$('#check').text('이름을 입력해주세요.');
+	  	  	$('#check').css('color', 'red');
+	  
+	    }else{
+	   	 	$('#check').hide();
+	    }
+	});
+	    
+		$("#email").focusout(function(){
+		    if($('#email').val() == ""){
+		  		$('#check').text('이메일을 입력해주세요');
+		  	  	$('#check').css('color', 'red');
+	    	}else{
+	   	 		$('#check').hide();
+	    	}
+	    });
+		
+</script>
 </head>
 <body>
     <form method="post" action="fooba.do?command=login" name="loginForm">
@@ -38,21 +61,21 @@
                 <div id="login_box">
                     <div id="text_button_box">
                         <div id="login_idpw_box">
-                            <input type="text" id="login_id" name="userid" placeholder="이름을 입력하세요" title="이름"
+                            <input type="text" id="find_id" name="userid" placeholder="이름" title="이름"
                         maxlength="30" value="">
             
-                            <input type="text" id="login_pw" name="userpw" placeholder="휴대폰번호를 입력하세요"
+                            <input type="text" id="find_phone" name="userphone" placeholder="휴대폰번호를 입력하세요"
                         maxlength="16" value="">
                         </div>
-            
+            			<br>
+            			<div id="id_find_message" style="text-align:center; ">메세지가 들어갈 자리</div>
                         <div id="log_buttonbox">
                             <button type="submit" id="log_button" onclick="return loginCheck()" >
                                 <span class="btn_text">아이디 찾기</span>
                             </button>
                         </div>
-                    </div>
-                      <div id="id_find_message">${message}</div>
-                </div>
+                    </div>                   
+                </div>                
             </div>
         </div>
 </body>
