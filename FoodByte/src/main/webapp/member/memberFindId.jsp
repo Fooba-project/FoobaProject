@@ -46,7 +46,7 @@
                             <input type="text" id="find_phone" name="userphone" placeholder="휴대폰 번호를 입력하세요" maxlength="13"  onkeyup="chkPhoneCode(event)">
                         </div>
             			<br>
-            			<div style="text-align:center; "><p id="check" class="check" >${check}</p></div>
+            			<div style="text-align:center; "><p id="check" class="check" >${check}${message }</p></div>
                         
                             <!-- 스크립트 자리 -->
 <script type="text/javascript">
