@@ -8,7 +8,7 @@
 <style type=text/css>
 .login_form {position: relative; width:100%; height:745px;}
 #logspace {width: 100%; height: 100px;}
-#loginmessage {width: 100%; height: 20px; margin-top: 30px; color: red; text-align: center; }
+#id_find_message {width: 100%; height: 20px; margin-top:-120px;  color: red; text-align: center; }
 #Login_form_space {width:100%; height:150px;}
 #loginmain_logo{position: relative; text-align: center; width: 150px; height: 100px; margin: 0 auto; border-radius:50%; width: calc(5.5em / 0.7); height: calc(5em / 0.7); background-color: #fa6146; opacity:90%;}
 #loginmain_logo img{width: 100px; height: 100px;}
@@ -38,7 +38,7 @@
                 <div id="login_box">
                     <div id="text_button_box">
                         <div id="login_idpw_box">
-                            <input type="text" id="login_id" name="userid" placeholder="이름" title="이름"
+                            <input type="text" id="login_id" name="userid" placeholder="이름을 입력하세요" title="이름"
                         maxlength="30" value="">
             
                             <input type="text" id="login_pw" name="userpw" placeholder="휴대폰번호를 입력하세요"
@@ -54,9 +54,9 @@
                     <div class ="id_find_btn">
                         <input type="button" name="find" value="찾기" onclick="member_id_find">
                         <input type="button" name="cancle" value="취소" onclick="history.back()">
-                     </div>
+                    </div>
+                      <div id="id_find_message">${message}</div>
                 </div>
-                <div id="id_find_message">${message}</div>
             </div>
         </div>
 </body>
