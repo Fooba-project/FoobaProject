@@ -214,7 +214,7 @@ public class MemberDao {
 	public String memberFindPw(String name, String phone, String id) {
 		String email = "";
 		con=Dbman.getConnection();
-		String sql="select id from member where name=? and phone=? and id=?";
+		String sql="select email from member where name=? and phone=? and id=?";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, name);

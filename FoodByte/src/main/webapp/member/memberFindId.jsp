@@ -29,7 +29,6 @@
 .loginform_linetext span{ position: relative; float: left; cursor: pointer; width:100px; margin-left: 45px; }
 .id_find_btn{text-align: center;}
 </style>
-
 </head>
 <body>
     <form method="post" action="fooba.do?command=memberFindId" name="findId">
@@ -47,8 +46,15 @@
                         </div>
             			<br>
             			<div style="text-align:center; "><p id="check" class="check" >${check}${message }</p></div>
-                        
-                            <!-- 스크립트 자리 -->
+                        <div id="log_buttonbox">
+                            <button type="submit" id="log_button" onclick="return find_id()">
+                                <span class="btn_text">아이디 찾기</span>
+                            </button>
+                        </div>
+                    </div>                   
+                </div>                
+            </div>
+        </form>
 <script type="text/javascript">
     $("#find_name").focusout(function(){
         if($('#find_name').val() == ""){
@@ -80,15 +86,6 @@
         } else {return true;} 
     }			
 </script>
-                        <div id="log_buttonbox">
-                            <button type="submit" id="log_button" onclick="return find_id()">
-                                <span class="btn_text">아이디 찾기</span>
-                            </button>
-                        </div>
-                    </div>                   
-                </div>                
-            </div>
-        </form>
 </body>
 </html>
 <%@ include file="../footer.jsp"%>
