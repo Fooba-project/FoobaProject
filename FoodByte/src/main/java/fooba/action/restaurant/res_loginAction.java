@@ -41,7 +41,8 @@ public class res_loginAction implements Action {
 			session.setAttribute("intstar",intstar); //별 개수
 			session.setAttribute("doublestar",doublestar); //별점(소수점까지)
 			/**/
-			}
+			session.removeAttribute("message");
+		}
 		
 		
 		RequestDispatcher rd=request.getRequestDispatcher(url);

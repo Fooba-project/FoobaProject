@@ -106,49 +106,6 @@ function joincheck() {
 		document.res_join_send_form.submit();
 	}
 }
-function autoHypenPhone(str){
-    str = str.replace(/[^0-9]/g, '');
-    var tmp = '';
-    if( str.length < 4){
-        return str;
-    }else if(str.length < 7){
-        tmp += str.substr(0, 3);
-        tmp += '-';
-        tmp += str.substr(3);
-        return tmp;
-    }else if(str.length < 11){
-        tmp += str.substr(0, 3);
-        tmp += '-';
-        tmp += str.substr(3, 3);
-        tmp += '-';
-        tmp += str.substr(6);
-        return tmp;
-    }else{              
-        tmp += str.substr(0, 3);
-        tmp += '-';
-        tmp += str.substr(3, 4);
-        tmp += '-';
-        tmp += str.substr(7);
-        return tmp;
-    }
-    return str;
-}
-function chkPhoneCode(event){
-    const regExp1 = /[^0-9a-zA-Z]/g;
-    if (regExp1.test(event.target.value)) {
-        event.target.value = event.target.value.replace(regExp1, '');
-    }
-    const regExp2 = /[0-9]/g;
-    if (regExp2.test(event.target.value)) {
-        var _val =  event.target.value.trim();
-        event.target.value = autoHypenPhone(_val);
-    }
-
-    const regExp3 = /^[a-zA-Z]*$/;
-    if (regExp3.test(event.target.value)) {
-        event.target.value = event.target.value.replace(regExp3, '');
-    }
-}
 
 function chkIdCode(event) {
     const regExp = /[^0-9a-zA-Z]/g;
@@ -192,7 +149,7 @@ function chkIdCode(event) {
             </div>
 
             <div class="join_list">
-                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" />
+                <input type="text" id="rbiznum" class="input_text" name="rbiznum" maxlength="12" placeholder="사업자 등록번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
             </div>
 
             <div class="join_list">
@@ -256,7 +213,7 @@ function chkIdCode(event) {
                     <textarea placeholder="사업장 소개글을 작성해주세요(100자 이내)" name="content" maxlength="100" style="resize:none;"></textarea>
                 </div>
                 <div class="join_list">
-                    <input type="text" class="input_text" name="rtip" maxlength="4" placeholder="기본배달료를 입력하세요">
+                    <input type="text" class="input_text" name="rtip" maxlength="4" placeholder="기본배달료를 입력하세요" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
                 </div>
                 <div class="join_list">
                     <input type="text" class="input_text" name="hash" placeholder="해시태그">

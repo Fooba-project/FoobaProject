@@ -46,8 +46,8 @@ public class res_joinAction implements Action {
 		
 		int result=rdao.insertRes(rvo);
 		
-		if(result==1)request.setAttribute("message","가입이 완료되었습니다. 승인을 기다리세요");
-		else request.setAttribute("message","가입 실패, 다시 시도하세요.");
+		if(result==1)session.setAttribute("message","가입이 완료되었습니다. 승인을 기다리세요");
+		else session.setAttribute("message","가입 실패, 다시 시도하세요.");
 		
 		response.sendRedirect("fooba.do?command=res_loginForm");
 

@@ -36,7 +36,7 @@
 	                <span class="text2"> 아이디찾기</span>
 	            </div>
 	            <div class="loginform_linetext">
-	                <span class="text3"> 회원가입</span>
+	                <span class="text3" onclick="location.href='fooba.do?command=res_joinForm'"> 사업자가입</span>
 	            </div>
 	        </div>
 	    </div>

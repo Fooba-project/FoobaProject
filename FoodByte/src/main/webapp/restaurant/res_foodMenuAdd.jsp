@@ -24,7 +24,7 @@
 
                             <h3>메뉴 가격</h3>
                             <div id="food_text">
-                                <input type="text" class="food_text" name="fprice" placeholder=" 예) 6000"/> 원
+                                <input type="text" class="food_text" name="fprice" placeholder=" 예) 6000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> 원
                             </div><hr>
                             
                             <h3>메뉴 소개</h3>
@@ -42,7 +42,7 @@
                            		style="width:120px; height:35px;" name="fside1" placeholder=" 예) 콘치즈 추가"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice1" placeholder=" 예) 3000"/> 원
+                                style="width:120px; height:35px;" name="fsideprice1" placeholder=" 예) 3000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> 원
                             </div><hr>
                             
                              <h3>사이드메뉴 2</h3>
@@ -51,7 +51,7 @@
                            		style="width:120px; height:35px;" name="fside2" placeholder=" 예) 콘치즈 추가"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice2" placeholder=" 예) 3000"/> 원
+                                style="width:120px; height:35px;" name="fsideprice2" placeholder=" 예) 3000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> 원
                             </div><hr>
                             
                              <h3>사이드메뉴 3</h3>
@@ -60,7 +60,7 @@
                            		style="width:120px; height:35px;" name="fside3" placeholder=" 예) 콘치즈 추가"/>
                            		&nbsp;
                                 <input type="text" class="food_text" 
-                                style="width:120px; height:35px;" name="fsideprice3" placeholder=" 예) 3000"/> 원
+                                style="width:120px; height:35px;" name="fsideprice3" placeholder=" 예) 3000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> 원
                             </div><hr>
                                 
                             <div id="res_tab">

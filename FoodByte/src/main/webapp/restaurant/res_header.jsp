@@ -99,6 +99,51 @@ function return_ryn( rseq ){
 	document.frmm.action = "fooba.do?command=res_restaurantReturn&rseq="+rseq;
 	document.frmm.submit();
 } 
+
+function autoHypenPhone(str){
+    str = str.replace(/[^0-9]/g, '');
+    var tmp = '';
+    if( str.length < 4){
+        return str;
+    }else if(str.length < 7){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3);
+        return tmp;
+    }else if(str.length < 11){
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 3);
+        tmp += '-';
+        tmp += str.substr(6);
+        return tmp;
+    }else{              
+        tmp += str.substr(0, 3);
+        tmp += '-';
+        tmp += str.substr(3, 4);
+        tmp += '-';
+        tmp += str.substr(7);
+        return tmp;
+    }
+    return str;
+}
+function chkPhoneCode(event){
+    const regExp1 = /[^0-9a-zA-Z]/g;
+    if (regExp1.test(event.target.value)) {
+        event.target.value = event.target.value.replace(regExp1, '');
+    }
+    const regExp2 = /[0-9]/g;
+    if (regExp2.test(event.target.value)) {
+        var _val =  event.target.value.trim();
+        event.target.value = autoHypenPhone(_val);
+    }
+
+    const regExp3 = /^[a-zA-Z]*$/;
+    if (regExp3.test(event.target.value)) {
+        event.target.value = event.target.value.replace(regExp3, '');
+    }
+}
+
 </script>
 
 

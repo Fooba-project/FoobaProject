@@ -23,14 +23,13 @@
 	                        <h3>사장님 알림</h3><hr>
 	                        <textarea name="content" rows="5" cols="50" style="border-radius:2px; resize:none" maxlength="100" >${RestaurantVO.content}</textarea>
 	                    </div><br>
-                    
                     	<div id="res_num">
 	                        <h3>업체 정보</h3><hr>
 	                        <a class="basic">사업자 번호</a>&nbsp; ${RestaurantVO.rbiznum}
 	                        	<input type="hidden" name="rbiznum" value="${loginRes.rbiznum}"><br><hr>                    
 	                        <a class="basic">전화 번호</a>&nbsp;
 	                        	<input type="text" name="rphone" style="border-radius:5px; width:170px; height:20px;"
-	                        	 value="${RestaurantVO.rphone}"/><br><hr>
+	                        	 value="${RestaurantVO.rphone}"  maxlength="13" id="rphone" onkeyup="chkPhoneCode(event)"/><br><hr>
 	                        <a class="basic">가게 주소</a>&nbsp; 
 	                        	<input type="text" name="raddress" style="border-radius:5px; width:310px; height:20px;"
 	                        	value="${RestaurantVO.raddress}"/><br><hr>
@@ -42,7 +41,7 @@
 	                        <a class="basic">결제 방법</a>&nbsp;&nbsp; 신용카드, 현금<br><hr>                    
 	                        <a class="basic">배달 팁</a>&nbsp;&nbsp;&nbsp;
 	                        	<input type="text" name="rtip" style="border-radius:5px; width:100px; height:20px;"
-	                        	 value="${RestaurantVO.rtip}"/> 원<br><hr>
+	                        	 value="${RestaurantVO.rtip}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> 원<br><hr>
 	                        <a class="basic">해시태그</a>&nbsp; 
 	                        	# <input type="text" name="hash" style="border-radius:5px; width:100px; height:20px;"
 	                        	value="${RestaurantVO.hash}"/><br><hr>
