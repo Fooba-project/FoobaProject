@@ -21,7 +21,7 @@
 	                    <div id="res_cont">
 	                    	<br>
 	                        <h3>사장님 알림</h3><hr>
-	                        <textarea name="content" rows="5" cols="50" style="border-radius:2px; resize:none">${RestaurantVO.content}</textarea>
+	                        <textarea name="content" rows="5" cols="50" style="border-radius:2px; resize:none" maxlength="100" >${RestaurantVO.content}</textarea>
 	                    </div><br>
                     
                     	<div id="res_num">

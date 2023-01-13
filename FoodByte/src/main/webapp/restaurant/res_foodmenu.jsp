@@ -16,8 +16,8 @@
                  		<img id="res_menu_icon" src="images/delete.png" onClick="deletefm(${FoodmenuVO.fseq})">	                    
                  	</h3>
                  			  
-                 <a class="basic">${FoodmenuVO.fcontent }</a><br>
-                 ${FoodmenuVO.fprice}원
+                 <div class="grayyy">${FoodmenuVO.fcontent }</div><br>
+	             <div class="menugaguk">${FoodmenuVO.fprice}원</div>
                  <img class="res_meima" src="images/foodmenu/${FoodmenuVO.fimage}">
              </div>
             </c:forEach>

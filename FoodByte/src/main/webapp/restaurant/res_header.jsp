@@ -30,7 +30,7 @@ function res_idcheck(){
 			return;
 		}
 		var url = "fooba.do?command=res_idCheckForm&rid=" + document.res_join_send_form.rid.value;
-		var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
+		var opt = "toolbar=no, menubar=no, resizable=no, width=550, height=400, top=100, left=700, scrollbars=no";
 		window.open(url, "IdCheck", opt);	
 	}
 
@@ -151,8 +151,10 @@ body {margin:0}
 text-align: center;line-height: 50px;}
 #res_info{height: 140px; border-bottom: 1px solid black; margin:0 auto;}
 .res_logo{height: 120px; width: 120px; position: relative; float: left;margin: 10px;}
-#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 33px;}
-.basic{color: gray; font-weight: normal; font-size: 100%; }
+#res_basic{font-size: 100%; position: absolute; left: 150px;line-height: 33px; }
+.basic{color: gray; font-weight: normal; font-size: 100%; word-break:break-all; width:400px;}
+.grayyy{color: gray; font-weight: normal; font-size: 100%;  width: 500px;position: absolute; top: 50px;}
+.menugaguk{bottom: 3px; position: absolute;}
 #res_tab{height: 50px; }
 .res_infotab{background-color: rgb(255,204,0); height:50px; width:347px ;position: relative; float:left ;
 border :1px solid lightyellow; line-height: 50px; text-align: center; font-weight: bold;font-size: 110%;}
