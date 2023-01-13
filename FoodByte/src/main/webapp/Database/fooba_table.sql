@@ -146,7 +146,7 @@ CREATE TABLE review
 	reply varchar2(1000),
 	replyyn number(2) DEFAULT 0 NOT NULL,
 	nick varchar2(100) not null,
-	reviewyn number(2) not null,
+	reviewyn number(2) DEFAULT 0 not null,
 	PRIMARY KEY (review_seq)
 );
 
