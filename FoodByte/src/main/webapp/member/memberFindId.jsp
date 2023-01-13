@@ -32,7 +32,7 @@
 
 </head>
 <body>
-    <form method="post" action="fooba.do?command=findIdForm" name="findIdForm">
+    <form method="post" action="fooba.do?command=findId" name="findId">
         <div class="login_form">
                 <div id="logspace"></div>
                 <div id="loginmain_logo">
@@ -69,13 +69,13 @@
     });
 
     function find_id(){    	
-         if(document.findIdForm.username.value==0){
+         if(document.findId.username.value==0){
             alert('이름을 입력하세요');
-            document.findIdForm.username.focus();
+            document.findId.username.focus();
             return false;
-        } else if(document.findIdForm.userphone.value==0) {
+        } else if(document.findId.userphone.value==0) {
             alert('전화번호를 입력하세요');
-            document.findIdForm.userphone.focus();
+            document.findId.userphone.focus();
             return false;
         } else {return true;} 
     }			

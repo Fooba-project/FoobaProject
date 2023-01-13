@@ -40,6 +40,7 @@ import fooba.action.main.searchAction;
 import fooba.action.member.findZipNumAction;
 import fooba.action.member.idCheckFormAction;
 import fooba.action.member.idfindFormAction;
+import fooba.action.member.memberFindIdAction;
 import fooba.action.member.memberJoinAction;
 import fooba.action.member.memberJoinFormAction;
 import fooba.action.member.memberOrderAllAction;
@@ -121,8 +122,8 @@ public class ActionFactory {
 		else if (command.equals("memberOrderAll")) ac = new memberOrderAllAction();// 전체 주문 내역
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
 		else if (command.equals("memberReviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
-
-	
+		else if (command.equals("memberFindId")) ac = new memberFindIdAction(); // 아이디 찾기
+		else if (command.equals("memberFindPw")) ac = new memberFindPwAction();// 비밀번호 찾기
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();
