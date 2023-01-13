@@ -15,7 +15,7 @@ public class miniLoginFormAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="member/memberMiniLogin.jsp";
 		
-		request.setAttribute("message", "로그인이 필요합니다.");
+		if(request.getParameter("check")==null)request.setAttribute("message", "로그인이 필요합니다.");
 		RequestDispatcher dp=request.getRequestDispatcher(url);
 		dp.forward(request, response);
 

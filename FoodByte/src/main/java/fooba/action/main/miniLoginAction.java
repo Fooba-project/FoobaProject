@@ -26,7 +26,7 @@ public class miniLoginAction implements Action {
 
 		String url="fooba.do?command=miniLoginForm";
 		
-		
+		request.setAttribute("check", "1");
 		if(mvo==null) request.setAttribute("message","존재하지 않는 아이디입니다.");
 		else if(mvo.getPwd()==null)request.setAttribute("message","시스템 오류. 관리자에게 문의하세요");
 		else if(!mvo.getPwd().equals(pwd)) request.setAttribute("message","비밀번호가 틀립니다.");

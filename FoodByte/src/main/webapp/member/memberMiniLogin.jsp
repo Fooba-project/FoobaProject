@@ -39,6 +39,7 @@
 	            </div>
 
 	    </div>
+	    <input type="hidden" name="check" value="">
 	    <div id="loginmessage">${message}</div>
 	</div>
 
