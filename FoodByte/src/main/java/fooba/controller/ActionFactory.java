@@ -39,6 +39,7 @@ import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
 import fooba.action.member.findZipNumAction;
 import fooba.action.member.idCheckFormAction;
+import fooba.action.member.idfindFormAction;
 import fooba.action.member.memberJoinAction;
 import fooba.action.member.memberJoinFormAction;
 import fooba.action.member.memberOrderAllAction;
@@ -103,6 +104,7 @@ public class ActionFactory {
 		// member 멤버
 		else if (command.equals("memberJoinForm")) ac = new memberJoinFormAction();
 		else if (command.equals("idCheckForm")) ac = new idCheckFormAction();
+		else if (command.equals("idfindForm")) ac = new idfindFormAction();
 		else if (command.equals("findZipNum")) ac = new findZipNumAction();
 		else if (command.equals("memberJoin")) ac = new memberJoinAction();
 		//카트담기 및 메뉴주문
