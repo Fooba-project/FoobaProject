@@ -16,7 +16,7 @@
     <div id="popup_text">
 		<h1>우편번호 검색</h1>
 		<form method="post" name="formm" action="fooba.do">
-			<input type="hidden" name="command" value="findZipNum">
+			<input type="hidden" name="command" value="memberFindZipNum">
                  <input name="dong" id="dongtext" type="text" placeholder="주소를 입력하세요.">
                  <input type="submit" value=" " class="submit" id="eheqhrl">
 		</form> 
