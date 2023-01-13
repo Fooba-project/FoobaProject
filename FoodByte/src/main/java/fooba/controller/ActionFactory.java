@@ -37,10 +37,12 @@ import fooba.action.main.orderAction;
 import fooba.action.main.orderFormAction;
 import fooba.action.main.restaurantDetailAction;
 import fooba.action.main.searchAction;
-import fooba.action.member.findZipNumAction;
-import fooba.action.member.idCheckFormAction;
-import fooba.action.member.idfindFormAction;
 import fooba.action.member.memberFindIdAction;
+import fooba.action.member.memberFindIdFormAction;
+import fooba.action.member.memberFindPwAction;
+import fooba.action.member.memberFindPwFormAction;
+import fooba.action.member.memberFindZipNumAction;
+import fooba.action.member.memberIdCheckFormAction;
 import fooba.action.member.memberJoinAction;
 import fooba.action.member.memberJoinFormAction;
 import fooba.action.member.memberOrderAllAction;
@@ -101,12 +103,14 @@ public class ActionFactory {
 		else if (command.equals("fooba_tos")) ac = new fooba_tosAction();
 		else if (command.equals("fooba_privacy")) ac = new fooba_privacyAction();
 		else if (command.equals("memberQnalist")) ac = new memberQnalistAction();
-		
+		else if (command.equals("memberFindIdForm")) ac = new memberFindIdFormAction();
+		else if (command.equals("memberFindId")) ac = new memberFindIdAction(); // 아이디 찾기
+		else if (command.equals("memberFindPwForm")) ac = new memberFindPwFormAction();// 비밀번호 찾기
+		else if (command.equals("memberFindPw")) ac = new memberFindPwAction();
 		// member 멤버
 		else if (command.equals("memberJoinForm")) ac = new memberJoinFormAction();
-		else if (command.equals("idCheckForm")) ac = new idCheckFormAction();
-		else if (command.equals("idfindForm")) ac = new idfindFormAction();
-		else if (command.equals("findZipNum")) ac = new findZipNumAction();
+		else if (command.equals("memberIdCheckForm")) ac = new memberIdCheckFormAction();
+		else if (command.equals("memberFindZipNum")) ac = new memberFindZipNumAction();
 		else if (command.equals("memberJoin")) ac = new memberJoinAction();
 		//카트담기 및 메뉴주문
 		else if (command.equals("menupopup")) ac= new menupopupAction(); //메뉴 팝업창
@@ -122,8 +126,6 @@ public class ActionFactory {
 		else if (command.equals("memberOrderAll")) ac = new memberOrderAllAction();// 전체 주문 내역
 		else if (command.equals("memberOrderDetail")) ac = new memberOrderDetailAction();// 주문 번호별 상세 내역
 		else if (command.equals("memberReviewWrite")) ac = new memberReviewWriteAction();// 별점 및 리뷰 작성된 내용 저장
-		else if (command.equals("memberFindId")) ac = new memberFindIdAction(); // 아이디 찾기
-		else if (command.equals("memberFindPw")) ac = new memberFindPwAction();// 비밀번호 찾기
 		// restaurant 가입-정보-수정 액션
 		// 가게정보, 주문관리, 메뉴관리, 리뷰관리, 가게미리보기
 		else if (command.equals("res_loginForm")) ac=new res_loginFormAction();

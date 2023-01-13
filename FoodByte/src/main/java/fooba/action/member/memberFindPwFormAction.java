@@ -1,7 +1,6 @@
 package fooba.action.member;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,18 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fooba.action.Action;
-import fooba.dao.MemberDao;
 
-public class memberJoinFormAction implements Action {
+public class memberFindPwFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="member/memberJoin.jsp";
 		
-		MemberDao mdao=MemberDao.getInstance();
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		String url="member/memberFindPw.jsp";
+		RequestDispatcher dp=request.getRequestDispatcher(url);
+		dp.forward(request, response);
+
 	}
 
 }

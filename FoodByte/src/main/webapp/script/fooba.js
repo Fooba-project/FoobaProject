@@ -155,7 +155,7 @@ function idcheck(){
 		documnet.member_join_send_form.userid.focus();
 		return;
 	}
-	var url = "fooba.do?command=idCheckForm&userid=" + document.member_join_send_form.userid.value;
+	var url = "fooba.do?command=memberIdCheckForm&userid=" + document.member_join_send_form.userid.value;
 	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
 	window.open(url, "IdCheck", opt);	
 }
@@ -184,7 +184,7 @@ function idok( userid ){
 
 
 function post_zip(){
-	var url = "fooba.do?command=findZipNum";
+	var url = "fooba.do?command=memberFindZipNum";
 	var opt = "toolbar=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500, top=100, left=700";
 	window.open( url, "우편번호 찾기", opt);
 }
@@ -241,7 +241,7 @@ function menumove(x){
 function go_search2(){
 	document.search.action = "fooba.do?command=search";
 	document.search.submit();
-}       
+}
 
 function go_search(hash){
 	var url = "fooba.do?command=search&hash="+ hash;  

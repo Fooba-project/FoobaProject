@@ -21,7 +21,7 @@
 				<div class="join_list">
                   <input type="password" class="input_text" name="userpwdchk" id="userpwdchk" placeholder="비밀번호 확인" style="color:red;"/>
                 </div>
-				
+			
                 <p class="error_text" id="error1"></p>
     
                 <div class="join_list">

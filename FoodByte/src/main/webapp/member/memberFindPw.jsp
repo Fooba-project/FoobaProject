@@ -28,7 +28,7 @@
 </style>
 </head>
 <body>
- <form method="post" action="fooba.do?command=login" name="loginForm">
+ <form method="post" action="fooba.do?command=memberFindPw" name="loginForm">
         <div class="login_form">
                 <div id="logspace"></div>
                 <div id="loginmain_logo">
@@ -38,15 +38,9 @@
                 <div id="login_box">
                     <div id="text_button_box">
                         <div id="login_idpw_box">
-                            <input type="text" id="login_id" name="userpw" placeholder="아이디를 입력하세요"
-                        	maxlength="16" value="">
-                        	
-                        	 <input type="text" id="login_phone" name="userpw" placeholder="휴대폰번호를 입력하세요"
-                        	maxlength="16" value="">
-                        	
-                            <input type="text" id="login_name" name="userid" placeholder="이름을 입력하세요" title="이름"
-                       		 maxlength="10" value="">
-               	
+                            <input type="text" id="login_id" name="userid" placeholder="아이디를 입력하세요" maxlength="16" onkeyup="chkIdCode(event)">
+                        	 <input type="text" id="login_phone" name="userphone" placeholder="휴대폰 번호를 입력하세요" maxlength="13"  onkeyup="chkPhoneCode(event)">
+                            <input type="text" id="login_name" name="username" placeholder="이름을 입력하세요" maxlength="10">
                         </div>
             
                         <div id="pw_buttonbox">

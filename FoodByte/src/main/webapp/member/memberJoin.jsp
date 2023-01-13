@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="join_list">
-                    <input type="text" id="userphone" class="input_text" name="userphone" maxlength="13" placeholder="전화번호"  onkeyup="chkPhoneCode(event)"/>
+                    <input type="text" id="userphone" class="input_text" name="userphone" placeholder="전화번호" maxlength="13"  onkeyup="chkPhoneCode(event)"/>
                 </div>
 
                 <div class="join_list">

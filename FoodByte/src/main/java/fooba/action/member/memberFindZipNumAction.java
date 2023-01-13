@@ -12,7 +12,7 @@ import fooba.VO.AddressVO;
 import fooba.action.Action;
 import fooba.dao.MemberDao;
 
-public class findZipNumAction implements Action {
+public class memberFindZipNumAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class findZipNumAction implements Action {
 			}
 		}
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/findZipnum.jsp");
+		RequestDispatcher dp=request.getRequestDispatcher("member/memberFindZipnum.jsp");
 		dp.forward(request, response);
 
 	}

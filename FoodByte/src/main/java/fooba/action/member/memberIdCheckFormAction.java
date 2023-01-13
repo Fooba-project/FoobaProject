@@ -11,7 +11,7 @@ import fooba.VO.MemberVO;
 import fooba.action.Action;
 import fooba.dao.MemberDao;
 
-public class idCheckFormAction implements Action {
+public class memberIdCheckFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class idCheckFormAction implements Action {
 		
 		request.setAttribute("userid", userid);
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/idcheck.jsp");
+		RequestDispatcher dp=request.getRequestDispatcher("member/memberIdCheck.jsp");
 		dp.forward(request, response);
 
 	}

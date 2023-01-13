@@ -32,7 +32,7 @@
 
 </head>
 <body>
-    <form method="post" action="fooba.do?command=findId" name="findId">
+    <form method="post" action="fooba.do?command=memberFindId" name="findId">
         <div class="login_form">
                 <div id="logspace"></div>
                 <div id="loginmain_logo">
@@ -42,8 +42,8 @@
                 <div id="login_box">
                     <div id="text_button_box">
                         <div id="login_idpw_box">
-							<input type="text" id="find_name" name="username" placeholder="이름" title="이름" maxlength="30" value="">
-                            <input type="text" id="find_phone" name="userphone" placeholder="휴대폰번호를 입력하세요" maxlength="16" value="">
+							<input type="text" id="find_name" name="username" placeholder="이름" title="이름" maxlength="30">
+                            <input type="text" id="find_phone" name="userphone" placeholder="휴대폰 번호를 입력하세요" maxlength="13"  onkeyup="chkPhoneCode(event)">
                         </div>
             			<br>
             			<div style="text-align:center; "><p id="check" class="check" >${check}</p></div>
