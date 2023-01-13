@@ -239,7 +239,6 @@ public class ResDao {
 	               String z="";
 	               String[] array = x.split(",");
 	               for(int i=0; i<array.length; i++) {
-	                  System.out.println(array[i]);
 	                  String sql2="select*from foodmenu where fseq=?";
 	                  pstmt=con.prepareStatement(sql2);
 	                  pstmt.setString(1,array[i]);
