@@ -47,8 +47,6 @@ public class orderAction implements Action {
 				ovo.setPhone(request.getParameter("phone"));
 			}
 			ovo.setTotalprice(totalprice);
-			//System.out.println(ovo.getId()+"/"+ovo.getRideryn()+"/"+ovo.getPlasticyn()+"/"+ovo.getPayment()+"/");
-			//System.out.println(ovo.getAddress1()+"/"+ ovo.getAddress2()+"/"+ovo.getPhone()+"/"+ovo.getTotalprice());
 			OrderDao odao=OrderDao.getInstance();
 			CartDao cdao=CartDao.getInstance();
 			ArrayList<CartVO>clist=cdao.CartList(mvo.getId(),rseq);

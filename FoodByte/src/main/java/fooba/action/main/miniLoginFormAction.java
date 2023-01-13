@@ -13,7 +13,7 @@ public class miniLoginFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="member/miniLogin.jsp";
+		String url="member/memberMiniLogin.jsp";
 		
 		request.setAttribute("message", "로그인이 필요합니다.");
 		RequestDispatcher dp=request.getRequestDispatcher(url);
