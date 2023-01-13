@@ -24,9 +24,7 @@ public class memberQnalistAction implements Action {
 		
 		HttpSession session = request.getSession();
 		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");	
-		if(mvo==null)
-			url="fooba.do?command=loginForm";		
-		else {
+		
 			MemberDao mdao=MemberDao.getInstance();
 			
 			if(request.getParameter("start")!=null) {
@@ -67,7 +65,7 @@ public class memberQnalistAction implements Action {
 			request.setAttribute("qnaList", qnaList);
 			request.setAttribute("paging", paging); 
 			request.setAttribute("key", key);
-		}
+		
 		
 		request.getRequestDispatcher(url).forward(request, response);
 
