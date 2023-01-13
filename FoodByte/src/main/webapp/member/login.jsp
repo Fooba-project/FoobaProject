@@ -28,8 +28,8 @@
 	            <div class="loginform_linetext">
 	                <span class="text1"> 비밀번호찾기</span>
 	            </div>
-	            <div class="loginform_linetext">
-	                <span class="text2"> 아이디찾기</span>
+	            <div class="loginform_linetext">            
+	                 <input type="button" id="id_btn" value="아이디 찾기" onclick="id_find()">
 	            </div>
 	            <div class="loginform_linetext">
 	                <span class="text3"> 회원가입</span>
