@@ -10,15 +10,15 @@ Fooba 배달 웹사이트 만들기
 2022/12/26 ~ 2023/01/13
 
 
-## 프로젝트 주제 
+## :pencil2: 프로젝트 주제 
 1인 가구를 위한 지역 배달 웹사이트 플랫폼
 
 
-## 프로젝트 선정 이유 
+## :pencil2: 프로젝트 선정 이유 
 학습한 내용에서 최대한 응용할 수 있는 가장 적합한 벤치마킹 모델
 
 
-## 사용한 툴 & 플랫폼
+## :pencil2: 사용한 툴 & 플랫폼
 <div style="float:left">
   <img src="https://img.shields.io/badge/Oracle-F80000?style=flat&logo=Oracle&logoColor=white"/> 
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/>
@@ -33,7 +33,7 @@ Fooba 배달 웹사이트 만들기
 </div>
 
 
-## 기능 설명
+## 📌 기능 설명
 <details>
 <summary style="font-weight:bold">사용자 화면</summary>
 <div markdown="1">
