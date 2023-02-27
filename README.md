@@ -51,9 +51,13 @@ Fooba 배달 웹사이트 만들기
 
 + **마이페이지**
     - 주문 내역 상세 확인 및 리뷰 작성!
+  
     - 회원정보 수정 및 탈퇴 
+  
+   <img width="500px" src="https://user-images.githubusercontent.com/115220828/221536387-2f342d43-c584-4f81-b066-aaf164468c12.png">
 
 + **Q&A 확인**
+
   
   
 
