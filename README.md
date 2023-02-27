@@ -72,9 +72,9 @@ Fooba 배달 웹사이트 만들기
     - 메뉴 수정 및 삭제
 
 + **정보 관리 / 수정**
-<img width="80%" src="https://user-images.githubusercontent.com/16822641/109461495-913fc480-7aa5-11eb-9d0e-aff762669f98.gif"/>
+<img width="500px" src="https://user-images.githubusercontent.com/16822641/109461495-913fc480-7aa5-11eb-9d0e-aff762669f98.gif"/>
 
-![사용자1](https://user-images.githubusercontent.com/115220828/221533198-cdd03829-2e70-4d0a-aa80-5fed1bea1b3e.png)
+
 
 
 </details>
