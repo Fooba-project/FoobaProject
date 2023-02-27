@@ -39,7 +39,8 @@ Fooba 배달 웹사이트 만들기
 <div markdown="1">
   
 + **가게 검색**
-    - 해쉬 / 메뉴 / 카테고리 별 검색 
+    - 해쉬 / 메뉴 / 카테고리 별 검색
+  <img width="500px" src="https://user-images.githubusercontent.com/115220828/221533614-c15ff458-5aa1-4c95-9831-91cdb3c98bdf.png">
 
 + **메뉴 확인 및  주문하기**
     - 옵션 추가 카트 담기
@@ -72,7 +73,7 @@ Fooba 배달 웹사이트 만들기
     - 메뉴 수정 및 삭제
 
 + **정보 관리 / 수정**
-<img width="500px" src="https://user-images.githubusercontent.com/115220828/221533614-c15ff458-5aa1-4c95-9831-91cdb3c98bdf.png">
+
 </details>
 
 <details>
