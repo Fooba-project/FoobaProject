@@ -45,7 +45,7 @@ Fooba 배달 웹사이트 만들기
 </details>
 
 <details>
-<summary>__레스토랑 오너 화면__</summary>
+<summary>**레스토랑 오너 화면**</summary>
 <div markdown="1">
   
 + 주문 관리
