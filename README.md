@@ -24,7 +24,7 @@ Fooba 배달 웹사이트 만들기
 
 ### 기능 설명
 <details>
-<summary>사용자 화면</summary>
+<summary style="font-weight:bold">사용자 화면</summary>
 <div markdown="1">
   
 + **가게 검색**
@@ -65,7 +65,7 @@ Fooba 배달 웹사이트 만들기
 </details>
 
 <details>
-<summary>##관리자 화면 </summary>
+<summary>관리자 화면 </summary>
 <div markdown="1">
   
 + **입점 가게 관리**
