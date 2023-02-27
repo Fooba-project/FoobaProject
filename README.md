@@ -24,7 +24,23 @@ Fooba 배달 웹사이트 만들기
 
 ### 기능 설명
 <details>
-<summary>메인 화면</summary>
+<summary>사용자 화면</summary>
+<div markdown="1">
++ 
+
+</div>
+</details>
+
+<details>
+<summary>레스토랑 오너 화면</summary>
+<div markdown="1">
++ 카테고리 클릭시 관련 음식점 보이기 
+
+</div>
+</details>
+
+<details>
+<summary>관리자 화면</summary>
 <div markdown="1">
 + 카테고리 클릭시 관련 음식점 보이기 
 
