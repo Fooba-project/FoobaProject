@@ -46,6 +46,7 @@ Fooba 배달 웹사이트 만들기
     - 옵션 추가 카트 담기
     - 가게 정보 확인 및 리뷰 확인
     - 배송지 변경 및 배달 옵션 선택
+  
   <img width="500px" src="https://user-images.githubusercontent.com/115220828/221534036-a501b5ab-6007-42cd-ac6a-fcd77cc6ec7e.png">
 
 + **마이페이지**
