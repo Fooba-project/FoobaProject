@@ -22,12 +22,11 @@ Fooba 배달 웹사이트 만들기
   <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
 </div>
 
-### 기능 설명 
+### 기능 설명
 <details>
-<summary>토글 접기/펼치기</summary>
+<summary>메인 화면</summary>
 <div markdown="1">
-
-안녕
++ 카테고리 클릭시 관련 음식점 보이기 
 
 </div>
 </details>
