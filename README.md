@@ -26,6 +26,7 @@ Fooba 배달 웹사이트 만들기
 <details>
 <summary>사용자 화면</summary>
 <div markdown="1">
+  
 + 가게 검색
     - 해쉬 / 메뉴 / 카테고리 별 검색 
 
