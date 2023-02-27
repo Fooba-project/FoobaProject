@@ -45,10 +45,10 @@ Fooba 배달 웹사이트 만들기
 </details>
 
 <details>
-<summary>**레스토랑 오너 화면**</summary>
+<summary>레스토랑 오너 화면</summary>
 <div markdown="1">
   
-+ 주문 관리
++ **주문 관리**
     - 주문 현황 확인
 
 + 리뷰 관리
