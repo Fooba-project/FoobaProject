@@ -22,3 +22,12 @@ Fooba 배달 웹사이트 만들기
   <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
 </div>
 
+### 기능 설명 
+<details>
+<summary>토글 접기/펼치기</summary>
+<div markdown="1">
+
+안녕
+
+</div>
+</details>
