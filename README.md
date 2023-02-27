@@ -9,7 +9,7 @@ Fooba 배달 웹사이트 만들기
 ### 프로젝트 선정 이유 
 학습한 내용에서 최대한 응용할 수 있는 가장 적합한 벤치마킹 모델
 ### 사용한 툴 & 플랫폼
-<div align="center" style="float:left">
+<div style="float:left">
   <img src="https://img.shields.io/badge/Oracle-F80000?style=flat&logo=Oracle&logoColor=white"/> 
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/>
