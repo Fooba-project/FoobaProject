@@ -39,7 +39,7 @@ Fooba 배달 웹사이트 만들기
 <img width="500px" src = "https://user-images.githubusercontent.com/115220828/234448429-0c8c7f4f-5f8b-4f41-b568-0a1ad04db091.jpg">
 - 유스케이스 다이어그램
 <img width="500px" src="https://user-images.githubusercontent.com/115220828/234448437-3e17d464-b662-4ebb-b8e6-2865aee5760b.jpg">
-- db 설계
+- DB 설계
 <img width="500px" src="https://user-images.githubusercontent.com/115220828/234448744-be589157-dbd6-4cea-a7de-54acdd0ad08b.jpg">
 
 
